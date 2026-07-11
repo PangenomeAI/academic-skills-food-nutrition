@@ -9,9 +9,16 @@ Open source. Free to use, modify, and build on.
 ## Skills
 
 ### Core workflow
-- **`food-research`** — literature discovery and evidence synthesis for food &
-  nutrition (FSTA, PubMed, Web of Science, Scopus, AGRICOLA; EFSA/FDA/USDA/Codex
-  for safety and regulatory evidence); grades evidence and maps gaps.
+- **`food-research`** — comprehensive, multi-source literature discovery and
+  evidence synthesis for food & nutrition (FSTA, PubMed, Web of Science, Scopus,
+  AGRICOLA, preprints, semantic search; EFSA/FDA/USDA/Codex for safety and
+  regulatory evidence). Four-layer search, two-phase screening, and synthesis via
+  subagents; grades evidence and maps gaps. Includes a **PRISMA 2020 systematic
+  review** mode (`systematic_reviewer` + `data_extractor` subagents).
+- **`deep-research`** — general iterative deep-research engine (scope → plan →
+  investigate → verify → synthesize → critique → report) with a 6-subagent team.
+  Runs standalone on any question, or as the deep-dive engine called by
+  `food-research`.
 - **`food-paper`** — journal-aware manuscript writing. Resolves the target
   journal first, drafts to its structure and limits, applies its reference
   style, and routes figures through `food-figure`.
@@ -65,8 +72,9 @@ MIT — see [LICENSE](LICENSE). Free for any use, including commercial.
 This is original, independently written work released under MIT. It was informed
 by — but contains no code or text from — earlier community projects exploring
 academic-research and scientific-figure skills for Claude Code, including the
-`nature-skills` collection (Apache-2.0) and `academic-research-skills`
-(CC-BY-NC-4.0). Only non-copyrightable workflow *concepts* (e.g. multi-source
-search, layered retrieval, staged screening) were drawn on; all wording here is
-our own, so this project is free of their license obligations and is offered
-under MIT.
+`nature-skills` collection (Apache-2.0), `deer-flow` (MIT), and
+`academic-research-skills` (CC-BY-NC-4.0). Only non-copyrightable workflow
+*concepts* (e.g. multi-source search, layered retrieval, staged screening,
+parallel extraction, PRISMA structure, subagent teams) were drawn on; all wording
+here is our own, so this project is free of their license obligations and is
+offered under MIT.

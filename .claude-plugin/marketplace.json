@@ -10,10 +10,11 @@
       "name": "academic-skills-food-nutrition",
       "source": "./",
       "description": "Food & nutrition research/write/review/orchestrate skills, publisher-tiered journal skills (60 journals), and a food-figure workflow.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "license": "MIT",
       "skills": [
         "./food-research",
+        "./deep-research",
         "./food-paper",
         "./food-review",
         "./food-pipeline",

@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.2.0 — 2026-07
+
+- New **`deep-research`** skill: general iterative deep-research engine (scope →
+  plan → investigate → verify → synthesize → critique → report) with a 6-subagent
+  team (`question_scoper`, `research_planner`, `investigator`, `verifier`,
+  `synthesizer`, `critic`). Runs standalone or as `food-research`'s deep-dive engine.
+- `food-research` gains a **PRISMA 2020 systematic-review** capability: new
+  `systematic_reviewer` (protocol → search → PRISMA flow → extraction →
+  risk-of-bias → synthesis ± meta-analysis) and `data_extractor` (parallel,
+  batched structured extraction) subagents; `systematic` mode now routes to them.
+
 ## 1.1.0 — 2026-07
 
 - `food-research` expanded to a comprehensive, multi-source workflow: four-layer

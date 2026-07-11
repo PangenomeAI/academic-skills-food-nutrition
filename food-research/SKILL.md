@@ -4,8 +4,8 @@ description: "Run a comprehensive, multi-source literature and evidence-synthesi
 metadata:
   version: "2.0.0"
   verified: "2026-07"
-  related_skills: [food-paper, food-review, food-pipeline]
-  subagents: [search_strategist, source_scout, screener_appraiser, synthesis]
+  related_skills: [deep-research, food-paper, food-review, food-pipeline]
+  subagents: [search_strategist, source_scout, screener_appraiser, synthesis, systematic_reviewer, data_extractor]
 ---
 
 # Food-Research — Comprehensive Evidence Synthesis for Food & Nutrition Science
@@ -18,7 +18,7 @@ literature-search skills (see Acknowledgements in the repo README).
 ## When to go deep vs light
 - **quick brief** — fast orientation: run one search pass, top sources, open questions.
 - **full review** — the default: full four-layer search + two-phase screening + synthesis.
-- **systematic** — PRISMA-style: pre-registered question, exhaustive search log, screening funnel with counts, extraction table; meta-analysis only if the data are comparable.
+- **systematic** — full PRISMA 2020 systematic review, run by the **`systematic_reviewer`** subagent (fixed protocol, reproducible search, PRISMA flow counts, structured extraction via `data_extractor`, risk-of-bias assessment, synthesis ± meta-analysis, certainty of evidence). Use this whenever the user asks for a systematic review, PRISMA review, or meta-analysis.
 
 ## Subagents (dispatch, don't inline)
 Run these as subagents (via the Agent tool). Layers that are independent — e.g.
@@ -77,6 +77,11 @@ An evidence brief containing: question & scope; **reproducible search strategy**
 intended paper section); **literature/evidence matrix**; graded conclusions;
 **coverage advisory**; and a **gap list**. Export references as `.bib`/`.ris`
 (deduplicated) for reuse.
+
+## Deep dives
+For a subtopic that needs open-ended investigation beyond the literature (e.g.
+regulatory landscape, market/technology state), call the **`deep-research`**
+skill and fold its sourced synthesis back into the evidence brief.
 
 ## Handoff
 Sources tagged and assigned by section feed `food-paper` (Introduction and
