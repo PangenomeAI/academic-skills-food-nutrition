@@ -1,0 +1,23 @@
+{
+  "name": "academic-skills-food-nutrition",
+  "version": "1.0.0",
+  "description": "Original, MIT-licensed academic skills for food & nutrition science: research, journal-aware writing, peer review, and end-to-end orchestration, plus publisher-tiered journal author-guideline skills and a food-science figure workflow.",
+  "author": {
+    "name": "PangeZAU",
+    "url": "https://github.com/PangenomeAI"
+  },
+  "homepage": "https://github.com/PangenomeAI/academic-skills-food-nutrition",
+  "repository": "https://github.com/PangenomeAI/academic-skills-food-nutrition",
+  "license": "MIT",
+  "keywords": [
+    "food-science",
+    "nutrition",
+    "academic",
+    "research",
+    "writing",
+    "peer-review",
+    "journal-guidelines",
+    "scientific-figures",
+    "scholarly-publishing"
+  ]
+}

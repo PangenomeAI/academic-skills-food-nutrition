@@ -1,0 +1,41 @@
+{
+  "name": "academic-skills-food-nutrition",
+  "owner": {
+    "name": "PangeZAU",
+    "url": "https://github.com/PangenomeAI"
+  },
+  "description": "Original, MIT-licensed academic skills for food & nutrition science — research, journal-aware writing, peer review, orchestration, journal author-guideline skills, and food-science figure generation for Claude Code.",
+  "plugins": [
+    {
+      "name": "academic-skills-food-nutrition",
+      "source": "./",
+      "description": "Food & nutrition research/write/review/orchestrate skills, publisher-tiered journal skills (60 journals), and a food-figure workflow.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "skills": [
+        "./food-research",
+        "./food-paper",
+        "./food-review",
+        "./food-pipeline",
+        "./food-figure",
+        "./journal-selector",
+        "./journals/elsevier-food",
+        "./journals/food-chemistry",
+        "./journals/j-dairy-science",
+        "./journals/wiley-food",
+        "./journals/nature-food",
+        "./journals/springer-food",
+        "./journals/crit-rev-food",
+        "./journals/foods-mdpi",
+        "./journals/food-function",
+        "./journals/jafc",
+        "./journals/annu-rev-food",
+        "./journals/food-quality-safety",
+        "./journals/british-food-journal",
+        "./journals/j-future-foods",
+        "./journals/qas-crops-foods",
+        "./journals/agri-food-security"
+      ]
+    }
+  ]
+}
