@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.15.0 — 2026-07
+
+- **food-figure expanded** (informed by the nature-figure project):
+  - Detailed Python guidance — matplotlib, seaborn, **subplot_mosaic** (named
+    multi-panel), and **statsmodels** (regression/CI/ANOVA/mixed models).
+  - Detailed R guidance — ggplot2, patchwork, **ComplexHeatmap**, **ggrepel**, and
+    export via **svglite / cairo_pdf / ragg**.
+  - Template libraries `examples/python_food_figures.py` and
+    `examples/r_food_figures.R` with a ready function for every figure type
+    (bar+letters, box/violin, kinetic/growth+fit, dose–response, scatter+CI,
+    Bland–Altman, sensory radar, PCA, clustered heatmap, Kaplan–Meier, forest,
+    multi-panel).
+  - **AI image route (opt-in):** `references/ai-image-generation.md` — only when
+    the user explicitly requests Gemini/ChatGPT/Claude, and only for schematics/
+    graphical abstracts (never data figures, never fabricated data).
+- **Privacy check for all skills.** New `scripts/privacy_scan.py` (flags local
+  paths, temp/machine paths, IPs, tokens, non-project emails; self-tested) and
+  `food-paper/references/privacy-and-confidentiality.md`. Wired into AGENTS.md, the
+  food-pipeline pre-finalize gate, and every core skill's delivery step.
+
 ## 1.14.0 — 2026-07
 
 - Banner: removed the "Initiated by…" line; added a responsible-AI declaration

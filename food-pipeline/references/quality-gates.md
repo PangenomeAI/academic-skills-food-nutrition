@@ -25,9 +25,10 @@ The checklist `quality_gate` applies between stages. Each gate returns
 - Accept → FINALIZE; else one more loop (cap 2).
 
 ## Before FINALIZE — final compliance
-- [ ] Every citation resolves; reference style correct and consistent.
+- [ ] Every citation resolves (four-gate); reference style correct and consistent.
 - [ ] All declarations present (competing interests, funding, CRediT, data availability, ethics).
 - [ ] Format matches the target journal; figures at journal spec.
+- [ ] **Privacy scan clean** — no local paths, machine/temp paths, secrets, or private data in the deliverable (`python3 scripts/privacy_scan.py <file>`; see `food-paper/references/privacy-and-confidentiality.md`).
 
 ## Non-negotiable
 Integrity and ethics gates cannot be waived. A must-fix cannot be passed through.

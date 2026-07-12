@@ -76,6 +76,7 @@ skeleton the author can fill in. Critique the work, not the author.
 - `references/ethics-integrity-checklist.md` — `reviewer_integrity` (canonical; shared with `deep-research`).
 - `food-paper/references/statistics-reporting.md` — `reviewer_methodology`: stats red flags.
 - `food-paper/references/faithfulness-and-citation.md` — `reviewer_integrity`: verify every citation is real (four-gate) and every claim is source-bound; flag any fabricated/unsupported content.
+- `food-paper/references/privacy-and-confidentiality.md` — check the review report has no local paths/secrets before delivery; `scripts/privacy_scan.py`.
 
 ## Handoff
 Feeds `food-paper` (revise mode) for the author to act on; part of the

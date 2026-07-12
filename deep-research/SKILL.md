@@ -88,6 +88,7 @@ mark missing evidence `[EVIDENCE GAP]`, never fabricate.
 - `food-paper/references/apa7-quickref.md` — APA 7.0 for `bibliography`/`compiler` (default style).
 - `food-review/references/ethics-integrity-checklist.md` — for `ethics_reviewer`.
 - `food-paper/references/faithfulness-and-citation.md` — **grounding + four-gate citation check** for `bibliography`, `source_verifier`, `claim_verifier`, `compiler`. Never invent sources/data; run `scripts/verify_citations.py`.
+- `food-paper/references/privacy-and-confidentiality.md` — **privacy scan before delivering the report** (no local paths/secrets); `scripts/privacy_scan.py`.
 
 ## Handoff
 Standalone → deliver the final review. Called by `food-research` → return the

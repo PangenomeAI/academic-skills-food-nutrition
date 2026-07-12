@@ -69,6 +69,7 @@ python3 scripts/check_journal_coverage.py
 python3 food-figure/scripts/analyze_data.py --selftest
 python3 food-figure/scripts/backend_pref.py --selftest
 python3 scripts/verify_citations.py --selftest        # citation/anti-fabrication gate
+python3 scripts/privacy_scan.py --selftest            # privacy/confidentiality gate
 
 # 3. Manifests are valid JSON (and, if you have Claude Code, validate the plugin)
 python3 -c "import json;[json.load(open(p)) for p in ['.claude-plugin/plugin.json','.claude-plugin/marketplace.json']];print('json ok')"
@@ -92,6 +93,14 @@ claude plugin validate .    # optional, if claude CLI is installed
   supports the claim at a locator). See
   `food-paper/references/faithfulness-and-citation.md` and run
   `python3 scripts/verify_citations.py <cites.json>` on the reference set.
+- **Privacy — check before delivering (every skill).** Before handing any
+  document to the user (manuscript, brief, report, response letter, figure
+  legend, code, PDF/DOCX/LaTeX), ensure it contains **no confidential/local
+  information** — absolute filesystem paths (`/Users/<name>/…`, `C:\Users\…`),
+  temp/scratchpad paths, usernames, hostnames, IPs, API tokens, or private data.
+  Use relative/placeholder paths instead. Scan with
+  `python3 scripts/privacy_scan.py <file>` and redact every hit. See
+  `food-paper/references/privacy-and-confidentiality.md`.
 - **Original text only.** This project is MIT. Do NOT copy text from CC-BY-NC or
   other non-permissive sources (e.g. the upstream `academic-research-skills`).
   Workflow *ideas* are fine; the wording must be your own. Permissive sources

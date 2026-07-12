@@ -15,6 +15,10 @@ metadata:
     - references/r-guide.md
     - references/food-recipes.md
     - references/journal-specs.md
+    - references/ai-image-generation.md
+  examples:
+    - examples/python_food_figures.py
+    - examples/r_food_figures.R
   scripts:
     - scripts/analyze_data.py
     - scripts/backend_pref.py
@@ -68,26 +72,38 @@ Fix the conclusion, evidence logic, export needs (target journal), and review
 risks. See `references/figure-contract.md`.
 
 ### 4 — Backend gate (blocking)
-Resolve **Python or R** by priority: explicit request → language of the user's
-input files/data → saved preference (`python scripts/backend_pref.py get`) → ask
-once ("Python or R? I'll remember this") and save it
-(`backend_pref.py set python|r`). The chosen backend does **all** graphics,
-preview, and export; the other may only help with data prep/conversion. Backend
-guidance: `references/backend-selection` note in `python-guide.md` / `r-guide.md`.
+- **Data figures → Python or R (always).** Resolve the backend by priority:
+  explicit request → language of the user's input files/data → saved preference
+  (`python scripts/backend_pref.py get`) → ask once ("Python or R? I'll remember
+  this") and save it (`backend_pref.py set python|r`). The chosen backend does
+  **all** data graphics, preview, and export; the other may only help with data
+  prep/conversion.
+- **AI image route (opt-in, schematics only).** **Only if the user explicitly
+  asks** to generate the image with **Gemini, ChatGPT, or Claude** (or another
+  named image model) — and **only for conceptual visuals** (mechanism diagrams,
+  graphical abstracts, process schematics) — use that model instead. **Never** use
+  an AI image model for a data-bearing figure, and never let it invent data. See
+  `references/ai-image-generation.md`.
 
 ### 5 — Render & export
-Use the selected backend's guide (`python-guide.md` = matplotlib/seaborn;
-`r-guide.md` = ggplot2/patchwork/ComplexHeatmap) plus `food-recipes.md` for the
-food/nutrition figure types. Export **vector** (PDF/SVG) for line/bar/scatter and
+Use the selected backend's guide (`python-guide.md` = matplotlib/seaborn/
+subplot_mosaic/statsmodels; `r-guide.md` = ggplot2/patchwork/ComplexHeatmap/
+ggrepel + svglite/cairo_pdf/ragg) plus `food-recipes.md` for the food/nutrition
+figure types. **Start from the template library** — `examples/python_food_figures.py`
+or `examples/r_food_figures.R` — which has a ready function for every figure type;
+adapt it to the user's data. Export **vector** (PDF/SVG) for line/bar/scatter and
 **TIFF (LZW)** at the journal DPI for raster/microscopy; keep an editable source.
 Pull DPI, column width, font, and format from the target journal via
-`references/journal-specs.md` (which reads the journal skill's constraints); if
-no journal is set, default to 300 dpi, ~90/190 mm widths, TIFF+PDF, Arial 7–9 pt.
+`references/journal-specs.md`; if no journal is set, default to 300 dpi, ~90/190 mm
+widths, TIFF+PDF, Arial 7–9 pt.
 
 ### 6 — QA
 Run `references/qa-checklist.md` before delivering (error bars defined + n;
 statistics shown consistently; axes honest; colorblind-safe; labels legible at
-final size; matches journal spec; every panel cited).
+final size; matches journal spec; every panel cited). **Privacy:** any code or
+legend you hand back must use **relative paths**, never local machine paths — scan
+with `python3 scripts/privacy_scan.py` (see
+`food-paper/references/privacy-and-confidentiality.md`).
 
 ## Modes
 - **recommend** — analyze data and suggest figures, no rendering yet.
@@ -97,9 +113,11 @@ final size; matches journal spec; every panel cited).
 
 ## Scope
 Reproducible, code-generated, submission-grade scientific figures for food &
-nutrition. Not for dashboards, slide infographics, or Illustrator/Figma-first
-artwork. For a schematic/graphical abstract (mechanism diagram), say so — that is
-a drawing task, handled separately from data plotting.
+nutrition. Not for dashboards or Illustrator/Figma-first artwork. A
+schematic/graphical-abstract (mechanism diagram) is a drawing task: keep it in
+Python/R by default, or — only if the user explicitly asks — generate it with an
+AI image model (Gemini/ChatGPT/Claude) per `references/ai-image-generation.md`.
+Data figures are always Python/R.
 
 ## Handoff
 Called by `food-paper`'s `viz_designer` at the journal spec; figures feed the
