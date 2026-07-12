@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.13.0 — 2026-07
+
+- **Automatic GitHub releases on major updates.** Added
+  `.github/workflows/release.yml`: when a new MINOR/MAJOR version (`x.y.0`) lands
+  on `main`, a release `v<version>` is published automatically with notes from the
+  matching CHANGELOG section. Patch releases do not trigger a release. Documented
+  the rule in `AGENTS.md`.
+
 ## 1.12.0 — 2026-07
 
 Informed by investigating the MIT `Light-skills` project (evidence/citation

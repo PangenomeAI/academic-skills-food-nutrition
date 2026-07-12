@@ -1,0 +1,46 @@
+name: Auto-release on major update
+
+# Publishes a GitHub Release automatically when a MINOR or MAJOR version
+# (x.y.0 — a feature/major update) lands on main. Patch releases (x.y.z, z>0,
+# e.g. docs/typo fixes) do NOT trigger a release. Release notes are taken from
+# the matching section of CHANGELOG.md.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".claude-plugin/plugin.json"
+      - "CHANGELOG.md"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish release for minor/major version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          VER=$(python3 -c "import json;print(json.load(open('.claude-plugin/plugin.json'))['version'])")
+          PATCH="${VER##*.}"
+          if [ "$PATCH" != "0" ]; then
+            echo "Version $VER is a patch release — no auto-release (only x.y.0 minor/major updates)."
+            exit 0
+          fi
+          if gh release view "v$VER" >/dev/null 2>&1; then
+            echo "Release v$VER already exists — nothing to do."
+            exit 0
+          fi
+          # Extract the CHANGELOG section for this version as the release notes.
+          awk -v v="$VER" 'index($0,"## "v)==1{f=1;print;next} f&&/^## /{f=0} f{print}' CHANGELOG.md > NOTES.md
+          [ -s NOTES.md ] || echo "See CHANGELOG.md for details." > NOTES.md
+          gh release create "v$VER" \
+            --title "v$VER — Academic Skills for Food & Nutrition Science" \
+            --notes-file NOTES.md \
+            --target main
+          echo "Published release v$VER."

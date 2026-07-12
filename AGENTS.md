@@ -43,6 +43,23 @@ or changes behavior, MUST in the same PR:
 
 A PR that changes skills but not README/CHANGELOG will be rejected.
 
+## Releases (automatic on major updates)
+A GitHub Release is published **automatically** when a **major update** lands on
+`main` — defined as a new **MINOR or MAJOR** version (`x.y.0`, e.g. a new skill,
+subagent, or capability). The `.github/workflows/release.yml` workflow runs on
+every push to `main` that touches `.claude-plugin/plugin.json` or `CHANGELOG.md`,
+and creates release `v<version>` using the matching `CHANGELOG.md` section as the
+notes. **Patch releases** (`x.y.z` with `z>0`, e.g. docs/typo fixes) do **not**
+create a release.
+
+So, as a developer/agent:
+- For a **feature or major change**, bump the version to the next **`x.y.0`** (minor)
+  or **`(x+1).0.0`** (major/breaking) and write a matching `## x.y.0 — <date>`
+  section in `CHANGELOG.md`. The release publishes itself when the PR merges to `main`.
+- For a small fix, use a **patch** bump (`x.y.z`) — no release is created.
+- Do **not** create releases by hand for normal changes; let the workflow do it.
+  (Manual release if ever needed: `gh release create vX.Y.Z --notes-file NOTES.md --target main`.)
+
 ## Verification — run before opening a PR (all must pass)
 ```bash
 # 1. Journal coverage maps resolve (food 60, nutrition list)
