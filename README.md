@@ -88,11 +88,15 @@ structure so cross-skill references resolve.
 ### Journal knowledge
 - **`journal-selector`** — asks which journal you're targeting (or reads it from
   your request) and loads that journal's constraints. Covers the **Food Science &
-  Technology** (60) and **Nutrition & Dietetics** (59) journal lists (see
-  [`journals/_coverage.md`](journals/_coverage.md) and
-  [`journals/_coverage_nutrition.md`](journals/_coverage_nutrition.md)).
-- **`journals/*`** — 19 publisher-tiered author-guideline skills covering both
-  the **Food Science & Technology** and **Nutrition & Dietetics** journal lists
+  Technology** (60) and **Nutrition & Dietetics** (59) journal lists, plus **35
+  multidisciplinary / cross-discipline** journals food & nutrition researchers
+  publish in (Nature, Science, Cell, and PNAS families, eLife, PLOS, ES&T, Gut,
+  etc.). See [`journals/_coverage.md`](journals/_coverage.md),
+  [`journals/_coverage_nutrition.md`](journals/_coverage_nutrition.md), and
+  [`journals/_coverage_multidisciplinary.md`](journals/_coverage_multidisciplinary.md).
+- **`journals/*`** — 24 publisher-tiered author-guideline skills covering the
+  **Food Science & Technology**, **Nutrition & Dietetics**, and multidisciplinary
+  journal lists
   (Elsevier, Wiley, Nature Portfolio, Springer, Taylor & Francis, MDPI, RSC, ACS,
   Annual Reviews, Oxford, Emerald, KeAi/Tsinghua, Codon, BioMed Central,
   Cambridge, Frontiers, plus a niche-publisher skill). Each lists the journals it
@@ -200,8 +204,8 @@ This is original, independently written work released under MIT. It was informed
 by — but contains no code or text from — earlier community projects exploring
 academic-research and scientific-figure skills for Claude Code, including the
 `nature-skills` collection (Apache-2.0), `deer-flow` (MIT), `Light-skills` (MIT),
-`academic-figure-skills` and `academic-figure-generator` (MIT), and
-`academic-research-skills` (CC-BY-NC-4.0). Only non-copyrightable workflow
+`academic-figure-skills` and `academic-figure-generator` (MIT),
+`Awesome-Journal-Skills` (MIT), and `academic-research-skills` (CC-BY-NC-4.0). Only non-copyrightable workflow
 *concepts* (e.g. multi-source search, layered retrieval, staged screening,
 parallel extraction, PRISMA structure, subagent teams, evidence/citation
 verification gates, and publication figure styles) were drawn on; all wording

@@ -50,6 +50,7 @@ def check(path, expected):
 def main() -> int:
     rc = check(JOURNALS / "_coverage.md", expected=60)
     rc |= check(JOURNALS / "_coverage_nutrition.md", expected=None)
+    rc |= check(JOURNALS / "_coverage_multidisciplinary.md", expected=None)
     return rc
 
 

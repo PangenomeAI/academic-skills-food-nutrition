@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.17.0 — 2026-07
+
+- Added **multidisciplinary & cross-discipline journal skills** (from the MIT
+  `Awesome-Journal-Skills` list) that food & nutrition researchers publish in,
+  grouped by publisher format: `nature-portfolio` (Nature, Nature Communications,
+  Nature Microbiology/Metabolism/Sustainability/Biotechnology/Medicine),
+  `science-aaas` (Science, Science Advances, …), `cell-press` (Cell, Cell
+  Metabolism, Cell Host & Microbe, …), `pnas`, and `multidisciplinary` (eLife,
+  PLOS Biology/Medicine, National Science Review, The Innovation, Environmental
+  Science & Technology, Gut, Gastroenterology, Diabetes Care, The ISME Journal).
+  `journal-selector` updated; new `journals/_coverage_multidisciplinary.md` (35
+  journals) + checker.
+
 ## 1.16.0 — 2026-07
 
 Learned from the MIT `academic-figure-skills` / `academic-figure-generator`

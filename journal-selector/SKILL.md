@@ -103,6 +103,22 @@ structured abstracts, trial registration, and reporting guidelines.
   (AME); Beneficial Microbes (Brill); Food & Nutrition Research (Swedish Nutrition
   Foundation)
 
+### Multidisciplinary & cross-discipline journals
+High-priority venues food/nutrition researchers publish in, grouped by publisher
+format (the Nature/Science/Cell families and PNAS are top-priority per the
+ranking rule).
+- **nature-portfolio** — Nature; Nature Communications; Nature Microbiology;
+  Nature Metabolism; Nature Sustainability; Nature Biotechnology; Nature Medicine;
+  Nature Reviews titles. (**Nature Food** and **npj Science of Food** → `nature-food`.)
+- **science-aaas** — Science; Science Advances; Science Translational Medicine;
+  Science Immunology; Science Signaling; Science Robotics.
+- **cell-press** — Cell; Cell Metabolism; Cell Host & Microbe; Molecular Cell;
+  Immunity; Current Biology; Cell Reports Medicine; One Earth; Joule; Matter; Chem.
+- **pnas** — Proceedings of the National Academy of Sciences (PNAS).
+- **multidisciplinary** — eLife; PLOS Biology; PLOS Medicine; National Science
+  Review; The Innovation; Environmental Science & Technology; Gut; Gastroenterology;
+  Diabetes Care; The ISME Journal.
+
 ## Output contract
 Return: `{journal, publisher, skill_folder, reference_style, abstract_words,
 figure_spec, notes}` drawn from the resolved skill's constraints block, so the
