@@ -1,5 +1,10 @@
 # Academic Skills for Food & Nutrition Science
 
+> **AI research assistant for food science and nutrition** — Claude Code & Codex
+> skills for **literature review, systematic review (PRISMA & meta-analysis), data
+> analysis and statistics, scientific figures, journal formatting, and peer
+> review**. Food-science research automation, end to end.
+
 Original, **MIT-licensed** Claude Code skills for the food & nutrition research
 lifecycle — **research → write → review → revise → finalize** — where each core
 skill is a **multi-subagent system** and a master pipeline orchestrates them,

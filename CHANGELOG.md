@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.11.1 — 2026-07
+
+- Discoverability: added a keyword-rich README tagline (food science / nutrition,
+  literature review, systematic review, PRISMA, meta-analysis, figures, peer
+  review) and set GitHub repo topics (incl. `food`, `food-science`,
+  `food-science-innovation`, `nutrition`). No functional changes.
+
 ## 1.11.0 — 2026-07
 
 - Published to `github.com/PangenomeAI/academic-skills-food-nutrition` with a
