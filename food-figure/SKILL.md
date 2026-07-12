@@ -1,117 +1,106 @@
 ---
 name: food-figure
-description: "Submission-grade figure workflow for food & nutrition manuscripts in Python or R. Use whenever the user asks to make, create, design, revise, audit, or polish a figure, chart, or plot, multi-panel scientific plots, or journal-ready SVG/PDF/TIFF outputs for a food-science paper. Before plotting, define the figure's conclusion, evidence logic, export needs, and review risks. If the user has not chosen Python or R, ask 'Python or R?' and stop; use only the selected backend. Supports matplotlib/seaborn and ggplot2/patchwork. Covers food-specific plots: grouped bars with error bars + significance letters, sensory radar, microbial growth/survival curves, chromatograms, texture profile analysis, rheology, PCA/heatmaps, microscopy panels. Triggers: make a figure, create a figure, design a figure, help me design a figure, plot my data, chart my results, food science figure, journal figure, scientific plotting, data visualization for a manuscript."
+description: "Comprehensive figure system for food & nutrition manuscripts: analyzes the user's data, recommends the best figure(s) to make, then produces submission-grade graphics in Python or R at the target journal's spec. Handles all common scientific figure types (bar/box/violin, line/kinetic, scatter/regression, Bland–Altman, radar/sensory, chromatograms, TPA/rheology, dose–response, survival, PCA/PLS-DA, heatmaps/clustering, forest, microscopy plates, multi-panel). Use to make, create, design, revise, audit, or recommend figures/charts/plots for a food-science paper, or to work out what to plot from a dataset. If Python or R isn't chosen, ask once and remember it. Triggers: make a figure, create a figure, design a figure, what figure should I make, recommend a chart, plot my data, analyze my data and plot it, chart my results, food science figure, journal figure, scientific plotting, data visualization for a manuscript."
 metadata:
-  version: "1.0.0"
+  version: "2.0.0"
   verified: "2026-07"
+  related_skills: [journal-selector, food-paper, food-research]
+  references:
+    - references/chart-types.md
+    - references/data-to-figure.md
+    - references/design-principles.md
+    - references/figure-contract.md
+    - references/qa-checklist.md
+    - references/python-guide.md
+    - references/r-guide.md
+    - references/food-recipes.md
+    - references/journal-specs.md
+  scripts:
+    - scripts/analyze_data.py
+    - scripts/backend_pref.py
 ---
 
-# Food-Figure — Submission-Grade Figures for Food & Nutrition Manuscripts
+# Food-Figure — Data-Driven Figure System for Food & Nutrition Science
 
-**The chart serves the scientific logic; aesthetic polish is subordinate to
-making the core conclusion clear, defensible, and reviewable.**
+Turn a dataset (or a described result) into the right submission-grade figure.
+**The chart serves the scientific logic; polish is subordinate to making the
+core conclusion clear, defensible, and reviewable.** Original work; architecture
+informed by open community figure skills (see the repo README Acknowledgements).
 
-## Workflow (follow in order)
+Load reference files **as needed** (progressive disclosure) — don't read them all
+up front. The map is in the frontmatter `references` list.
 
-### Step 1 — Figure contract (before any code)
-State, in one or two lines each:
-1. **Conclusion** — the single claim this figure must let a reader reach
-   (e.g. "coating cut weight loss vs control across 14 days").
-2. **Evidence logic** — which comparison/trend carries that claim, and the
-   controls that make it defensible (replicates n, error type, statistics).
-3. **Export needs** — target journal + its figure spec (DPI, column width,
-   file format, fonts). If a target journal is set, pull this from the matching
-   `journals/<name>` skill's `## Formatting constraints` (`figure_dpi`,
-   `column_widths_mm`). If unset, default to 300 dpi, ~90/190 mm widths, TIFF+PDF.
-4. **Review risks** — what a reviewer will attack (missing error bars, pseudo-
-   replication, truncated axes, undisclosed n, jet colormaps, unreadable labels).
+## Workflow
 
-Do not proceed to code until the contract is explicit. If the data isn't
-described well enough to fill it, ask.
-
-### Step 2 — Backend gate (blocking)
-- Honor an explicit **Python** or **R** choice, or a language-specific input
-  file (`.py`/`.ipynb` → Python; `.R`/`.Rmd` → R).
-- Otherwise ask exactly once: **"Python or R?"** and stop. Use only the
-  selected backend for plotting, preview, export, and QA.
-
-### Step 3 — Build to the contract
-Use the backend recipes below. One figure = one clear message; multi-panel only
-when panels share a logical thread (label panels **a, b, c**, lower-case, bold).
-
-### Step 4 — Export
-- **Vector** (PDF/SVG/EPS) for line/bar/scatter; **TIFF** (LZW) at the journal's
-  DPI for raster/microscopy. Always keep an editable source (`.svg`/`.pdf`).
-- Embed fonts; sans-serif (Arial/Helvetica), ~7–9 pt at final size.
-- Size to the journal column width; never rely on the reader to rescale.
-
-### Step 5 — QA checklist (self-review before delivery)
-- [ ] Error bars defined (SD/SEM/CI stated) and n disclosed
-- [ ] Statistics shown consistently (letters or asterisks; test named in legend)
-- [ ] Axes start where they should; no misleading truncation; units on every axis
-- [ ] Colorblind-safe palette (avoid red/green pairing; avoid `jet`)
-- [ ] Labels legible at final print size; no overlap
-- [ ] Matches the target journal's DPI / width / format
-- [ ] Every panel cited in the text and the legend states what each shows
-
-## Food & nutrition figure recipes
-
-| Figure type | When | Key rules |
-|---|---|---|
-| Grouped bar + error bars + significance letters | treatments × response (composition, texture, antioxidant activity) | letters (a,b,c) from post-hoc (Tukey); state n and error type |
-| Line/kinetic curve | storage/shelf-life, microbial growth/survival, drying | log CFU/g for microbes; model fit (Weibull/Gompertz) overlaid if used |
-| Sensory radar/spider | trained-panel or consumer attribute profiles | scale 0–max marked; overlay treatments; report panel size |
-| Chromatogram (HPLC/GC) | separation/identification | label peaks with compound IDs; retention time axis; keep baseline |
-| Texture Profile Analysis | hardness/springiness/chewiness | show force–time trace or grouped bars; note probe/settings in legend |
-| Rheology | flow/oscillatory behavior | log axes where appropriate; mark model region; label G′/G″ |
-| PCA / heatmap | metabolomics, volatile/sensory clustering | show variance explained; scale/normalize; dendrogram if clustered |
-| Boxplot/violin + points | distributions across groups | overlay raw points; show n; avoid bar-of-means for distributions |
-| Microscopy panel | structure (SEM/CLSM/light) | scale bar on every panel; consistent magnification; state stain/mode |
-
-## Python backend (matplotlib / seaborn)
-```python
-import matplotlib as mpl, matplotlib.pyplot as plt
-mpl.rcParams.update({
-    "figure.dpi": 300, "savefig.dpi": 300,
-    "font.family": "Arial", "font.size": 8,
-    "axes.linewidth": 0.8, "svg.fonttype": "none",
-    "pdf.fonttype": 42, "ps.fonttype": 42,           # editable text in vector output
-})
-# grouped bar + error bars + significance letters
-fig, ax = plt.subplots(figsize=(3.5, 2.6))          # ~90 mm single column
-ax.bar(x, means, yerr=sds, capsize=3, color=palette) # palette = colorblind-safe
-for xi, mi, si, letter in zip(x, means, sds, letters):
-    ax.text(xi, mi + si + pad, letter, ha="center", va="bottom")
-ax.set_ylabel("Firmness (N)"); ax.set_xticks(x); ax.set_xticklabels(groups)
-fig.tight_layout()
-fig.savefig("fig1.pdf"); fig.savefig("fig1.tiff", dpi=300, pil_kwargs={"compression": "tiff_lzw"})
+```mermaid
+flowchart TD
+    A[Data or described result] --> B[1. Analyze the data<br/>scripts/analyze_data.py -> profile]
+    B --> C[2. Recommend figures<br/>references/data-to-figure.md]
+    C --> D[3. Figure contract<br/>references/figure-contract.md]
+    D --> E{Backend?}
+    E -- unknown --> Eq[Ask 'Python or R?' once<br/>scripts/backend_pref.py]
+    E -- known --> F
+    Eq --> F[4. Render<br/>python-guide.md OR r-guide.md + food-recipes.md]
+    F --> G[5. Export at journal spec<br/>references/journal-specs.md]
+    G --> H[6. QA<br/>references/qa-checklist.md]
+    H --> OUT[Journal-ready SVG/PDF/TIFF + editable source]
 ```
-Colorblind-safe palette (Okabe–Ito): `['#000000','#E69F00','#56B4E9','#009E73','#F0E442','#0072B2','#D55E00','#CC79A7']`.
 
-## R backend (ggplot2 / patchwork)
-```r
-library(ggplot2); library(patchwork)
-okabe <- c("#000000","#E69F00","#56B4E9","#009E73","#F0E442","#0072B2","#D55E00","#CC79A7")
-p <- ggplot(df, aes(group, mean, fill = group)) +
-  geom_col(width = .7) +
-  geom_errorbar(aes(ymin = mean - sd, ymax = mean + sd), width = .2) +
-  geom_text(aes(y = mean + sd, label = letter), vjust = -0.4) +
-  scale_fill_manual(values = okabe) +
-  labs(y = "Firmness (N)", x = NULL) +
-  theme_classic(base_size = 8, base_family = "Arial") +
-  theme(legend.position = "none")
-ggsave("fig1.pdf", p, width = 90, height = 66, units = "mm")
-ggsave("fig1.tiff", p, width = 90, height = 66, units = "mm", dpi = 300, compression = "lzw")
-```
-For multi-panel: `(<code>p1 | p2) / p3 + plot_annotation(tag_levels = "a")</code>`.
+### 1 — Analyze the data
+If the user supplies a data file (CSV/TSV/Excel) or table, profile it first:
+run `scripts/analyze_data.py <file>` to get, per column, the type
+(numeric/categorical/datetime), cardinality, missingness, distribution summary,
+and the detected structure (grouping factors, repeated measures, time/dose axis,
+wide sensory/composition matrix). If the user only describes a result, elicit the
+same: what varies, what's measured, n, and the error type. See
+`references/data-to-figure.md`.
 
-## Journal figure-spec hook
-When a target journal is selected (via `journal-selector`), read its
-`## Formatting constraints` block and apply `figure_dpi`, `column_widths_mm`
-(or `_cm`), and any format requirement (e.g. RSC TOC graphic, ACS TOC graphic,
-MDPI ≥1000 dpi line art) before export. If no journal is set, use the defaults
-in Step 4 and note the assumption.
+### 2 — Recommend the figure(s)
+From the profile, propose the **best** figure type(s) with a one-line rationale
+each, and say what each would show. Prefer the figure that makes the paper's
+claim most directly; note honest alternatives. The decision rules and a full
+catalog are in `references/data-to-figure.md` and `references/chart-types.md`.
+Never force a chart the data can't support (e.g. bar-of-means where a
+distribution matters → box/violin + points).
 
-## Not for
-Dashboards, slide infographics, or Illustrator/Figma-first artwork. This skill
-produces reproducible, code-generated, submission-grade scientific figures.
+### 3 — Figure contract (before code)
+Fix the conclusion, evidence logic, export needs (target journal), and review
+risks. See `references/figure-contract.md`.
+
+### 4 — Backend gate (blocking)
+Resolve **Python or R** by priority: explicit request → language of the user's
+input files/data → saved preference (`python scripts/backend_pref.py get`) → ask
+once ("Python or R? I'll remember this") and save it
+(`backend_pref.py set python|r`). The chosen backend does **all** graphics,
+preview, and export; the other may only help with data prep/conversion. Backend
+guidance: `references/backend-selection` note in `python-guide.md` / `r-guide.md`.
+
+### 5 — Render & export
+Use the selected backend's guide (`python-guide.md` = matplotlib/seaborn;
+`r-guide.md` = ggplot2/patchwork/ComplexHeatmap) plus `food-recipes.md` for the
+food/nutrition figure types. Export **vector** (PDF/SVG) for line/bar/scatter and
+**TIFF (LZW)** at the journal DPI for raster/microscopy; keep an editable source.
+Pull DPI, column width, font, and format from the target journal via
+`references/journal-specs.md` (which reads the journal skill's constraints); if
+no journal is set, default to 300 dpi, ~90/190 mm widths, TIFF+PDF, Arial 7–9 pt.
+
+### 6 — QA
+Run `references/qa-checklist.md` before delivering (error bars defined + n;
+statistics shown consistently; axes honest; colorblind-safe; labels legible at
+final size; matches journal spec; every panel cited).
+
+## Modes
+- **recommend** — analyze data and suggest figures, no rendering yet.
+- **make** (default) — full pipeline to a rendered, exported figure.
+- **revise / audit** — critique or fix an existing figure against the QA checklist and journal spec.
+- **multi-panel** — compose labelled panels (a, b, c) that share a logical thread.
+
+## Scope
+Reproducible, code-generated, submission-grade scientific figures for food &
+nutrition. Not for dashboards, slide infographics, or Illustrator/Figma-first
+artwork. For a schematic/graphical abstract (mechanism diagram), say so — that is
+a drawing task, handled separately from data plotting.
+
+## Handoff
+Called by `food-paper`'s `viz_designer` at the journal spec; figures feed the
+manuscript's Results.

@@ -68,11 +68,14 @@ source — free to use, modify, and build on.
   limits, structure, **reference/citation style**, and a submission checklist.
 
 ### Figures
-- **`food-figure`** — submission-grade food-science figures in Python or R
-  (grouped bars with error bars and significance letters, sensory radar,
-  microbial growth/survival curves, chromatograms, texture profile analysis,
-  rheology, PCA/heatmaps, microscopy), exporting journal-ready SVG/PDF/TIFF at
-  the target journal's spec.
+- **`food-figure`** — comprehensive figure system: **analyzes your data**
+  (`scripts/analyze_data.py` profiles a CSV/TSV and **recommends the best figure
+  type**), then renders submission-grade graphics in **Python or R** at the target
+  journal's spec. Covers all common scientific figure types (bar/box/violin,
+  line/kinetic, scatter/regression, Bland-Altman, sensory radar, chromatograms,
+  TPA/rheology, dose-response, survival, PCA/PLS-DA, clustered heatmaps, forest,
+  microscopy plates, multi-panel), with nine reference docs plus data-profiler and
+  backend-preference scripts. Exports journal-ready SVG/PDF/TIFF.
 
 ## How it fits together
 

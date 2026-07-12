@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.8.0 — 2026-07
+
+- `food-figure` rebuilt into a comprehensive, multi-file figure system:
+  - **Data analysis + figure recommendation** front end — `scripts/analyze_data.py`
+    profiles a CSV/TSV (variable types, cardinality, missingness, group/time/dose
+    structure) and recommends the best figure type(s) with rationale (stdlib only,
+    self-tested).
+  - `scripts/backend_pref.py` — persists the Python-vs-R backend choice
+    (get/set/clear/path, self-tested).
+  - Nine reference docs (chart-types, data-to-figure rules, design-principles,
+    figure-contract, qa-checklist, python-guide, r-guide, food-recipes,
+    journal-specs) loaded progressively.
+  - Six-step workflow (analyze → recommend → contract → backend gate → render/export
+    → QA) covering all common scientific figure types in Python or R at the target
+    journal's spec.
+
 ## 1.7.0 — 2026-07
 
 - `food-paper` rebuilt into a whole-process, 12-subagent manuscript system:
