@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.14.0 — 2026-07
+
+- Banner: removed the "Initiated by…" line; added a responsible-AI declaration
+  ("Use AI responsibly — scientists must validate AI-generated information. AI can
+  make mistakes.").
+- README: new **"Using AI responsibly for academic work"** section — researcher
+  responsibility to validate AI output, disclosure, University of Melbourne
+  GenAI/academic-integrity policy links, and two Nature/Nature Methods references
+  (metadata verified via Crossref, not fabricated).
+
 ## 1.13.0 — 2026-07
 
 - **Automatic GitHub releases on major updates.** Added

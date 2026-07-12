@@ -129,6 +129,45 @@ Author-guideline details record a `Source:` URL and a `Verified:` date. Publishe
 pages change and several block automated access — confirm exact numeric limits at
 the source before submitting; structure and reference styles are the stable part.
 
+## Using AI responsibly for academic work
+
+> **AI can make mistakes.** Large language models can produce fluent but incorrect
+> statements, invented references, and unsupported conclusions. **You — the
+> researcher — are responsible for the integrity of your work.**
+
+These skills are research **assistants, not authors**. Treat every AI-generated
+statement as a *draft to be verified*, never as established fact.
+
+### Your responsibilities
+- **Validate everything.** Check every claim, number, and citation against the
+  primary source before you use or submit it. This project enforces an
+  anti-fabrication grounding rule and ships a runnable check
+  ([`scripts/verify_citations.py`](scripts/verify_citations.py); see
+  [`faithfulness-and-citation.md`](food-paper/references/faithfulness-and-citation.md)) —
+  use them, but they do **not** replace your own judgement.
+- **Never present unverified AI output** as your own knowledge or as fact; do not
+  submit AI-written text you have not checked and understood.
+- **Disclose your use of AI** honestly, following your venue's and institution's
+  policy — most journals and universities now require an AI-use statement
+  (see [`declarations-guide.md`](food-paper/references/declarations-guide.md)).
+- **Follow your institution's academic-integrity rules.**
+
+### University of Melbourne policy (for UoM staff and students)
+This project is initiated at the University of Melbourne; UoM users must comply
+with University policy on acknowledging and using generative AI. Always check the
+current policy and your course/coordinator's specific requirements:
+- [Acknowledging use of AI tools and technologies](https://students.unimelb.edu.au/academic-skills/academic-integrity/acknowledging-use-of-ai-tools-and-technologies)
+- [Academic integrity](https://students.unimelb.edu.au/academic-skills/academic-integrity)
+- [Guidelines for allowing student GenAI use in assessment](https://www.unimelb.edu.au/tli/lda/genai-hub/resources-links/guidelines-for-allowing-student-genai-use-in-assessment)
+- [Writing with GenAI](https://students.unimelb.edu.au/academic-skills/study-skills/learning-with-genai/writing-with-genai)
+- [Studying with GenAI](https://students.unimelb.edu.au/academic-skills/study-skills/learning-with-genai/studying-with-genai)
+- [Organising with GenAI](https://students.unimelb.edu.au/academic-skills/study-skills/learning-with-genai/organising-with-genai)
+- [Using GenAI effectively](https://students.unimelb.edu.au/academic-skills/study-skills/learning-with-genai/using-genai-effectively)
+
+### Further reading
+- Sarkar, R. (2026). Why AI can't be trusted to write scientific reviews. *Nature*. https://doi.org/10.1038/d41586-026-01616-3
+- Using AI responsibly in scientific publishing. (2026). *Nature Methods* (editorial). https://doi.org/10.1038/s41592-026-03020-1
+
 ## Contributing
 
 We welcome contributions from food & nutrition research groups worldwide. If your
