@@ -25,10 +25,23 @@ Study design determines which questions apply; each is rated **per outcome**.
 | Other | 11 | Were there no other potential threats to internal validity? |
 
 **Applicability by design.**
-- **In vitro exposure:** apply the experimental-animal question set — 1, 2, 4, 5, 6, 7, 8, 9, 10, 11 (Q3 does not apply). (Per NTP/OHAT, *Extending a Risk-of-Bias Approach to Address In Vitro Studies*, 2015.)
+- **In vitro exposure:** apply **Q1, Q2, Q5, Q6, Q7, Q8, Q9, Q10, Q11**. **Q3 (participant selection) and Q4 (confounding) are Not Applicable** to in vitro. (Per NTP/OHAT, *Extending a Risk-of-Bias Approach to Address In Vitro Studies*, Rooney 2015.)
 - **Experimental animal:** 1, 2, 4, 5, 6, 7, 8, 9, 10, 11.
 - **Human controlled exposure:** 1, 2, 4, 6, 7, 8, 9, 10, 11.
-- **Human cohort / case-control / cross-sectional / case series:** 3, 4, 7, 8, 9, 10, 11 (design-dependent; see the OHAT handbook).
+- **Human observational (cohort / case-control / cross-sectional):** 3, 4, 7, 8, 9, 10, 11 (design-dependent). **Case series:** 7, 8, 9, 10, 11.
+
+**In vitro–specific criteria (how to answer each applicable question).** Q1/Q2:
+in a **homogeneous cell suspension** there is no between-group variation, so
+randomization/allocation-concealment have no impact; otherwise they apply. Q5:
+**same media, same solvent/vehicle, uniform incubation and handling** (same
+change/wash schedule, same time out of incubator, same incubator; control for
+plate-location/edge effects). Q6: **automated/robotic** handling removes the need
+for blinding; otherwise it applies. Q7: account for **well/plate loss** without
+explanation. Q8: confidence in **purity, stability, solubility, volatility** of
+the test substance. Q9: well-established methods + assessor blinding **unless
+automated with no handling** between exposure and measurement. Q11:
+project-specific issues (e.g., appropriate statistics). Full detail:
+`references/ohat-risk-of-bias.md`.
 
 ## Rating scale (per question, per outcome)
 - `++` **Definitely low** risk of bias

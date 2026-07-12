@@ -10,6 +10,7 @@ metadata:
     - references/literature-sources.md
     - references/source-quality-hierarchy.md
     - references/reporting-guidelines.md
+    - references/ohat-risk-of-bias.md
 ---
 
 # Food-Research — Comprehensive Evidence Synthesis for Food & Nutrition Science
@@ -179,6 +180,7 @@ skill and fold its sourced synthesis back into the evidence brief.
 - `references/literature-sources.md` — databases + APIs (FSTA/PubMed/WoS/Scopus/CrossRef/OpenAlex + EFSA/FDA/USDA) for `search_strategist`/`source_scout`/`sr_search`.
 - `references/source-quality-hierarchy.md` — evidence grading for `screener_appraiser`/`synthesis`.
 - `references/reporting-guidelines.md` — EQUATOR/PRISMA/CONSORT/STROBE for the systematic stream and appraisal.
+- `references/ohat-risk-of-bias.md` — full OHAT tool (11 questions, 4-point scale, design applicability incl. corrected in-vitro Q3/Q4 = NA, and in-vitro criteria) for `risk_of_bias`.
 
 ## Handoff
 Sources tagged and assigned by section feed `food-paper` (Introduction and

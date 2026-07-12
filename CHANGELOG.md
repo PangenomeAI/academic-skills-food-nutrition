@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.11.5 — 2026-07
+
+- OHAT risk-of-bias, in vitro: added `food-research/references/ohat-risk-of-bias.md`
+  (full tool from the NTP/OHAT *In Vitro* guidance) and **corrected the in-vitro
+  applicability** — **Q3 (participant selection) and Q4 (confounding) are Not
+  Applicable** to in vitro (previously Q4 was wrongly included). Added the
+  in-vitro-specific answering criteria per question (homogeneous-suspension logic,
+  identical culture conditions, robotic-handling blinding, well/plate loss,
+  substance purity/stability/solubility/volatility, etc.). `risk_of_bias` agent
+  updated to match.
+
 ## 1.11.4 — 2026-07
 
 - Added the development team contact email
