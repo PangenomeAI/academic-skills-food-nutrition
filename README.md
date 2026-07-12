@@ -120,6 +120,20 @@ Author-guideline details record a `Source:` URL and a `Verified:` date. Publishe
 pages change and several block automated access — confirm exact numeric limits at
 the source before submitting; structure and reference styles are the stable part.
 
+## Contributing
+
+We welcome contributions from food & nutrition research groups worldwide.
+
+**Branching model — please read:** `main` is release-only; **never push to it
+directly**. Do your work on the **`development`** branch and open a **pull request**
+to merge `development` → `main`, so changes are tracked and reviewed. Always keep
+[`README.md`](README.md) and [`CHANGELOG.md`](CHANGELOG.md) up to date in the same PR.
+
+Full, machine-actionable instructions for collaborators and their AI coding agents
+are in **[`AGENTS.md`](AGENTS.md)** (see also [`CONTRIBUTING.md`](CONTRIBUTING.md)).
+
+Key documents: **[README](README.md)** · **[CHANGELOG](CHANGELOG.md)** · **[LICENSE](LICENSE)**.
+
 ## License & community
 
 MIT — see [LICENSE](LICENSE). Free for any use, including commercial. This open

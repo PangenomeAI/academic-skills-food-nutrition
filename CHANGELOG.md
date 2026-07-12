@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.11.0 — 2026-07
+
+- Published to `github.com/PangenomeAI/academic-skills-food-nutrition` with a
+  `main` (release) + `development` (working) branch model.
+- Added **`AGENTS.md`** (machine-actionable collaborator/coding-agent instructions)
+  and **`CONTRIBUTING.md`**: never push to `main`; work on `development` and open a
+  PR; always update README + CHANGELOG and bump the version; verification steps;
+  original-content (MIT) and English-only rules; structure conventions.
+- README gained a Contributing section documenting the branching model.
+
 ## 1.10.0 — 2026-07
 
 - Added a one-command **installer** (`install.sh`) that installs the skills as a
