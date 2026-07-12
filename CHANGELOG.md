@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.11.2 — 2026-07
+
+- `AGENTS.md`: strengthened the language rule — **all project files must be in
+  English**; if a file is created in another language, an English copy must be
+  made and kept as the **main/canonical document** (non-English files are
+  secondary translations with a language suffix).
+
 ## 1.11.1 — 2026-07
 
 - Discoverability: added a keyword-rich README tagline (food science / nutrition,

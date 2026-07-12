@@ -67,7 +67,14 @@ claude plugin validate .    # optional, if claude CLI is installed
   other non-permissive sources (e.g. the upstream `academic-research-skills`).
   Workflow *ideas* are fine; the wording must be your own. Permissive sources
   (MIT/Apache-2.0) may be drawn on with acknowledgement in the README.
-- **English only** in all skill files and descriptions.
+- **English only — all project files.** Every file in the repository (skills,
+  subagents, references, docs, scripts and their comments, manifests) must be in
+  English, including all `description` and trigger text. If you create a file in
+  another language, you MUST also create an English version and make the
+  **English copy the main/canonical document**; the non-English file is a
+  secondary translation, named with a language suffix (e.g. `SKILL.zh.md`,
+  `README.zh-CN.md`) and never the primary. Reviewers will reject a PR whose
+  primary document is not in English.
 - **Food & nutrition specific.** Keep domain conventions correct (units as SI,
   g/100 g with basis, log CFU/g, biological vs analytical n, validated methods,
   ethics/food-safety).
