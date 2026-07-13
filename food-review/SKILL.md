@@ -73,7 +73,7 @@ skeleton the author can fill in. Critique the work, not the author.
 - `references/review-criteria.md` — what each reviewer checks (food-tuned).
 - `references/quality-rubrics.md` — 1–5 scoring per dimension + weights.
 - `references/editorial-decisions.md` — `review_coordinator`: Accept/Minor/Major/Reject logic + overrides.
-- `references/ethics-integrity-checklist.md` — `reviewer_integrity` (canonical; shared with `deep-research`).
+- `references/ethics-integrity-checklist.md` — `reviewer_integrity` (canonical; shared with `food-deep-research`).
 - `food-paper/references/statistics-reporting.md` — `reviewer_methodology`: stats red flags.
 - `food-paper/references/faithfulness-and-citation.md` — `reviewer_integrity`: verify every citation is real (four-gate) and every claim is source-bound; flag any fabricated/unsupported content.
 - `food-paper/references/privacy-and-confidentiality.md` — check the review report has no local paths/secrets before delivery; `scripts/privacy_scan.py`.

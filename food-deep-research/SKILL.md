@@ -1,5 +1,5 @@
 ---
-name: deep-research
+name: food-deep-research
 description: "General-purpose deep research that produces a fully written, source-validated literature review on any question: scope it, design the method, discover and screen sources by journal ranking, validate every source, extract and verify evidence, synthesize, stress-test, then write and format the review (APA 7.0 by default, or a target journal's style) and polish it through an editorial + integrity review loop. Use standalone for a deep dive or literature review, or as the deep-dive engine called by food-research. Runs a 12-subagent team with iterate-to-saturation and compile↔review loops. Triggers: deep research, research this in depth, write a literature review, investigate thoroughly, comprehensive review, state of the evidence, briefing on, dig into, deep dive."
 metadata:
   version: "2.1.0"
@@ -16,7 +16,7 @@ Answer a hard question properly and hand back a **written, formatted, integrity-
 checked literature review** — not just notes. Scope → design → discover → screen
 by journal ranking → validate sources → extract & verify evidence → synthesize →
 stress-test → write → review-loop → final report. Original work; architecture
-informed by open community deep-research skills (see the repo README
+informed by open community food-deep-research skills (see the repo README
 Acknowledgements). Usable standalone, or as the deep-dive engine called by
 `food-research`.
 

@@ -37,7 +37,7 @@ claim in the final text.
 Maintain, in effect, a claim→source map: each substantive claim lists the
 source(s) that support it and the locator. A claim with no bound, gate-4-supported
 source cannot appear as a factual statement. This applies to `food-paper`
-(`citation_manager`, `draft_writer`), `deep-research` (`bibliography`,
+(`citation_manager`, `draft_writer`), `food-deep-research` (`bibliography`,
 `claim_verifier`, `source_verifier`, `compiler`), `food-research`
 (`synthesis`/`sr_synthesis`), and `food-review` (`reviewer_integrity`).
 

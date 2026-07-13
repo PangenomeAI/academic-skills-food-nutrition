@@ -1,10 +1,10 @@
 ---
 name: food-pipeline
-description: "Master orchestrator for the whole food & nutrition research-to-publication workflow. Coordinates the specialist skills — each with its own subagent set — into one governed path: journal selection, research (food-research / deep-research), writing & analysis (food-paper), figures (food-figure), peer review (food-review), revision, and finalization. Use when the user wants the entire process managed end to end, or a project routed to the right skills with quality gates. Triggers: run the full paper workflow, take this from research to submission, manage the whole project, research to publication, end-to-end paper, orchestrate my paper."
+description: "Master orchestrator for the whole food & nutrition research-to-publication workflow. Coordinates the specialist skills — each with its own subagent set — into one governed path: journal selection, research (food-research / food-deep-research), writing & analysis (food-paper), figures (food-figure), peer review (food-review), revision, and finalization. Use when the user wants the entire process managed end to end, or a project routed to the right skills with quality gates. Triggers: run the full paper workflow, take this from research to submission, manage the whole project, research to publication, end-to-end paper, orchestrate my paper."
 metadata:
   version: "2.1.0"
   verified: "2026-07"
-  related_skills: [journal-selector, food-research, deep-research, food-paper, food-figure, food-review]
+  related_skills: [journal-selector, food-research, food-deep-research, food-paper, food-figure, food-review]
   subagents: [intake_router, quality_gate]
   references:
     - references/pipeline-state-machine.md
@@ -21,7 +21,7 @@ Original work.
 
 ## Skills it orchestrates (each brings its own subagent team)
 - **`journal-selector`** — target-journal constraints (structure, limits, reference style, figure spec).
-- **`food-research`** — literature/evidence synthesis (quick brief / full review / **systematic** PRISMA + OHAT). Use **`deep-research`** instead for an open-ended, source-validated deep dive or a standalone literature review.
+- **`food-research`** — literature/evidence synthesis (quick brief / full review / **systematic** PRISMA + OHAT). Use **`food-deep-research`** instead for an open-ended, source-validated deep dive or a standalone literature review.
 - **`food-paper`** — whole-process manuscript system (field → questions → data/stats → figures → argument → draft → polish → self-review).
 - **`food-figure`** — submission-grade figures at the journal spec (invoked within `food-paper`).
 - **`food-review`** — multi-reviewer peer-review panel + formatting compliance.
@@ -34,7 +34,7 @@ Original work.
 | Stage | Skill / agent | Deliverable | Gate |
 |---|---|---|---|
 | 0 · ROUTE | `intake_router` + `journal-selector` | Entry point + journal constraints | — |
-| 1 · RESEARCH | `food-research` (or `deep-research`) | Evidence brief / gap list / (systematic report) | evidence sufficiency |
+| 1 · RESEARCH | `food-research` (or `food-deep-research`) | Evidence brief / gap list / (systematic report) | evidence sufficiency |
 | 2 · WRITE | `food-paper` | Draft: analysis, figures (`food-figure`), argument, references | integrity + journal compliance |
 | 3 · REVIEW | `food-review` | Panel report + editorial decision + revision checklist | **mandatory** author decision |
 | 4 · REVISE | `food-paper` (revise) | Revised draft + point-by-point response | issues resolved |
@@ -47,7 +47,7 @@ Original work.
 flowchart TD
     A[Project in] --> R[intake_router<br/>state + materials + journal + entry stage]
     R --> J[journal-selector]
-    R --> S1[Stage 1 RESEARCH<br/>food-research / deep-research]
+    R --> S1[Stage 1 RESEARCH<br/>food-research / food-deep-research]
     S1 --> G1{quality_gate<br/>evidence sufficient?}
     G1 -- yes --> S2[Stage 2 WRITE<br/>food-paper -> food-figure]
     G1 -- no --> S1

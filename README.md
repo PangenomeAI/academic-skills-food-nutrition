@@ -65,7 +65,7 @@ the app so it rescans skills. (Override the location with `CODEX_HOME` /
   three-step screening** (title → abstract → full text) with a moderator, a PRISMA
   flow diagram, a results table, and **OHAT risk-of-bias** (in vitro / human /
   animal); it uses eligibility-based inclusion rather than journal ranking.
-- **`deep-research`** — source-validated literature-review engine (scope → design
+- **`food-deep-research`** — source-validated literature-review engine (scope → design
   → discover → **screen by journal ranking** → **validate every source** →
   extract & verify evidence → synthesize → stress-test → **write & format** →
   editorial + integrity review loop) with a 12-subagent team. Outputs a finished,
@@ -85,7 +85,7 @@ the app so it rescans skills. (Override the location with `CODEX_HOME` /
   editorial decision + revision checklist + response-letter skeleton.
 - **`food-pipeline`** — **master orchestrator** that routes a project to the
   specialist skills (each with its own subagent team) and enforces quality gates:
-  journal selection → research (`food-research`/`deep-research`) → write & analyze
+  journal selection → research (`food-research`/`food-deep-research`) → write & analyze
   (`food-paper` → `food-figure`) → peer review (`food-review`) → revise →
   re-review → finalize, with mandatory author decision points.
 

@@ -1,6 +1,6 @@
 # Literature Sources & APIs (food & nutrition)
 
-Canonical source list for `food-research` and `deep-research`. Prefer connected
+Canonical source list for `food-research` and `food-deep-research`. Prefer connected
 MCP tools; fall back to web search. Record which source/tool produced each hit so
 the search is reproducible.
 

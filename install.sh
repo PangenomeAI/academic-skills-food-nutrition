@@ -23,7 +23,7 @@ MARKET="academic-skills-food-nutrition"
 TARGET="${1:-all}"
 
 # Top-level skills (each holds a SKILL.md) + shared dirs the skills reference.
-SKILLS="deep-research food-research food-paper food-pipeline food-review food-figure journal-selector"
+SKILLS="food-deep-research food-research food-paper food-pipeline food-review food-figure journal-selector"
 SHARED="journals scripts"
 
 # Locate the source: this checkout if run from inside the repo, else clone it.

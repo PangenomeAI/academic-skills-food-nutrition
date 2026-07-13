@@ -24,7 +24,7 @@ responsibility; required declarations and the correct reporting guideline
 ## Devil's advocate (`devils_advocate`)
 The strongest case that the central claim is wrong or unsupported: alternative
 explanations, confounders, artifacts, selective reporting, the missing decisive
-experiment. See `deep-research/references/reasoning-and-fallacies.md`.
+experiment. See `food-deep-research/references/reasoning-and-fallacies.md`.
 
 ## Formatting (`format_checker`)
 Structure, limits, and reference style vs the target journal (APA 7.0 default);

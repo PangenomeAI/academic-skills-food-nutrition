@@ -7,7 +7,7 @@ rules literally.
 
 ## What this project is
 A Claude Code / Codex **skill suite** for food & nutrition science research:
-multi-subagent skills (`food-research`, `deep-research`, `food-paper`,
+multi-subagent skills (`food-research`, `food-deep-research`, `food-paper`,
 `food-review`, `food-pipeline`, `food-figure`), a `journal-selector`, and
 publisher-tiered journal author-guideline skills under `journals/`. MIT-licensed,
 original work.

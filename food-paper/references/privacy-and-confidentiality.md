@@ -36,6 +36,6 @@ or private context.
   own notes), that is their choice — but never insert machine paths into a
   submission-ready document by default.
 
-Wired into `food-paper` (writer/internal_reviewer), `deep-research` (compiler),
+Wired into `food-paper` (writer/internal_reviewer), `food-deep-research` (compiler),
 `food-research` (deliverables), `food-review`, and `food-pipeline` (the
 pre-finalize gate).

@@ -1,6 +1,6 @@
 # APA 7.0 Quick Reference (default style)
 
-Canonical APA 7 reference for the suite. `deep-research`, `food-review`, and
+Canonical APA 7 reference for the suite. `food-deep-research`, `food-review`, and
 `food-paper` default to APA 7.0 unless a target journal sets another style (via
 `journal-selector`). When switching styles, re-flow **both** the reference list
 and every in-text marker — never leave a mixed style.

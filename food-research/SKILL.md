@@ -4,7 +4,7 @@ description: "Run a comprehensive, multi-source literature and evidence-synthesi
 metadata:
   version: "4.1.0"
   verified: "2026-07"
-  related_skills: [deep-research, journal-selector, food-paper, food-review, food-pipeline]
+  related_skills: [food-deep-research, journal-selector, food-paper, food-review, food-pipeline]
   subagents: [search_strategist, source_scout, screener_appraiser, journal_ranker, synthesis, writer, reviewer, systematic_reviewer, sr_search, sr_screener, sr_moderator, data_extractor, risk_of_bias, sr_synthesis]
   references:
     - references/literature-sources.md
@@ -31,7 +31,7 @@ of them (**quick brief, full review, deep research**) prioritize sources by
 |---|---|---|---|
 | **quick brief** | You need fast orientation on a topic — "what's known about X", a starting point, a scoping glance. | One search pass; top sources; key open questions. May run inline without subagents. | Yes — Tier 1 only, usually |
 | **full review** | You want a thorough narrative review manuscript (the default). | Four-layer search + two-phase screening + synthesis → **write manuscript** (`writer`) → **review loop** (`reviewer`) → **Word (.docx)**. | Yes — Tier 1 preferred, Tier 2 to fill gaps |
-| **deep research** | The question extends beyond the literature — regulatory landscape, market/technology state, an open-ended "investigate this" — or you want an iterative, verified deep dive on a subtopic. | Calls the **`deep-research`** skill (scope → plan → investigate → verify → synthesize → critique loop); its literature portion still passes through journal ranking. | Yes — for the literature portion |
+| **deep research** | The question extends beyond the literature — regulatory landscape, market/technology state, an open-ended "investigate this" — or you want an iterative, verified deep dive on a subtopic. | Calls the **`food-deep-research`** skill (scope → plan → investigate → verify → synthesize → critique loop); its literature portion still passes through journal ranking. | Yes — for the literature portion |
 | **systematic** | You need a reproducible, auditable PRISMA review / meta-analysis with a protocol, ≥3 databases, **dual independent screening**, and **risk-of-bias (OHAT)** — i.e. a defensible, publishable systematic review. | Full **`systematic_reviewer`** pipeline (protocol → `sr_search` → dual 3-step `sr_screener` + `sr_moderator` → PRISMA → `data_extractor` results table → `risk_of_bias` OHAT → `sr_synthesis` → `reviewer` loop → `writer` **Word .docx**). | **No** — eligibility-based inclusion |
 
 ### Overall flow
@@ -40,7 +40,7 @@ of them (**quick brief, full review, deep research**) prioritize sources by
 flowchart TD
     Q[Research question] --> M{Which stream?}
     M -- quick / full --> S1[search_strategist]
-    M -- deep research --> DR[deep-research skill<br/>scope, plan, investigate,<br/>verify, critique loop]
+    M -- deep research --> DR[food-deep-research skill<br/>scope, plan, investigate,<br/>verify, critique loop]
     M -- systematic --> SR[systematic_reviewer<br/>PRISMA pipeline]
     S1 --> S2[source_scout<br/>four-layer search + dedup]
     S2 --> S3[screener_appraiser<br/>two-phase screening + quality tags]
@@ -57,7 +57,7 @@ flowchart TD
 Both the **full review** and **systematic** streams finish by writing a manuscript,
 passing it through the `reviewer` loop, and delivering a **Word document**
 (`writer`). The **quick brief** and **deep research** streams do not (quick brief
-returns a short brief; deep research is handled by the `deep-research` skill).
+returns a short brief; deep research is handled by the `food-deep-research` skill).
 
 ## Stream detail — invocation & subagent call sequence
 
@@ -85,7 +85,7 @@ returns a short brief; deep research is handled by the `deep-research` skill).
   - Output: a finished review manuscript (`.docx`) + annotated bibliography + `.bib/.ris`.
 
 ### Deep research
-- **When it wakes:** *"deep research on…", "investigate … thoroughly", "I need a deep dive / full briefing on…"*, or a question extending beyond the literature (regulatory, market, technology landscape). Calls the **`deep-research`** skill; its literature portion still passes through `journal_ranker`.
+- **When it wakes:** *"deep research on…", "investigate … thoroughly", "I need a deep dive / full briefing on…"*, or a question extending beyond the literature (regulatory, market, technology landscape). Calls the **`food-deep-research`** skill; its literature portion still passes through `journal_ranker`.
 
 ### Systematic
 - **When it wakes — use the systematic stream when the user needs a defensible, reproducible, publishable systematic review, signalled by any of:**
@@ -173,7 +173,7 @@ intended paper section); **literature/evidence matrix**; graded conclusions;
 
 ## Deep dives
 For a subtopic that needs open-ended investigation beyond the literature (e.g.
-regulatory landscape, market/technology state), call the **`deep-research`**
+regulatory landscape, market/technology state), call the **`food-deep-research`**
 skill and fold its sourced synthesis back into the evidence brief.
 
 ## References (load as needed)

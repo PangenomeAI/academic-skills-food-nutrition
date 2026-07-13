@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.22.0 — 2026-07
+
+- **Renamed the `deep-research` skill to `food-deep-research`** to avoid name
+  collisions with other agents' skills of the same name. Updated the folder,
+  frontmatter name, marketplace registration, installer skill list, and every
+  cross-reference in food-research/food-paper/food-review/food-pipeline and their
+  references/agents. (Historical CHANGELOG entries keep the old name.)
+
 ## 1.21.0 — 2026-07
 
 - **Fixed the Codex/MiniMax installer** (reported by a MiniMax/Mavis test). Two

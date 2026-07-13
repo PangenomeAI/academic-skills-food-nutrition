@@ -1,6 +1,6 @@
 # Ethics & Integrity Checklist
 
-Canonical checklist for `food-review`'s `reviewer_integrity` and `deep-research`'s
+Canonical checklist for `food-review`'s `reviewer_integrity` and `food-deep-research`'s
 `ethics_reviewer`. Each item: pass / flag (with severity + required fix).
 
 ## Research integrity
