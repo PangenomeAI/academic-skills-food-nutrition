@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.20.0 — 2026-07
+
+- **MiniMax Agent support.** `install.sh` gains a `minimax` target that installs
+  the skills bundle into MiniMax Agent's shared skills directory
+  (`${MINIMAX_SKILLS_DIR:-~/.agents/skills}/`); the default (`all`) now installs
+  for Claude Code, Codex, **and** MiniMax Agent. README Install section and the
+  project/plugin descriptions updated to name all three platforms.
+
 ## 1.19.0 — 2026-07
 
 - **food-figure gallery and route hardening.** Added a reproducible,

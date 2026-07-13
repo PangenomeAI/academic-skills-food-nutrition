@@ -31,16 +31,20 @@ claude plugin install academic-skills-food-nutrition@academic-skills-food-nutrit
 Then restart Claude Code (or run `/plugin`). Update later with
 `claude plugin update academic-skills-food-nutrition`.
 
-**Both Claude Code and Codex** (one command via the installer):
+**Claude Code, Codex, and MiniMax Agent** (one command via the installer):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/PangenomeAI/academic-skills-food-nutrition/main/install.sh | bash
 ```
 
-Or, from a local clone: `./install.sh` (both) · `./install.sh claude` · `./install.sh codex`.
+Or, from a local clone: `./install.sh` (all) · `./install.sh claude` · `./install.sh codex` · `./install.sh minimax`.
 The installer registers the Claude Code plugin and copies the skills bundle into
-Codex's skills directory (`${CODEX_HOME:-~/.codex}/skills/`), preserving the repo
-structure so cross-skill references resolve.
+Codex's skills directory (`${CODEX_HOME:-~/.codex}/skills/`) and MiniMax Agent's
+shared skills directory (`${MINIMAX_SKILLS_DIR:-~/.agents/skills}/`), preserving
+the repo structure so cross-skill references resolve. Then restart the app so it
+rescans skills. (For [MiniMax Agent](https://agent.minimax.io/), if your build
+uses a different location, set `MINIMAX_SKILLS_DIR` or add the folder via the
+in-app Skill Creator/import.)
 
 ## Skills
 

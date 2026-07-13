@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # One-command installer for academic-skills-food-nutrition.
-# Installs the skills as a plugin in Claude Code and/or as a skills bundle in Codex.
+# Installs the skills as a plugin in Claude Code, and as a skills bundle in Codex
+# and MiniMax Agent.
 #
-#   ./install.sh                # install for both (auto-detects what's present)
+#   ./install.sh                # install for all (auto-detects what's present)
 #   ./install.sh claude         # Claude Code only
 #   ./install.sh codex          # Codex only
+#   ./install.sh minimax        # MiniMax Agent only
 #
 # Remote one-liner:
 #   curl -fsSL https://raw.githubusercontent.com/PangenomeAI/academic-skills-food-nutrition/main/install.sh | bash
@@ -58,19 +60,40 @@ install_codex() {
   echo "    If your Codex build uses a different path, set CODEX_HOME or move the folder."
 }
 
+install_minimax() {
+  # MiniMax Agent reads SKILL.md skills from the shared agents skills directory
+  # (~/.agents/skills, per MiniMax's own docs). Override with MINIMAX_SKILLS_DIR.
+  local base="${MINIMAX_SKILLS_DIR:-$HOME/.agents/skills}"
+  local dir="$base/$PLUGIN"
+  echo "→ MiniMax Agent: installing skills bundle to $dir"
+  mkdir -p "$base"
+  rm -rf "$dir"
+  # Copy the whole repo so cross-skill references resolve; strip VCS metadata.
+  cp -R "$SRC" "$dir"
+  rm -rf "$dir/.git"
+  echo "  ✔ Copied. Restart MiniMax Agent so it rescans local skills."
+  echo "    If your build uses a different location, set MINIMAX_SKILLS_DIR, or add"
+  echo "    the folder via the in-app Skill Creator/import at https://agent.minimax.io/."
+}
+
 case "$TARGET" in
-  claude) install_claude ;;
-  codex)  install_codex ;;
-  both|"")
+  claude)  install_claude ;;
+  codex)   install_codex ;;
+  minimax) install_minimax ;;
+  all|both|"")
     install_claude
     if command -v codex >/dev/null 2>&1 || [ -d "${CODEX_HOME:-$HOME/.codex}" ]; then
       install_codex
     else
-      echo "→ Codex: not detected (no 'codex' CLI or ~/.codex) — skipping."
-      echo "  To install for Codex later: ./install.sh codex"
+      echo "→ Codex: not detected (no 'codex' CLI or ~/.codex) — skipping. Later: ./install.sh codex"
+    fi
+    if [ -d "${MINIMAX_SKILLS_DIR:-$HOME/.agents/skills}" ] || [ -n "${MINIMAX_SKILLS_DIR:-}" ]; then
+      install_minimax
+    else
+      echo "→ MiniMax Agent: shared skills dir not found — skipping. Later: ./install.sh minimax"
     fi
     ;;
-  *) echo "Usage: $0 [claude|codex|both]"; exit 2 ;;
+  *) echo "Usage: $0 [claude|codex|minimax|all]"; exit 2 ;;
 esac
 
 [ "${CLONED:-0}" = 1 ] && echo "(source cloned to $SRC)"
