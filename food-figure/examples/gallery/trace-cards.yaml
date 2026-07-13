@@ -1,0 +1,37 @@
+figures:
+  - figure: 1
+    data_source: data/polyphenol_retention.csv and data/film_extract_dose_response.csv; synthetic illustrative datasets
+    transformation: render_gallery.R; group mean and SD for panel a; group mean plus smoothing spline for panel b
+    shows: Illustrative layouts for packaging-treatment comparison and screening dose-response.
+    supported_claims:
+      - text: Synthetic examples only; no manuscript claim is supported.
+        locator: Gallery README
+    statistics_shown: Panel a mean ± SD, n = 4 synthetic biological replicates; panel b replicate points and visual smooth only.
+    limitations: [Synthetic data, placeholder letters, no inferential analysis, unvalidated curve]
+  - figure: 2
+    data_source: data/probiotic_storage_kinetics.csv; synthetic illustrative dataset
+    transformation: render_gallery.R; group mean and SD by treatment and day
+    shows: Illustrative layout for probiotic viable-count storage kinetics.
+    supported_claims:
+      - text: Synthetic example only; no manuscript claim is supported.
+        locator: Gallery README
+    statistics_shown: Mean ± SD, n = 3 synthetic biological replicates per treatment-day combination.
+    limitations: [Synthetic data, no kinetic fit, illustrative threshold only]
+  - figure: 3
+    data_source: data/sensory_panel_profile.csv; synthetic illustrative dataset
+    transformation: render_gallery.R; direct plotting of synthetic mean scores
+    shows: Illustrative radar layout for a yogurt sensory profile.
+    supported_claims:
+      - text: Synthetic example only; no manuscript claim is supported.
+        locator: Gallery README
+    statistics_shown: Synthetic means only; panel size and uncertainty are not applicable to this layout test.
+    limitations: [Synthetic data, no panel protocol, radar area should not be interpreted as effect size]
+  - figure: 4
+    data_source: data/method_validation_agreement.csv and data/illustrative_forest_effects.csv; synthetic illustrative datasets
+    transformation: render_gallery.R; Bland–Altman mean difference and ±1.96 SD limits; direct CI plotting for forest layout
+    shows: Illustrative layouts for assay agreement and an evidence-synthesis forest plot.
+    supported_claims:
+      - text: Synthetic example only; no manuscript claim is supported.
+        locator: Gallery README
+    statistics_shown: Panel a bias and limits of agreement from 12 synthetic pairs; panel b synthetic effect sizes and 95% CIs only.
+    limitations: [Synthetic data, no validation acceptance criteria, no meta-analysis pooling, no heterogeneity estimate]

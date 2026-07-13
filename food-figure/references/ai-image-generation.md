@@ -38,6 +38,41 @@ For tight control, output a **structured JSON spec** (boxes with positions/label
 arrows with from→to/label) and hand that to the model — it renders text and layout
 more reliably than prose alone.
 
+## Draft → controlled final workflow
+Generate a **text-free composition draft** first, then apply essential labels in a
+vector editor from the approved spec. This separates the image model's useful
+strength (simple visual composition) from its unreliable strength (scientific
+terminology and exact typography). Before generation, create a content boundary:
+list every permitted entity, relationship, and visual metaphor, and reject every
+extra detail. Do not ask the model to improvise a mechanism.
+
+Use this compact spec when the layout needs to be auditable and reproducible:
+```json
+{
+  "layout": "left-to-right",
+  "permitted_entities": ["coated berry", "protective barrier", "storage"],
+  "sections": [
+    {"id": "input", "position": "left", "visual": "berries"},
+    {"id": "process", "position": "centre", "visual": "barrier around berries"},
+    {"id": "outcome", "position": "right", "visual": "intact berries"}
+  ],
+  "arrows": [{"from": "input", "to": "process"}, {"from": "process", "to": "outcome"}],
+  "forbidden": ["text", "numbers", "axes", "logos", "unsupported mechanisms"]
+}
+```
+The spec is an instruction for a draft image, not evidence or a substitute for
+source verification. Replace the placeholder entities only with concepts that
+the manuscript source supports.
+
+## AI schematic QA and trace record
+Before use, inspect the output at final size and reject it if it contains an
+invented entity, causal step, data-like mark, axis, number, logo, illegible text,
+or a style element that hides the causal flow. Keep an AI-specific trace record
+beside the normal figure trace card: model/service and date, final prompt and JSON
+spec, source material that constrained the concept, accepted human edits, and the
+policy-required disclosure location. If the service fails or access is denied,
+record the failure and do not claim that an image was generated or evaluated.
+
 ## Text budget (labels only; details go in the caption)
 Module/box titles ≤5 words; sub-labels ≤3 words; pipeline steps ≤2 words. **No
 equations, parameters, or numbers inside the image** — those belong in the figure

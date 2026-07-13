@@ -1,0 +1,11 @@
+sample,attribute,mean_score
+plain_yogurt,creaminess,5.2
+plain_yogurt,fruit_aroma,2.1
+plain_yogurt,sourness,6.4
+plain_yogurt,sweetness,3.0
+plain_yogurt,aftertaste,4.1
+berry_yogurt,creaminess,5.8
+berry_yogurt,fruit_aroma,7.2
+berry_yogurt,sourness,4.8
+berry_yogurt,sweetness,6.6
+berry_yogurt,aftertaste,5.9

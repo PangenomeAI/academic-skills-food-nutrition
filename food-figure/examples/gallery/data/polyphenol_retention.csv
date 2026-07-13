@@ -1,0 +1,13 @@
+package,replicate,retention_percent
+uncoated_control,1,58.4
+uncoated_control,2,61.1
+uncoated_control,3,59.7
+uncoated_control,4,62.0
+pectin_coating,1,72.5
+pectin_coating,2,74.1
+pectin_coating,3,70.8
+pectin_coating,4,73.4
+active_pectin_coating,1,83.7
+active_pectin_coating,2,85.2
+active_pectin_coating,3,82.6
+active_pectin_coating,4,84.5

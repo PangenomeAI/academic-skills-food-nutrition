@@ -71,7 +71,9 @@ def main(argv):
         selftest()
         return 0
     args = [a for a in argv[1:] if not a.startswith("--")]
-    text = open(args[0], encoding="utf-8").read() if args else sys.stdin.read()
+    # Figures and PDFs may contain readable metadata alongside binary bytes.
+    # Replacement decoding keeps the scan fail-safe for those deliverables.
+    text = open(args[0], encoding="utf-8", errors="replace").read() if args else sys.stdin.read()
     hits = scan(text)
     if hits:
         print(f"FAIL: {len(hits)} potential privacy leak(s) — redact before delivering:")

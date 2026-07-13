@@ -2,7 +2,7 @@
 name: food-figure
 description: "Comprehensive figure system for food & nutrition manuscripts: analyzes the user's data, recommends the best figure(s) to make, then produces submission-grade graphics in Python or R at the target journal's spec. Handles all common scientific figure types (bar/box/violin, line/kinetic, scatter/regression, Bland–Altman, radar/sensory, chromatograms, TPA/rheology, dose–response, survival, PCA/PLS-DA, heatmaps/clustering, forest, microscopy plates, multi-panel). Use to make, create, design, revise, audit, or recommend figures/charts/plots for a food-science paper, or to work out what to plot from a dataset. If Python or R isn't chosen, ask once and remember it. Triggers: make a figure, create a figure, design a figure, what figure should I make, recommend a chart, plot my data, analyze my data and plot it, chart my results, food science figure, journal figure, scientific plotting, data visualization for a manuscript."
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
   verified: "2026-07"
   related_skills: [journal-selector, food-paper, food-research]
   references:

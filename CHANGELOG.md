@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.19.0 — 2026-07
+
+- **food-figure gallery and route hardening.** Added a reproducible,
+  explicitly synthetic/illustrative food & nutrition gallery with four scenarios:
+  active packaging/polyphenol retention, probiotic storage kinetics, sensory
+  profiling, and method agreement/evidence-summary layouts. Each includes source
+  CSVs, a base-R rendering script, PDF + PNG outputs, captions, and trace cards.
+  The gallery exercises grouped bars, dose-response, kinetic, radar,
+  Bland–Altman, and forest layouts.
+- **AI schematic route improved.** Added a text-free draft → vector-label final
+  workflow, a content-boundary/JSON-spec pattern, and AI-specific QA/trace-record
+  requirements. The recorded test correctly reports an HTTP 403 service failure
+  without representing an image as generated.
+- **Privacy scan fix.** The scanner now safely examines readable text embedded in
+  binary figure deliverables (PDF/PNG) instead of failing on UTF-8 decoding.
+
 ## 1.18.0 — 2026-07
 
 - **Mandatory AI-use acknowledgement** when writing a manuscript. `food-paper`
