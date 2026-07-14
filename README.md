@@ -46,6 +46,32 @@ The installer registers the Claude Code plugin, and for **Codex**
 the app so it rescans skills. (Override the location with `CODEX_HOME` /
 `MAVIS_SKILLS_DIR`, or add via MiniMax's in-app Skill Creator/import.)
 
+## Updating
+
+**Updates are not automatic** — once installed you stay on that version until you
+choose to update. To get the latest release:
+
+**Claude Code** (built-in update):
+```bash
+claude plugin update academic-skills-food-nutrition
+```
+Restart Claude Code (or run `/plugin`) to apply. If it doesn't yet show the newest
+version, refresh the marketplace first:
+```bash
+claude plugin marketplace update academic-skills-food-nutrition
+```
+
+**Codex / MiniMax Agent (Mavis)** — re-run the installer (it cleanly replaces the
+skills), then restart the app:
+```bash
+curl -fsSL https://raw.githubusercontent.com/PangenomeAI/academic-skills-food-nutrition/main/install.sh | bash
+# or, from a local clone:  ./install.sh codex   |   ./install.sh minimax
+```
+
+Check your installed version with `claude plugin list`; see all versions on the
+[Releases](https://github.com/PangenomeAI/academic-skills-food-nutrition/releases)
+page (a GitHub Release is published automatically on each feature update).
+
 ## Skills
 
 ### Core workflow

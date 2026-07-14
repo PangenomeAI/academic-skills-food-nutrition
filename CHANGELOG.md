@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.25.1 — 2026-07
+
+- Documented **updating** in the README (updates are not automatic): Claude Code
+  via `claude plugin update` (+ `marketplace update` to refresh), Codex/MiniMax by
+  re-running the installer. Made `install.sh` update-safe (installs if new, else
+  updates) and noted the update path in its header.
+
 ## 1.25.0 — 2026-07
 
 - **Word review comments + tracked-changes revision workflow.**

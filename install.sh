@@ -14,6 +14,10 @@
 #
 # Remote one-liner:
 #   curl -fsSL https://raw.githubusercontent.com/PangenomeAI/academic-skills-food-nutrition/main/install.sh | bash
+#
+# To UPDATE later, just re-run this script (Claude Code is updated via
+# `claude plugin update`; Codex/MiniMax bundles are cleanly replaced). Updates are
+# never automatic — you update when you choose. Restart the app afterwards.
 set -euo pipefail
 
 REPO_URL="https://github.com/PangenomeAI/academic-skills-food-nutrition"
@@ -54,10 +58,12 @@ install_claude() {
   if command -v claude >/dev/null 2>&1; then
     echo "→ Claude Code: registering marketplace and installing plugin…"
     claude plugin marketplace add "$REPO_SLUG" 2>/dev/null \
-      || claude plugin marketplace add "$SRC" 2>/dev/null \
-      || claude plugin marketplace update "$MARKET" 2>/dev/null || true
-    claude plugin install "${PLUGIN}@${MARKET}"
-    echo "  ✔ Installed. Restart Claude Code (or run /plugin) to load the skills."
+      || claude plugin marketplace update "$MARKET" 2>/dev/null \
+      || claude plugin marketplace add "$SRC" 2>/dev/null || true
+    # install if new, otherwise update to the latest release
+    claude plugin install "${PLUGIN}@${MARKET}" 2>/dev/null \
+      || claude plugin update "$PLUGIN" 2>/dev/null || true
+    echo "  ✔ Installed/updated. Restart Claude Code (or run /plugin) to apply."
   else
     echo "→ Claude Code: 'claude' CLI not found — skipping."
     echo "    claude plugin marketplace add $REPO_SLUG"
