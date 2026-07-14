@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.25.2 — 2026-07
+
+- **Fix: Claude Code plugin loaded with 0 skills.** Skills live at the repo root
+  (`food-research/`, `journals/*/`, …) rather than in a `skills/` directory, so
+  the plugin manifest had no way to find them. Added a `skills` array to
+  `plugin.json` listing all 31 skill directories (files stay in place, so
+  cross-skill references and the Codex/MiniMax flat install are unaffected).
+  Update with `claude plugin update academic-skills-food-nutrition`, then restart.
+
 ## 1.25.1 — 2026-07
 
 - Documented **updating** in the README (updates are not automatic): Claude Code
