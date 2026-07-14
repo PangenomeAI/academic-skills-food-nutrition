@@ -243,6 +243,7 @@ worldwide are warmly welcomed — open an issue or pull request.
 - **PangeZAU** — Principal Investigator, Food Science Research Team, University of Melbourne.
 - **Zijian Liang** — Research Coordinator, Food Science Research Team, University of Melbourne.
 - **Calebsch** — Developer, Food Science Research Team, University of Melbourne.
+- **Pimiao Huang** — Contributor, Food Science Research Team, University of Melbourne.
 
 ## Acknowledgements
 
