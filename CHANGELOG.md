@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.26.0 — 2026-07
+
+- Added **Pimiao Huang** and **Chenghao Shen** (The University of Melbourne) as
+  co-authors in `CITATION.cff`; bumped its version to match the release.
+- First released version to roll up the 1.25.1–1.25.3 changes (README updating
+  docs; Claude Code plugin 0-skills fix; Windows/Codex UTF-8 coverage-check fix;
+  `food-pipeline` safer single-round defaults).
+
 ## 1.25.3 — 2026-07
 
 - **Windows / Codex verification fix.** `scripts/check_journal_coverage.py` now
