@@ -11,13 +11,19 @@
 4. **Decide.** Weigh the panel into one verdict — **Accept · Minor Revision · Major Revision · Reject** — with the decisive reasons.
 5. **Produce author-facing outputs:** a prioritized revision checklist (Critical → Major → Minor → Suggestions, each tied to a reviewer and a concrete fix) and a **response-letter skeleton** (one numbered block per concern for the author to answer).
 
-**Output format.** A panel report: editorial summary + decision; the reconciled
-concern list; each reviewer's full report; the formatting report; the revision
-checklist; the response-letter skeleton. **If the manuscript is a Word (`.docx`)
-file or equivalent, also return the manuscript with the panel's concerns inserted
-as margin comments** (one per concern, tagged with reviewer lens + severity),
-using the Review/Comments feature — see `references/word-review-comments.md`. Run
-`scripts/privacy_scan.py` on any file before delivering.
+**Output format.** A review report in the structure of
+`references/report-format.md`: header + overall assessment; **Part A** editing
+report by category (`A#/B#/C#/D#`); summary; **Part B** scientific-quality comments
+(`SQ#`) + editorial decision + residual items; **Part C** figure/table consistency
+(`FC#`). Every concern has a stable ID and a `Response (<type>)` line (in a review
+this is a **Recommendation**, or an **Editor query** when the fix needs the
+author's data/decision), each with a precise location. **If the manuscript is a
+Word (`.docx`) file or equivalent, also return the manuscript with the panel's
+concerns inserted as margin comments** — one per concern, tagged with the **same
+issue ID** + reviewer lens + severity — and, for every **Editor query** item, a
+comment/tracked note **at that location** so the author sees where to act (see
+`references/word-review-comments.md`). Run `scripts/privacy_scan.py` on any file
+before delivering.
 
 **Constraints.** Do not overrule a reviewer silently — show the adjudication.
 Decision must follow from the panel, not override it without reason.

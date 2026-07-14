@@ -61,7 +61,11 @@ authorized, consolidate — do **not** emit per-round copies:
   original Word (`.docx`), accumulated across authorized rounds. `food-review`
   adds margin **comments** to that same file each round.
 - **One combined review report.** Merge round-1 and (if any) round-2 into a
-  single report (note which round each point came from).
+  single report in the canonical **`food-review/references/report-format.md`**
+  structure (Parts A/B/C; stable issue IDs; `Response (<type>)` = Tracked edit /
+  Editor query / Recommendation / Residual; precise locations; note which round
+  each point came from). Every **Editor query** item also gets a comment/note in
+  the manuscript at its location.
 - **One combined response letter.** A single point-by-point response (new
   `.docx`) covering every comment from the round(s) run, delivered at FINALIZE.
 

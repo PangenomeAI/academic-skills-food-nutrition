@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.28.0 — 2026-07
+
+- **Structured review report + revision-log format, and manuscript editor queries.**
+  - New canonical `food-review/references/report-format.md`: the combined **review
+    report + revision log** now uses **stable issue IDs** grouped by category
+    (`A#/B#/C#/D#`, `SQ#`, `R2-*`, `FC#`), each concern paired with a
+    `Response (<type>)` line — **Tracked edit · Editor query · Recommendation ·
+    Residual** — with precise manuscript locations (`P##` / Table / Figure), an
+    overall assessment, editorial decision, summary of changes, and a residual-items
+    list (Parts A/B/C). Wired into `food-review` (report + `review_coordinator`),
+    `food-pipeline` (the one combined report), and `food-paper` revise (revision log).
+  - **Editor queries in the manuscript:** when the reviewer/reviser suggests a fix
+    it **cannot make itself** (needs the author's data or decision), it now also
+    inserts a **comment / tracked "EDITOR QUERY" note in the manuscript at that
+    location**, tagged with the same report issue ID — so the author can jump from a
+    report item straight to the spot, not just read it in the report. Updated
+    `word-review-comments.md` and `revision-response.md`.
+
 ## 1.27.0 — 2026-07
 
 - **Prompt for the target journal once, then persist.** `food-paper`,

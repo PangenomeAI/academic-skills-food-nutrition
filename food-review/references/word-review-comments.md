@@ -9,14 +9,31 @@ LibreOffice `.odt`, Pages, Google Docs)**, `food-review` delivers **two** things
 
 ## What to annotate
 For each concern the panel raised, insert a **margin comment** on the specific
-sentence/figure/table/reference it targets. Prefix with the reviewer lens and
-severity so the author can triage, e.g.:
-> **[Methodology · Major]** n is not stated for this assay — is it biological (not analytical) replication? Add n and the error type.
-> **[Domain · Minor]** Overreaches beyond the tested matrix; qualify to "in blueberry purée".
-> **[Integrity · Critical]** These means do not match Table 2 — reconcile.
+sentence/figure/table/reference it targets. Prefix with the concern's **report
+issue ID** (`A5`, `SQ3`, `FC1` — see `report-format.md`) plus the reviewer lens and
+severity, so the author can jump between the report and the manuscript:
+> **[A5 · Integrity · Critical]** These means do not match Table 2 — reconcile.
+> **[C1 · Methodology · Major]** n is not stated for this assay — is it biological (not analytical) replication? Add n and the error type.
+> **[D2 · Domain · Minor]** Overreaches beyond the tested matrix; qualify to "in blueberry purée".
 
-Keep each comment short and actionable; the full reasoning stays in the report.
-Comment on the actual location, not the general area.
+Use the **same ID in the comment and the report**. Keep each comment short and
+actionable; the full reasoning stays in the report. Comment on the actual location,
+not the general area.
+
+## Editor queries — comment on items you suggest but cannot edit (required)
+Some concerns recommend a change the reviewer/reviser **cannot make itself** —
+because it needs the author's data, a value only they have, or a decision. Do **not**
+leave those only in the report. **Insert a comment in the manuscript at the exact
+location**, tagged with the issue ID and marked as an **editor query**, mirroring the
+report's `Response (Editor query)` line so the author can go straight to the spot:
+> **[A1 · Editor query]** Results give BioProject PRJNA1482698 but Data Availability gives a different accession — insert the correct, verified number here.
+> **[B1 · Editor query]** Text says 32 mg/kg; Table 1 says 320 mg/kg — which is right?
+
+This is required whenever a report item is classified **Editor query**: every such
+item must have a matching comment at its location. If in-manuscript **tracked notes**
+are preferred over margin comments, insert a tracked `EDITOR QUERY: …` note at the
+location instead — either way it lives where the author needs to act, keyed by the
+same ID.
 
 ## How to create the comments
 - **Preferred:** use the **`docx` skill** (or a Word-capable tool) to add real

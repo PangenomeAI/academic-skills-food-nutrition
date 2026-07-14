@@ -63,11 +63,15 @@ user names a different target journal; reuse the choice if `food-pipeline` alrea
 resolved one.
 
 ## Output
-A consolidated **panel report**: each reviewer's report (strengths → major →
-minor, each concern actionable), the devil's advocate challenge, the formatting
-compliance report, and the coordinator's **editorial decision** (Accept / Minor /
-Major / Reject) with a prioritized revision checklist and a response-letter
-skeleton the author can fill in. Critique the work, not the author.
+A consolidated **review report** in the canonical structure of
+`references/report-format.md`: header (manuscript, target journal, editorial
+decision, colour legend) → overall assessment → **Part A** editing report by
+category → summary → **Part B** scientific-quality comments + editorial decision +
+residual items → **Part C** figure/table consistency audit. Every concern carries a
+**stable issue ID** (`A#/B#/C#/D#`, `SQ#`, `FC#`) and a `Response (<type>)` line —
+**Recommendation** or, for a fix that needs the author's data/decision, **Editor
+query** — with a precise location (`P##` / Table / Figure). Critique the work, not
+the author.
 
 **When the manuscript is a Word (`.docx`) file (or equivalent — LibreOffice /
 Pages / Google Docs), also deliver the manuscript itself with margin comments.**
@@ -78,6 +82,7 @@ reviewer lens + severity), using the word processor's Review/Comments feature. S
 tooling is available, deliver a location→comment table instead and say so.
 
 ## References (load as needed)
+- `references/report-format.md` — **canonical review report + revision-log format** (Parts A/B/C, issue IDs, `Response (<type>)` taxonomy, editor queries, colour legend).
 - `references/review-criteria.md` — what each reviewer checks (food-tuned).
 - `references/quality-rubrics.md` — 1–5 scoring per dimension + weights.
 - `references/editorial-decisions.md` — `review_coordinator`: Accept/Minor/Major/Reject logic + overrides.
