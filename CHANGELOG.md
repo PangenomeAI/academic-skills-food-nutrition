@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.28.2 — 2026-07
+
+- **Fix: EndNote/Zotero/Mendeley citation field codes leaking into the manuscript.**
+  Reference-manager citations are Word **fields** — the code (`ADDIN EN.CITE
+  <EndNote>…</EndNote>`) lives in a hidden `w:instrText` and only `(Author, Year)`
+  is shown. When an edit read every run and rewrote the paragraph as plain text, the
+  hidden code was dumped into the body as a stray block before the citation. New
+  guidance `food-paper/references/word-field-codes.md` (treat each citation field as
+  an atomic unit; never flatten `w:instrText` into visible text; keep `fldChar`
+  runs together; warn if a tool can't preserve fields), wired into the revise,
+  comment, and format-convert paths. New `scripts/check_docx_fields.py` (with
+  `--selftest`) detects leaked field codes in a `.docx`'s visible text; added to the
+  pre-delivery checks and `AGENTS.md`.
+
 ## 1.28.1 — 2026-07
 
 - **Editorial decision made explicit in the report format.** `report-format.md`

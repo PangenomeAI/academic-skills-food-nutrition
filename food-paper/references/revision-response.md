@@ -28,6 +28,12 @@ and the response letter so the three cross-reference.
   `<w:del …><w:r><w:delText>…</w:delText></w:r></w:del>`; enabling
   `<w:trackChanges/>` in `word/settings.xml` keeps further edits marked. Use the
   **`docx` skill** (or a Word-capable tool) to apply these — it handles the plumbing.
+- **Preserve citation field codes.** EndNote/Zotero/Mendeley citations are Word
+  **fields**: the code lives in a hidden `w:instrText`, and only `(Author, Year)`
+  is shown. Never flatten a field into visible text (that dumps
+  `ADDIN EN.CITE <EndNote>…</EndNote>` into the manuscript as a stray paragraph).
+  Treat each field as one atomic unit and edit the prose around it — see
+  `word-field-codes.md`.
 - **Resolve the margin comments** as you address them (or leave a reply noting the
   change), so each reviewer comment maps to a visible edit.
 - **Items you cannot edit** (need the author's data/decision) are classified
@@ -36,7 +42,8 @@ and the response letter so the three cross-reference.
   ID, so the author sees exactly where to act (see
   `food-review/references/word-review-comments.md`).
 - Keep the project's grounding rule: every new claim/number/citation is real and
-  verified (`faithfulness-and-citation.md`); run `scripts/verify_citations.py` and
+  verified (`faithfulness-and-citation.md`); run `scripts/verify_citations.py`,
+  `scripts/check_docx_fields.py` (no leaked EndNote/Zotero field codes), and
   `scripts/privacy_scan.py` before delivering.
 
 ## 2. Point-by-point response letter (new .docx)

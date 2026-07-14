@@ -47,6 +47,11 @@ same ID.
   Integrity / Devil's advocate / Formatting) so comments are attributable.
 - Do **not** alter the manuscript text at this stage — comments only (revision
   happens later in `food-paper`).
+- **Preserve citation field codes.** EndNote/Zotero/Mendeley citations are Word
+  **fields** (the code sits in a hidden `w:instrText`; only `(Author, Year)` shows).
+  Anchor comments around whole runs and never rewrite a citation run as plain text,
+  or the raw `ADDIN EN.CITE <EndNote>…</EndNote>` code leaks into the body — see
+  `../../food-paper/references/word-field-codes.md`.
 
 ## Equivalents
 - **LibreOffice `.odt`:** Insert → Comment (same margin-comment model).

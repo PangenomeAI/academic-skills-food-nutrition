@@ -70,6 +70,7 @@ python3 food-figure/scripts/analyze_data.py --selftest
 python3 food-figure/scripts/backend_pref.py --selftest
 python3 scripts/verify_citations.py --selftest        # citation/anti-fabrication gate
 python3 scripts/privacy_scan.py --selftest            # privacy/confidentiality gate
+python3 scripts/check_docx_fields.py --selftest       # leaked EndNote/Zotero field-code gate
 
 # 3. Manifests are valid JSON (and, if you have Claude Code, validate the plugin)
 python3 -c "import json;[json.load(open(p)) for p in ['.claude-plugin/plugin.json','.claude-plugin/marketplace.json']];print('json ok')"

@@ -17,6 +17,7 @@ metadata:
     - references/latex-guide.md
     - references/privacy-and-confidentiality.md
     - references/revision-response.md
+    - references/word-field-codes.md
 ---
 
 # Food-Paper — Whole-Process Manuscript System for Food & Nutrition Science
@@ -42,7 +43,7 @@ limits, reference style, and the figure spec passed to `food-figure`.
 - **section** — draft or rewrite one section (intro/methods/results/discussion/abstract).
 - **stats** — statistical analysis plan/execution guidance only.
 - **revise** — revise against an existing review (a `food-review` report and/or margin comments on a Word file). Edit **the original `.docx` with Tracked Changes** (do not start a fresh copy), resolving each comment, and produce a **point-by-point response letter as a new Word document**. See `references/revision-response.md`.
-- **format-convert** — convert a draft to the target journal's structure + reference style; output **Markdown, LaTeX (.tex), or DOCX**, and **build a PDF** via Pandoc or `latexmk` (see `references/latex-guide.md`). Yes — this skill can prepare and edit LaTeX drafts.
+- **format-convert** — convert a draft to the target journal's structure + reference style; output **Markdown, LaTeX (.tex), or DOCX**, and **build a PDF** via Pandoc or `latexmk` (see `references/latex-guide.md`). Yes — this skill can prepare and edit LaTeX drafts. When the source is a Word file, **preserve EndNote/Zotero/Mendeley citation fields** (`references/word-field-codes.md`) — don't flatten field codes into text.
 - **polish** — language editing to publication-quality English.
 
 ## Subagent team (dispatch via the Agent tool; independent stages run in parallel)
@@ -101,6 +102,7 @@ prep, storage). Ethics/food-safety statements where relevant.
 - `references/faithfulness-and-citation.md` — **grounding rules + four-gate citation check; the suite's no-fabrication contract.** Run `scripts/verify_citations.py` on the reference set.
 - `references/latex-guide.md` — prepare/edit LaTeX drafts and build the PDF (Pandoc / latexmk).
 - `references/revision-response.md` — **revise mode**: tracked changes (original Word opt-in under `food-pipeline`) + a point-by-point response letter (new `.docx`).
+- `references/word-field-codes.md` — **preserve EndNote/Zotero/Mendeley citation fields** when editing a `.docx` (don't flatten field codes into visible text); verify with `scripts/check_docx_fields.py`.
 - `references/privacy-and-confidentiality.md` — **privacy check before delivery** (no local paths/secrets); run `scripts/privacy_scan.py`.
 
 ## Grounding (non-negotiable)
