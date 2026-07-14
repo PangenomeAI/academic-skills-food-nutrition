@@ -11,6 +11,7 @@ metadata:
     - references/quality-rubrics.md
     - references/editorial-decisions.md
     - references/ethics-integrity-checklist.md
+    - references/word-review-comments.md
 ---
 
 # Food-Review — Multi-Reviewer Peer Review for Food & Nutrition Manuscripts
@@ -69,10 +70,19 @@ compliance report, and the coordinator's **editorial decision** (Accept / Minor 
 Major / Reject) with a prioritized revision checklist and a response-letter
 skeleton the author can fill in. Critique the work, not the author.
 
+**When the manuscript is a Word (`.docx`) file (or equivalent — LibreOffice /
+Pages / Google Docs), also deliver the manuscript itself with margin comments.**
+In addition to the report, insert the panel's concerns as **Word review comments**
+anchored to the exact text they target (one comment per concern, prefixed with the
+reviewer lens + severity), using the word processor's Review/Comments feature. See
+`references/word-review-comments.md`. If the manuscript isn't a Word doc or no Word
+tooling is available, deliver a location→comment table instead and say so.
+
 ## References (load as needed)
 - `references/review-criteria.md` — what each reviewer checks (food-tuned).
 - `references/quality-rubrics.md` — 1–5 scoring per dimension + weights.
 - `references/editorial-decisions.md` — `review_coordinator`: Accept/Minor/Major/Reject logic + overrides.
+- `references/word-review-comments.md` — insert margin comments into a Word/`.docx` manuscript (in addition to the report).
 - `references/ethics-integrity-checklist.md` — `reviewer_integrity` (canonical; shared with `food-deep-research`).
 - `food-paper/references/statistics-reporting.md` — `reviewer_methodology`: stats red flags.
 - `food-paper/references/faithfulness-and-citation.md` — `reviewer_integrity`: verify every citation is real (four-gate) and every claim is source-bound; flag any fabricated/unsupported content.

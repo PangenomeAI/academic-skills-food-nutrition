@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.25.0 — 2026-07
+
+- **Word review comments + tracked-changes revision workflow.**
+  - `food-review`: when the manuscript is a Word (`.docx`) file (or LibreOffice/
+    Pages/Google Docs), it now also returns the manuscript with **margin comments**
+    (Word Review) anchored to the text, one per concern with reviewer lens +
+    severity — in addition to the panel report. New
+    `references/word-review-comments.md`.
+  - `food-paper` (revise mode): revises **the original Word file with Tracked
+    Changes** (resolving the comments) and produces a **point-by-point response
+    letter as a new `.docx`**. New `references/revision-response.md`.
+  - `food-pipeline`: across its **two** review→revise rounds (Stage 3 onward), all
+    edits stay as tracked changes on the **one** original Word manuscript, and it
+    delivers exactly **one combined review report** and **one combined response
+    letter** (not per-round copies).
+  Prefers the `docx` skill for the Word plumbing; falls back to a comments table /
+  change log when Word tooling isn't available (never claims a file it didn't make).
+
 ## 1.24.0 — 2026-07
 
 - **Complete Figure-story design for food-figure.** Added a workflow for planning

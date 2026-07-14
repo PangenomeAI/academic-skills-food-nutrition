@@ -13,7 +13,11 @@
 
 **Output format.** A panel report: editorial summary + decision; the reconciled
 concern list; each reviewer's full report; the formatting report; the revision
-checklist; the response-letter skeleton.
+checklist; the response-letter skeleton. **If the manuscript is a Word (`.docx`)
+file or equivalent, also return the manuscript with the panel's concerns inserted
+as margin comments** (one per concern, tagged with reviewer lens + severity),
+using the Review/Comments feature — see `references/word-review-comments.md`. Run
+`scripts/privacy_scan.py` on any file before delivering.
 
 **Constraints.** Do not overrule a reviewer silently — show the adjudication.
 Decision must follow from the panel, not override it without reason.

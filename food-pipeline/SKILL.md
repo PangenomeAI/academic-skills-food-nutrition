@@ -36,10 +36,25 @@ Original work.
 | 0 · ROUTE | `intake_router` + `journal-selector` | Entry point + journal constraints | — |
 | 1 · RESEARCH | `food-research` (or `food-deep-research`) | Evidence brief / gap list / (systematic report) | evidence sufficiency |
 | 2 · WRITE | `food-paper` | Draft: analysis, figures (`food-figure`), argument, references | integrity + journal compliance |
-| 3 · REVIEW | `food-review` | Panel report + editorial decision + revision checklist | **mandatory** author decision |
-| 4 · REVISE | `food-paper` (revise) | Revised draft + point-by-point response | issues resolved |
-| 5 · RE-REVIEW | `food-review` (re-review) | Verification of the revision | accept / one more loop (cap 2) |
-| 6 · FINALIZE | `food-paper` (format-convert) + `writer` | Submission-ready manuscript + checklist (Word/target format) | final compliance |
+| 3 · REVIEW | `food-review` | Panel report + **margin comments on the Word manuscript** + editorial decision | **mandatory** author decision |
+| 4 · REVISE | `food-paper` (revise) | **Tracked changes on the original Word manuscript** (resolving comments) + response entries | issues resolved |
+| 5 · RE-REVIEW | `food-review` (re-review) | Verifies the revision; adds any new comments to the same file | accept / one more loop (cap 2) |
+| 6 · FINALIZE | `food-paper` (format-convert) + `writer` | Submission-ready manuscript + **one combined review report + one combined response letter** | final compliance |
+
+## Review & revision artifacts (Stage 3 onward)
+When the pipeline starts at or reaches Stage 3 with a manuscript, there are **two
+rounds** of review→revise (Stage 3→4, then 5→4'). Consolidate — do **not** emit
+per-round copies:
+- **One manuscript file.** All revisions are **Tracked Changes on the single
+  original Word (`.docx`)** manuscript, accumulated across both rounds. `food-review`
+  adds its margin **comments** to that same file each round.
+- **One combined review report.** Merge round-1 and round-2 review into a single
+  report (note which round each point came from) — not two separate reports.
+- **One combined response letter.** A single point-by-point response (new `.docx`)
+  covering every comment from both rounds, delivered at FINALIZE.
+
+See `food-review/references/word-review-comments.md` and
+`food-paper/references/revision-response.md`.
 
 ## Workflow
 
@@ -78,3 +93,4 @@ stages unnecessarily.
 - **Gates are real:** `quality_gate` can send a stage back; integrity and review gates cannot be skipped, and the review decision is always the author's.
 - **Food-science standards everywhere:** n and error type, validated methods, panel details, ethics/food-safety — enforced at every write/review gate.
 - **Don't duplicate work:** the specialist skills own their subagents; the pipeline sequences and gates them, it does not re-implement them.
+- **One manuscript, one report, one letter:** across the two review/revise rounds, keep all edits as tracked changes on the single original Word file, and deliver exactly one combined review report and one combined response letter (see "Review & revision artifacts").
