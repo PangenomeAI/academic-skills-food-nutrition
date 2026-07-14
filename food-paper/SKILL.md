@@ -26,11 +26,14 @@ formatted manuscript, using a team of subagents for each stage of the research
 and writing process. Original work; architecture informed by open community
 paper-writing and Nature-style skills (see the repo README Acknowledgements).
 
-## First move — resolve the target journal
-Before drafting, call **`journal-selector`** to load the target journal's
-structure, limits, and reference style. If none is named, default to **APA 7.0**
-and state the assumption. The journal's constraints govern structure, word/
-abstract limits, reference style, and the figure spec passed to `food-figure`.
+## First move — resolve the target journal (once)
+Before drafting, call **`journal-selector`**, which **asks the author which journal
+they are targeting** (they may answer 'generic' for **APA 7.0** defaults). Do this
+**once**: record the resolved journal and its constraints and reuse them for every
+subagent and stage — do **not** ask again. Re-run `journal-selector` only if the
+author asks to switch journals, or reuse the choice already resolved by
+`food-pipeline`/an earlier turn. The constraints govern structure, word/abstract
+limits, reference style, and the figure spec passed to `food-figure`.
 
 ## Modes
 - **full** (default) — the whole pipeline: field → questions → data/stats → figures → argument → draft → polish → self-review.

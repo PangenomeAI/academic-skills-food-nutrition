@@ -10,9 +10,10 @@ Blueprint. On revision loops, also the feedback from `editor` and
 `ethics_reviewer`.
 
 ## Formatting / citation style
-- **Default: APA 7.0** (author–date in text; APA reference list).
-- If the user named a **target journal**, call the **`journal-selector`** skill to
-  pull that journal's structure, limits, and reference style, and format the
+- Use the **target journal already resolved at intake** (via `journal-selector`);
+  **default APA 7.0** (author–date in text; APA reference list) when 'generic'. Do
+  not re-ask the journal.
+- Apply that journal's structure, limits, and reference style, and format the
   draft to it (structure, word/abstract limits, and citation style — numbered,
   author–date, Nature-superscript, ACS, RSC, MDPI, Emerald-Harvard, etc.).
 

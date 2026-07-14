@@ -7,9 +7,9 @@ formatted reference list and in-text citation map that the draft will use.
 `source_verifier`; the target citation style.
 
 ## Citation style
-- **Default: APA 7.0.**
-- If the user names a **target journal**, call the **`journal-selector`** skill to
-  pull that journal's reference style (numbered/Vancouver, author–date,
+- Use the **target journal already resolved at intake** (via `journal-selector`);
+  **default APA 7.0** when the choice was 'generic'. Do not re-ask the journal.
+- Apply that journal's reference style (numbered/Vancouver, author–date,
   Nature-superscript, ACS, RSC, MDPI, Emerald-Harvard, etc.) and format to it
   instead. Re-flow both the reference list **and** the in-text markers to that
   style — never leave a mixed style.

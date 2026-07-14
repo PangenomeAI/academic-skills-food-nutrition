@@ -39,15 +39,12 @@ community peer-review skills (see the repo README Acknowledgements).
 ```mermaid
 flowchart TD
     A[Manuscript in] --> B[review_coordinator<br/>resolve target journal + scope]
-    B --> J{Target journal?}
-    J -- named --> JS[journal-selector<br/>load journal requirements]
-    J -- none --> AP[default: APA 7.0]
+    B --> JS[journal-selector<br/>ask once → journal or 'generic'/APA 7.0]
     B --> R1[reviewer_methodology]
     B --> R2[reviewer_domain]
     B --> R3[reviewer_integrity]
     B --> R4[devils_advocate]
     JS --> FC[format_checker]
-    AP --> FC
     R1 --> C[review_coordinator<br/>synthesize + decision]
     R2 --> C
     R3 --> C
@@ -57,11 +54,13 @@ flowchart TD
 ```
 
 ## Formatting / target journal
-The `review_coordinator` first establishes the target journal. If the user names
-one, it calls the **`journal-selector`** skill to load that journal's structure,
-limits, and reference/citation style; `format_checker` then audits the manuscript
-against those requirements. If no journal is named, **APA 7.0** is the default
-standard for the formatting check.
+The `review_coordinator` first establishes the target journal by calling
+**`journal-selector`**, which **asks the user which journal the manuscript targets**
+(they may answer 'generic' → **APA 7.0**). This is asked **once**: the resolved
+journal's structure, limits, and reference/citation style are recorded and reused,
+and `format_checker` audits the manuscript against them. Don't re-ask unless the
+user names a different target journal; reuse the choice if `food-pipeline` already
+resolved one.
 
 ## Output
 A consolidated **panel report**: each reviewer's report (strengths → major →

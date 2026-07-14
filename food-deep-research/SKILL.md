@@ -70,10 +70,13 @@ to `compiler` until Accept (cap ~2–3), then deliver.
 - **Journal ranking** favors Tier 1 (Q1/Q2 food-science & nutrition, Nature/Science/Cell families, Q1/Q2 in any other discipline); Tier 2 (Q3) only to fill gaps; Tier 4 avoided.
 - Every claim carries a source and locator; inference is labelled as inference.
 
-## Formatting
-Default **APA 7.0**. If the user names a **target journal**, `bibliography` and
-`compiler` call the **`journal-selector`** skill to format the review to that
-journal's structure, limits, and reference style.
+## Formatting — resolve the target journal once
+At the start, call **`journal-selector`**, which **asks which journal the review
+targets** (they may answer 'generic' → **APA 7.0**). Ask **once**: record the
+choice and reuse it in `bibliography` and `compiler` to format the review to that
+journal's structure, limits, and reference style — don't ask again. Reuse a
+journal already resolved by `food-research`/`food-pipeline`; re-resolve only if the
+user asks to switch journals.
 
 ## Principles
 Every claim sourced; fact separated from interpretation; disagreement shown, not

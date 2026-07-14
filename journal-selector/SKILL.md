@@ -15,8 +15,10 @@ journals: [`journals/_coverage.md`](../journals/_coverage.md).
 
 ## Behavior
 
-1. **Determine the target journal.** If the author has already named a journal
-   (full name or JCR abbreviation), resolve it. If not, **ask**:
+1. **Determine the target journal — ask once.** If the author has already named a
+   journal (full name or JCR abbreviation), resolve it. If a target journal is
+   **already on record for this project/session** (resolved earlier, or set by
+   `food-pipeline`), reuse it and skip the question. Otherwise **ask exactly once**:
    > "Which journal are you targeting? (name or JCR abbreviation — e.g. Food
    > Chemistry, LWT, Nature Food). If undecided, say 'generic' and I'll use
    > standard food-science conventions."
@@ -32,6 +34,14 @@ journals: [`journals/_coverage.md`](../journals/_coverage.md).
    (IMRaD; abstract ≤250 words; numbered or author–date references; figures
    ≥300 dpi; ~90/190 mm columns) and state the assumption so the author can
    correct it.
+
+## Ask once, then persist
+The journal question is asked **at most once per project**. Once resolved (to a
+journal *or* to 'generic'/APA 7.0), **record the choice and its constraints** and
+reuse them for every downstream stage and subagent — never re-prompt. Re-run this
+resolution **only** when the user explicitly asks to target a **different**
+journal; then replace the recorded choice and re-flow the affected formatting
+(structure, limits, reference style, figure spec).
 
 ## Resolution table (journal / abbreviation → skill folder)
 

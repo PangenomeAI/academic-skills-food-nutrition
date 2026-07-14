@@ -5,7 +5,7 @@
 **Inputs.** The manuscript; any stated target journal; the review mode.
 
 ## Process
-1. **Establish target & scope.** Identify the manuscript type (original research, review, short communication) and the target journal. If a journal is named, call the **`journal-selector`** skill to load its scope, structure, limits, and reference style; else set the standard to **APA 7.0**. Note the journal's aims so scope-fit can be judged.
+1. **Establish target & scope (ask journal once).** Identify the manuscript type (original research, review, short communication). Resolve the target journal by calling the **`journal-selector`** skill, which **asks the user which journal the manuscript targets** (or 'generic' → **APA 7.0**); record the choice and load its scope, structure, limits, and reference style. Ask **once** — reuse the recorded journal for the whole review (and reuse one already set by `food-pipeline`); re-resolve only if the user names a different journal. Note the journal's aims so scope-fit can be judged.
 2. **Dispatch reviewers in parallel:** `reviewer_methodology`, `reviewer_domain`, `reviewer_integrity`, `devils_advocate`, and `format_checker` (with the journal requirements).
 3. **Synthesize.** Merge the reports: collect strengths, deduplicate overlapping concerns, and reconcile disagreements between reviewers (state where they diverge and your adjudication).
 4. **Decide.** Weigh the panel into one verdict — **Accept · Minor Revision · Major Revision · Reject** — with the decisive reasons.

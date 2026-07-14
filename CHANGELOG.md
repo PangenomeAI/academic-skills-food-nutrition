@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.27.0 — 2026-07
+
+- **Prompt for the target journal once, then persist.** `food-paper`,
+  `food-review`, `food-deep-research`, and `food-pipeline` now resolve the target
+  journal up front by calling `journal-selector`, which **asks the user which
+  journal they are targeting** (answer 'generic' for APA 7.0 defaults) instead of
+  silently defaulting. The choice is asked **exactly once** per project and reused
+  by every downstream subagent/stage; it is re-resolved **only** when the user asks
+  to switch journals. `journal-selector` gained an explicit "ask once, then
+  persist" contract, and `food-pipeline` resolves the journal at ROUTE and passes
+  it to every downstream skill so none of them re-asks.
+
 ## 1.26.1 — 2026-07
 
 - **Journal skills no longer register as top-level plugin skills.** The 24
