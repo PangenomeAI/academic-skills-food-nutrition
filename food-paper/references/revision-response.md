@@ -6,10 +6,16 @@ produces two Word deliverables:
 1. the **original manuscript revised with Tracked Changes**, and
 2. a **point-by-point response letter** as a **new Word (`.docx`) document**.
 
-## 1. Revise on the original, with Tracked Changes
-- Edit **the original `.docx`** (or equivalent) — do not start a fresh copy — so
-  the editor can see and accept/reject each change.
-- Make every edit as a **tracked change**. In OOXML: insertions are
+## 1. Revise with Tracked Changes (original file is opt-in)
+- **Standalone `food-paper` revise** (user asked to revise this file): edit **the
+  original `.docx`** with Tracked Changes so the editor can accept/reject each
+  change — unless the user asks for a separate revised copy.
+- **Inside `food-pipeline`:** do **not** modify the original Word file unless the
+  author has **explicitly authorized** in-place tracked changes. Default: leave
+  the original untouched; deliver a **revised copy** (or change log / marked
+  draft) plus the response letter.
+- When editing in place is authorized: make every edit as a **tracked change**.
+  In OOXML: insertions are
   `<w:ins w:id=".." w:author=".." w:date="..">…</w:ins>` and deletions
   `<w:del …><w:r><w:delText>…</w:delText></w:r></w:del>`; enabling
   `<w:trackChanges/>` in `word/settings.xml` keeps further edits marked. Use the
@@ -48,6 +54,9 @@ lines 112–118">. [Optionally quote the revised text.]
 
 ## Combined vs per-round
 When run standalone (one review round), produce one revised manuscript + one
-response letter. Inside `food-pipeline` (two rounds), the manuscript accumulates
-**all** tracked changes in the **one** original file, and there is a **single
-combined response letter** covering both rounds — see the pipeline's rules.
+response letter. Inside `food-pipeline`, the **default is one** review→revise
+round (a second round needs author authorization). Only when the author has
+authorized **both** a second round **and** in-place edits on the original file
+does the manuscript accumulate all tracked changes in that **one** original, with
+a **single combined response letter** covering both rounds — see the pipeline's
+rules.

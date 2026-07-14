@@ -2,7 +2,7 @@
 name: food-pipeline
 description: "Master orchestrator for the whole food & nutrition research-to-publication workflow. Coordinates the specialist skills — each with its own subagent set — into one governed path: journal selection, research (food-research / food-deep-research), writing & analysis (food-paper), figures (food-figure), peer review (food-review), revision, and finalization. Use when the user wants the entire process managed end to end, or a project routed to the right skills with quality gates. Triggers: run the full paper workflow, take this from research to submission, manage the whole project, research to publication, end-to-end paper, orchestrate my paper."
 metadata:
-  version: "2.1.0"
+  version: "2.2.0"
   verified: "2026-07"
   related_skills: [journal-selector, food-research, food-deep-research, food-paper, food-figure, food-review]
   subagents: [intake_router, quality_gate]
@@ -36,22 +36,34 @@ Original work.
 | 0 · ROUTE | `intake_router` + `journal-selector` | Entry point + journal constraints | — |
 | 1 · RESEARCH | `food-research` (or `food-deep-research`) | Evidence brief / gap list / (systematic report) | evidence sufficiency |
 | 2 · WRITE | `food-paper` | Draft: analysis, figures (`food-figure`), argument, references | integrity + journal compliance |
-| 3 · REVIEW | `food-review` | Panel report + **margin comments on the Word manuscript** + editorial decision | **mandatory** author decision |
-| 4 · REVISE | `food-paper` (revise) | **Tracked changes on the original Word manuscript** (resolving comments) + response entries | issues resolved |
-| 5 · RE-REVIEW | `food-review` (re-review) | Verifies the revision; adds any new comments to the same file | accept / one more loop (cap 2) |
-| 6 · FINALIZE | `food-paper` (format-convert) + `writer` | Submission-ready manuscript + **one combined review report + one combined response letter** | final compliance |
+| 3 · REVIEW | `food-review` | Panel report + **margin comments** (when Word tooling available) + editorial decision | **mandatory** author decision |
+| 4 · REVISE | `food-paper` (revise) | Revision + response entries — **tracked changes on the original Word only if the author authorizes** | issues resolved |
+| 5 · RE-REVIEW | `food-review` (re-review) | **Only if the author authorizes a second round** — verifies the revision; may add new comments | accept / stop (no auto third round) |
+| 6 · FINALIZE | `food-paper` (format-convert) + `writer` | Submission-ready manuscript + review report + response letter | final compliance |
 
-## Review & revision artifacts (Stage 3 onward)
-When the pipeline starts at or reaches Stage 3 with a manuscript, there are **two
-rounds** of review→revise (Stage 3→4, then 5→4'). Consolidate — do **not** emit
-per-round copies:
-- **One manuscript file.** All revisions are **Tracked Changes on the single
-  original Word (`.docx`)** manuscript, accumulated across both rounds. `food-review`
-  adds its margin **comments** to that same file each round.
-- **One combined review report.** Merge round-1 and round-2 review into a single
-  report (note which round each point came from) — not two separate reports.
-- **One combined response letter.** A single point-by-point response (new `.docx`)
-  covering every comment from both rounds, delivered at FINALIZE.
+## Review & revision defaults (Stage 3 onward) — explicit authorization
+
+**Default: one review→revise round**, then FINALIZE. Do **not** auto-run a second
+round or silently rewrite the author's original Word file.
+
+Ask once (consolidate) before Stage 4 when a `.docx` (or equivalent) is in play:
+
+1. **Second review round?** Default **no**. Run Stage 5 (RE-REVIEW) only if the
+   author explicitly authorizes it. Hard cap remains **2** rounds total.
+2. **Edit the original Word with Tracked Changes?** Default **no**. Only modify
+   the original manuscript in place when the author explicitly authorizes it.
+   Without that authorization: deliver a **revised copy** (or a change log /
+   marked draft) plus the response letter — leave the original file untouched.
+
+When both rounds *are* authorized and original-file tracked changes *are*
+authorized, consolidate — do **not** emit per-round copies:
+- **One manuscript file.** All revisions are Tracked Changes on that single
+  original Word (`.docx`), accumulated across authorized rounds. `food-review`
+  adds margin **comments** to that same file each round.
+- **One combined review report.** Merge round-1 and (if any) round-2 into a
+  single report (note which round each point came from).
+- **One combined response letter.** A single point-by-point response (new
+  `.docx`) covering every comment from the round(s) run, delivered at FINALIZE.
 
 See `food-review/references/word-review-comments.md` and
 `food-paper/references/revision-response.md`.
@@ -71,9 +83,11 @@ flowchart TD
     G2 -- fail --> S2
     S3 --> G3{{author decision<br/>mandatory gate}}
     G3 -- revise --> S4[Stage 4 REVISE<br/>food-paper revise]
-    S4 --> S5[Stage 5 RE-REVIEW<br/>food-review re-review]
-    S5 -- issues --> S4
-    S5 -- accept --> S6[Stage 6 FINALIZE<br/>format + Word export]
+    S4 --> G4{{author: second round?}}
+    G4 -- no / default --> S6[Stage 6 FINALIZE<br/>format + Word export]
+    G4 -- yes authorized --> S5[Stage 5 RE-REVIEW<br/>food-review re-review]
+    S5 -- issues + author continues --> S4
+    S5 -- accept --> S6
     G3 -- accept --> S6
     S6 --> OUT[Submission-ready manuscript]
 ```
@@ -81,7 +95,8 @@ flowchart TD
 ## Entry points (mid-pipeline)
 `intake_router` detects where to start: a topic/dataset → Stage 1; a full draft →
 Stage 2 or 3; reviewer comments in hand → Stage 4. It never restarts completed
-stages unnecessarily.
+stages unnecessarily. At Stage 3/4 it records whether the author has authorized
+a second round and/or in-place tracked changes on the original Word file.
 
 ## References (load as needed)
 - `references/mode-advisor.md` — `intake_router` uses it to pick entry stage, research flavor, and skills.
@@ -91,6 +106,8 @@ stages unnecessarily.
 ## Rules
 - **Journal first, journal throughout:** re-flow references and re-check limits whenever the target journal changes.
 - **Gates are real:** `quality_gate` can send a stage back; integrity and review gates cannot be skipped, and the review decision is always the author's.
+- **One round by default:** do not auto-run RE-REVIEW; a second round needs explicit author authorization (hard cap 2).
+- **Original Word is opt-in:** do not apply tracked changes to the author's original file unless they authorize it; otherwise leave the original untouched and deliver a revised copy / change log + response letter.
 - **Food-science standards everywhere:** n and error type, validated methods, panel details, ethics/food-safety — enforced at every write/review gate.
 - **Don't duplicate work:** the specialist skills own their subagents; the pipeline sequences and gates them, it does not re-implement them.
-- **One manuscript, one report, one letter:** across the two review/revise rounds, keep all edits as tracked changes on the single original Word file, and deliver exactly one combined review report and one combined response letter (see "Review & revision artifacts").
+- **Consolidate when multi-round + original edits are authorized:** one manuscript, one combined review report, one combined response letter (see "Review & revision defaults").

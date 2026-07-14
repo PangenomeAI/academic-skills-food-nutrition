@@ -113,7 +113,9 @@ page (a GitHub Release is published automatically on each feature update).
   specialist skills (each with its own subagent team) and enforces quality gates:
   journal selection → research (`food-research`/`food-deep-research`) → write & analyze
   (`food-paper` → `food-figure`) → peer review (`food-review`) → revise →
-  re-review → finalize, with mandatory author decision points.
+  finalize, with mandatory author decision points. **Default: one** review→revise
+  round; a second round and in-place Tracked Changes on the original Word file
+  require **explicit author authorization** (avoids over-automation).
 
 ### Journal knowledge
 - **`journal-selector`** — asks which journal you're targeting (or reads it from
@@ -238,7 +240,9 @@ worldwide are warmly welcomed — open an issue or pull request.
 
 ### Contributors and institutions
 
-- **Zijian Liang** — Food Science Research Team, University of Melbourne.
+- **PangeZAU** — Principal Investigator, Food Science Research Team, University of Melbourne.
+- **Zijian Liang** — Research Coordinator, Food Science Research Team, University of Melbourne.
+- **Calebsch** — Developer, Food Science Research Team, University of Melbourne.
 
 ## Acknowledgements
 

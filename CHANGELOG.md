@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.25.3 — 2026-07
+
+- **Windows / Codex verification fix.** `scripts/check_journal_coverage.py` now
+  reads coverage maps with `encoding="utf-8"`, so the required journal-coverage
+  check no longer fails on Windows Python defaults (e.g. GBK) that cannot decode
+  the UTF-8 markdown tables. Citation and privacy self-tests were already fine.
+- **`food-pipeline` safer defaults (explicit authorization).** Default is **one**
+  review→revise round, then FINALIZE — not an automatic two-round loop. A second
+  round (RE-REVIEW) and applying Tracked Changes to the **original** Word
+  manuscript both require the author's explicit confirmation; otherwise leave the
+  original file untouched and deliver a revised copy / change log + response
+  letter. Hard cap remains 2 rounds. Updated `food-pipeline` SKILL + state machine
+  / gates / intake router, and `food-paper/references/revision-response.md`.
+
 ## 1.25.2 — 2026-07
 
 - **Fix: Claude Code plugin loaded with 0 skills.** Skills live at the repo root
