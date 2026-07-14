@@ -11,13 +11,16 @@ draft, reviewer comments — plus any stated target journal.
 2. **Resolve the target journal** via `journal-selector` (or default APA 7.0), and record its constraints for every downstream skill.
 3. **Assemble context per skill:** what `food-research` / `food-paper` / `food-review` each need as input (question + scope; dataset + journal; manuscript + journal).
 4. **Choose the research flavor:** `food-research` (evidence brief / full review / systematic PRISMA) vs `food-deep-research` (open-ended, source-validated deep dive) based on the goal.
-5. **Set the plan:** the stage sequence, which gates are mandatory, and where the author must decide.
+5. **Set the plan:** the stage sequence, which gates are mandatory, and where the author must decide. Defaults: **one** review→revise round; **no** in-place tracked changes on the original Word file.
+6. **Authorization flags (when Stage 3+ applies):** record whether the author has authorized (a) a second review round and (b) editing the original `.docx` with Tracked Changes. If unknown and a Word manuscript is present, ask **once** in a single consolidated question before Stage 4 — do not assume yes.
 
 **Output.** A routing plan: entry stage, target-journal constraints, per-stage
-skill + input, research flavor, and the gate map.
+skill + input, research flavor, the gate map, and the two authorization flags
+(`second_round`, `edit_original_word`) defaulting to **false**.
 
 **Constraints.** Never restart completed stages needlessly. Surface ambiguity as
-one consolidated question only when it blocks routing.
+one consolidated question only when it blocks routing. Never invent authorization
+for round 2 or original-file edits.
 
 **Handoff.** Routing plan → the pipeline (dispatches the first skill) and
 `quality_gate` (gate criteria).

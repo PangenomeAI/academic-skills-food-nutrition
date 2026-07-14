@@ -97,7 +97,7 @@ prep, storage). Ethics/food-safety statements where relevant.
 - `references/apa7-quickref.md` — default citation style for `citation_manager` (canonical APA 7.0 for the suite).
 - `references/faithfulness-and-citation.md` — **grounding rules + four-gate citation check; the suite's no-fabrication contract.** Run `scripts/verify_citations.py` on the reference set.
 - `references/latex-guide.md` — prepare/edit LaTeX drafts and build the PDF (Pandoc / latexmk).
-- `references/revision-response.md` — **revise mode**: tracked changes on the original Word manuscript + a point-by-point response letter (new `.docx`).
+- `references/revision-response.md` — **revise mode**: tracked changes (original Word opt-in under `food-pipeline`) + a point-by-point response letter (new `.docx`).
 - `references/privacy-and-confidentiality.md` — **privacy check before delivery** (no local paths/secrets); run `scripts/privacy_scan.py`.
 
 ## Grounding (non-negotiable)

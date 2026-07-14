@@ -19,10 +19,20 @@ The checklist `quality_gate` applies between stages. Each gate returns
 - Present the panel's decision (Accept / Minor / Major / Reject) and prioritized concerns.
 - **The author decides** which concerns to address. The pipeline does not decide this.
 
-## After REVISE / RE-REVIEW — resolution
+## After REVISE — resolution (+ optional second round)
 - [ ] Each accepted concern is actually resolved (point-by-point).
 - [ ] No new issue introduced.
-- Accept → FINALIZE; else one more loop (cap 2).
+- **Default → FINALIZE** after one round.
+- A second round (RE-REVIEW → REVISE) runs **only** if the author explicitly
+  authorizes it (hard cap 2). Never start round 2 automatically.
+- In-place Tracked Changes on the **original** Word file also require explicit
+  author authorization; otherwise leave the original untouched.
+
+## After RE-REVIEW — resolution (authorized second round only)
+- [ ] Each accepted concern from round 2 is resolved (or listed as residual).
+- [ ] No new blocking issue introduced.
+- Accept → FINALIZE; else back to REVISE within the 2-round cap, or FINALIZE with
+  residual issues listed.
 
 ## Before FINALIZE — final compliance
 - [ ] Every citation resolves (four-gate); reference style correct and consistent.

@@ -19,7 +19,7 @@ ROW = re.compile(r"\|\s*(\d+)\s*\|(.+)\|(.+)\|(.+)\|\s*([a-z0-9-]+)\s*\|")
 
 def parse(path: pathlib.Path):
     rows = []
-    for line in path.read_text().splitlines():
+    for line in path.read_text(encoding="utf-8").splitlines():
         m = ROW.match(line)
         if m:
             rows.append((int(m.group(1)), m.group(5).strip()))
