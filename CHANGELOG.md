@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.26.1 — 2026-07
+
+- **Journal skills no longer register as top-level plugin skills.** The 24
+  publisher/journal author-guideline folders under `journals/` are *reference
+  material* that `journal-selector` reads on demand (`journals/<folder>/SKILL.md`
+  → its `## Formatting constraints`), not skills a user invokes directly. They
+  were cluttering the plugin's skill list. Trimmed the `skills` array in
+  `plugin.json` and `marketplace.json` to the **7** real skills (the six
+  `food-*` skills + `journal-selector`). The journal files still ship with the
+  plugin, so `journal-selector` resolves them exactly as before.
+
 ## 1.26.0 — 2026-07
 
 - Added **Pimiao Huang** and **Chenghao Shen** (The University of Melbourne) as

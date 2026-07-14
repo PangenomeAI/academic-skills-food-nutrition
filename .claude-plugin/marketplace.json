@@ -10,7 +10,7 @@
       "name": "academic-skills-food-nutrition",
       "source": "./",
       "description": "Food & nutrition research/write/review/orchestrate skills, publisher-tiered journal skills, and a food-figure workflow — for Claude Code, Codex, and MiniMax Agent.",
-      "version": "1.26.0",
+      "version": "1.26.1",
       "license": "MIT",
       "skills": [
         "./food-research",
@@ -19,31 +19,7 @@
         "./food-review",
         "./food-pipeline",
         "./food-figure",
-        "./journal-selector",
-        "./journals/elsevier-food",
-        "./journals/food-chemistry",
-        "./journals/j-dairy-science",
-        "./journals/wiley-food",
-        "./journals/nature-food",
-        "./journals/springer-food",
-        "./journals/crit-rev-food",
-        "./journals/foods-mdpi",
-        "./journals/food-function",
-        "./journals/jafc",
-        "./journals/annu-rev-food",
-        "./journals/food-quality-safety",
-        "./journals/british-food-journal",
-        "./journals/j-future-foods",
-        "./journals/qas-crops-foods",
-        "./journals/agri-food-security",
-        "./journals/cambridge-nutrition",
-        "./journals/frontiers-nutrition",
-        "./journals/nutrition-other",
-        "./journals/nature-portfolio",
-        "./journals/science-aaas",
-        "./journals/cell-press",
-        "./journals/pnas",
-        "./journals/multidisciplinary"
+        "./journal-selector"
       ]
     }
   ]

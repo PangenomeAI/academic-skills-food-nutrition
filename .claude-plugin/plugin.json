@@ -1,6 +1,6 @@
 {
   "name": "academic-skills-food-nutrition",
-  "version": "1.26.0",
+  "version": "1.26.1",
   "description": "Original, MIT-licensed academic skills for food & nutrition science: research, journal-aware writing, peer review, and end-to-end orchestration, plus publisher-tiered journal author-guideline skills and a food-science figure workflow, for Claude Code, Codex, and MiniMax Agent. Initiated by the Food Science Group, University of Melbourne; contributions from food & nutrition research groups worldwide welcome.",
   "author": {
     "name": "PangeZAU",
@@ -27,30 +27,6 @@
     "./food-review",
     "./food-pipeline",
     "./food-figure",
-    "./journal-selector",
-    "./journals/elsevier-food",
-    "./journals/food-chemistry",
-    "./journals/j-dairy-science",
-    "./journals/wiley-food",
-    "./journals/nature-food",
-    "./journals/springer-food",
-    "./journals/crit-rev-food",
-    "./journals/foods-mdpi",
-    "./journals/food-function",
-    "./journals/jafc",
-    "./journals/annu-rev-food",
-    "./journals/food-quality-safety",
-    "./journals/british-food-journal",
-    "./journals/j-future-foods",
-    "./journals/qas-crops-foods",
-    "./journals/agri-food-security",
-    "./journals/cambridge-nutrition",
-    "./journals/frontiers-nutrition",
-    "./journals/nutrition-other",
-    "./journals/nature-portfolio",
-    "./journals/science-aaas",
-    "./journals/cell-press",
-    "./journals/pnas",
-    "./journals/multidisciplinary"
+    "./journal-selector"
   ]
 }
