@@ -5,8 +5,34 @@ science — **before** any reviewer forms an opinion. A reviewer cannot assess
 novelty, correctness, or whether a claim is over-reached without knowing the field.
 This is a **reviewer's briefing, not a literature review**.
 
-**Inputs.** The manuscript (full text, keywords, reference list) and the target
-journal (from `review_coordinator`).
+**Inputs.** The manuscript (full text, keywords, reference list), the target journal
+(from `review_coordinator`), and — **only when `food-pipeline` ran Stage 1** — that
+stage's evidence base.
+
+## Pipeline mode — reuse Stage-1 research instead of re-searching
+When invoked by **`food-pipeline`** and the pipeline **actually ran Stage 1**
+(it entered at Stage 0 or 1, so an evidence base exists), do **not** repeat the full
+Pathway-B field search — Stage 1 already did it. Instead:
+1. **Reuse the Stage-1 evidence base** (`food-research` / `food-deep-research`
+   output: validated sources, evidence matrix / synthesis, evidence grading, gap
+   list) as the field-knowledge foundation. Do **not** re-fetch sources already
+   retrieved and validated there.
+2. **Add the field's key reviews.** Run the **`food-research` `quick brief`** stream
+   to identify the **key review publications** for this topic (authoritative and
+   recent reviews; Tier 1 first) and **read those review articles in full** —
+   extracting state of the art, consensus vs contested, standard methods, and
+   benchmark ranges.
+3. **Knowledge base = Stage-1 knowledge + key-review knowledge**, in the output shape
+   below.
+
+**Pathway A still runs** — the manuscript's citations must be read and audited
+regardless — but reuse Stage-1 records for any source already retrieved there rather
+than fetching it twice.
+
+**When Stage 1 did **not** run** — the pipeline entered at Stage 2/3 with a finished
+draft, or `food-review` is used **standalone** — there is no evidence base to
+inherit: run the full **Pathway A + Pathway B** below. **Standalone behaviour is
+unchanged.**
 
 ## Pathway A — read what the manuscript cites
 1. Extract the **reference list** and map each in-text citation to the claim it is
@@ -23,6 +49,9 @@ journal (from `review_coordinator`).
    **unretrievable**. → feeds `reviewer_integrity`.
 
 ## Pathway B — read the field around the manuscript
+*(Standalone / no Stage 1. In **pipeline mode** this full search is replaced by
+Stage-1 reuse + key reviews — see above.)*
+
 5. Extract the manuscript's **keywords and research disciplines** (topic, matrix,
    technique, endpoint, application) — from the title, abstract, keywords, and
    methods, not guesswork.

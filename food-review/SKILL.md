@@ -2,7 +2,7 @@
 name: food-review
 description: "Multi-reviewer peer-review system for food & nutrition manuscripts. Simulates an editorial panel — a coordinating editor, three domain reviewers (methodology/statistics, domain/novelty, integrity/ethics), and a devil's advocate — plus a formatting-compliance check against the target journal (APA 7.0 by default, or a specific journal via journal-selector). Grounds the panel first: reads the manuscript's cited sources and the field's key literature into a knowledge base, so novelty and correctness are judged from evidence, not impression. Use for pre-submission review, reviewer reports, mock peer review, or a critique before submitting. Triggers: review my paper, peer review, referee report, reviewer reports, critique my manuscript, pre-submission review, is my paper ready, mock review, editorial review, assess novelty and rigor."
 metadata:
-  version: "2.2.0"
+  version: "2.3.0"
   verified: "2026-07"
   related_skills: [journal-selector, food-paper, food-research]
   subagents: [review_coordinator, knowledge_builder, reviewer_methodology, reviewer_domain, reviewer_integrity, devils_advocate, format_checker]
@@ -51,6 +51,13 @@ consensus vs contested points, a novelty map, and gaps — so novelty and correc
 are **judged, not guessed**. Never summarize a source that was not retrieved; mark
 abstract-only and unretrievable items. In **quick** mode, build a light version
 (Pathway A spot-checks on the load-bearing citations).
+
+**Inside `food-pipeline` (Stage 1 already ran):** don't search the field twice —
+reuse the **Stage-1 evidence base** in place of the Pathway-B search, topped up with
+`food-research` **quick brief** to find the field's **key review publications** and
+read them in full; knowledge base = Stage-1 knowledge + key-review knowledge
+(Pathway A still runs). **Standalone `food-review` is unaffected** and always builds
+the full A + B.
 
 ## Workflow
 

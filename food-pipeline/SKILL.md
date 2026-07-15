@@ -41,6 +41,27 @@ Original work.
 | 5 · RE-REVIEW | `food-review` (re-review) | **Only if the author authorizes a second round** — verifies the revision; may add new comments | accept / stop (no auto third round) |
 | 6 · FINALIZE | `food-paper` (format-convert) + `writer` | Submission-ready manuscript + review report + response letter | final compliance |
 
+## Knowledge reuse — don't research the same field twice
+When the pipeline **ran Stage 1** (it entered at Stage 0 or 1), the field has already
+been searched and synthesized. Stages **3 · REVIEW** and **5 · RE-REVIEW** must
+therefore **carry the Stage-1 evidence base into `food-review`** rather than let its
+`knowledge_builder` repeat a full literature search:
+
+- **Pass forward** the Stage-1 output (`food-research` / `food-deep-research`:
+  validated sources, evidence matrix / synthesis, grading, gap list) as the review's
+  field-knowledge foundation; don't re-fetch what Stage 1 already validated.
+- **Top it up** with the **`food-research` `quick brief`** stream to find the field's
+  **key review publications** and **read those reviews in full** (state of the art,
+  consensus vs contested, standard methods, benchmark ranges).
+- **Knowledge base = Stage-1 knowledge + key-review knowledge.** The manuscript's own
+  cited sources are still read and audited (Pathway A), reusing Stage-1 records where
+  the source was already retrieved.
+
+**If Stage 1 did not run** (entry at Stage 2/3 with a finished draft), there is
+nothing to inherit — `food-review` builds its knowledge base the full way
+(Pathway A + B). Using **`food-review` standalone is unaffected** by this rule. See
+`food-review/agents/knowledge_builder.md`.
+
 ## Review & revision defaults (Stage 3 onward) — explicit authorization
 
 **Default: one review→revise round**, then FINALIZE. Do **not** auto-run a second

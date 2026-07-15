@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.30.0 — 2026-07
+
+- **`food-pipeline` no longer researches the same field twice.** When the pipeline
+  ran **Stage 1** (entry at Stage 0/1), Stages **3 · REVIEW** and **5 · RE-REVIEW**
+  now carry the **Stage-1 evidence base** into `food-review` instead of letting
+  `knowledge_builder` repeat a full literature search. It reuses Stage 1's validated
+  sources / synthesis / gap list and **tops it up via `food-research` `quick brief`
+  to identify the field's key review publications and read those reviews in full** —
+  knowledge base = **Stage-1 knowledge + key-review knowledge**. The manuscript's own
+  cited sources are still read and audited (Pathway A), reusing Stage-1 records
+  rather than re-fetching. `intake_router` records `stage1_evidence_base:
+  available | none` and passes it through `review_coordinator`.
+- **Standalone `food-review` is unchanged** — with no Stage-1 base (used standalone,
+  or pipeline entry at Stage 2/3 with a finished draft) it still builds the full
+  Pathway A + B knowledge base. (`food-review` skill 2.3.0.)
+
 ## 1.29.0 — 2026-07
 
 - **`food-review` grounds the panel before it critiques.** New `knowledge_builder`

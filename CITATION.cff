@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 title: "Academic Skills for Food & Nutrition Science"
 type: software
-version: "1.29.0"
+version: "1.30.0"
 license: MIT
 authors:
   - family-names: Zhang
