@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.30.1 — 2026-07
+
+- **Fix: `food-paper` and `journal-selector` did not appear on Claude online (5 of 7
+  skills shown).** Both descriptions used `<journal>` as a placeholder — the only two
+  of the seven skills containing angle brackets. Read as HTML/XML tags, they made the
+  web client drop those skills, while Claude Code (desktop) tolerated them and showed
+  all 7. Length was not the cause (`food-figure`, at 926 chars, is longer than
+  `food-paper` and loaded fine). Replaced the placeholders with bracket-free wording
+  and concrete journal examples ("publish on a specific journal", "I want to publish
+  on Food Chemistry", "submit to LWT"), which also match user phrasing better. All 7
+  skill descriptions are now free of HTML/XML-like placeholders.
+
 ## 1.30.0 — 2026-07
 
 - **`food-pipeline` no longer researches the same field twice.** When the pipeline
