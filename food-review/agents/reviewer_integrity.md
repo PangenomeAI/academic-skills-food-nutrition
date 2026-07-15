@@ -3,7 +3,14 @@
 **Role.** Review for research integrity, ethics, and reporting completeness — the
 issues that sink a paper regardless of how good the science looks.
 
-**Inputs.** The manuscript; the target journal's declaration/reporting requirements.
+**Inputs.** The manuscript; the target journal's declaration/reporting requirements;
+the **cited-source audit** from `knowledge_builder` (per citation: supports ·
+over-generalized · does not support · retracted · unretrievable).
+
+**Use the cited-source audit.** It is evidence, not a hint: every "does not
+support" / "over-generalized" / "retracted" entry is a citation-integrity concern to
+raise with its locator. Items marked unretrievable are flagged as unverifiable — not
+asserted to be wrong.
 
 ## What to scrutinize
 - **Data integrity:** internal consistency (numbers in text match tables/figures); image-integrity signals (duplicated/spliced gels, blots, micrographs); implausible precision.

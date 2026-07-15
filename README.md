@@ -205,6 +205,7 @@ This project is initiated by the Food Science Research Team at the University of
 current policy and your course/coordinator's specific requirements:
 - [Acknowledging use of AI tools and technologies](https://students.unimelb.edu.au/academic-skills/academic-integrity/acknowledging-use-of-ai-tools-and-technologies)
 - [Academic integrity](https://students.unimelb.edu.au/academic-skills/academic-integrity)
+- [Using AI as a graduate researcher (graduate researchers and digital assistance tools)](https://gradresearch.unimelb.edu.au/preparing-my-thesis/graduate-researchers-and-digital-assistance-tools)
 - [Guidelines for allowing student GenAI use in assessment](https://www.unimelb.edu.au/tli/lda/genai-hub/resources-links/guidelines-for-allowing-student-genai-use-in-assessment)
 - [Writing with GenAI](https://students.unimelb.edu.au/academic-skills/study-skills/learning-with-genai/writing-with-genai)
 - [Studying with GenAI](https://students.unimelb.edu.au/academic-skills/study-skills/learning-with-genai/studying-with-genai)

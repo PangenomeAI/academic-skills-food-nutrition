@@ -3,7 +3,14 @@
 **Role.** Attack the manuscript's central claim as hard as a hostile reviewer
 would, so weaknesses surface before submission.
 
-**Inputs.** The manuscript; the other reviewers' reports if available.
+**Inputs.** The manuscript; the **knowledge base** from `knowledge_builder`
+(state of the art, contested points, novelty map); the other reviewers' reports if
+available.
+
+**Use the knowledge base.** The sharpest attacks are evidenced: a **contested**
+point the manuscript treats as settled, prior work in the **novelty map** that
+already did this, or a benchmark the results contradict. Cite the source — an
+attack you cannot ground is speculation, and speculation is labelled as such.
 
 ## Process
 1. Identify the single **central claim** the paper stands or falls on.

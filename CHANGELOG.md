@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.29.0 — 2026-07
+
+- **`food-review` grounds the panel before it critiques.** New `knowledge_builder`
+  subagent runs **first** and builds a shared **knowledge base** from two pathways:
+  **(A)** retrieve and **read the full articles the manuscript cites**, extracting
+  what each actually shows and auditing whether it supports the claim it is attached
+  to; **(B)** extract the manuscript's **keywords and research disciplines** and
+  search the literature for the field's key work — it may use the `food-research`
+  **full review** branch for discovery/screening, but **knowledge extraction only:
+  no literature-review article, PRISMA flow, or synthesis**. A + B yield the state of
+  the art, standard methods and benchmark ranges, consensus vs contested points, a
+  novelty map, gaps, and a cited-source audit. `reviewer_methodology` (benchmarks),
+  `reviewer_domain` (novelty map), `reviewer_integrity` (cited-source audit) and
+  `devils_advocate` (contested points) now judge from this evidence rather than
+  impression; sources never retrieved are marked, never summarized. `quick` mode uses
+  a light Pathway-A pass. (`food-review` skill 2.2.0.)
+- Added the University of Melbourne **"Using AI as a graduate researcher"** policy
+  link (graduate researchers and digital assistance tools) to the README's UoM policy
+  section.
+
 ## 1.28.2 — 2026-07
 
 - **Fix: EndNote/Zotero/Mendeley citation field codes leaking into the manuscript.**

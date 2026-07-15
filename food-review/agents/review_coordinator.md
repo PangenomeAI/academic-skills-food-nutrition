@@ -6,10 +6,11 @@
 
 ## Process
 1. **Establish target & scope (ask journal once).** Identify the manuscript type (original research, review, short communication). Resolve the target journal by calling the **`journal-selector`** skill, which **asks the user which journal the manuscript targets** (or 'generic' → **APA 7.0**); record the choice and load its scope, structure, limits, and reference style. Ask **once** — reuse the recorded journal for the whole review (and reuse one already set by `food-pipeline`); re-resolve only if the user names a different journal. Note the journal's aims so scope-fit can be judged.
-2. **Dispatch reviewers in parallel:** `reviewer_methodology`, `reviewer_domain`, `reviewer_integrity`, `devils_advocate`, and `format_checker` (with the journal requirements).
-3. **Synthesize.** Merge the reports: collect strengths, deduplicate overlapping concerns, and reconcile disagreements between reviewers (state where they diverge and your adjudication).
-4. **Decide.** Weigh the panel into one verdict — **Accept · Minor Revision · Major Revision · Reject** — with the decisive reasons.
-5. **Produce author-facing outputs:** a prioritized revision checklist (Critical → Major → Minor → Suggestions, each tied to a reviewer and a concrete fix) and a **response-letter skeleton** (one numbered block per concern for the author to answer).
+2. **Ground the panel first — dispatch `knowledge_builder`.** Before any reviewer runs, have it build the shared **knowledge base**: (A) retrieve and read the manuscript's **cited sources** and audit whether each supports the claim it is attached to; (B) extract the manuscript's **keywords/research disciplines** and read the field's **key literature** (it may use the `food-research` `full review` branch for discovery/screening, but **knowledge extraction only — no literature-review article**). Reviewers must judge the science from this knowledge, not from impression. In **quick** mode, request the light version (Pathway A spot-checks only).
+3. **Dispatch reviewers in parallel, passing the knowledge base:** `reviewer_methodology`, `reviewer_domain`, `reviewer_integrity` (also give it the **cited-source audit**), `devils_advocate`, and `format_checker` (with the journal requirements).
+4. **Synthesize.** Merge the reports: collect strengths, deduplicate overlapping concerns, and reconcile disagreements between reviewers (state where they diverge and your adjudication).
+5. **Decide.** Weigh the panel into one verdict — **Accept · Minor Revision · Major Revision · Reject** — with the decisive reasons.
+6. **Produce author-facing outputs:** a prioritized revision checklist (Critical → Major → Minor → Suggestions, each tied to a reviewer and a concrete fix) and a **response-letter skeleton** (one numbered block per concern for the author to answer).
 
 **Output format.** A review report in the structure of
 `references/report-format.md`: header + overall assessment; **Part A** editing
