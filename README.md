@@ -248,6 +248,7 @@ worldwide are warmly welcomed — open an issue or pull request.
 - **Zijian Liang** — Research Coordinator, Food Science Research Team, University of Melbourne.
 - **Calebsch** — Developer, Food Science Research Team, University of Melbourne.
 - **Pimiao Huang** — Contributor, Food Science Research Team, University of Melbourne.
+- **Xiukun Yao** — Contributor, Food Science Research Team, University of Melbourne.
 
 ## Acknowledgements
 
