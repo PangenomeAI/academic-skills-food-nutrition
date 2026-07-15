@@ -40,6 +40,7 @@ if SELF="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" 2>/dev/null && pwd)" \
   SRC="$SELF"; CLONED=0
 else
   SRC="$(mktemp -d)/$PLUGIN"
+  trap 'rm -rf "$(dirname "$SRC")"' EXIT
   echo "Cloning $REPO_URL …"
   git clone --depth 1 "$REPO_URL" "$SRC"
   CLONED=1
@@ -128,12 +129,12 @@ case "$TARGET" in
     else
       echo "→ MiniMax Agent (Mavis): not detected (no ~/.mavis) — skipping. Later: ./install.sh minimax"
     fi
-    if command -v openclaw >/dev/null 2>&1 || [ -d "${OPENCLAW_HOME:-$HOME/.openclaw}" ]; then
+    if command -v openclaw >/dev/null 2>&1 || [ -d "${OPENCLAW_HOME:-$HOME/.openclaw}" ] || [ -n "${OPENCLAW_HOME:-}" ]; then
       install_openclaw
     else
       echo "→ OpenClaw: not detected (no 'openclaw' CLI or ~/.openclaw) — skipping. Later: ./install.sh openclaw"
     fi
-    if command -v reasonix >/dev/null 2>&1 || [ -d "${REASONIX_HOME:-$HOME/.reasonix}" ]; then
+    if command -v reasonix >/dev/null 2>&1 || [ -d "${REASONIX_HOME:-$HOME/.reasonix}" ] || [ -n "${REASONIX_HOME:-}" ]; then
       install_reasonix
     else
       echo "→ Reasonix (DeepSeek Agent): not detected (no 'reasonix' CLI or ~/.reasonix) — skipping. Later: ./install.sh reasonix"
