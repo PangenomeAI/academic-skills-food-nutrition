@@ -2,7 +2,7 @@
 # One-command installer for academic-skills-food-nutrition.
 #
 # Claude Code: installed as a plugin (the whole repo is the plugin).
-# Codex, MiniMax Agent (Mavis), OpenClaw, and Reasonix (DeepSeek Agent): each
+# Codex, MiniMax Agent (Mavis), and OpenClaw: each
 #   skill is installed FLAT into the agent's skills directory
 #   (…/skills/<name>/SKILL.md) so the agent discovers it, PLUS the shared
 #   `journals/` and `scripts/` directories so cross-skill references
@@ -13,13 +13,12 @@
 #   ./install.sh codex      # Codex only
 #   ./install.sh minimax    # MiniMax Agent / Mavis only  (alias: mavis)
 #   ./install.sh openclaw   # OpenClaw only
-#   ./install.sh reasonix   # Reasonix (DeepSeek Agent) only
 #
 # Remote one-liner:
 #   curl -fsSL https://raw.githubusercontent.com/PangenomeAI/academic-skills-food-nutrition/main/install.sh | bash
 #
 # To UPDATE later, just re-run this script (Claude Code is updated via
-# `claude plugin update`; Codex/MiniMax/OpenClaw/Reasonix bundles are cleanly
+# `claude plugin update`; Codex/MiniMax/OpenClaw bundles are cleanly
 # replaced). Updates are never automatic — you update when you choose. Restart
 # the app afterwards.
 set -euo pipefail
@@ -102,21 +101,12 @@ install_openclaw() {
   echo "    (Override the dir with OPENCLAW_HOME.)"
 }
 
-install_reasonix() {
-  # Reasonix (DeepSeek Agent) reads SKILL.md skills from ~/.reasonix/skills.
-  local dir="${REASONIX_HOME:-$HOME/.reasonix}/skills"
-  echo "→ Reasonix (DeepSeek Agent): installing skills to $dir"
-  install_bundle "$dir"
-  echo "    Restart Reasonix to discover the skills."
-  echo "    (Override the dir with REASONIX_HOME.)"
-}
 
 case "$TARGET" in
   claude)        install_claude ;;
   codex)         install_codex ;;
   minimax|mavis) install_minimax ;;
   openclaw)      install_openclaw ;;
-  reasonix)      install_reasonix ;;
   all|both|"")
     install_claude
     if command -v codex >/dev/null 2>&1 || [ -d "${CODEX_HOME:-$HOME/.codex}" ]; then
@@ -134,13 +124,8 @@ case "$TARGET" in
     else
       echo "→ OpenClaw: not detected (no 'openclaw' CLI or ~/.openclaw) — skipping. Later: ./install.sh openclaw"
     fi
-    if command -v reasonix >/dev/null 2>&1 || [ -d "${REASONIX_HOME:-$HOME/.reasonix}" ] || [ -n "${REASONIX_HOME:-}" ]; then
-      install_reasonix
-    else
-      echo "→ Reasonix (DeepSeek Agent): not detected (no 'reasonix' CLI or ~/.reasonix) — skipping. Later: ./install.sh reasonix"
-    fi
     ;;
-  *) echo "Usage: $0 [claude|codex|minimax|openclaw|reasonix|all]"; exit 2 ;;
+  *) echo "Usage: $0 [claude|codex|minimax|openclaw|all]"; exit 2 ;;
 esac
 
 [ "${CLONED:-0}" = 1 ] && echo "(source cloned to $SRC)"
