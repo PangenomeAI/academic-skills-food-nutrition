@@ -1,6 +1,6 @@
 {
   "name": "academic-skills-food-nutrition",
-  "version": "1.31.0",
+  "version": "1.31.1",
   "description": "Original, MIT-licensed academic skills for food & nutrition science: research, journal-aware writing, peer review, and end-to-end orchestration, plus publisher-tiered journal author-guideline skills and a food-science figure workflow, for Claude Code, Codex, MiniMax Agent, and OpenClaw. Initiated by the Food Science Group, University of Melbourne; contributions from food & nutrition research groups worldwide welcome.",
   "author": {
     "name": "PangeZAU",
