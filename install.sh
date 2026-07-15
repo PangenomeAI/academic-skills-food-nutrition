@@ -97,6 +97,25 @@ install_openclaw() {
   local dir="${OPENCLAW_HOME:-$HOME/.openclaw}/skills"
   echo "→ OpenClaw: installing skills to $dir"
   install_bundle "$dir"
+
+  # Register each skill with the OpenClaw CLI so 'openclaw skills' discovers
+  # them in the current workspace (creates skills/.openclaw/source-origin.json).
+  if command -v openclaw >/dev/null 2>&1; then
+    echo "  Registering skills with OpenClaw CLI…"
+    local ok=0
+    for skill in $SKILLS; do
+      openclaw skills install --as "$skill" "$dir/$skill" 2>/dev/null && ok=$((ok + 1)) || true
+    done
+    echo "  ✔ Registered $ok/7 skills in this workspace."
+    if [ "$ok" -lt 7 ]; then
+      echo "    (Run from an OpenClaw workspace directory to register all 7.)"
+      echo "    cd <workspace> && for s in $SKILLS; do openclaw skills install --as \"\$s\" \"$dir/\$s\"; done"
+    fi
+  else
+    echo "  (OpenClaw CLI not found — to register skills in a workspace, run:"
+    echo "   cd <workspace> && for s in $SKILLS; do openclaw skills install --as \"\$s\" \"$dir/\$s\"; done)"
+  fi
+
   echo "    Restart OpenClaw (or start a new session) to discover the skills."
   echo "    (Override the dir with OPENCLAW_HOME.)"
 }
