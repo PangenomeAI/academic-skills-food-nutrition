@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- **Zenodo DOI and citation metadata.** Added the DOI badge to the README and a
+  **Citation** section explaining Zenodo's two DOIs — the **concept DOI**
+  [10.5281/zenodo.21372994](https://doi.org/10.5281/zenodo.21372994) (cite the
+  project; always resolves to the latest version) and the **version DOI**
+  [10.5281/zenodo.21372995](https://doi.org/10.5281/zenodo.21372995) (cite the exact
+  version, v1.31.1). `CITATION.cff` gains `doi` (concept), `date-released`, and both
+  DOIs as `identifiers`, and its `version` now tracks the archived release (1.31.1).
+
 ## 1.31.1 — 2026-07
 
 - **Fix: `food-paper` and `journal-selector` did not appear on Claude online (5 of 7

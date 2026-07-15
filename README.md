@@ -4,6 +4,9 @@
 
 # Academic Skills for Food & Nutrition Science
 
+[![DOI](https://zenodo.org/badge/1297924742.svg)](https://doi.org/10.5281/zenodo.21372994)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > **AI research assistant for food science and nutrition** — Claude Code, Codex,
 > MiniMax Agent, and OpenClaw skills for **literature
 > review, systematic review (PRISMA & meta-analysis), data analysis and
@@ -218,6 +221,27 @@ current policy and your course/coordinator's specific requirements:
 ### Further reading
 - Sarkar, R. (2026). Why AI can't be trusted to write scientific reviews. *Nature*. https://doi.org/10.1038/d41586-026-01616-3
 - Using AI responsibly in scientific publishing. (2026). *Nature Methods* (editorial). https://doi.org/10.1038/s41592-026-03020-1
+
+## Citation
+
+If you use these skills in your research, please cite the software:
+
+> Zhang, P., Liang, Z., Huang, P., Shen, C., & Yao, X. (2026). *Academic Skills for
+> Food & Nutrition Science* (Version 1.31.1) [Computer software]. Zenodo.
+> https://doi.org/10.5281/zenodo.21372994
+
+Zenodo mints two kinds of DOI — pick the one that matches what you mean:
+
+| DOI | Use it to |
+|---|---|
+| [10.5281/zenodo.21372994](https://doi.org/10.5281/zenodo.21372994) — **concept DOI** | Cite the project in general; always resolves to the **latest** version. Use this unless you need to pin a version. |
+| [10.5281/zenodo.21372995](https://doi.org/10.5281/zenodo.21372995) — **version DOI** | Cite the **exact version** you ran (v1.31.1), for reproducibility. |
+
+Machine-readable metadata is in [`CITATION.cff`](CITATION.cff) — GitHub's
+**"Cite this repository"** button generates APA and BibTeX from it. When you report
+AI-assisted work, also state the tool and model version you used (see
+[Using AI responsibly](#using-ai-responsibly-for-academic-work) and
+[`declarations-guide.md`](food-paper/references/declarations-guide.md)).
 
 ## Contributing
 

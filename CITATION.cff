@@ -2,8 +2,17 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 title: "Academic Skills for Food & Nutrition Science"
 type: software
-version: "1.31.0"
+version: "1.31.1"
 license: MIT
+doi: "10.5281/zenodo.21372994"
+date-released: "2026-07-15"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21372994"
+    description: "Concept DOI — always resolves to the latest version"
+  - type: doi
+    value: "10.5281/zenodo.21372995"
+    description: "DOI for version 1.31.1"
 authors:
   - family-names: Zhang
     given-names: Pangzhen
