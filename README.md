@@ -7,17 +7,19 @@
 [![DOI](https://zenodo.org/badge/1297924742.svg)](https://doi.org/10.5281/zenodo.21372994)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **AI research assistant for food science and nutrition** — Claude Code, Codex,
-> MiniMax Agent, and OpenClaw skills for **literature
+> **AI research assistant for food, nutrition and agricultural science** — Claude
+> Code, Codex, MiniMax Agent, and OpenClaw skills for **literature
 > review, systematic review (PRISMA & meta-analysis), data analysis and
 > statistics, scientific figures, journal formatting, and peer review**.
-> Food-science research automation, end to end.
+> Food, nutrition & agriculture research automation, end to end.
 
-Original, **MIT-licensed** skills for the food & nutrition research lifecycle —
-**research → write → review → revise → finalize** — where each core skill is a
-**multi-subagent system** and a master pipeline orchestrates them, with built-in
-knowledge of food & nutrition journal author guidelines and a food-science figure
-workflow. Supports Claude Code, Codex, MiniMax Agent, and OpenClaw.
+Original, **MIT-licensed** skills for the food, nutrition & agriculture research
+lifecycle — **research → write → review → revise → finalize** — where each core skill
+is a **multi-subagent system** and a master pipeline orchestrates them, with built-in
+knowledge of food, nutrition & agriculture journal author guidelines and a scientific
+figure workflow. Two parallel skill sets share one engine: **`food-*`** for food &
+nutrition science and **`agri-*`** for agricultural science. Supports Claude Code,
+Codex, MiniMax Agent, and OpenClaw.
 
 This open project was **initiated by the Food Science Group at the University of
 Melbourne**, and we warmly welcome food & nutrition research groups from around
@@ -123,24 +125,51 @@ page (a GitHub Release is published automatically on each feature update).
   round; a second round and in-place Tracked Changes on the original Word file
   require **explicit author authorization** (avoids over-automation).
 
+### Agricultural science (`agri-*`)
+The same five-skill workflow for **agricultural science**, acting as a **senior
+agricultural scientist of the relevant discipline** — agronomy · soil science ·
+horticulture · dairy & animal science · agricultural engineering · agricultural
+economics & policy · agriculture multidisciplinary.
+
+- **`agri-research`** · **`agri-deep-research`** · **`agri-paper`** ·
+  **`agri-review`** · **`agri-pipeline`** — each **delegates its machinery to the
+  corresponding `food-*` skill** (same subagents, gates, modes, and output
+  contracts) and applies three substitutions: the **persona**, the **evidence base**,
+  and **journal routing**. One engine, no duplicated architecture. Figures still go
+  through `food-figure`, which is domain-neutral.
+- **Evidence base:** agriculture + multidisciplinary literature, ranked like the food
+  suite — **Tier 1** the **230 Q1/Q2 agriculture journals** plus the
+  Nature/Science/Cell/PNAS families and Q1/Q2 adjacent disciplines; **Tier 2** Q3 for
+  gaps only; **Q4 avoided**. FAO, USDA, CGIAR, EFSA and extension sources count as
+  evidence with a source and date.
+- **Agricultural rigour:** field-trial reporting (site, season/years, soil, cultivar,
+  design, replication), **the experimental unit** (pseudoreplication is the classic
+  fatal flaw), G×E and season-to-season variation, ARRIVE for animal work, soil
+  sampling depth and equivalent-soil-mass basis, and no pot-to-field extrapolation.
+  The contract: [`agri-research/references/agriculture-domain.md`](agri-research/references/agriculture-domain.md).
+
 ### Journal knowledge
 - **`journal-selector`** — asks which journal you're targeting (or reads it from
   your request) and loads that journal's constraints. Covers the **Food Science &
-  Technology** (60) and **Nutrition & Dietetics** (59) journal lists, plus **35
-  multidisciplinary / cross-discipline** journals food & nutrition researchers
+  Technology** (60) and **Nutrition & Dietetics** (59) journal lists, the **230 Q1/Q2
+  agriculture** journals across seven JCR categories, plus **35
+  multidisciplinary / cross-discipline** journals these researchers
   publish in (Nature, Science, Cell, and PNAS families, eLife, PLOS, ES&T, Gut,
   etc.). See [`journals/_coverage.md`](journals/_coverage.md),
-  [`journals/_coverage_nutrition.md`](journals/_coverage_nutrition.md), and
+  [`journals/_coverage_nutrition.md`](journals/_coverage_nutrition.md),
+  [`journals/_coverage_agriculture.md`](journals/_coverage_agriculture.md), and
   [`journals/_coverage_multidisciplinary.md`](journals/_coverage_multidisciplinary.md).
-- **`journals/*`** — 24 publisher-tiered author-guideline skills covering the
-  **Food Science & Technology**, **Nutrition & Dietetics**, and multidisciplinary
-  journal lists
+- **`journals/*`** — 25 publisher-tiered author-guideline skills covering the
+  **Food Science & Technology**, **Nutrition & Dietetics**, **agriculture (Q1/Q2)**,
+  and multidisciplinary journal lists
   (Elsevier, Wiley, Nature Portfolio, Springer, Taylor & Francis, MDPI, RSC, ACS,
   Annual Reviews, Oxford, Emerald, KeAi/Tsinghua, Codon, BioMed Central,
-  Cambridge, Frontiers, plus a niche-publisher skill). Each lists the journals it
-  covers (see [`journals/_coverage.md`](journals/_coverage.md) and
-  [`journals/_coverage_nutrition.md`](journals/_coverage_nutrition.md)), their
-  limits, structure, **reference/citation style**, and a submission checklist.
+  Cambridge, Frontiers, plus niche-publisher skills for nutrition and agriculture).
+  Because the folders are **publisher-tiered**, an Elsevier agronomy journal reuses
+  the same Guide-for-Authors skill as an Elsevier food journal — **185 of the 230
+  agriculture journals need no new format**. Each lists the journals it
+  covers, their limits, structure, **reference/citation style**, and a submission
+  checklist.
 
 ### Figures
 - **`food-figure`** — comprehensive figure system: **analyzes your data**
@@ -175,9 +204,24 @@ checkpoints.
 
 ## Coverage
 
-All 60 target journals map to a publisher-tiered skill, verified by
-[`scripts/check_journal_coverage.py`](scripts/check_journal_coverage.py). Full
-map: [`journals/_coverage.md`](journals/_coverage.md).
+Every target journal maps to a publisher-tiered skill, verified by
+[`scripts/check_journal_coverage.py`](scripts/check_journal_coverage.py):
+
+| List | Journals | Map |
+|---|---|---|
+| Food Science & Technology | 60 | [`_coverage.md`](journals/_coverage.md) |
+| Nutrition & Dietetics | 59 | [`_coverage_nutrition.md`](journals/_coverage_nutrition.md) |
+| **Agriculture (Q1 + Q2)** | **230** (109 Q1, 121 Q2) | [`_coverage_agriculture.md`](journals/_coverage_agriculture.md) |
+| Multidisciplinary | 35 | [`_coverage_multidisciplinary.md`](journals/_coverage_multidisciplinary.md) |
+
+The agriculture list is the **Q1 and Q2** journals of all seven JCR agriculture
+categories (Agronomy · Agriculture Multidisciplinary · Dairy & Animal Science · Soil
+Science · Agricultural Economics & Policy · Horticulture · Agricultural Engineering),
+from JCR 2025, **deduplicated** across categories at each journal's best quartile.
+Q3 fills gaps only and **Q4 is avoided**. Journals already in the food or nutrition
+lists keep their existing folder (Journal of Dairy Science → `j-dairy-science`), and
+185 of the 230 reuse an existing publisher format — only society and regional titles
+fall to `agri-other`.
 
 Author-guideline details record a `Source:` URL and a `Verified:` date. Publisher
 pages change and several block automated access — confirm exact numeric limits at

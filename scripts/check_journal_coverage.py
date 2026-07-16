@@ -3,7 +3,10 @@
 
 - journals/_coverage.md must map exactly 60 food journals (numbered 1..60).
 - journals/_coverage_nutrition.md maps the nutrition journals (contiguous 1..N).
-Every referenced folder must contain a SKILL.md.
+- journals/_coverage_multidisciplinary.md and _coverage_agriculture.md likewise.
+Every referenced folder must contain a SKILL.md. Rows may carry extra columns
+(agriculture adds Category and Quartile) as long as the row starts with the number
+and ends with the skill folder.
 
 Run: python3 scripts/check_journal_coverage.py
 Exits non-zero on any problem.
@@ -14,7 +17,9 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 JOURNALS = ROOT / "journals"
-ROW = re.compile(r"\|\s*(\d+)\s*\|(.+)\|(.+)\|(.+)\|\s*([a-z0-9-]+)\s*\|")
+# Number first, skill folder last; any number of columns between (agriculture adds
+# Category and Quartile). Non-greedy middle so the folder is the FINAL cell.
+ROW = re.compile(r"^\|\s*(\d+)\s*\|(?:[^|]*\|)+?\s*([a-z0-9-]+)\s*\|\s*$")
 
 
 def parse(path: pathlib.Path):
@@ -22,7 +27,7 @@ def parse(path: pathlib.Path):
     for line in path.read_text(encoding="utf-8").splitlines():
         m = ROW.match(line)
         if m:
-            rows.append((int(m.group(1)), m.group(5).strip()))
+            rows.append((int(m.group(1)), m.group(2).strip()))
     return rows
 
 
@@ -51,6 +56,7 @@ def main() -> int:
     rc = check(JOURNALS / "_coverage.md", expected=60)
     rc |= check(JOURNALS / "_coverage_nutrition.md", expected=None)
     rc |= check(JOURNALS / "_coverage_multidisciplinary.md", expected=None)
+    rc |= check(JOURNALS / "_coverage_agriculture.md", expected=None)
     return rc
 
 

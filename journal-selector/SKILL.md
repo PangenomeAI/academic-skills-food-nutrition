@@ -10,8 +10,11 @@ metadata:
 # Journal Selector — Route a Manuscript to Its Journal Skill
 
 Maps a target journal to the correct `journals/<folder>` author-guideline skill
-and returns its `## Formatting constraints`. Full authoritative mapping of all 60
-journals: [`journals/_coverage.md`](../journals/_coverage.md).
+and returns its `## Formatting constraints`. Authoritative mappings:
+[food (60)](../journals/_coverage.md) ·
+[nutrition (59)](../journals/_coverage_nutrition.md) ·
+[multidisciplinary (35)](../journals/_coverage_multidisciplinary.md) ·
+[**agriculture Q1+Q2 (230)**](../journals/_coverage_agriculture.md).
 
 ## Behavior
 
@@ -112,6 +115,29 @@ structured abstracts, trial registration, and reporting guidelines.
   Nutrition and Metabolic Care (Lippincott); Hepatobiliary Surgery and Nutrition
   (AME); Beneficial Microbes (Brill); Food & Nutrition Research (Swedish Nutrition
   Foundation)
+
+### Agriculture journals (Q1 + Q2, seven JCR categories)
+The **230 Q1/Q2 journals** of Agronomy, Agriculture Multidisciplinary, Agriculture
+Dairy & Animal Science, Soil Science, Agricultural Economics & Policy, Horticulture,
+and Agricultural Engineering — deduplicated across categories at their best quartile.
+They **reuse the publisher-tier folders above** (an Elsevier agronomy journal follows
+the same Guide for Authors as an Elsevier food journal), so resolve them from the
+full table: [`journals/_coverage_agriculture.md`](../journals/_coverage_agriculture.md).
+Common routings:
+- **elsevier-food** — Soil Biology & Biochemistry; Computers and Electronics in Agriculture; Industrial Crops and Products; Agricultural Systems; Agricultural Water Management; Field Crops Research; Soil & Tillage Research; European Journal of Agronomy; Scientia Horticulturae; Animal Feed Science and Technology; Livestock Science; Geoderma; Agriculture Ecosystems & Environment; Bioresource Technology; Biosystems Engineering; Biomass & Bioenergy; Smart Agricultural Technology.
+- **wiley-food** — Agronomy Journal; Crop Science; Soil Science Society of America Journal; Journal of Animal Breeding and Genetics; Journal of Agronomy and Crop Science; Journal of the Science of Food and Agriculture; Plant Breeding; Grass and Forage Science; European Journal of Soil Science; Land Degradation & Development; Vadose Zone Journal; Agricultural Economics.
+- **springer-food** — Biochar; Molecular Horticulture; Precision Agriculture; Agronomy for Sustainable Development; Biology and Fertility of Soils; Plant and Soil; Irrigation Science; Journal of Soils and Sediments; Tropical Animal Health and Production; Food Security.
+- **crit-rev-food** (Taylor & Francis) — Critical Reviews in Plant Sciences; Journal of Sustainable Agriculture; Archives of Animal Nutrition; Soil Science and Plant Nutrition.
+- **foods-mdpi** — Agronomy; Agriculture; Horticulturae; Land; Animals; Plants; AgriEngineering.
+- **food-quality-safety** (Oxford) — Horticulture Research; Journal of Animal Science; Translational Animal Science; Journal of Economic Entomology.
+- **cambridge-nutrition** — Journal of Agricultural Science; Animal; Experimental Agriculture; Renewable Agriculture and Food Systems.
+- **j-future-foods** (KeAi) — Artificial Intelligence in Agriculture; The Crop Journal; Rice Science; Journal of Integrative Agriculture.
+- **annu-rev-food** — Annual Review of Animal Biosciences; Annual Review of Resource Economics.
+- **british-food-journal** (Emerald) — China Agricultural Economic Review; Agricultural Finance Review.
+- **agri-food-security** (BMC) — Agriculture & Food Security; CABI Agriculture and Bioscience.
+- **frontiers-nutrition** — Frontiers in Plant Science; Frontiers in Veterinary Science; Frontiers in Sustainable Food Systems.
+- **jafc** — Journal of Agricultural and Food Chemistry. · **j-dairy-science** — Journal of Dairy Science.
+- **agri-other** — society/regional titles with no shared format: SOIL (Copernicus); Crop and Pasture Science (CSIRO); Animal Bioscience; Journal of Animal Science and Technology; Plant Soil and Environment; Czech Journal of Animal Science; Scientia Agricola; American Journal of Enology and Viticulture; Australian Journal of Grape and Wine Research; Seed Science and Technology; and similar.
 
 ### Multidisciplinary & cross-discipline journals
 High-priority venues food/nutrition researchers publish in, grouped by publisher

@@ -1,5 +1,48 @@
 # Changelog
 
+## 1.34.0 — 2026-07
+
+- **New `agri-*` skill set for agricultural science (5 skills).** `agri-research`,
+  `agri-deep-research`, `agri-paper`, `agri-review`, and `agri-pipeline` — each
+  **delegates its machinery to the corresponding `food-*` skill** (same subagents,
+  gates, modes, and output contracts) and applies three substitutions: the
+  **persona**, the **evidence base**, and **journal routing**. No duplicated
+  architecture; figures still route through the domain-neutral `food-figure`.
+  The plugin now registers **12 skills** (was 7) — verified by installing the plugin
+  and reading its component inventory.
+  - **Persona:** a **senior agricultural scientist of the specific discipline** —
+    agronomy · agriculture multidisciplinary · dairy & animal science · soil science ·
+    agricultural economics & policy · horticulture · agricultural engineering.
+  - **Evidence base:** agriculture + multidisciplinary literature ranked as in the
+    food suite — **Tier 1** the 230 Q1/Q2 agriculture journals + Nature/Science/Cell/
+    PNAS + Q1/Q2 adjacent disciplines; **Tier 2** Q3 for gaps; **Q4 avoided**.
+    FAO/USDA/CGIAR/EFSA/extension sources count as dated evidence. Systematic reviews
+    still include by pre-specified eligibility, never prestige.
+  - **Agricultural rigour:** field-trial reporting (site, season/years, soil,
+    cultivar, design, replication), **the experimental unit / pseudoreplication**,
+    G×E and season-to-season variation, ARRIVE for animal work, soil sampling depth
+    and equivalent-soil-mass basis, no pot-to-field extrapolation. Contract:
+    `agri-research/references/agriculture-domain.md`.
+  - Everything else is **inherited unchanged**: anti-fabrication grounding, four-gate
+    citations, privacy scan, `journal-selector` ask-once, the review report format
+    and editor queries, `human-writing.md`, and the mandatory AI-use disclosure.
+- **Agriculture journal coverage (Q1 + Q2): 230 journals** across the seven JCR
+  agriculture categories (JCR 2025), **deduplicated** across categories at each
+  journal's best quartile — new `journals/_coverage_agriculture.md` (109 Q1, 121 Q2).
+  **No duplicate formats:** because the journal folders are publisher-tiered, **185 of
+  the 230 reuse an existing skill** (an Elsevier agronomy journal follows the same
+  Guide for Authors as an Elsevier food journal), and journals already in the food or
+  nutrition lists **keep their existing folder** (Journal of Dairy Science →
+  `j-dairy-science`, Food Policy → `elsevier-food`). Only the society/regional tail
+  gets one new folder, **`journals/agri-other`** (Copernicus, CSIRO, Czech Academy,
+  CABI, AAAP, KSAST, ISTA, ASEV, USP/ESALQ and similar). `journal-selector` resolves
+  agriculture journals and lists the common routings.
+- `scripts/check_journal_coverage.py` now validates the agriculture map too, and
+  accepts rows with extra columns (agriculture adds Category and Quartile) as long as
+  the row starts with the number and ends with the skill folder.
+- README, plugin, and marketplace descriptions updated to cover food, nutrition **and
+  agriculture**; added `agriculture`/`agronomy`/`soil-science`/`horticulture` keywords.
+
 ## 1.33.0 — 2026-07
 
 - **`human-writing.md` completed against both sources.** A coverage audit found the

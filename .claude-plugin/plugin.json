@@ -1,7 +1,7 @@
 {
   "name": "academic-skills-food-nutrition",
-  "version": "1.33.0",
-  "description": "Original, MIT-licensed academic skills for food & nutrition science: research, journal-aware writing, peer review, and end-to-end orchestration, plus publisher-tiered journal author-guideline skills and a food-science figure workflow, for Claude Code, Codex, MiniMax Agent, and OpenClaw. Initiated by the Food Science Group, University of Melbourne; contributions from food & nutrition research groups worldwide welcome.",
+  "version": "1.34.0",
+  "description": "Original, MIT-licensed academic skills for food, nutrition & agricultural science: research, journal-aware writing, peer review, and end-to-end orchestration, plus publisher-tiered journal author-guideline skills (food, nutrition, agriculture Q1/Q2, and multidisciplinary) and a scientific figure workflow, for Claude Code, Codex, MiniMax Agent, and OpenClaw. Initiated by the Food Science Group, University of Melbourne; contributions from food, nutrition & agriculture research groups worldwide welcome.",
   "author": {
     "name": "PangeZAU",
     "url": "https://github.com/PangenomeAI"
@@ -18,7 +18,11 @@
     "peer-review",
     "journal-guidelines",
     "scientific-figures",
-    "scholarly-publishing"
+    "scholarly-publishing",
+    "agriculture",
+    "agronomy",
+    "soil-science",
+    "horticulture"
   ],
   "skills": [
     "./food-research",
@@ -27,6 +31,11 @@
     "./food-review",
     "./food-pipeline",
     "./food-figure",
+    "./agri-research",
+    "./agri-deep-research",
+    "./agri-paper",
+    "./agri-review",
+    "./agri-pipeline",
     "./journal-selector"
   ]
 }

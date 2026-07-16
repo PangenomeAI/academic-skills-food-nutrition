@@ -4,13 +4,13 @@
     "name": "PangeZAU",
     "url": "https://github.com/PangenomeAI"
   },
-  "description": "Original, MIT-licensed academic skills for food & nutrition science — research, journal-aware writing, peer review, orchestration, journal author-guideline skills, and food-science figure generation — for Claude Code, Codex, MiniMax Agent, and OpenClaw.",
+  "description": "Original, MIT-licensed academic skills for food, nutrition & agricultural science — research, journal-aware writing, peer review, orchestration, journal author-guideline skills, and scientific figure generation — for Claude Code, Codex, MiniMax Agent, and OpenClaw.",
   "plugins": [
     {
       "name": "academic-skills-food-nutrition",
       "source": "./",
-      "description": "Food & nutrition research/write/review/orchestrate skills, publisher-tiered journal skills, and a food-figure workflow — for Claude Code, Codex, MiniMax Agent, and OpenClaw.",
-      "version": "1.33.0",
+      "description": "Food, nutrition & agriculture research/write/review/orchestrate skills, publisher-tiered journal skills, and a figure workflow — for Claude Code, Codex, MiniMax Agent, and OpenClaw.",
+      "version": "1.34.0",
       "license": "MIT",
       "skills": [
         "./food-research",
@@ -19,6 +19,11 @@
         "./food-review",
         "./food-pipeline",
         "./food-figure",
+        "./agri-research",
+        "./agri-deep-research",
+        "./agri-paper",
+        "./agri-review",
+        "./agri-pipeline",
         "./journal-selector"
       ]
     }
