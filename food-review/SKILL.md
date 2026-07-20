@@ -82,7 +82,8 @@ flowchart TD
 
 ## Formatting / target journal
 The `review_coordinator` first establishes the target journal by calling
-**`journal-selector`**, which **asks the user which journal the manuscript targets**
+**`journal-selector/SKILL.md`** (a shared procedure, not an installed skill), which
+**asks the user which journal the manuscript targets**
 (they may answer 'generic' → **APA 7.0**). This is asked **once**: the resolved
 journal's structure, limits, and reference/citation style are recorded and reused,
 and `format_checker` audits the manuscript against them. Don't re-ask unless the

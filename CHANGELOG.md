@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.36.0 — 2026-07
+
+- **`journal-selector` no longer appears in the skill list (12 → 11 skills).** It is
+  machinery the other skills use, not something a user invokes, so it cluttered the
+  `/` menu. Unregistered from `plugin.json` and `marketplace.json`; it still **ships
+  with the plugin** and is now loaded as a **shared procedure file**
+  (`journal-selector/SKILL.md`) — the same treatment the 24 `journals/*` author-guideline
+  files already get. Every "call the `journal-selector` skill" phrasing across
+  `food-*`/`agri-*` was rewritten to load the file, so journal resolution keeps
+  working; users still reach it by naming a journal to any skill.
+- **Reformatting a finished manuscript is now discoverable.** A user with a done,
+  reviewed, polished paper who only wants another journal's format should use
+  **`food-paper` / `agri-paper` `format-convert`** — not the pipeline, which would
+  re-research, re-review, and re-edit finished work. Added explicit triggers to both
+  descriptions ("reformat my manuscript for a different journal", "change the journal
+  format", "my paper is finished I just need the formatting"), a **"Which one do I
+  pick?"** table to the README, and a routing row + explicit warning to
+  `food-pipeline`'s `mode-advisor.md`.
+
 ## 1.35.0 — 2026-07
 
 - **Reports are Word (`.docx`), not Markdown.** `report-format.md` never named a file

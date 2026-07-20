@@ -20,7 +20,7 @@ enforces quality gates between stages, and manages the review→revise loop.
 Original work.
 
 ## Skills it orchestrates (each brings its own subagent team)
-- **`journal-selector`** — target-journal constraints (structure, limits, reference style, figure spec).
+- **`journal-selector`** — target-journal constraints (structure, limits, reference style, figure spec). A **shared procedure, not an installed skill**: load `journal-selector/SKILL.md` and follow it.
 - **`food-research`** — literature/evidence synthesis (quick brief / full review / **systematic** PRISMA + OHAT). Use **`food-deep-research`** instead for an open-ended, source-validated deep dive or a standalone literature review.
 - **`food-paper`** — whole-process manuscript system (field → questions → data/stats → figures → argument → draft → polish → self-review).
 - **`food-figure`** — submission-grade figures at the journal spec (invoked within `food-paper`).

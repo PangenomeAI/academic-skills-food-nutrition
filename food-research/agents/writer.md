@@ -11,7 +11,7 @@ style.
 
 ## Formatting
 - Default **APA 7.0**.
-- If the user named a **target journal**, call the **`journal-selector`** skill to
+- If the user named a **target journal**, load the **`journal-selector`** procedure (`journal-selector/SKILL.md`) to
   apply that journal's structure, section order, word/abstract limits, and
   reference/citation style. Re-flow the whole reference list and in-text markers
   to that style.

@@ -149,8 +149,10 @@ economics & policy · agriculture multidisciplinary.
   The contract: [`agri-research/references/agriculture-domain.md`](agri-research/references/agriculture-domain.md).
 
 ### Journal knowledge
-- **`journal-selector`** — asks which journal you're targeting (or reads it from
-  your request) and loads that journal's constraints. Covers the **Food Science &
+- **`journal-selector`** *(shared machinery — deliberately **not** in the skill
+  list)* — asks which journal you're targeting (or reads it from
+  your request) and loads that journal's constraints. You never invoke it directly:
+  just name a journal to any skill above and it runs. Covers the **Food Science &
   Technology** (60) and **Nutrition & Dietetics** (59) journal lists, the **230 Q1/Q2
   agriculture** journals across seven JCR categories, plus **35
   multidisciplinary / cross-discipline** journals these researchers
@@ -201,6 +203,23 @@ re-flows the reference list into the journal's citation style; any figure
 request goes to `food-figure` at the journal's DPI and column width. Ask for the
 whole thing and `food-pipeline` runs research → write → review → revise with
 checkpoints.
+
+### Which one do I pick?
+Use the smallest skill that does the job — the pipeline is for whole projects, not
+one-off tasks.
+
+| You have… | You want… | Use |
+|---|---|---|
+| A topic or question | The evidence | `food-research` (or `agri-research`) |
+| A dataset / results | A manuscript | `food-paper` (or `agri-paper`) |
+| A finished draft | A critique before submitting | `food-review` (or `agri-review`) |
+| Reviewer comments + your draft | The revision + responses | `food-paper` **revise** |
+| **A finished, reviewed, polished paper** | **Only to change it to another journal's format** | **`food-paper` `format-convert`** — say *"reformat my manuscript for Food Chemistry"*. It re-flows structure, word/abstract limits, headings and the **whole reference list** into the new style, exports `.docx`/LaTeX/PDF, and **preserves EndNote/Zotero citation fields** — **no re-research, no re-review, no rewriting of your science.** |
+| A topic and nothing else, and you want it all | The whole project managed | `food-pipeline` (or `agri-pipeline`) |
+
+Reformatting is deliberately **not** a pipeline job: running the pipeline on a
+finished paper would re-research, re-review, and re-edit work you already consider
+final.
 
 ## Coverage
 

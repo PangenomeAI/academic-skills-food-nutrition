@@ -27,7 +27,7 @@ flowchart TD
 
 ## Formatting
 Default **APA 7.0**. If the user names a **target journal**, call the
-**`journal-selector`** skill to pull that journal's structure, limits, and
+the **`journal-selector`** procedure (`journal-selector/SKILL.md`) to pull that journal's structure, limits, and
 reference style, and format to it. Cite by key from `bibliography`; never
 fabricate citations or data.
 

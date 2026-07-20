@@ -1,6 +1,6 @@
 ---
 name: food-paper
-description: "Multi-subagent manuscript system for food & nutrition science covering the whole research process: understand the field (literature), frame research questions, curate and analyze data, run statistics, build figures and tables, construct arguments and discussion, draft and polish the manuscript, and self-review — journal-aware throughout. Resolves the target journal first and formats to it (APA 7.0 default or a specific journal via journal-selector); routes figures through food-figure and deep literature through food-research. Use to write, outline, revise, or format a food-science paper or any section. Triggers: write my paper, draft a manuscript, food science paper, outline my paper, revise my manuscript, analyze my data and write it up, statistics for my paper, build figures for my paper, polish my manuscript, format for a journal, publish on a specific journal."
+description: "Multi-subagent manuscript system for food & nutrition science covering the whole research process: understand the field, frame research questions, curate and analyze data, run statistics, build figures and tables, construct the discussion, draft, polish, and self-review — journal-aware throughout. Includes a format-convert mode that reformats an already-finished manuscript to another journal's structure and reference style without touching the science. Use to write, outline, revise, polish, or reformat a food-science paper or any section. Triggers: write my paper, draft a manuscript, food science paper, outline my paper, revise my manuscript, analyze my data and write it up, statistics for my paper, polish my manuscript, format for a journal, reformat my manuscript for a different journal, change the journal format, convert to another journal style, my paper is finished I just need the formatting."
 metadata:
   version: "2.1.0"
   verified: "2026-07"
@@ -29,7 +29,8 @@ and writing process. Original work; architecture informed by open community
 paper-writing and Nature-style skills (see the repo README Acknowledgements).
 
 ## First move — resolve the target journal (once)
-Before drafting, call **`journal-selector`**, which **asks the author which journal
+Before drafting, load **`journal-selector/SKILL.md`** (a shared procedure, not an
+installed skill) and follow it — it **asks the author which journal
 they are targeting** (they may answer 'generic' for **APA 7.0** defaults). Do this
 **once**: record the resolved journal and its constraints and reuse them for every
 subagent and stage — do **not** ask again. Re-run `journal-selector` only if the

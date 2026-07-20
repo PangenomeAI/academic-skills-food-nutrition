@@ -9,8 +9,14 @@ skills to run.
 | A topic / question only | RESEARCH |
 | A dataset / results | WRITE (analysis happens inside `food-paper`) |
 | A full draft | WRITE (finish) or REVIEW |
+| **A finished, already-reviewed and polished manuscript — only the formatting needs to change** | **`food-paper` `format-convert` standalone. Do NOT run the pipeline** — no research, no review, no rewriting. Resolve the target journal, re-flow structure/limits/reference style, export. |
 | Reviewer comments + draft | REVISE |
 | A literature question, no manuscript planned | `food-research` or `food-deep-research` standalone (skip the write path) |
+
+**Don't over-process a finished paper.** If the author says the science is done and
+they just want it to fit another journal, the whole pipeline is the wrong tool: it
+would re-research, re-review, and re-edit work they already consider final. Route
+straight to `food-paper` **format-convert** (or `agri-paper` for agriculture).
 
 ## Research flavor
 | Goal | Use |

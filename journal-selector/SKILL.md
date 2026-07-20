@@ -9,6 +9,13 @@ metadata:
 
 # Journal Selector — Route a Manuscript to Its Journal Skill
 
+> **Shared procedure, not an installed skill.** `journal-selector` is **not**
+> registered in the plugin's skill list — it is machinery the other skills use, so it
+> doesn't clutter the user's `/` menu. The `food-*` and `agri-*` skills **load this
+> file** (`journal-selector/SKILL.md`) and follow the steps below; users reach it
+> automatically by naming a target journal to any of them. It still ships with the
+> plugin, exactly like the `journals/*` author-guideline files it resolves to.
+
 Maps a target journal to the correct `journals/<folder>` author-guideline skill
 and returns its `## Formatting constraints`. Authoritative mappings:
 [food (60)](../journals/_coverage.md) ·

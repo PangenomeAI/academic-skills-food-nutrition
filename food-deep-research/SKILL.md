@@ -71,7 +71,8 @@ to `compiler` until Accept (cap ~2–3), then deliver.
 - Every claim carries a source and locator; inference is labelled as inference.
 
 ## Formatting — resolve the target journal once
-At the start, call **`journal-selector`**, which **asks which journal the review
+At the start, load **`journal-selector/SKILL.md`** (a shared procedure, not an
+installed skill), which **asks which journal the review
 targets** (they may answer 'generic' → **APA 7.0**). Ask **once**: record the
 choice and reuse it in `bibliography` and `compiler` to format the review to that
 journal's structure, limits, and reference style — don't ask again. Reuse a

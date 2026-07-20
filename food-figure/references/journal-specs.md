@@ -4,7 +4,7 @@ Export figures to the target journal's requirements. When a journal is set, get
 its spec from the journal skill; otherwise use the defaults below.
 
 ## How to get the spec
-1. Resolve the target journal via the **`journal-selector`** skill.
+1. Resolve the target journal via the **`journal-selector`** procedure (`journal-selector/SKILL.md`).
 2. Read that journal skill's `## Formatting constraints` block — use
    `figure_dpi`, `column_widths_mm` (or `_cm`), and any format requirement
    (e.g. RSC/ACS **TOC graphic**, MDPI **≥1000 dpi line art**, Nature accessible
