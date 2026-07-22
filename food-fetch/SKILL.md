@@ -8,6 +8,7 @@ metadata:
   related_skills: [food-research, food-deep-research, food-review, food-paper, agri-research, agri-review]
   references:
     - references/access-routing.md
+    - references/institution-profiles.md
     - references/institutional-access.md
     - references/format-reading.md
     - references/manifest-and-status.md
