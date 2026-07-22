@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.42.0 — 2026-07
+
+- **Open-access full text is now mandatory to fetch — not optional.** A real test
+  showed the agent "reconciling citation keys" and reading search snippets instead of
+  reading the papers, then labelling it "Pathway A performed". Fixed: `knowledge_builder`,
+  `screener_appraiser` (Phase B), `data_extractor`, and `investigator` (Pass 2) now
+  **must download and read every open-access article** (`scripts/fetch_oa.py`); metadata
+  reconciliation or snippet-reading is explicitly **not** an acceptable substitute, and
+  each run produces a **coverage manifest** with a typed status per reference.
+- **New `food-fetch` skill (6 subagents) — lawful full-text acquisition.** Registered as
+  the 12th skill. It turns a reference list / DOIs into **read full text** via a
+  legal-access ladder — **open access** (Unpaywall/OpenAlex/PMC/arXiv, always downloaded)
+  → the user's **reference-manager library** (EndNote/Zotero/Mendeley PDFs, read-only) →
+  the user's **own logged-in institutional browser session** for entitled full text →
+  user-supplied PDFs — and writes a coverage manifest (`open_access_downloaded`,
+  `library_pdf_read`, `institutional_downloaded`, `oa_not_found`,
+  `library_no_permission`, …). Subagents: `fetch_coordinator`, `access_router`,
+  `oa_fetcher`, `library_fetcher`, `institutional_fetcher`, `pdf_reader`. **Strict lawful
+  boundaries** — never bypasses paywalls, DRM, logins, or 2FA; never handles passwords,
+  cookies, or OTP codes; no bulk downloading; hands every login/CAPTCHA to the user.
+  Architecture informed by the open-source (MIT) `nature-downloader` skill; original text.
+  `food-research`, `food-deep-research`, `food-review` call it; `agri-*` via delegation.
+- New **`scripts/fetch_oa.py`** (`--selftest`): downloads legal OA PDFs for a DOI list,
+  verifies each is a real PDF (`%PDF`), and writes a manifest. Verified live — downloaded
+  a PLOS OA PDF, correctly marked a paywalled DOI `oa_not_found`.
+
 ## 1.41.0 — 2026-07
 
 - **Full-text access now covers discovered, *not-yet-cited* literature — not just the

@@ -120,6 +120,15 @@ page (a GitHub Release is published automatically on each feature update).
   advocate) with a **formatting-compliance check** against the target journal
   (APA 7.0 default, or a specific journal via `journal-selector`), ending in an
   editorial decision + revision checklist + response-letter skeleton.
+- **`food-fetch`** — **lawful full-text acquisition** (6 subagents) so the research
+  and review skills read **papers, not abstracts**. Routes each article through legal
+  **open access** (Unpaywall/OpenAlex/PMC/arXiv — always downloaded via
+  [`scripts/fetch_oa.py`](scripts/fetch_oa.py)), the user's **own reference-manager
+  library** (EndNote/Zotero/Mendeley PDFs, read-only), and — only with the user's
+  **own logged-in institutional browser session** — their library's **entitled** full
+  text; then writes a coverage **manifest** of what was and wasn't obtained. **Never
+  bypasses paywalls, DRM, logins, or 2FA**, and never summarizes a paper it didn't
+  read. Called by `food-research`, `food-deep-research`, and `food-review`.
 - **`food-pipeline`** — **master orchestrator** that routes a project to the
   specialist skills (each with its own subagent team) and enforces quality gates:
   journal selection → research (`food-research`/`food-deep-research`) → write & analyze
@@ -437,7 +446,10 @@ by — but contains no code or text from — earlier community projects explorin
 academic-research and scientific-figure skills for Claude Code, including the
 `nature-skills` collection (Apache-2.0), `deer-flow` (MIT), `Light-skills` (MIT),
 `academic-figure-skills` and `academic-figure-generator` (MIT),
-`Awesome-Journal-Skills` (MIT), [`humanizer`](https://github.com/blader/humanizer)
+`Awesome-Journal-Skills` (MIT), [`nature-downloader`](https://github.com/Yuan1z0825/nature-skills/tree/main/skills/nature-downloader)
+(MIT — its lawful-access routing, status-manifest, and institutional-session
+architecture informed our original [`food-fetch`](food-fetch/SKILL.md) skill),
+[`humanizer`](https://github.com/blader/humanizer)
 (MIT, Siqi Chen — whose AI-writing-pattern taxonomy, itself informed by Wikipedia's
 "Signs of AI writing", shaped our
 [`human-writing.md`](food-paper/references/human-writing.md) guide, rewritten for

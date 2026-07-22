@@ -18,14 +18,16 @@ identifiers (title, authors, year, venue, DOI/URL) and the tool/source that
 found each. Do not extract detailed evidence yet — these candidates go to
 `source_screener` → `source_verifier` first. Note obvious off-topic removals.
 
-**Pass 2 — Evidence extraction (validated set only).** First **obtain the full text**
-of each validated source via `food-research/references/full-text-access.md` (open
-access via `scripts/resolve_oa.py` / PMC → connected tool → **the user's
-reference-manager library / provided PDFs**); the locators below (section / page /
-table / figure) require the actual article. If a source stays paywalled and unsupplied,
-extract only what its abstract supports, mark it **abstract-only**, and record the
-access route — never invent a value or locator. For each validated source relevant to
-the sub-question, extract evidence as structured records:
+**Pass 2 — Evidence extraction (validated set only).** First **obtain and read the
+full text** of each validated source via the **`food-fetch`** skill
+(`food-research/references/full-text-access.md`) — **open-access sources MUST be
+downloaded and read** (`scripts/fetch_oa.py`), then the user's reference-manager
+library / institutional session / provided PDFs; the locators below (section / page /
+table / figure) require the actual article, not the abstract. If a source is genuinely
+paywalled and unsupplied, extract only what its abstract supports, mark it
+**abstract-only**, and record the access route — never invent a value or locator. For
+each validated source relevant to the sub-question, extract evidence as structured
+records:
 
 ```
 - claim: <one specific finding, in your words>

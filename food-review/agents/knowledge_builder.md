@@ -48,16 +48,17 @@ Skip this in pipeline mode when a Stage-1 evidence base is already supplied.
 1. Extract the **reference list** and map each in-text citation to the claim it is
    attached to. Mark which citations are **load-bearing** — the ones the central
    claims (and the reviewers' likely key concerns) depend on.
-2. **Retrieve the full text** of each cited work by working the retrieval ladder in
-   **`food-research/references/full-text-access.md`**: open-access copy (Europe PMC /
-   PMC, Unpaywall/OpenAlex OA URL, preprint servers, free publisher HTML) → a
-   connected full-text tool/MCP if the user has one → institutional/green-OA copy →
-   **user-supplied PDFs** → a logged-in library browser session. Read the **full
-   article** where any of these reaches it; where only the abstract is reachable, use
-   the abstract and **record that limitation** with the access route. **Legitimate
-   access only — never bypass a paywall or scrape against terms.** For a fast OA
-   lookup per DOI, `python3 scripts/resolve_oa.py <doi>` returns the free PDF URL when
-   one exists.
+2. **Retrieve and read the full text** of each cited work via the **`food-fetch`**
+   skill (or its `scripts/fetch_oa.py`), working the ladder in
+   **`food-research/references/full-text-access.md`**: open access → the user's
+   reference-manager library → the user's institutional session → user PDFs.
+   **Open-access articles MUST be downloaded and read** — run
+   `python3 scripts/fetch_oa.py --dois <…> --out <folder>` and read the PDFs. It is
+   **not acceptable** to reconcile citation keys, read search-result snippets, or stop
+   at the abstract for an article that is open access; doing so and calling Pathway A
+   "performed" is the exact overclaim this rule forbids. Where a paper is genuinely
+   paywalled and unsupplied, use the abstract and **record that limitation** with the
+   access route. **Legitimate access only — never bypass a paywall or scrape.**
 3. **Escalate for load-bearing citations that stay paywalled.** Don't silently
    settle for abstracts on the papers that matter. Once you've worked the ladder,
    surface **one consolidated request**: list those DOIs and ask the user to drop the
@@ -111,10 +112,13 @@ Merge both pathways into one briefing. **Output — Reviewer knowledge base:**
   over-generalized · does not support · retracted · unretrieved) **and the access
   route** (open access · connected tool · user PDF · abstract-only · unretrieved), so
   the audit's depth is transparent.
-- **Coverage & limits** — how many of the **load-bearing** citations were read in
-  full vs abstract-only vs unretrieved, what a paywall blocked, and therefore how
-  deep the grounding actually goes. If key sources are unread, say so plainly and
-  point to `full-text-access.md` for what the author can enable.
+- **Coverage manifest** — from `food-fetch`: **every** cited reference with a typed
+  status (`open_access_downloaded` · `library_pdf_read` · `institutional_downloaded` ·
+  `oa_not_found` · `library_no_permission` · `abstract_only`) and its access route,
+  ending in the count **read-in-full vs abstract-only vs unavailable**. Every
+  open-access source must show as downloaded/read, not abstract-only. If key sources
+  are unread, say so plainly and point to `full-text-access.md` for what the author
+  can enable.
 
 Every entry carries its **source + locator**.
 

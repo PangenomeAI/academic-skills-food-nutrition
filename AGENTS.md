@@ -72,6 +72,7 @@ python3 scripts/verify_citations.py --selftest        # citation/anti-fabricatio
 python3 scripts/privacy_scan.py --selftest            # privacy/confidentiality gate
 python3 scripts/check_docx_fields.py --selftest       # leaked EndNote/Zotero field-code gate
 python3 scripts/resolve_oa.py --selftest              # open-access PDF resolver (Unpaywall/OpenAlex)
+python3 scripts/fetch_oa.py --selftest                # open-access PDF downloader + manifest (food-fetch)
 
 # 3. Manifests are valid JSON (and, if you have Claude Code, validate the plugin)
 python3 -c "import json;[json.load(open(p)) for p in ['.claude-plugin/plugin.json','.claude-plugin/marketplace.json']];print('json ok')"

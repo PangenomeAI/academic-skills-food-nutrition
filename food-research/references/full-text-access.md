@@ -49,8 +49,17 @@ if they decline, continue at open-access + abstract level and say so in the outp
 coverage note). If they give a folder, confirm what you found (e.g. "read 34 PDFs
 from your EndNote library") so access is transparent.
 
+## Acquisition is done by the `food-fetch` skill
+The **`food-fetch`** skill (multi-subagent) performs the acquisition described below —
+call it to download/read full text and get a coverage manifest; `scripts/fetch_oa.py`
+is its open-access workhorse. **Open-access articles MUST be downloaded and read** —
+reconciling citation keys, reading search-result snippets, or stopping at the abstract
+for an open-access paper is not acceptable and must never be reported as having read
+the paper.
+
 ## Retrieval ladder — try in order, per cited source
-1. **Open-access copy (free, legitimate).**
+1. **Open-access copy (free, legitimate) — always download and read it.** Run
+   `python3 scripts/fetch_oa.py --dois <…> --out <folder>` (or `food-fetch`).
    - **Europe PMC** / **PMC** full-text (`europepmc.org`, `pmc.ncbi.nlm.nih.gov`).
      **Prefer this for reading an OA article's text** — it serves clean HTML full
      text without the consent/auth gates that publisher sites often use.
