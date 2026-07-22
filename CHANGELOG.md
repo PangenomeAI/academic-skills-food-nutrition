@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.41.0 — 2026-07
+
+- **Full-text access now covers discovered, *not-yet-cited* literature — not just the
+  papers the manuscript cites.** `full-text-access.md` is reframed around **two
+  situations**: (A) papers the manuscript already cites (the user's reference-manager
+  library is the best source), and (B) field literature discovered to build a broader
+  knowledge base (the library usually won't have it, so open access + connected tools
+  are the realistic routes, and only the **key subset** — authoritative reviews and
+  closest prior work — is read in full; the rest stay abstract/metadata level, which
+  is expected for a field scan).
+- **Fixed the Pathway B gap in `knowledge_builder`.** Step 7 previously said "read the
+  key sources" with no retrieval method, so the *discovery* side silently stopped at
+  abstracts. It now works the retrieval ladder for the key discovered subset (open
+  access via `resolve_oa.py`/PMC → connected tool), marks abstract-only reads with
+  their access route, and reuses the `food-research` full-review branch's full-text
+  records when it delegated discovery there. (The research skills' `source_scout` →
+  `screener_appraiser` Phase B, `sr_search` → `data_extractor`, and `investigator`
+  Pass 1 → Pass 2 chains were already wired in 1.40.0.) `agri-*` inherit via delegation.
+
 ## 1.40.0 — 2026-07
 
 - **Skills now ask for full-text access up front, with a highlighted request.** Any

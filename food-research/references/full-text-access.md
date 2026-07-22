@@ -1,8 +1,23 @@
-# Getting the Full Text of a Cited Paper
+# Getting the Full Text of an Article
 
 Canonical retrieval policy for any agent that must **read the actual article**, not
-just its abstract: `knowledge_builder` (Pathway A), `food-research` /
-`food-deep-research` (`source_verifier`, `investigator`), and the `agri-*` equivalents.
+just its abstract. It applies to **two situations**, with the same ladder but
+different realistic routes:
+
+- **(A) Papers the manuscript already cites** — `knowledge_builder` **Pathway A**;
+  `food-paper`/`food-review` integrity checks. The user's **reference-manager
+  library** is the best source here — they cited these, so they usually have the PDFs.
+- **(B) Field literature the manuscript does *not* cite**, discovered to build a
+  broader knowledge base — `knowledge_builder` **Pathway B**; `food-research`
+  (`source_scout` discovers → `screener_appraiser` Phase B / `data_extractor` read);
+  `food-deep-research` (`investigator` Pass 1 discovers → Pass 2 reads). Here the
+  user's library usually **won't** have the paper (it wasn't cited), so the realistic
+  routes are **open access (`resolve_oa.py`/PMC) and connected literature tools**, and
+  — as in any screening — you **full-text-read only the key subset** (key reviews and
+  the closest prior work / novelty-map candidates); the rest are screened at
+  abstract/metadata level, which is expected and fine for a field scan.
+
+The `agri-*` skills inherit this via delegation.
 
 ## Why full text is often not reachable
 In an AI agent environment you can freely reach **metadata and abstracts** (Crossref,
