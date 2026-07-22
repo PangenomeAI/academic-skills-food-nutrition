@@ -126,6 +126,7 @@ tooling is available, deliver a location→comment table instead and say so.
 - `references/ethics-integrity-checklist.md` — `reviewer_integrity` (canonical; shared with `food-deep-research`).
 - `food-paper/references/statistics-reporting.md` — `reviewer_methodology`: stats red flags.
 - `food-paper/references/faithfulness-and-citation.md` — `reviewer_integrity`: verify every citation is real (four-gate) and every claim is source-bound; flag any fabricated/unsupported content.
+- `food-research/references/full-text-access.md` — **`knowledge_builder`**: how to actually read the cited papers (open access → connected tool → user-supplied PDFs → library session), when to ask the author for access, and how to report what a paywall blocked.
 - `food-paper/references/privacy-and-confidentiality.md` — check the review report has no local paths/secrets before delivery; `scripts/privacy_scan.py`.
 
 ## Handoff

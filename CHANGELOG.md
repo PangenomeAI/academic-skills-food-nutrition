@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.37.0 — 2026-07
+
+- **Full-text access for the review knowledge base.** During testing,
+  `knowledge_builder` correctly refused to summarize cited papers it could not open
+  ("can't extract cited source PDFs in this environment") — honest, but it had no
+  real retrieval strategy and no way for the author to supply access. New
+  `food-research/references/full-text-access.md` defines a **retrieval ladder** —
+  open-access copy (Europe PMC/PMC, Unpaywall/OpenAlex OA URL, preprint servers, free
+  publisher HTML) → a connected full-text tool/MCP → institutional/green-OA copy →
+  **user-supplied PDFs** → a user-driven logged-in library browser session — with
+  **legitimate access only** (no paywall bypass or scraping).
+- **`knowledge_builder` now escalates instead of silently degrading.** It marks
+  **load-bearing** citations, works the ladder, and if the papers behind the central
+  claims stay paywalled it raises **one consolidated request** ("drop these PDFs in
+  the folder or enable a full-text tool, otherwise these claims are assessed at
+  abstract-level and flagged as unverified") — never per-paper prompts, and peripheral
+  citations stay abstract-level without asking. The cited-source audit and
+  `Coverage & limits` now record each source's **access route** and how many
+  load-bearing citations were read in full vs abstract-only, so the grounding's depth
+  is transparent.
+- Wired the retrieval policy into `food-research`/`food-deep-research` (`source_scout`,
+  `source_verifier`, `investigator`) and `literature-sources.md`. The `agri-*` skills
+  inherit it via delegation. **Answer to "do we need extra programs":** no setup is
+  needed for metadata, abstracts, and open-access full text; for paywalled papers,
+  the easiest fix is to **drop the cited PDFs in the project folder**, or connect a
+  full-text literature tool, or use a logged-in institutional browser session.
+
 ## 1.36.1 — 2026-07
 
 - **Documented `food-paper`'s eight modes in the README** — new

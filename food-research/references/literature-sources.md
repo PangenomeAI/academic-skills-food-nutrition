@@ -23,6 +23,14 @@ the search is reproducible.
 - **PubChem**, **ChEMBL**, **FooDB**, **Phenol-Explorer** — compounds/bioactives.
 - **AOAC**, **ISO** — standard methods.
 
+## Getting the actual full text (not just metadata)
+Metadata and abstracts are always reachable; **paywalled full-text PDFs are not,
+without help.** When an agent must read the whole article (e.g. `knowledge_builder`
+Pathway A, `source_verifier`), follow the retrieval ladder and escalation rules in
+**`full-text-access.md`** — open access → connected full-text tool → user-supplied
+PDFs → institutional browser session — using **legitimate access only**, and mark
+anything unread rather than summarizing it.
+
 ## Use notes
 - Distinguish peer-reviewed literature from regulatory/industry **grey literature**.
 - Use controlled vocabulary (MeSH, FSTA/CAB descriptors) plus free-text synonyms.

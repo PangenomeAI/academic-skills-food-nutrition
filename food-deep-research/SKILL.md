@@ -87,6 +87,7 @@ mark missing evidence `[EVIDENCE GAP]`, never fabricate.
 ## References (load as needed)
 - `references/reasoning-and-fallacies.md` — `synthesizer`/`critic`: sound argument + fallacies.
 - `food-research/references/literature-sources.md` — databases/APIs for `investigator`.
+- `food-research/references/full-text-access.md` — reading the **actual full text** for `investigator`/`source_verifier` (open access → connected tool → user PDFs → library session, legitimate access only); mark anything unread rather than summarizing.
 - `food-research/references/source-quality-hierarchy.md` — evidence grading for `source_verifier`/`synthesizer`.
 - `food-research/references/reporting-guidelines.md` — EQUATOR/PRISMA/CONSORT/STROBE.
 - `food-paper/references/apa7-quickref.md` — APA 7.0 for `bibliography`/`compiler` (default style).

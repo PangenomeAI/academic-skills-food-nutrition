@@ -8,6 +8,7 @@ metadata:
   subagents: [search_strategist, source_scout, screener_appraiser, journal_ranker, synthesis, writer, reviewer, systematic_reviewer, sr_search, sr_screener, sr_moderator, data_extractor, risk_of_bias, sr_synthesis]
   references:
     - references/literature-sources.md
+    - references/full-text-access.md
     - references/source-quality-hierarchy.md
     - references/reporting-guidelines.md
     - references/ohat-risk-of-bias.md
@@ -178,6 +179,7 @@ skill and fold its sourced synthesis back into the evidence brief.
 
 ## References (load as needed)
 - `references/literature-sources.md` — databases + APIs (FSTA/PubMed/WoS/Scopus/CrossRef/OpenAlex + EFSA/FDA/USDA) for `search_strategist`/`source_scout`/`sr_search`.
+- `references/full-text-access.md` — reading the **actual full text** (open access → connected tool → user PDFs → library session), legitimate access only; for `source_scout`/`screener_appraiser` and any step that needs more than an abstract.
 - `references/source-quality-hierarchy.md` — evidence grading for `screener_appraiser`/`synthesis`.
 - `references/reporting-guidelines.md` — EQUATOR/PRISMA/CONSORT/STROBE for the systematic stream and appraisal.
 - `references/ohat-risk-of-bias.md` — full OHAT tool (11 questions, 4-point scale, design applicability incl. corrected in-vitro Q3/Q4 = NA, and in-vitro criteria) for `risk_of_bias`.
