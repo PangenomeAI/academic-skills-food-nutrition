@@ -45,7 +45,9 @@ unchanged.**
    **user-supplied PDFs** → a logged-in library browser session. Read the **full
    article** where any of these reaches it; where only the abstract is reachable, use
    the abstract and **record that limitation** with the access route. **Legitimate
-   access only — never bypass a paywall or scrape against terms.**
+   access only — never bypass a paywall or scrape against terms.** For a fast OA
+   lookup per DOI, `python3 scripts/resolve_oa.py <doi>` returns the free PDF URL when
+   one exists.
 3. **Escalate for load-bearing citations that stay paywalled.** Don't silently
    settle for abstracts on the papers that matter. Once you've worked the ladder,
    surface **one consolidated request**: list those DOIs and ask the user to drop the

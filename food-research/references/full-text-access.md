@@ -38,6 +38,38 @@ files the user provides. **Never bypass a paywall, share credentials, or scrape
 against a site's terms.** If none of the above reaches it, the source stays
 **unretrieved** — mark it, do not invent its contents.
 
+## API endpoints you can fetch directly (no connected tool needed)
+When no literature MCP is connected, the agent can still resolve open access with the
+**built-in web-fetch tool** over these public REST APIs. They return metadata,
+abstracts, and — crucially — **the URL of the legal free PDF when one exists**. None
+of them returns paywalled full text; that still needs a user PDF or institutional
+access.
+
+| Purpose | Endpoint (substitute the DOI, URL-encoded) | Gives you |
+|---|---|---|
+| **OA PDF location** | `https://api.unpaywall.org/v2/<doi>?email=<email>` | `best_oa_location.url_for_pdf` — the legal free PDF, if any |
+| **OA + metadata + refs** | `https://api.openalex.org/works/doi:<doi>` | `open_access.oa_url`, `primary_location`, abstract, referenced works |
+| **Metadata + license** | `https://api.crossref.org/works/<doi>` | title / authors / year, `license`, `link` (OA full-text links) |
+| **Abstract + OA PDF** | `https://api.semanticscholar.org/graph/v1/paper/DOI:<doi>?fields=title,abstract,openAccessPdf` | abstract + `openAccessPdf.url` |
+| **Full text (OA only)** | `https://www.ebi.ac.uk/europepmc/webservices/rest/<SRC>/<ID>/fullTextXML` | full-text XML for Europe PMC / PMC-OA articles |
+| **Find ID from a title** | `https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=<title>&format=json` | the source + ID when you only have a title |
+| **PubMed lookup** | NCBI E-utilities `esearch`/`efetch`/`elink` (add your `tool=`+`email=`) | PMIDs, abstracts, PMC-OA links |
+
+**One-command resolver:** `python3 scripts/resolve_oa.py <doi>` does the
+Unpaywall→OpenAlex step and prints `{is_oa, pdf_url, landing_url, source}`. If
+`pdf_url` is set, fetch and read that PDF; if `is_oa` is false, there is no legal free
+copy — get it from a user PDF or institutional access, don't summarize the abstract as
+if it were the paper.
+
+**Flow for one cited DOI:** `resolve_oa.py` (or fetch Unpaywall/OpenAlex) → if an OA
+PDF URL comes back, read it → else Europe PMC full text if it is PMC-OA → else use the
+abstract and mark it. `scripts/verify_citations.py --online` and `resolve_oa.py` both
+query these hosts, so network access works in this environment.
+
+Prefer a **connected MCP/literature tool** over raw fetching when the user has one
+(cleaner, rate-limit-friendly, rights-cleared); these endpoints are the **zero-setup
+fallback**.
+
 ## When to ask the user (escalate, don't silently degrade)
 Read every source you can via the ladder first. Then judge by **importance**:
 - **Load-bearing citations** — the ones the manuscript's central claims or the
