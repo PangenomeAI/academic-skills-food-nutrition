@@ -13,6 +13,27 @@ an honest agent will read what it can and **mark the rest as unretrieved**. That
 correct (never summarize a paper you did not read), but it is not the end of the
 options below.
 
+## Ask for full-text access up front (highlighted request)
+Any skill that builds a knowledge base or evidence synthesis **needs the full text**,
+not abstracts. Before the heavy work, surface **one prominent, highlighted request**
+in the chat (a bold blockquote callout) so the user can unlock deep access. **Reading
+PDFs from a folder path the user gives is exactly how Claude accesses local files —
+this is the correct method**, in Claude Code and in Cowork (add the folder to the
+project). Use this template, adapting the wording:
+
+> 📚 **To ground this in the actual literature — not just abstracts — I need access to
+> the full-text articles.** Please provide **one** of:
+> - the path to your **EndNote library's `.Data` folder** (or Zotero `storage/` /
+>   Mendeley folder) — I'll read the PDFs you've already downloaded, **read-only**;
+> - a **folder of PDFs** for the key references; or
+> - reply **"open-access only"** and I'll use open-access full text + abstracts, and
+>   **flag every paywalled source as read at abstract-level (unverified)**.
+
+Ask **once, up front**, and proceed as soon as the user answers (don't block on it —
+if they decline, continue at open-access + abstract level and say so in the output's
+coverage note). If they give a folder, confirm what you found (e.g. "read 34 PDFs
+from your EndNote library") so access is transparent.
+
 ## Retrieval ladder — try in order, per cited source
 1. **Open-access copy (free, legitimate).**
    - **Europe PMC** / **PMC** full-text (`europepmc.org`, `pmc.ncbi.nlm.nih.gov`).

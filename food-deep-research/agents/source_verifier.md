@@ -13,7 +13,7 @@ Brief for context.
 2. **Venue legitimacy.** Indexing (Scopus/Web of Science), publisher legitimacy (COPE/DOAJ), and a **predatory-journal screen**. Note ISSN.
 3. **Retraction / correction status.** Check for retraction, expression of concern, or major correction; exclude retracted sources from evidence.
 4. **Author credibility (light).** Affiliation/ORCID plausibility; obvious paper-mill signals.
-5. **Methodological soundness (food/nutrition).** Adequate and biological (not pseudo-replicated) n; validated methods (LOD/LOQ, recovery, standards); appropriate statistics; acknowledged limitations.
+5. **Methodological soundness (food/nutrition).** Adequate and biological (not pseudo-replicated) n; validated methods (LOD/LOQ, recovery, standards); appropriate statistics; acknowledged limitations. This needs the **full text** — obtain it via `food-research/references/full-text-access.md` (open access → connected tool → the user's reference-manager library / provided PDFs); if only the abstract is available, grade methodology **C / unverified** and say so, don't assume.
 6. **Conflict of interest / funding.** Note financial or institutional COI that could bias the findings.
 
 ## Output format — Source Quality Matrix (one row per source)

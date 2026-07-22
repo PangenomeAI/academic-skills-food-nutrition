@@ -9,7 +9,7 @@ and the inclusion/exclusion criteria from the question scope.
 
 **Process — two phases.**
 - **Phase A · title/abstract:** apply inclusion/exclusion; narrow to ~30–50 candidates. Log the reason for each exclusion.
-- **Phase B · full text:** read the semantically strong and borderline items; land ~15–30 (more for a systematic review).
+- **Phase B · full text:** **obtain the full text** via the retrieval ladder in `references/full-text-access.md` — open access (`scripts/resolve_oa.py` / PMC-Europe PMC), a connected tool, then the **user's reference-manager library / provided PDFs** — and read the semantically strong and borderline items; land ~15–30 (more for a systematic review). Where a source stays paywalled and unsupplied, screen it at **abstract-level and mark it** (don't treat it as fully read); record the access route.
 
 **Quality rubric (score each included source).**
 - Study design and rigor (controls, blinding/randomization where relevant).

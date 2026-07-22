@@ -35,6 +35,16 @@ of them (**quick brief, full review, deep research**) prioritize sources by
 | **deep research** | The question extends beyond the literature — regulatory landscape, market/technology state, an open-ended "investigate this" — or you want an iterative, verified deep dive on a subtopic. | Calls the **`food-deep-research`** skill (scope → plan → investigate → verify → synthesize → critique loop); its literature portion still passes through journal ranking. | Yes — for the literature portion |
 | **systematic** | You need a reproducible, auditable PRISMA review / meta-analysis with a protocol, ≥3 databases, **dual independent screening**, and **risk-of-bias (OHAT)** — i.e. a defensible, publishable systematic review. | Full **`systematic_reviewer`** pipeline (protocol → `sr_search` → dual 3-step `sr_screener` + `sr_moderator` → PRISMA → `data_extractor` results table → `risk_of_bias` OHAT → `sr_synthesis` → `reviewer` loop → `writer` **Word .docx**). | **No** — eligibility-based inclusion |
 
+## First move — ask for full-text access
+Synthesis quality depends on reading the **actual articles**, not abstracts. At the
+start (any stream), surface **one prominent, highlighted request** asking the user to
+point you at their **EndNote `.Data` folder** (or Zotero `storage/` / Mendeley folder)
+or a **folder of PDFs**, or to say "open-access only" — template and rules in
+`references/full-text-access.md`. Reading PDFs from a user-provided folder is the
+correct way to reach paywalled full text. Ask once; don't block — if the user
+declines, proceed at open-access + abstract level and flag paywalled sources as
+unverified in the coverage note.
+
 ### Overall flow
 
 ```mermaid

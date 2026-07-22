@@ -65,6 +65,16 @@ flowchart TD
 (cap ~2–3); (2) *writing loop* — `editor`/`ethics_reviewer` send revisions back
 to `compiler` until Accept (cap ~2–3), then deliver.
 
+## First move — ask for full-text access
+The evidence loop reads **actual articles**, not abstracts. At the start, surface
+**one prominent, highlighted request** asking the user to point you at their **EndNote
+`.Data` folder** (or Zotero `storage/` / Mendeley folder) or a **folder of PDFs**, or
+to say "open-access only" — template in
+`food-research/references/full-text-access.md`. Reading PDFs from a user-provided
+folder is the correct way to reach paywalled full text. Ask once; don't block — if
+declined, proceed at open-access + abstract level and flag paywalled sources as
+unverified.
+
 ## Source discipline (non-negotiable)
 - **Investigation and claim-checking operate only on validated sources** — those that passed `source_screener` (ranking) **and** `source_verifier` (validity). Retracted/unresolvable sources are excluded and logged.
 - **Journal ranking** favors Tier 1 (Q1/Q2 food-science & nutrition, Nature/Science/Cell families, Q1/Q2 in any other discipline); Tier 2 (Q3) only to fill gaps; Tier 4 avoided.

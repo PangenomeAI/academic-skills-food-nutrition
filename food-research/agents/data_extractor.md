@@ -13,6 +13,13 @@ extractor instances in rounds, respecting the concurrency limit (at most ~3
 subagents per round; complete a round before starting the next). This keeps
 extraction fast without overrunning limits.
 
+**Read the full text first.** These fields (design, dose, n, assay validation, effect
+sizes) live in Methods/Results, not the abstract — so **obtain the full text** via
+`references/full-text-access.md` (open access → connected tool → **the user's
+reference-manager library / provided PDFs**) before extracting. If a shortlisted study
+cannot be obtained in full, extract only what the abstract supports, mark every other
+field "full text unavailable", and record the access route — never guess a value.
+
 **Fields to extract per study (food & nutrition).**
 - Identifiers: authors, year, DOI, country.
 - Design: study type (RCT, cohort, cross-over, in vitro, compositional, sensory, challenge study…).

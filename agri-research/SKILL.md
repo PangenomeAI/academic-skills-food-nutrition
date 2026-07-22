@@ -53,4 +53,7 @@ for animal work, and no extrapolation from pot to field or region to region.
 Anti-fabrication grounding and the four-gate citation check
 (`scripts/verify_citations.py`), the privacy scan, `journal-selector`'s ask-once
 contract, `food-paper/references/human-writing.md`, and the **mandatory AI-use
-disclosure** in every written output.
+disclosure** in every written output. Also the **full-text-access first move** —
+`food-research`'s highlighted, one-time request for the user's EndNote `.Data` folder
+/ reference PDFs, and full-text extraction via the ladder before synthesis
+(`food-research/references/full-text-access.md`).

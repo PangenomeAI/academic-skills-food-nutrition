@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 title: "Academic Skills for Food & Nutrition Science"
 type: software
-version: "1.39.0"
+version: "1.40.0"
 license: MIT
 doi: "10.5281/zenodo.21372994"
 date-released: "2026-07-15"

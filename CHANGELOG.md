@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.40.0 — 2026-07
+
+- **Skills now ask for full-text access up front, with a highlighted request.** Any
+  skill that builds a knowledge base or evidence synthesis surfaces **one prominent
+  chat callout** asking the user to point it at their **EndNote `.Data` folder** (or
+  Zotero `storage/` / Mendeley folder) or a **folder of PDFs**, or to reply
+  "open-access only". Reading PDFs from a user-provided folder is confirmed as the
+  correct way Claude reaches that full text (Claude Code and Cowork). It asks once and
+  doesn't block — declining proceeds at open-access + abstract level with paywalled
+  sources flagged. Added to `full-text-access.md` (template) and wired as a "first
+  move" into `food-review` (`knowledge_builder`), `food-research`, and
+  `food-deep-research`; `agri-*` inherit it via delegation.
+- **The extraction agents now actually retrieve full text — they no longer assume it.**
+  `screener_appraiser` (Phase B), `data_extractor`, `investigator` (Pass 2), and
+  `source_verifier` previously said "read the full text" without saying how, so in
+  practice they stopped at abstracts. Each now works the retrieval ladder
+  (open access via `resolve_oa.py`/PMC → connected tool → **the user's
+  reference-manager library / provided PDFs**) **before** extracting, and marks any
+  source that stays paywalled and unsupplied as abstract-only/unverified with its
+  access route — never inventing a value or locator from an abstract.
+
 ## 1.39.0 — 2026-07
 
 - **README "Limitations" section.** States plainly that the tool is only as informed
