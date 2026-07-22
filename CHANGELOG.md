@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.38.0 — 2026-07
+
+- **Fetchable literature-API endpoints + a one-command OA resolver.** The model has
+  no live database of its own — literature access is entirely via tools — so
+  `full-text-access.md` now lists the public REST endpoints the built-in web-fetch can
+  hit with **no connected tool**: Unpaywall and OpenAlex (legal free-PDF URL), Crossref
+  (metadata/license), Semantic Scholar (abstract + OA PDF), Europe PMC (PMC-OA full
+  text), and PubMed E-utilities. These return metadata, abstracts, and the OA PDF URL
+  when one exists — **never paywalled full text**.
+- New **`scripts/resolve_oa.py`** (`--selftest`): give it a DOI, it queries
+  Unpaywall→OpenAlex and prints `{is_oa, pdf_url, landing_url, source}`, exiting 0 when
+  a free PDF is found and 3 when the DOI is closed-access (so it never dresses up a
+  paywalled paper as readable). Verified live — finds the real PLOS OA PDF and reports
+  a paywalled Biochimie DOI as `is_oa: false`. Wired into `knowledge_builder` and the
+  `AGENTS.md` self-test suite.
+
 ## 1.37.0 — 2026-07
 
 - **Full-text access for the review knowledge base.** During testing,
