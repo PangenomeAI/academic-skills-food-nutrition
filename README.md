@@ -288,6 +288,36 @@ Author-guideline details record a `Source:` URL and a `Verified:` date. Publishe
 pages change and several block automated access — confirm exact numeric limits at
 the source before submitting; structure and reference styles are the stable part.
 
+## Limitations
+
+**The tool is only as informed as the literature it can actually read.** Because it
+never fabricates, its knowledge base — and therefore the depth of a review or the
+strength of a claim's grounding — is bounded by what it can legitimately access:
+
+- **Metadata, abstracts, and open-access full text** work with no setup (Crossref,
+  OpenAlex, Unpaywall, PubMed/Europe PMC; [`resolve_oa.py`](scripts/resolve_oa.py)).
+  Roughly half of the literature has a legal free copy.
+- **Paywalled articles have no free full text.** The tool **will not bypass
+  paywalls**. Without a copy you provide, a paywalled source is read at
+  **abstract-level only and flagged as unverified** — it is never summarized as if the
+  full paper had been read. For load-bearing citations, `knowledge_builder` asks you
+  to supply access rather than guess.
+- **You can lift this limit** — in rough order of coverage:
+  1. **Point the tool at your reference-manager library** (EndNote `.Data/PDF/`,
+     Zotero `storage/`, Mendeley) — it reads the PDFs you have **already downloaded**,
+     giving the fullest picture of a paper's own reference list. Works in Claude Code
+     and Cowork; libraries synced via OneDrive/Dropbox are fine.
+  2. **Drop the specific cited PDFs** into the project folder.
+  3. **Connect a literature MCP/connector** (PubMed full-text, Europe PMC, a
+     publisher/library connector).
+  4. **Use a logged-in institutional browser session** (library proxy / VPN).
+
+See [`full-text-access.md`](food-research/references/full-text-access.md) for the full
+retrieval policy. Other standing limits: the model has **no live database of its
+own** (all literature comes through tools); publisher pages change, so **confirm exact
+journal limits at the source**; and every AI-generated claim, number, and citation is
+**your responsibility to verify** (see below).
+
 ## Using AI responsibly for academic work
 
 > **AI can make mistakes.** Large language models can produce fluent but incorrect

@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.39.0 — 2026-07
+
+- **README "Limitations" section.** States plainly that the tool is only as informed
+  as the literature it can legitimately read: metadata/abstracts/open-access full text
+  work with no setup, but **paywalled articles are read at abstract-level only and
+  flagged as unverified** unless the user supplies a copy — the tool never bypasses
+  paywalls and never summarizes a paper it did not read. Lists the four ways to lift
+  the limit, plus the standing limits (no live model database; verify everything).
+- **Reference-manager library as a full-text source.** Documented in
+  `full-text-access.md`: a user's **EndNote** (`<Library>.Data/PDF/`), **Zotero**
+  (`storage/`), or **Mendeley** library is a folder of already-downloaded, legitimate
+  PDFs. Point Claude Code / Cowork at that folder (OneDrive/Dropbox-synced libraries
+  included) and it maps each cited reference to its PDF by DOI/title and reads it —
+  the highest-coverage, fully-legal way to give a review the full picture of a
+  manuscript's literature. No EndNote MCP connector is required; it is plain,
+  read-only file access.
+
 ## 1.38.1 — 2026-07
 
 - **Publisher consent-gate fallback in `full-text-access.md`.** A live test on an
