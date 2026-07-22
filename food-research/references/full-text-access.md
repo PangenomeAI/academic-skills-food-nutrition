@@ -34,7 +34,16 @@ options below.
    accepted manuscript.
 4. **User-supplied PDFs (most reliable for paywalled work).** Ask the user to place
    the cited PDFs in the working folder or attach them; then read those directly
-   (`docx`/`pdf` tooling). See "When to ask the user" below.
+   (the `pdf` skill / built-in PDF reading). See "When to ask the user" below.
+   - **A reference manager's local library is exactly this — a folder of already-
+     downloaded PDFs.** If the user gives access to their **EndNote** library, the
+     attached full text lives under `<Library>.Data/PDF/` (many randomly-named
+     subfolders, one PDF each); **Zotero** keeps them under `Zotero/storage/<KEY>/`,
+     and **Mendeley** in its watched/`Downloaded` folder. Point Claude at that folder,
+     then map each cited reference to its PDF by the DOI or title on the PDF's first
+     page (or its filename) and read it. This turns the user's own library into a
+     high-coverage, fully-legal full-text source — see "Connecting a reference
+     manager" below.
 5. **Institutional access via a logged-in browser session** the user drives (their
    library/VPN in Claude-in-Chrome, or a downloader that reuses an institutional
    login). This is **user-initiated** — the agent does not log in on its own.
@@ -102,12 +111,38 @@ reproducible and its limits are honest. In `## Coverage & limits`, state how man
 the load-bearing citations were read in full versus abstract-only, so the author
 knows exactly how deep the grounding goes.
 
+## Connecting a reference manager (EndNote / Zotero / Mendeley)
+The single best way to give the tool the **full picture** of a manuscript's
+literature is the user's **own reference library**, because they have already
+downloaded the paywalled PDFs legitimately. No special integration is needed — the
+attachments are ordinary files on disk that Claude can read once it has folder access:
+
+- **EndNote:** the library is `MyLibrary.enl` **plus a `MyLibrary.Data/` folder**;
+  the PDFs are in `MyLibrary.Data/PDF/` (one PDF per randomly-named subfolder), and
+  reference metadata is in `MyLibrary.Data/sdb/sdb.eni` (a SQLite file). Give access
+  to the **`.Data` folder** (or the whole library folder).
+- **Zotero:** PDFs under `Zotero/storage/<ITEMKEY>/…pdf`; metadata in `zotero.sqlite`.
+- **Mendeley:** PDFs in the app's watched/download folder.
+
+**Workflow:** point Claude at the folder (in Claude Code, open that directory; in
+Cowork, add it to the project — libraries synced via OneDrive/Dropbox work the same).
+Then, per cited reference, match to a PDF by the **DOI or title** on the PDF's first
+page (or the filename) and read it with the `pdf` skill. Treat the library as
+**read-only** — never modify or move the user's `.Data`/`storage` files.
+
+**Caveats.** Access is only as complete as the user's library (a reference they never
+attached a PDF for is still just metadata). Respect that these are licensed copies for
+the user's own use. There is no official EndNote MCP connector, and none is needed —
+this is plain file access.
+
 ## What the user can enable for deeper access
 If reviews routinely need paywalled full text, any **one** of these removes the
 limitation, in rough order of ease:
-1. **Drop the cited PDFs into the project folder** (zero setup, always works).
-2. **Connect a literature MCP/connector** that returns full text (PubMed full-text,
+1. **Point Claude at your reference-manager library** (EndNote `.Data/` / Zotero
+   `storage/` / Mendeley) — reuses PDFs you already downloaded; highest coverage.
+2. **Drop the specific cited PDFs into the project folder** (zero setup, always works).
+3. **Connect a literature MCP/connector** that returns full text (PubMed full-text,
    Europe PMC, a publisher or library connector).
-3. **Use a logged-in institutional browser session** (library proxy / VPN) via
+4. **Use a logged-in institutional browser session** (library proxy / VPN) via
    Claude-in-Chrome so entitled articles resolve.
 Metadata, abstracts, and open-access full text already work with no setup.
