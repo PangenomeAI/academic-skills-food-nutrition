@@ -85,7 +85,17 @@ Stage-1 reuse + key reviews — see above.)*
      **not** produce a literature-review manuscript, PRISMA flow, narrative
      synthesis, or reference list for publication. The deliverable is **knowledge**,
      not an article.
-7. Read the key sources and extract only what a reviewer needs (below).
+7. **Full-text-read the key discovered sources; extract only what a reviewer needs.**
+   You don't need every hit in full — screen the discovered set at abstract/metadata
+   level, then **obtain the full text of the key subset** (the authoritative reviews
+   and the closest prior work / novelty-map candidates) via the retrieval ladder in
+   `food-research/references/full-text-access.md`. For these **not-cited** papers the
+   user's library usually won't help, so the realistic routes are **open access
+   (`scripts/resolve_oa.py` / PMC-Europe PMC) and any connected literature tool**; if
+   the up-front folder the user gave happens to contain one, read it. Mark anything
+   read at abstract-level only, with its access route. (When you called the
+   `food-research` `full review` branch in step 6, its `screener_appraiser`/
+   `investigator` already did this — just reuse their full-text records.)
 
 ## A + B — the knowledge base
 Merge both pathways into one briefing. **Output — Reviewer knowledge base:**
