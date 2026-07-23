@@ -52,5 +52,5 @@ apply to agricultural data). Revision still follows
 ## Inherited unchanged (not optional)
 Anti-fabrication grounding + four-gate citations (`scripts/verify_citations.py`),
 `word-field-codes.md` (never flatten EndNote/Zotero fields), privacy scan,
-`human-writing.md` (write like a scientist, not a chatbot), and the **mandatory
+**academic style + AI-tell removal** (`writing-style.md` with `human-writing.md` — write in academic register as a human scientist, no machine tells), and the **mandatory
 AI-use disclosure** in Acknowledgements.

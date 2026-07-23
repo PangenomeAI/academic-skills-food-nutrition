@@ -102,6 +102,7 @@ mark missing evidence `[EVIDENCE GAP]`, never fabricate.
 - `food-research/references/source-quality-hierarchy.md` — evidence grading for `source_verifier`/`synthesizer`.
 - `food-research/references/reporting-guidelines.md` — EQUATOR/PRISMA/CONSORT/STROBE.
 - `food-paper/references/apa7-quickref.md` — APA 7.0 for `bibliography`/`compiler` (default style).
+- `food-paper/references/writing-style.md` + `food-paper/references/human-writing.md` — **`compiler`: academic style + remove AI tells, applied together** — academic register as a human scientist, machine tells stripped, calibrated hedging and journal form kept.
 - `food-review/references/ethics-integrity-checklist.md` — for `ethics_reviewer`.
 - `food-paper/references/faithfulness-and-citation.md` — **grounding + four-gate citation check** for `bibliography`, `source_verifier`, `claim_verifier`, `compiler`. Never invent sources/data; run `scripts/verify_citations.py`.
 - `food-paper/references/privacy-and-confidentiality.md` — **privacy scan before delivering the report** (no local paths/secrets); `scripts/privacy_scan.py`.

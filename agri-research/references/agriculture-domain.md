@@ -20,7 +20,7 @@ workflow, subagents, gates, modes, and output contracts **exactly as written**:
 Apply exactly three substitutions: **the persona** (§2), **the evidence base** (§3),
 and **journal routing** (§4). Everything else — anti-fabrication grounding, the
 four-gate citation check, privacy scan, journal-selector "ask once", the report
-format, `human-writing.md`, the mandatory AI-use disclosure — is inherited unchanged
+format, **academic style + AI-tell removal** (`writing-style.md` with `human-writing.md`), the mandatory AI-use disclosure — is inherited unchanged
 and is **not** optional. When `food-pipeline` routes to `food-research`/`food-paper`
 etc., the `agri-pipeline` equivalents route to the `agri-*` counterparts instead.
 
