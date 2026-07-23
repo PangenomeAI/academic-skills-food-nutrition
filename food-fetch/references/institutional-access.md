@@ -44,6 +44,12 @@ these as **sign-in stages, not failures**:
 | `webvpn` · `vpn` | WebVPN |
 | `webofscience` · `sciencedirect` · publisher host | database/publisher entry (check it was reached via the portal) |
 
+For an institution's first setup, if its authentication method is uncertain, the
+user can start one ordinary login in their own browser, observe the redirect hostname,
+compare it with this table, and record the matching method in
+`institution-profiles.md`. Observe only the hostname; never copy credentials, browser
+authentication data, or login URL parameters.
+
 A login page with `service=<url>` returns to that `service` host after auth — treat
 the callback host as the real resource, not the login page.
 

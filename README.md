@@ -106,9 +106,15 @@ Your choice is **remembered** (stored in `~/.config/food-fetch/access.json` — 
 folder path, mode, and non-secret institution ID, never a password). Institutional
 IDs are validated against the bundled library profiles before use. If you skip setup,
 the skills **remind you each run** that non-OA access isn't configured and that this
-limits accuracy — and you
-can set it up at any time. See [`food-fetch`](food-fetch/SKILL.md) and
+limits accuracy — and you can set it up at any time. See
+[`food-fetch`](food-fetch/SKILL.md) and
 [`full-text-access.md`](food-research/references/full-text-access.md).
+
+Users at other institutions can add their library's public search, homepage, OpenURL,
+and authentication-method metadata by following the
+[`institution-profiles` guide](food-fetch/references/institution-profiles.md). This
+stores no credentials and relies on the host AI's browser capability rather than a
+bundled browser-control or challenge-solving system.
 
 ## Skills
 
