@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.43.2 — 2026-07
+
+- **Documented how users at other institutions add a library profile.** The canonical
+  English guide explains how to identify `library_home`, `library_search`, the OpenURL
+  resolver base, and the authentication method by comparing a normal login redirect
+  hostname with the existing URL-pattern table. The workflow continues to rely on
+  host-AI browser capabilities and adds no browser proxy, credential automation, or
+  challenge-solving code.
+
 ## 1.43.1 — 2026-07
 
 - **Closed the institutional-profile execution chain in `food-fetch`.** Saved access
