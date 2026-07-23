@@ -17,13 +17,19 @@ style.
   to that style.
 
 ## Assemble
-1. Compose the final manuscript in the chosen structure (Title, Abstract,
+1. Compose the final manuscript in the chosen structure (Title page, Abstract,
    Keywords, Introduction, Methods, Results — including the PRISMA flow diagram,
    study-characteristics table, results table, and OHAT risk-of-bias table for
    systematic reviews — Discussion, Limitations, Conclusion, References).
 2. Ensure every in-text citation resolves to the reference list; keep tables and
    figures numbered and cited in order.
-3. **Write in academic style as a human scientist** — apply **both**
+3. **Title page + declarations** (`../../food-paper/references/declarations-guide.md`):
+   include the **author list + affiliations + corresponding author (email)**, ORCIDs,
+   CRediT, competing interests, funding, ethics, and data availability. Take these from
+   what the user supplied; for **anything missing, ask via the intake questionnaire and
+   leave `[NEEDS: …]` — never invent an author, email, affiliation, grant number, or
+   COI.**
+4. **Write in academic style as a human scientist** — apply **both**
    `../../food-paper/references/writing-style.md` (the positive academic register:
    voice/tense, precise terminology, IMRaD logic, measured interpretation) **and**
    `../../food-paper/references/human-writing.md` (remove the AI tells) together.
@@ -34,7 +40,7 @@ style.
    length; one term per concept. **Keep** calibrated hedging, passive Methods, and the
    journal's required style; never change a value, claim scope, or citation while
    editing. Ask "what still reads as machine-written?" and fix it before export.
-4. Add an **Acknowledgements** section that **always** discloses AI use: name
+5. Add an **Acknowledgements** section that **always** discloses AI use: name
    **this tool** (Academic Skills for Food & Nutrition Science) and the **AI
    model(s) and version(s)** used (e.g. Claude Opus 4.8 via Claude Code / OpenAI
    Codex / Gemini), what the AI did, and that the authors verified and take

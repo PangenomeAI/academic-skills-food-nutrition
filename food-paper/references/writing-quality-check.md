@@ -34,5 +34,7 @@ Run over the draft; fix before handing to `internal_reviewer`.
 - Undefined jargon; inconsistent naming of the same construct.
 - `[NEEDS DATA]` / `[EVIDENCE GAP]` placeholders left in the text.
 
-## Declarations present
-- [ ] Competing interests, funding, CRediT, data availability, ethics/food-safety, AI-use disclosure (see `declarations-guide.md`).
+## Title page & declarations present (`declarations-guide.md`)
+- [ ] **Title page:** author list (correct order) + affiliations + corresponding author with email; ORCIDs / equal-contribution notes where relevant.
+- [ ] Competing interests, funding, CRediT, data availability, ethics/food-safety, AI-use disclosure.
+- [ ] **No invented author data** and **no unanswered `[NEEDS: …]` placeholder** — every author/affiliation/COI/funding/ethics item came from the user or was asked for, never fabricated.

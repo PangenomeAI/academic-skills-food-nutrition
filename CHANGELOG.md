@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.45.0 — 2026-07
+
+- **Title page + declarations are now collected, written, and — when missing —
+  asked for.** Nearly every journal requires an author list, affiliations, a
+  corresponding author, CRediT statement, and a competing-interests declaration, but
+  the suite only wrote the end-matter and had **no way to gather this author-only
+  information**. Fixed:
+  - `declarations-guide.md` gains a **Title page / authorship block** (author list +
+    order, affiliations, corresponding author with email/address, ORCIDs,
+    equal-contribution/present-address notes, running title/keywords) and a **required
+    intake questionnaire**: the agent must **ask the user** for any missing item
+    (authors, affiliations, corresponding author, CRediT, COI, funding, ethics
+    approvals, data availability) and **never fabricate** a name, email, affiliation,
+    grant number, COI, or ORCID — leaving a visible `[NEEDS: …]` placeholder until
+    answered.
+  - `food-paper` `intake` now **collects** this metadata and lists what's missing;
+    `draft_writer` writes the **title page** + declarations from it; `food-research`
+    `writer` and `food-deep-research` `compiler` do the same for review manuscripts.
+    The self-review checklist verifies the title page is present with no invented
+    author data and no unanswered placeholder. `agri-*` inherit via delegation.
+  - Author contact details on a title page are noted as **intentional, author-supplied**
+    content (required by the journal), distinct from the stray local paths/secrets the
+    privacy scan flags — but they must come from the user, never be invented.
+
 ## 1.44.0 — 2026-07
 
 - **Every document-writing agent now applies academic style and AI-tell removal

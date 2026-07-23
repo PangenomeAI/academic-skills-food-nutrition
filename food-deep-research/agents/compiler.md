@@ -18,6 +18,7 @@ Blueprint. On revision loops, also the feedback from `editor` and
   author–date, Nature-superscript, ACS, RSC, MDPI, Emerald-Harvard, etc.).
 
 ## Draft structure (literature review; adapt to the target journal)
+- **Title page** — title (+ running title/keywords); **author list + affiliations + corresponding author (email)**, ORCIDs, and (in end-matter) CRediT, competing interests, funding, ethics, and data availability, per `food-paper/references/declarations-guide.md`. Take these from what the user supplied; for **anything missing, ask via the intake questionnaire and leave `[NEEDS: …]` — never invent an author, email, affiliation, grant number, or COI.**
 - **Title** and **Abstract** (150–250 words, unreferenced unless the style allows).
 - **Keywords.**
 - **Introduction** — background, problem, significance, and the review's aim/questions.

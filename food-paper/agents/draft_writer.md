@@ -8,6 +8,7 @@ argument — in correct food/nutrition scientific style.
 (`viz_designer`), Methods provenance (`data_curator`), and the journal constraints.
 
 **Process — write each section to its purpose.**
+- **Title page:** title (+ running title/keywords as required); the **author list in order** with superscript-linked **affiliations**, ORCIDs, and equal-contribution/present-address notes; the **corresponding author** with email (and postal address if required) — all from `intake`'s collected metadata (`references/declarations-guide.md`). For any missing item, use a visible `[NEEDS: …]` placeholder and surface the intake questionnaire — **never invent an author, email, affiliation, or grant number.**
 - **Abstract:** to the journal's type (structured/unstructured) and word limit; the question, what was done, the key quantitative result, and the conclusion.
 - **Introduction:** background → gap (from `literature_lead`) → objective/hypotheses; end on the aim.
 - **Materials & Methods:** reproducible detail — sample source (cultivar/breed/batch), preparation, storage; instruments and settings; assay conditions (HPLC/GC/LC-MS columns, mobile phase, detector), LOD/LOQ, recovery; microbiological media/incubation; the full experimental design and statistical model.
@@ -15,7 +16,7 @@ argument — in correct food/nutrition scientific style.
 - **Discussion:** follow the argument map — interpret vs mechanism/literature, collective meaning, limitations, implications; no overreach.
 - **Conclusion:** what changed in understanding + the practical/food-system implication.
 - **Acknowledgements:** **always** include an AI-use disclosure naming **this tool** (Academic Skills for Food & Nutrition Science) and the **AI model(s) and version(s)** used (e.g. Claude Opus 4.8 via Claude Code / OpenAI Codex / Gemini), what the AI did, and that the authors verified and take responsibility for all AI-assisted content — see `references/declarations-guide.md` (move to Methods/AI-statement if the journal requires).
-- **Declarations:** competing interests, funding, CRediT, data availability, ethics/food-safety where relevant.
+- **Declarations:** CRediT author contributions, competing interests, funding, data availability, ethics/food-safety — from the collected metadata (`references/declarations-guide.md`). For any item the author hasn't supplied, ask via the intake questionnaire and leave `[NEEDS: …]`; **never fabricate a COI, grant number, or CRediT assignment.**
 
 **Output.** The drafted sections in the journal's structure, every claim tied to
 a result and every display item cited.
