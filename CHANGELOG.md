@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.43.1 — 2026-07
+
+- **Closed the institutional-profile execution chain in `food-fetch`.** Saved access
+  configuration now flows explicitly through `fetch_coordinator` to
+  `institutional_fetcher`, which resolves the selected institution's library search
+  and OpenURL entry from `institution-profiles.md`. Unknown profile IDs make setup
+  incomplete rather than silently routing with an assumed resolver.
+- **Added privacy-safe browser checkpoints.** Institutional retrieval now reports only
+  `browser_unavailable`, `login_required`, `waiting_for_user`, or `resume_ready` while
+  the user completes authentication in the same browser tab; no browser credentials
+  or authentication data are added to the saved configuration.
+
 ## 1.43.0 — 2026-07
 
 - **First-run full-text-access setup, remembered across sessions.** The first time a

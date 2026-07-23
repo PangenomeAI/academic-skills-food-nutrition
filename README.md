@@ -102,9 +102,11 @@ asks you — **once** — to set up full-text access. Pick one:
 > abstracts plus the ~half of the literature that is open access. Open-access papers
 > are always downloaded and read; the rest need one of the options above.
 
-Your choice is **remembered** (stored in `~/.config/food-fetch/access.json` — just a
-folder path and a mode, never a password). If you skip setup, the skills **remind you
-each run** that non-OA access isn't configured and that this limits accuracy — and you
+Your choice is **remembered** (stored in `~/.config/food-fetch/access.json` — only a
+folder path, mode, and non-secret institution ID, never a password). Institutional
+IDs are validated against the bundled library profiles before use. If you skip setup,
+the skills **remind you each run** that non-OA access isn't configured and that this
+limits accuracy — and you
 can set it up at any time. See [`food-fetch`](food-fetch/SKILL.md) and
 [`full-text-access.md`](food-research/references/full-text-access.md).
 

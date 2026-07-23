@@ -5,6 +5,26 @@ the licensed full text by **reusing the user's own logged-in browser session** â
 by bypassing anything. In this environment that means driving the browser the user is
 already signed into (Claude-in-Chrome), not a fresh profile.
 
+## Institution configuration and profile lookup
+The institutional route uses one explicit, non-secret data chain:
+
+1. `scripts/food_fetch_setup.py` loads the saved access config (`mode`, optional
+   `library_path`, and `institution`).
+2. `fetch_coordinator` reads that config before routing and passes the saved
+   `institution` ID to `institutional_fetcher`; it must not infer opt-in from the
+   request or browser state.
+3. Before browser interaction, `institutional_fetcher` looks up that ID in
+   `references/institution-profiles.md` and resolves `library_search` and
+   `openurl_base`. These are the approved starting points for discovery and resolver
+   access.
+
+If the ID has no matching profile, stop before opening a publisher page and ask the
+user for their institution's library entry URL. After receiving it, ask separately
+whether the user wants to save a profile for later runs. With consent, save only
+`id`, `name`, `library_home`, `library_search`, `openurl_base`, and
+`authentication`, using HTTPS URLs. Never save credentials, authentication values
+entered by the user, browser state, or URL parameters produced by a login flow.
+
 ## Browser-state principle
 Authorized access depends on the **exact browser profile where the user is logged in**.
 If the browser opens a blank/new profile with no login, that is **not** "no library
