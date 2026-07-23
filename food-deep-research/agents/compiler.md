@@ -36,13 +36,16 @@ Blueprint. On revision loops, also the feedback from `editor` and
   it from memory.
 - Keep interpretation separate from reported fact.
 - Include a brief **AI-assistance disclosure** line.
-- **Write like a scientist, not a chatbot** — `food-paper/references/human-writing.md`.
-  A literature review is where AI tells cluster worst: no inflated significance
-  ("pivotal role", "paves the way", "has garnered increasing attention"), no stock
-  vocabulary ("delve", "intricate landscape", "tapestry", "showcase"), no "serves
-  as" for "is", no formulaic "Challenges and Future Prospects" padding, no generic
-  upbeat close. **Never write "studies have shown"** — cite the key. Vary sentence
-  length. Keep calibrated hedging and the mandatory AI disclosure; never let a style
+- **Write in academic style as a human scientist** — apply **both**
+  `food-paper/references/writing-style.md` (academic register: voice/tense, precise
+  terminology, IMRaD/review logic, measured interpretation) **and**
+  `food-paper/references/human-writing.md` (remove the AI tells) together. A literature
+  review is where AI tells cluster worst: no inflated significance ("pivotal role",
+  "paves the way", "has garnered increasing attention"), no stock vocabulary ("delve",
+  "intricate landscape", "tapestry", "showcase"), no "serves as" for "is", no formulaic
+  "Challenges and Future Prospects" padding, no generic upbeat close. **Never write
+  "studies have shown"** — cite the key. Vary sentence length. **Keep** calibrated
+  hedging, the academic register, and the mandatory AI disclosure; never let a style
   edit change a value, a claim's scope, or a citation. Before delivering, ask "what
   still reads as machine-written?" and fix it.
 

@@ -24,7 +24,9 @@ a result and every display item cited.
 Results; use SI units and the reporting conventions above. Mark any gap
 `[NEEDS DATA]` rather than inventing content.
 
-**Write like a scientist, not a chatbot** (`references/human-writing.md`): no
+**Write in academic style as a human scientist** — apply both the academic register in
+`references/writing-style.md` and the AI-tell removal in `references/human-writing.md`
+together: no
 inflated significance ("pivotal role", "paves the way"), no "-ing" tack-ons
 ("highlighting the potential of…"), no stock AI vocabulary ("delve", "intricate
 landscape", "showcase", "underscore"), no "serves as" for "is", no promotional

@@ -1,6 +1,24 @@
-# Scientific Writing Style (food & nutrition)
+# Scientific Writing Style (food, nutrition & agriculture)
 
-Used by `draft_writer` and `polisher`.
+**Canonical academic-style guide for every skill that writes a document** —
+`food-paper` (`draft_writer`, `polisher`), `food-research` (`writer`),
+`food-deep-research` (`compiler`), and the `agri-*` twins via delegation.
+
+## Apply this together with `human-writing.md`
+Two guides run **at the same time** on any written output, and they are
+complementary, not in tension:
+- **This file** = the **positive target**: write in the field's **academic register**
+  as a **human scientist** — correct voice/tense, precise terminology, IMRaD logic,
+  measured interpretation.
+- **`human-writing.md`** = what to **remove**: the machine tells (inflated
+  significance, vague attribution, stock AI vocabulary, hedge stacking, generic upbeat
+  endings) — while keeping the academic register this file defines (calibrated
+  hedging, passive Methods, journal-mandated form).
+
+The goal is not generic "human-sounding" prose but **a human scientist writing for the
+target journal**. Removing an AI tell must never cost academic correctness, and
+following academic style must never re-introduce a tell. When they seem to conflict,
+meaning and the journal's requirements win.
 
 ## Voice & tense
 - Past tense for what was done and found (Methods, Results); present tense for

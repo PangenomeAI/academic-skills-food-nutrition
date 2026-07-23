@@ -23,15 +23,17 @@ style.
    systematic reviews — Discussion, Limitations, Conclusion, References).
 2. Ensure every in-text citation resolves to the reference list; keep tables and
    figures numbered and cited in order.
-3. **Write like a scientist, not a chatbot** —
-   `../../food-paper/references/human-writing.md`. Remove inflated significance
-   ("pivotal role", "paves the way"), "-ing" tack-ons, stock AI vocabulary
-   ("delve", "intricate landscape", "showcase"), "serves as" for "is", promotional
-   adjectives, filler, hedge **stacking**, and generic upbeat endings; replace any
-   "studies have shown" with a specific citation. Vary sentence length; one term per
-   concept. Keep **calibrated hedging** and passive Methods; follow the journal's
-   heading style; never change a value, claim scope, or citation while editing. Ask
-   "what still reads as machine-written?" and fix it before export.
+3. **Write in academic style as a human scientist** — apply **both**
+   `../../food-paper/references/writing-style.md` (the positive academic register:
+   voice/tense, precise terminology, IMRaD logic, measured interpretation) **and**
+   `../../food-paper/references/human-writing.md` (remove the AI tells) together.
+   Strip inflated significance ("pivotal role", "paves the way"), "-ing" tack-ons,
+   stock AI vocabulary ("delve", "intricate landscape", "showcase"), "serves as" for
+   "is", promotional adjectives, filler, hedge **stacking**, and generic upbeat
+   endings; replace any "studies have shown" with a specific citation. Vary sentence
+   length; one term per concept. **Keep** calibrated hedging, passive Methods, and the
+   journal's required style; never change a value, claim scope, or citation while
+   editing. Ask "what still reads as machine-written?" and fix it before export.
 4. Add an **Acknowledgements** section that **always** discloses AI use: name
    **this tool** (Academic Skills for Food & Nutrition Science) and the **AI
    model(s) and version(s)** used (e.g. Claude Opus 4.8 via Claude Code / OpenAI

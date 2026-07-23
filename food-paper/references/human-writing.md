@@ -7,6 +7,15 @@ manuscripts). Original text; the pattern taxonomy is informed by the MIT-license
 `humanizer` skill (Siqi Chen) and Wikipedia's "Signs of AI writing", adapted here
 for scientific manuscripts — see the repo README Acknowledgements.
 
+## Apply this together with `writing-style.md`
+This guide says what to **remove** (the machine tells); **`writing-style.md`** says the
+**positive target** — write in the field's **academic register as a human scientist**
+(voice/tense, precise terminology, IMRaD logic, measured interpretation). Run **both at
+once**: strip the AI tells *and* keep correct academic style. The aim is not generic
+"human" prose but **a human scientist writing for the target journal**. Never let a
+de-AI edit cost academic correctness (see the "Academic exceptions" below), and never
+let academic polish re-introduce a tell.
+
 ## What this is — and is not
 **This is about writing quality, not disguise.** LLM prose has specific, learnable
 tells: inflated significance, vague attribution, stock vocabulary, and hedging so

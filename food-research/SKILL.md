@@ -195,6 +195,7 @@ skill and fold its sourced synthesis back into the evidence brief.
 - `references/source-quality-hierarchy.md` — evidence grading for `screener_appraiser`/`synthesis`.
 - `references/reporting-guidelines.md` — EQUATOR/PRISMA/CONSORT/STROBE for the systematic stream and appraisal.
 - `references/ohat-risk-of-bias.md` — full OHAT tool (11 questions, 4-point scale, design applicability incl. corrected in-vitro Q3/Q4 = NA, and in-vitro criteria) for `risk_of_bias`.
+- `food-paper/references/writing-style.md` + `food-paper/references/human-writing.md` — **`writer`: academic style + remove AI tells, applied together** — write in the field's academic register as a human scientist, and strip machine tells (inflated significance, vague attribution, stock vocabulary, hedge stacking) while keeping calibrated hedging and journal form.
 - `food-paper/references/faithfulness-and-citation.md` — **grounding + four-gate citation check.** Every finding, number, and citation traces to a real source; never fabricate. `scripts/verify_citations.py` audits the reference set.
 - `food-paper/references/privacy-and-confidentiality.md` — **privacy scan before delivering** the brief/report (no local paths/secrets); `scripts/privacy_scan.py`.
 

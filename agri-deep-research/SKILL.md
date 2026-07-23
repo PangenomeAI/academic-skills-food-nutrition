@@ -48,7 +48,7 @@ unearned by the design.
 
 ## Inherited unchanged (not optional)
 Four-gate citation verification (`scripts/verify_citations.py`), privacy scan,
-`food-paper/references/human-writing.md`, and the **mandatory AI-use disclosure**.
+**academic style + AI-tell removal** (`food-paper/references/writing-style.md` with `human-writing.md`), and the **mandatory AI-use disclosure**.
 Also the **full-text-access first move** — `food-deep-research`'s highlighted, one-time
 request for the user's EndNote `.Data` folder / reference PDFs, and full-text
 extraction via the ladder before the evidence loop

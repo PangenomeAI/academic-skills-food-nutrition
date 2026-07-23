@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.44.0 — 2026-07
+
+- **Every document-writing agent now applies academic style and AI-tell removal
+  together.** The de-AI guide (`human-writing.md`) was wired into all writers, but the
+  positive **academic-style** guide (`writing-style.md`) was referenced only by
+  `food-paper` — so `food-research`'s `writer` and `food-deep-research`'s `compiler`
+  removed machine tells without an explicit academic-register target. Fixed:
+  - `writing-style.md` is reframed as the **canonical, suite-wide** academic-style
+    guide and states that it runs **together with** `human-writing.md` — the positive
+    target (academic register, precise terminology, IMRaD logic, measured
+    interpretation) alongside the removals (inflated significance, vague attribution,
+    stock vocabulary, hedge stacking). `human-writing.md` gains the reciprocal pairing
+    note. The goal is stated explicitly: **a human scientist writing for the target
+    journal**, not generic "human" prose — removing a tell never costs academic
+    correctness, and academic polish never re-introduces a tell.
+  - `food-paper` (`draft_writer`, `polisher`), `food-research` (`writer`), and
+    `food-deep-research` (`compiler`) now cite **both** guides; the `agri-*` twins
+    inherit the pair via delegation. README's responsible-AI section updated.
+
 ## 1.43.2 — 2026-07
 
 - **Documented how users at other institutions add a library profile.** The canonical

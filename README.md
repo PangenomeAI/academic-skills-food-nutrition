@@ -387,13 +387,19 @@ statement as a *draft to be verified*, never as established fact.
 - **Follow your institution's academic-integrity rules.**
 
 ### Writing that reads like a scientist — and why that isn't a loophole
-The writing skills actively remove **AI writing tells**: inflated significance
-("plays a pivotal role", "paves the way"), vague attribution ("studies have shown"),
-stock vocabulary ("delve", "intricate landscape", "showcase"), "serves as" instead of
-"is", hedge stacking, and generic upbeat endings. These are **bad scientific
-writing** in their own right — vague, unattributed, and overstated — so cutting them
-makes a manuscript clearer, more specific, and more honest. See
-[`human-writing.md`](food-paper/references/human-writing.md).
+Every skill that writes a document applies **two guides together**: a positive
+**academic-style** target ([`writing-style.md`](food-paper/references/writing-style.md)
+— write in the field's academic register as a human scientist: voice/tense, precise
+terminology, IMRaD logic, measured interpretation) **and** removal of the
+**AI writing tells** ([`human-writing.md`](food-paper/references/human-writing.md) —
+inflated significance "plays a pivotal role"/"paves the way", vague attribution
+"studies have shown", stock vocabulary "delve"/"intricate landscape", "serves as"
+instead of "is", hedge stacking, generic upbeat endings). The two are complementary,
+not in tension: the tells are **bad scientific writing** in their own right — vague,
+unattributed, and overstated — so cutting them makes a manuscript clearer, more
+specific, and more honest, while the academic-style guide keeps **calibrated hedging,
+passive Methods, and journal-mandated form** intact. Removing a tell never costs
+academic correctness, and academic polish never re-introduces a tell.
 
 > **This is a quality edit, not a disguise.** It is **not** a way to hide AI
 > involvement, defeat an AI detector, or evade a journal's or university's AI
