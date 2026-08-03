@@ -480,6 +480,7 @@ worldwide are warmly welcomed — open an issue or pull request.
 - **Calebsch** — Developer, Food Science Research Team, University of Melbourne.
 - **Pimiao Huang** — Contributor, Food Science Research Team, University of Melbourne.
 - **Xiukun Yao** — Contributor, Food Science Research Team, University of Melbourne.
+- **Lyu Hujie** — Contributor, Nutrition and Food Science Team, Hong Kong Polytechnic University.
 
 ## Acknowledgements
 

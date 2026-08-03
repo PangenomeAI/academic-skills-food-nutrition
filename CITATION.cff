@@ -29,6 +29,10 @@ authors:
     given-names: Xiukun
     affiliation: "The University of Melbourne"
     orcid: "https://orcid.org/0009-0009-1557-9944"
+  - family-names: Lyu
+    given-names: Hujie
+    affiliation: "Hong Kong Polytechnic University"
+    orcid: "https://orcid.org/0000-0002-0518-7885"
 repository-code: "https://github.com/PangenomeAI/academic-skills-food-nutrition"
 url: "https://github.com/PangenomeAI/academic-skills-food-nutrition"
 abstract: >-

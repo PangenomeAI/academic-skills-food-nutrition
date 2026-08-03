@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- **Contributor metadata updated.** Added Lyu Hujie (Nutrition and Food Science
+  Team, Hong Kong Polytechnic University) to the README contributors list and
+  `CITATION.cff` authors metadata.
+
 ## 1.45.0 — 2026-07
 
 - **Title page + declarations are now collected, written, and — when missing —
