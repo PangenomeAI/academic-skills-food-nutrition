@@ -432,8 +432,8 @@ current policy and your course/coordinator's specific requirements:
 
 If you use these skills in your research, please cite the software:
 
-> Zhang, P., Liang, Z., Huang, P., Shen, C., & Yao, X. (2026). *Academic Skills for
-> Food & Nutrition Science* [Computer software]. Zenodo.
+> Zhang, P., Liang, Z., Huang, P., Shen, C., Yao, X., & Lyu, H. (2026). *Academic
+> Skills for Food & Nutrition Science* [Computer software]. Zenodo.
 > https://doi.org/10.5281/zenodo.21372994
 
 Zenodo mints two kinds of DOI — pick the one that matches what you mean:
@@ -479,7 +479,7 @@ worldwide are warmly welcomed — open an issue or pull request.
 
 - **PangeZAU** — Principal Investigator, Food Science Research Team, University of Melbourne.
 - **Zijian Liang** — Research Coordinator, Food Science Research Team, University of Melbourne.
-- **Calebsch** — Developer, Food Science Research Team, University of Melbourne.
+- **Chenghao Shen** (Calebsch) — Developer, Food Science Research Team, University of Melbourne.
 - **Pimiao Huang** — Contributor, Food Science Research Team, University of Melbourne.
 - **Xiukun Yao** — Contributor, Food Science Research Team, University of Melbourne.
 - **Lyu Hujie** — Contributor, Nutrition and Food Science Team, Hong Kong Polytechnic University.
