@@ -414,6 +414,8 @@ academic correctness, and academic polish never re-introduces a tell.
 This project is initiated by the Food Science Research Team at the University of Melbourne; UoM users must comply with University policy on acknowledging and using generative AI. Always check the
 current policy and your course/coordinator's specific requirements:
 - [Acknowledging use of AI tools and technologies](https://students.unimelb.edu.au/academic-skills/academic-integrity/acknowledging-use-of-ai-tools-and-technologies)
+- [AI and copyright](https://copyright.unimelb.edu.au/shared/using-copyright-material/ai-and-copyright)
+- [Responsible use of AI in research](https://research.unimelb.edu.au/strengths/responsible-research/trusted-research/responsible-use-of-AI-in-research)
 - [Academic integrity](https://students.unimelb.edu.au/academic-skills/academic-integrity)
 - [Using AI as a graduate researcher (graduate researchers and digital assistance tools)](https://gradresearch.unimelb.edu.au/preparing-my-thesis/graduate-researchers-and-digital-assistance-tools)
 - [Guidelines for allowing student GenAI use in assessment](https://www.unimelb.edu.au/tli/lda/genai-hub/resources-links/guidelines-for-allowing-student-genai-use-in-assessment)
@@ -480,6 +482,7 @@ worldwide are warmly welcomed — open an issue or pull request.
 - **Calebsch** — Developer, Food Science Research Team, University of Melbourne.
 - **Pimiao Huang** — Contributor, Food Science Research Team, University of Melbourne.
 - **Xiukun Yao** — Contributor, Food Science Research Team, University of Melbourne.
+- **Lyu Hujie** — Contributor, Nutrition and Food Science Team, Hong Kong Polytechnic University.
 
 ## Acknowledgements
 
