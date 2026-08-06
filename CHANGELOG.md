@@ -5,6 +5,8 @@
 - **Contributor metadata updated.** Added Lyu Hujie (Nutrition and Food Science
   Team, Hong Kong Polytechnic University) to the README contributors list and
   `CITATION.cff` authors metadata.
+- Added the University of Melbourne **"AI and copyright"** and **"Responsible use of AI
+  in research"** policy links to the README's UoM policy section.
 
 ## 1.45.0 — 2026-07
 
