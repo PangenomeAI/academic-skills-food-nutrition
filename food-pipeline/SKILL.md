@@ -39,7 +39,7 @@ Original work.
 | 3 · REVIEW | `food-review` | **Review & Response Report (`.docx`)** — feedback + editorial decision — plus **margin comments** on the manuscript (when Word tooling available) | **mandatory** author decision |
 | 4 · REVISE | `food-paper` (revise) | Revision + response entries — **tracked changes on the original Word only if the author authorizes** | issues resolved |
 | 5 · RE-REVIEW | `food-review` (re-review) | **Only if the author authorizes a second round** — verifies the revision; may add new comments | accept / stop (no auto third round) |
-| 6 · FINALIZE | `food-paper` (format-convert) + `writer` | Submission-ready manuscript (`.docx`) + the one **Review & Response Report** (`.docx`) | final compliance |
+| 6 · FINALIZE | `food-paper` (format-convert) + `writer` | Submission-ready manuscript (`.docx`) + the one **Review & Response Report** (`.docx`); optionally an editable **`.pptx`** deck via **`food-ppt`** if the author wants slides | final compliance |
 
 ## Knowledge reuse — don't research the same field twice
 When the pipeline **ran Stage 1** (it entered at Stage 0 or 1), the field has already

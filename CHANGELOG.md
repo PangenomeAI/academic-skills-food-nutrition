@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.46.0 — 2026-08
+
+- **New `food-ppt` + `agri-ppt` skills — editable presentations from reports (14 skills
+  total).** Convert a review report, evidence brief, or manuscript — from
+  `food-review`/`food-research`/`food-deep-research`/`food-paper`/`food-pipeline`, or
+  **any Word / PDF / Markdown / txt source** — into a **fully editable `.pptx`**: every
+  title, bullet, **native table**, and figure is an editable PowerPoint object, nothing
+  flattened to an image, with **presenter notes on every slide**. Six subagents
+  (`ppt_coordinator`, `outline_planner`, `slide_writer`, `figure_placer`,
+  `deck_builder`, `deck_qa`) and references (source-to-slides, deck-spec, slide-design,
+  editability-and-qa). Clean, non-generic design informed by `taste-skill`; grounded —
+  never invents content beyond the source. `agri-ppt` delegates to `food-ppt` with the
+  agriculture persona.
+- New **`scripts/build_pptx.py`** (`--selftest`): builds an editable `.pptx` from a
+  deck-spec JSON via **python-pptx** — real text frames, native tables, movable picture
+  objects, per-slide notes. Stdlib spec-validator so the self-test runs without
+  python-pptx.
+- **Worked example** in `food-ppt/examples/`: a 10-slide journal-club deck built from a
+  real open-access CC-BY food-science review (Rossi et al., *Antioxidants* 2025),
+  grounded in its abstract/metadata; verified fully editable (text runs on every slide,
+  a native table, zero flattened images) with notes on all 10 slides.
+- Architecture informed by the open-source (MIT) `ppt-master`, `GordenPPTSkill`, and
+  `codex-ppt-skill`, and the `taste-skill` design guide; original text, no third-party
+  templates bundled. README acknowledgements updated.
+
 ## Unreleased
 
 - **Contributor metadata updated.** Added Lyu Hujie (Nutrition and Food Science
