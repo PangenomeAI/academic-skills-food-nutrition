@@ -10,7 +10,7 @@
       "name": "academic-skills-food-nutrition",
       "source": "./",
       "description": "Food, nutrition & agriculture research/write/review/orchestrate skills, publisher-tiered journal skills, and a figure workflow — for Claude Code, Codex, MiniMax Agent, and OpenClaw.",
-      "version": "1.45.0",
+      "version": "1.46.0",
       "license": "MIT",
       "skills": [
         "./food-research",
@@ -19,12 +19,14 @@
         "./food-review",
         "./food-pipeline",
         "./food-figure",
+        "./food-ppt",
         "./food-fetch",
         "./agri-research",
         "./agri-deep-research",
         "./agri-paper",
         "./agri-review",
-        "./agri-pipeline"
+        "./agri-pipeline",
+        "./agri-ppt"
       ]
     }
   ]

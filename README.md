@@ -156,6 +156,14 @@ bundled browser-control or challenge-solving system.
   advocate) with a **formatting-compliance check** against the target journal
   (APA 7.0 default, or a specific journal via `journal-selector`), ending in an
   editorial decision + revision checklist + response-letter skeleton.
+- **`food-ppt`** — **editable presentations** (6 subagents) from a review report,
+  evidence brief, or manuscript. Reads any common source (**Word, PDF, Markdown,
+  txt**, or a suite skill's output), plans the outline, writes grounded slide text
+  **with presenter notes on every slide**, places figures as movable picture objects,
+  and builds a **fully editable `.pptx`** via [`scripts/build_pptx.py`](scripts/build_pptx.py)
+  (python-pptx) — every title, bullet, **native table**, and figure editable in
+  PowerPoint, nothing flattened to an image. Clean, non-generic design (taste-informed);
+  never invents content beyond the source. See [`food-ppt/examples/`](food-ppt/examples/).
 - **`food-fetch`** — **lawful full-text acquisition** (6 subagents) so the research
   and review skills read **papers, not abstracts**. Routes each article through legal
   **open access** (Unpaywall/OpenAlex/PMC/arXiv — always downloaded via
@@ -494,6 +502,13 @@ academic-research and scientific-figure skills for Claude Code, including the
 `Awesome-Journal-Skills` (MIT), [`nature-downloader`](https://github.com/Yuan1z0825/nature-skills/tree/main/skills/nature-downloader)
 (MIT — its lawful-access routing, status-manifest, and institutional-session
 architecture informed our original [`food-fetch`](food-fetch/SKILL.md) skill),
+[`ppt-master`](https://github.com/hugohe3/ppt-master),
+[`GordenPPTSkill`](https://github.com/GordenSun/GordenPPTSkill), and
+[`codex-ppt-skill`](https://github.com/ningzimu/codex-ppt-skill) (all MIT — their
+schema→builder→QA architecture for editable PPTX informed our original
+[`food-ppt`](food-ppt/SKILL.md) skill; no third-party templates bundled),
+[`taste-skill`](https://github.com/leonxlnx/taste-skill) (its anti-generic design
+sensibility informed `food-ppt`'s slide design),
 [`humanizer`](https://github.com/blader/humanizer)
 (MIT, Siqi Chen — whose AI-writing-pattern taxonomy, itself informed by Wikipedia's
 "Signs of AI writing", shaped our

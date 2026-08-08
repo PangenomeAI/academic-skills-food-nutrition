@@ -74,6 +74,7 @@ python3 scripts/check_docx_fields.py --selftest       # leaked EndNote/Zotero fi
 python3 scripts/resolve_oa.py --selftest              # open-access PDF resolver (Unpaywall/OpenAlex)
 python3 scripts/fetch_oa.py --selftest                # open-access PDF downloader + manifest (food-fetch)
 python3 scripts/food_fetch_setup.py --selftest        # full-text access config store (first-run setup)
+python3 scripts/build_pptx.py --selftest              # editable-PPTX builder (food-ppt)
 
 # 3. Manifests are valid JSON (and, if you have Claude Code, validate the plugin)
 python3 -c "import json;[json.load(open(p)) for p in ['.claude-plugin/plugin.json','.claude-plugin/marketplace.json']];print('json ok')"
