@@ -1,0 +1,45 @@
+{
+  "$schema": "food-proposal/schemes/v1",
+  "schemes": {
+    "arc-discovery-eoi": {
+      "name": "ARC Discovery Projects — Expression of Interest (EOI)",
+      "funder": "Australian Research Council",
+      "doc": "Project Description (EOI stage)",
+      "limit_type": "pages", "limit_value": 2, "words_per_page": 650,
+      "font": "per ARC Instructions §2.4; references may be 10 pt",
+      "headings": ["PROJECT TITLE", "PROJECT QUALITY AND INNOVATION", "REFERENCES",
+                   "ACKNOWLEDGEMENTS (if required)"],
+      "counted_sections": null,
+      "source": "ARC Discovery Projects EOI Instructions to Applicants",
+      "verified": "2026-08"
+    },
+    "arc-discovery-full": {
+      "name": "ARC Discovery Projects — Full Application",
+      "funder": "Australian Research Council",
+      "doc": "Project Description (Full Application stage)",
+      "limit_type": "pages", "limit_value": 7, "words_per_page": 650,
+      "font": "per ARC Instructions §2.4 (incl. text in figures/tables); references may be 10 pt",
+      "headings": ["PROJECT TITLE", "PROJECT QUALITY AND INNOVATION", "BENEFIT",
+                   "COMMUNICATION OF RESULTS", "REFERENCES", "ACKNOWLEDGEMENTS (if required)"],
+      "counted_sections": null,
+      "source": "ARC Discovery Projects Full Application Instructions to Applicants",
+      "verified": "2026-08"
+    },
+    "uom-major-minor-project": {
+      "name": "UoM Ag & Food Major/Minor Research Project Proposal",
+      "funder": "The University of Melbourne (coursework research project)",
+      "doc": "Research project proposal",
+      "limit_type": "words", "limit_value": 1500, "tolerance": 150,
+      "font": "11 pt, 1.5 line spacing",
+      "headings": ["Cover Sheet", "Abstract", "Table of Contents",
+                   "Introduction", "Aims & Objectives", "Literature Review", "Methods",
+                   "Acknowledgements", "Reference list",
+                   "Risks", "Resources", "Timelines", "Figures/Diagrams/Tables"],
+      "counted_sections": ["Abstract", "Introduction", "Aims & Objectives",
+                           "Literature Review"],
+      "counted_note": "Word count covers Abstract, Introduction, Aims & Objectives, Literature Review, and in-text citations only. Cover sheet, table of contents, tables/figures, methods, acknowledgements, reference list, risks, resources, timeline, and appendix are NOT counted.",
+      "source": "Ag & Food Project Proposal Marking Guideline v6 (2025)",
+      "verified": "2026-08"
+    }
+  }
+}

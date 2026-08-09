@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.49.0 — 2026-08
+
+- **New skill: `food-proposal` — research & funding-proposal orchestrator.** The proposal
+  counterpart of `food-pipeline`. It resolves the target **funding scheme's format
+  first** (required headings in order, page/word limit, font, assessment criteria) — the
+  proposal equivalent of a journal format — then either **drafts from scratch**
+  (`food-deep-research` for the knowledge base → `food-paper` to write → `food-review` as
+  a mock funding panel) or **revises an existing draft** after first understanding the
+  field, enforcing the scheme's length limit and criteria at every gate.
+- **Built-in schemes:** `arc-discovery-eoi` (≤2 pages), `arc-discovery-full` (≤7 pages),
+  and `uom-major-minor-project` (1500 ± 150 words, counting only Abstract/Intro/Aims/Lit
+  Review; 11 pt, 1.5 spacing; mandatory AI-use disclosure). Catalog in
+  `food-proposal/schemes/INDEX.md` + machine-readable `schemes/schemes.json`. **If a
+  scheme isn't built in**, `scheme_extractor` captures its format from a user-uploaded
+  guideline/sample form into a new scheme spec — nothing is guessed.
+- Subagents `proposal_router`, `scheme_extractor`, `compliance_gate`; references for
+  workflow, scheme selection, format/limits, and assessment alignment. New stdlib
+  `scripts/proposal_wordcount.py` enforces each scheme's length limit (counted-sections
+  and page-estimate modes; `--selftest`).
+
 ## 1.48.0 — 2026-08
 
 - **Editable experimental-design flow diagrams (BioRender-style) in food-ppt/agri-ppt.**
