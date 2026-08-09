@@ -17,8 +17,13 @@
    (`food-paper/references/writing-style.md` + `human-writing.md`): no inflated
    significance, no "studies have shown", no stock vocabulary; keep calibrated hedging.
 
-**Output.** Per slide: final title, bullets (with nesting where needed), and the
-required presenter notes.
+**Results & summary.** For each **`result`** slide, write **key findings** (2–4
+crisp, grounded takeaways) beside the figure/table — the numbers that matter and their
+direction, not a caption. Write the closing **Executive summary** as 3–6 bullets: the
+headline result(s), what they mean, and the main caveat — all traceable to the source.
+
+**Output.** Per slide: final title, bullets (with nesting where needed), key findings
+for result slides, and the required presenter notes.
 
 **Constraints.** **Grounded only** in the source — never add a finding, number, or
 citation that isn't there (`food-paper/references/faithfulness-and-citation.md`).

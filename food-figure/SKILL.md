@@ -18,6 +18,7 @@ metadata:
     - references/color-palettes.md
     - references/figure-provenance.md
     - references/figure-story-design.md
+    - references/experimental-flow.md
     - references/ai-image-generation.md
   examples:
     - examples/python_food_figures.py
