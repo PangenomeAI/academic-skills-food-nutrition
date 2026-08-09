@@ -20,8 +20,9 @@ Turn a **review report, evidence brief, or manuscript** into a **fully editable
 `.pptx`** — every title, bullet, table, and figure is a **native PowerPoint object the
 author can edit**, never a flattened image. Original work; the schema→builder→QA
 architecture and design sensibility are informed by the open-source (MIT) `ppt-master`,
-`GordenPPTSkill`, and `codex-ppt-skill` skills and the `taste-skill` design guide (see
-the repo README Acknowledgements). No third-party templates are bundled.
+`GordenPPTSkill`, and `codex-ppt-skill` skills and the `taste-skill` and
+`ui-ux-pro-max-skill` design guides (see the repo README Acknowledgements). No
+third-party templates are bundled.
 
 ## What it converts
 The outputs of the suite's other skills, or any report/paper the user supplies:
@@ -40,6 +41,10 @@ The outputs of the suite's other skills, or any report/paper the user supplies:
 - **Results slides illustrate the result** — each is a **`result`** slide: a
   **figure** (from `food-figure`, theme-matched) where feasible, or a **scientific
   table** when the numbers are the point, **plus a Key findings** panel of takeaways.
+- **Big numbers and parallel facts get their own design** — a single striking figure
+  goes on a **`metric`** big-number hero; a set of parallel facts (objectives,
+  contributions, study parameters, KPIs) goes on a **`cards`** accent-bar grid, not a
+  bullet list (`references/slide-design.md`).
 - **Executive summary** — a closing summary slide is **required** in every deck.
 - **Theme-matched figures** — figures use the deck theme's palette so they match the
   slides.
@@ -64,12 +69,13 @@ say so; prefer a vector/redrawable source where available.
 **Pick one of 8 editable themes** — slate (default) · sage · burgundy · teal · graphite
 · ocean · terracotta · forest — with the deck-spec `"theme"` field (catalog:
 `templates/INDEX.md`; preview: `templates/theme-previews.svg`). A theme is a palette +
-type + layout style (cover brand bar, full-bleed section dividers, accent edge stripe,
-underlined titles, footer + slide numbers, styled tables) applied as **editable
-shapes** — no bundled template files, nothing flattened. `ppt_coordinator` chooses the
-theme from topic/audience or asks. Restrained academic look informed by `taste-skill`:
-one accent + ink/greys, whitespace, one idea per slide, layout variety — never the
-templated "AI deck" look.
+type + layout style (cover brand bar + side panel, full-bleed section dividers, accent
+edge stripe, underlined titles, big-number heroes, accent-bar cards, footer + slide
+numbers, styled tables) applied as **editable shapes** — no bundled template files,
+nothing flattened. `ppt_coordinator` chooses the theme from topic/audience or asks.
+Restrained academic look informed by `taste-skill` and `ui-ux-pro-max-skill`: a real
+type scale (strong size + weight contrast), one accent + ink/greys, whitespace, one idea
+per slide, and layout variety — never the templated "AI deck" look.
 
 ## Grounding & privacy (inherited)
 Slides are **only** as true as the source — never add a finding, number, or citation

@@ -22,6 +22,8 @@ Deck-spec JSON:
     {"layout": "two_column", "title": "...", "left": ["..."], "right": ["..."], "notes": "..."},
     {"layout": "figure",  "title": "...", "image": "fig.png", "caption": "...", "notes": "..."},
     {"layout": "table",   "title": "...", "table": [["H1","H2"], ["a","b"]], "notes": "..."},
+    {"layout": "metric",  "title": "...", "value": "42%", "label": "reduction ...", "support": "vs control (p<0.05)", "notes": "..."},
+    {"layout": "cards",   "title": "...", "cards": [{"heading": "n = 1,240", "text": "..."}], "notes": "..."},
     {"layout": "references", "title": "References", "items": ["..."], "notes": "..."}
   ]
 }
@@ -31,12 +33,13 @@ Usage:
   build_pptx.py --selftest
 """
 import json
+import math
 import os
 import sys
 import zipfile
 
 LAYOUTS = {"title", "section", "bullets", "two_column", "figure", "table",
-           "references", "flow", "result"}
+           "references", "flow", "result", "metric", "cards"}
 
 _FALLBACK_THEME = {
     "bg": "FFFFFF", "surface": "EEF2F6", "band": "F5F8FB", "ink": "18212B",
@@ -91,6 +94,12 @@ def validate_spec(spec):
                 problems.append(f"slide {i} (result): needs an 'image' or a 'table'")
             if not s.get("key_findings"):
                 problems.append(f"slide {i} (result): needs 'key_findings' (list)")
+        if lay == "metric" and not s.get("value"):
+            problems.append(f"slide {i} (metric): needs a 'value' (the big number)")
+        if lay == "cards":
+            cards = s.get("cards")
+            if not (isinstance(cards, list) and cards):
+                problems.append(f"slide {i} (cards): needs 'cards' (list of {{heading,text}})")
     return problems
 
 
@@ -142,6 +151,16 @@ def build(spec, out_path, theme_name=None):
         p.space_after = Pt(space_after)
         return p
 
+    def track(p, pts):
+        """Letter-spacing (tracking) in points; negative = tight. Editable rPr attr."""
+        for r in p.runs:
+            r._r.get_or_add_rPr().set("spc", str(int(pts * 100)))
+        return p
+
+    def line_spacing(p, mult):
+        p.line_spacing = mult
+        return p
+
     def bg(sl, color=None):
         rect(sl, 0, 0, SW, SH, color or C["bg"])
 
@@ -182,6 +201,21 @@ def build(spec, out_path, theme_name=None):
         a.fill.solid(); a.fill.fore_color.rgb = C["accent2"]
         a.line.fill.background()
         return a
+
+    def card_panel(sl, l, t, w, h, heading, text, big=False):
+        """An accent-bar card (subtle-border surface + top accent bar) — editable shapes."""
+        panel = sl.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, l, t, w, h)
+        panel.shadow.inherit = False
+        panel.fill.solid(); panel.fill.fore_color.rgb = C["band"]
+        panel.line.color.rgb = C["surface"]; panel.line.width = Pt(1)
+        rect(sl, l + Inches(0.12), t + Inches(0.12), w - Inches(0.24), Pt(3), C["accent2"])
+        tf = tb(sl, l + Inches(0.28), t + Inches(0.32), w - Inches(0.56), h - Inches(0.5))
+        para(tf.paragraphs[0], str(heading), 30 if big else 22, font=FH, bold=True,
+             color=C["accent"], space_after=6)
+        if big:
+            track(tf.paragraphs[0], -0.5)
+        if text:
+            para(tf.add_paragraph(), str(text), 13, color=C["ink"], space_after=0)
 
     def flow_row(sl, steps, x0, y, total_w, box_h):
         """Lay a row of movable step boxes with arrows between them."""
@@ -228,11 +262,14 @@ def build(spec, out_path, theme_name=None):
         if lay == "title":
             bg(sl)
             rect(sl, 0, 0, SW, Inches(0.28), C["accent"])          # top brand bar
-            rect(sl, 0, Inches(6.9), SW, Inches(0.6), C["surface"])  # bottom band
-            tf = tb(sl, Inches(0.9), Inches(2.25), Inches(11.5), Inches(2.6))
-            para(tf.paragraphs[0], s.get("title", spec.get("title", "")), 40,
-                 font=FH, bold=True, color=C["accent"], space_after=10)
-            rect(sl, Inches(0.95), Inches(3.5), Inches(3.2), Pt(3), C["accent2"])
+            rect(sl, Inches(10.9), Inches(0.28), Inches(2.43), Inches(6.62), C["surface"])  # side panel
+            rect(sl, Inches(10.9), Inches(0.28), Pt(3), Inches(6.62), C["accent2"])          # panel edge
+            rect(sl, 0, Inches(6.9), SW, Inches(0.6), C["accent"])   # bottom band
+            tf = tb(sl, Inches(0.9), Inches(2.1), Inches(9.7), Inches(2.9))
+            para(tf.paragraphs[0], s.get("title", spec.get("title", "")), 46,
+                 font=FH, bold=True, color=C["accent"], space_after=12)
+            track(tf.paragraphs[0], -0.5); line_spacing(tf.paragraphs[0], 1.02)
+            rect(sl, Inches(0.95), Inches(3.65), Inches(3.2), Pt(3.5), C["accent2"])
             for txt, sz, col in ((s.get("subtitle") or spec.get("subtitle"), 20, C["ink"]),
                                  (s.get("authors") or spec.get("authors"), 16, C["muted"]),
                                  (s.get("date") or spec.get("date"), 13, C["muted"])):
@@ -241,10 +278,12 @@ def build(spec, out_path, theme_name=None):
 
         elif lay == "section":
             bg(sl, C["accent"])
+            rect(sl, 0, Inches(2.95), Inches(0.55), Inches(1.6), C["accent2"])  # side accent block
             tf = tb(sl, Inches(0.9), 0, Inches(11.5), SH, anchor=MSO_ANCHOR.MIDDLE)
-            para(tf.paragraphs[0], s.get("title", ""), 34, font=FH, bold=True,
+            para(tf.paragraphs[0], s.get("title", ""), 40, font=FH, bold=True,
                  color=C["onaccent"])
-            rect(sl, Inches(0.95), Inches(4.55), Inches(2.6), Pt(3), C["accent2"])
+            track(tf.paragraphs[0], -0.5)
+            rect(sl, Inches(0.95), Inches(4.65), Inches(2.6), Pt(3.5), C["accent2"])
             pn = tb(sl, Inches(11.9), Inches(6.7), Inches(0.7), Inches(0.4))
             para(pn.paragraphs[0], str(i), 11, color=C["onaccent"], align=PP_ALIGN.RIGHT)
 
@@ -369,6 +408,44 @@ def build(spec, out_path, theme_name=None):
             add_bullets(kf, s.get("key_findings", []), size=13)
             footer(sl, i)
 
+        elif lay == "metric":
+            # Big-number hero: one oversized figure the audience remembers.
+            bg(sl, C["surface"])
+            if s.get("title"):
+                title_zone(sl, s["title"])
+            vtf = tb(sl, Inches(1.0), Inches(2.5), Inches(11.3), Inches(2.4),
+                     anchor=MSO_ANCHOR.MIDDLE)
+            para(vtf.paragraphs[0], str(s.get("value", "")), 96, font=FH, bold=True,
+                 color=C["accent"], align=PP_ALIGN.CENTER, space_after=4)
+            track(vtf.paragraphs[0], -1.0)
+            if s.get("label"):
+                para(vtf.add_paragraph(), str(s["label"]), 24, color=C["ink"],
+                     align=PP_ALIGN.CENTER, space_after=2)
+            if s.get("support"):
+                para(vtf.add_paragraph(), str(s["support"]), 15, color=C["muted"],
+                     align=PP_ALIGN.CENTER, space_after=0)
+            footer(sl, i)
+
+        elif lay == "cards":
+            # Metrics/feature grid of accent-bar cards (up to 6).
+            bg(sl); title_zone(sl, s.get("title", ""))
+            cards = s.get("cards", [])[:6]
+            n = len(cards)
+            cols = 1 if n <= 1 else (2 if n in (2, 4) else 3)
+            rows_n = max(1, math.ceil(n / cols))
+            gap = Inches(0.35)
+            x0, y0, area_w, area_h = Inches(0.8), Inches(1.85), Inches(11.7), Inches(4.85)
+            cw = int((area_w - gap * (cols - 1)) / cols)
+            ch = int((area_h - gap * (rows_n - 1)) / rows_n)
+            big = rows_n == 1  # single row of headline stats → oversized headings
+            for idx, card in enumerate(cards):
+                r, c = divmod(idx, cols)
+                cx = x0 + c * (cw + gap)
+                cy = y0 + r * (ch + gap)
+                card_panel(sl, cx, cy, cw, ch, card.get("heading", ""),
+                           card.get("text", ""), big=big)
+            footer(sl, i)
+
         notes(sl, s.get("notes"))
 
     prs.save(out_path)
@@ -385,10 +462,18 @@ def selftest():
         {"layout": "flow", "title": "Design", "steps": ["Sample", "Assay", "Analyse"]},
         {"layout": "result", "title": "Result 1", "table": [["Trt", "Val"], ["A", "1.2"]],
          "key_findings": ["A beat control", "p < 0.05"]},
+        {"layout": "metric", "title": "Headline", "value": "42%",
+         "label": "reduction in spoilage", "support": "vs control (p < 0.05)"},
+        {"layout": "cards", "title": "At a glance", "cards": [
+            {"heading": "n = 1,240", "text": "participants"},
+            {"heading": "6 trials", "text": "pooled"},
+            {"heading": "2019-2024", "text": "window"}]},
         {"layout": "references", "title": "References", "items": ["Ref 1"]}]}
     assert validate_spec(spec) == [], validate_spec(spec)
-    bad = validate_spec({"slides": [{"layout": "bogus"}, {"layout": "figure"}]})
+    bad = validate_spec({"slides": [{"layout": "bogus"}, {"layout": "figure"},
+                                    {"layout": "metric"}, {"layout": "cards"}]})
     assert any("layout 'bogus'" in p for p in bad) and any("missing 'image'" in p for p in bad)
+    assert any("needs a 'value'" in p for p in bad) and any("needs 'cards'" in p for p in bad)
     assert validate_spec({}) == ["spec.slides must be a non-empty list"]
     # themes.json loads and default resolves
     t = load_theme("sage"); assert t["accent"] and t["font_body"]
@@ -407,6 +492,10 @@ def selftest():
         assert "<a:t>" in s3 and "one" in s3, "bullets must be native editable runs"
         s5 = z.read("ppt/slides/slide5.xml").decode("utf-8", "ignore")
         assert "<a:tbl>" in s5, "data slide must be a native table"
+        s8 = z.read("ppt/slides/slide8.xml").decode("utf-8", "ignore")
+        assert "42%" in s8 and "spc=" in s8, "metric slide: editable value with tracking"
+        s9 = z.read("ppt/slides/slide9.xml").decode("utf-8", "ignore")
+        assert s9.count("roundRect") >= 3 and "n = 1,240" in s9, "cards: native card shapes"
     print("OK: build_pptx selftest passed (validator + themed editable .pptx built)")
 
 

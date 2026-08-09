@@ -41,7 +41,9 @@ invented data. The deck ends with an AI-use disclosure slide, per the suite's ru
 ## experimental-design-demo
 An **illustrative** paper-style deck (synthetic data, clearly labelled) that shows the
 research-deck layouts:
-- `experimental-design-demo.deck.json` / `.pptx` — 7 slides.
+- `experimental-design-demo.deck.json` / `.pptx` — 9 slides.
+- A **`cards`** study-at-a-glance grid (accent-bar cards) and a **`metric`** big-number
+  hero (the headline result) — the design patterns adapted from `ui-ux-pro-max-skill`.
 - **Editable experimental-design `flow`** (swimlanes Material → Treatment → Assays →
   Analysis) rendered as **native movable shapes** — every box and arrow is individually
   editable, not a flattened image.

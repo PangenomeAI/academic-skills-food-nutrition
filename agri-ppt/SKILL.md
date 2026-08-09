@@ -35,7 +35,8 @@ Read that file first. No new machinery here.
 ## Inherited unchanged (not optional)
 Fully **editable** output (native text frames, native tables, movable picture objects;
 never a flattened image or a PDF-in-place-of-pptx); **presenter notes on every slide**;
-clean, non-generic design (taste-informed); grounding — slides only as true as the
+clean, non-generic design (informed by `taste-skill` + `ui-ux-pro-max-skill`, incl.
+`metric` big-number heroes and `cards` grids); grounding — slides only as true as the
 source, no fabricated finding/number/citation; the academic-style + `human-writing.md`
 pairing on slide prose; `scripts/privacy_scan.py` before delivery; and the AI-use
 disclosure slide when presenting AI-assisted work. See `food-ppt/SKILL.md`.

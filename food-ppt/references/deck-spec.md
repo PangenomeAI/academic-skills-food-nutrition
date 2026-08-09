@@ -24,6 +24,11 @@ content becomes **native, editable** objects (text frames, tables, picture objec
     {"layout": "result", "title": "Finding in a sentence",
        "image": "fig.png",          // OR "table": [["H","H"],["a","b"]]
        "key_findings": ["point", "point"], "caption": "...", "notes": "..."},
+    {"layout": "metric", "title": "Headline (optional)",
+       "value": "42%", "label": "reduction in ...", "support": "vs control (p<0.05)", "notes": "..."},
+    {"layout": "cards", "title": "...",
+       "cards": [{"heading": "n = 1,240", "text": "participants"},
+                 {"heading": "6 trials", "text": "pooled"}], "notes": "..."},
     {"layout": "references", "title": "References", "items": ["ref 1", "ref 2"], "notes": "..."}
   ]
 }
@@ -43,6 +48,19 @@ and a **Key findings** panel (`key_findings`, bullets) on the right — so every
 slide carries both the evidence and the takeaways. Prefer a figure to illustrate the
 result; use a table when the numbers are the point.
 
+## `metric` — big-number hero (one striking figure)
+`metric` shows one oversized number — an effect size, sample size, or % change — as
+editable text on a calm surface background, with a `label` (what it is) and optional
+`support` (the caveat/statistic). Use it when a single number *is* the message; don't
+bury that number in a bullet. `title` is optional (omit for a pure hero).
+
+## `cards` — accent-bar card grid (parallel facts)
+`cards` lays out up to **6** cards, each a `{"heading", "text"}` on an accent-bar
+surface panel (native rounded-rectangle shapes, editable), auto-arranged 1–3 per row.
+Use it for objectives, contributions, study parameters, or KPIs — a set of parallel
+facts reads as *designed* in a grid but as filler in a bullet list. A single row of
+cards gets oversized headings for a metrics-dashboard look.
+
 ## Executive summary (required)
 End every deck with an **Executive summary** slide (a `bullets` slide titled
 "Executive summary") capturing the key takeaways, before References and the AI-use
@@ -57,7 +75,8 @@ disclosure.
 
 ## Rules
 - **`layout`** is one of: `title · section · bullets · two_column · figure · table ·
-  references`. The validator rejects anything else and reports the offending slide.
+  flow · result · metric · cards · references`. The validator rejects anything else and
+  reports the offending slide.
 - **`bullets`** items: a string is a top-level bullet; a **nested list** is its
   sub-points. Keep each ≤ ~1 line; ~3–5 per slide.
 - **`figure.image`** is a path to a real image file → embedded as a **movable picture

@@ -88,8 +88,33 @@ def table(ox, oy, t):
 
 def section(ox, oy, t):
     e = [_rect(ox, oy, SW, SH, t["accent"])]
+    e.append(_rect(ox, oy + SH / 2 - 18, 12, 36, t["accent2"]))         # side accent block
     e.append(_text(ox + 20, oy + SH / 2, "Mechanisms of action", 15, t["onaccent"], "bold"))
     e.append(_rect(ox + 21, oy + SH / 2 + 10, 60, 3, t["accent2"]))
+    return "".join(e)
+
+
+def metric(ox, oy, t):
+    e = [_rect(ox, oy, SW, SH, t["surface"]), _rect(ox, oy, 4, SH, t["accent"])]
+    e.append(_text(ox + 18, oy + 24, "Impact", 12, t["accent"], "bold"))
+    e.append(_text(ox + SW / 2, oy + 92, "42%", 52, t["accent"], "bold", "middle"))
+    e.append(_text(ox + SW / 2, oy + 116, "reduction in spoilage", 11, t["ink"], anchor="middle"))
+    e.append(_text(ox + SW / 2, oy + 132, "vs control (p < 0.05)", 8, t["muted"], anchor="middle"))
+    return "".join(e)
+
+
+def cards(ox, oy, t):
+    e = [_rect(ox, oy, SW, SH, t["bg"]), _rect(ox, oy, 4, SH, t["accent"])]
+    e.append(_text(ox + 18, oy + 24, "At a glance", 13, t["accent"], "bold"))
+    e.append(_rect(ox + 19, oy + 30, 52, 2, t["accent2"]))
+    labels = [("n = 1,240", "participants"), ("6 trials", "pooled"), ("2019-24", "window")]
+    cw, gap = (SW - 36 - 2 * 8) / 3, 8
+    for j, (h, sub) in enumerate(labels):
+        cx = ox + 18 + j * (cw + gap)
+        e.append(_rect(cx, oy + 46, cw, SH - 74, t["band"], rx=4))
+        e.append(_rect(cx + 6, oy + 52, cw - 12, 2.5, t["accent2"]))
+        e.append(_text(cx + 8, oy + 82, h, 13, t["accent"], "bold"))
+        e.append(_text(cx + 8, oy + 98, sub, 7.5, t["ink"]))
     return "".join(e)
 
 
@@ -98,7 +123,7 @@ def theme_row(oy, key, t):
     parts = [_text(10, oy + 22, t["name"], 13, t["ink"], "bold"),
              _text(10, oy + 38, t.get("style", "")[:18], 7.5, t["muted"]),
              _text(10, oy + SH, "#" + t["accent"], 7, t["accent"])]
-    for fn in (cover, section, bullets, table):
+    for fn in (cover, section, bullets, metric, cards, table):
         parts.append(fn(x, oy, t)); x += SW + GAP
     return "".join(parts), x
 
@@ -107,10 +132,11 @@ def build_svg(data, only=None):
     themes = data["themes"]
     keys = [only] if only else list(themes)
     row_h = SH + 26
-    width = LABEL_W + 4 * (SW + GAP)
+    width = LABEL_W + 6 * (SW + GAP)
     height = 40 + row_h * len(keys)
     body = [_rect(0, 0, width, height, "FFFFFF"),
-            _text(12, 26, "food-ppt themes — cover · section · bullets · table", 15, "222222", "bold")]
+            _text(12, 26, "food-ppt themes — cover · section · bullets · metric · cards · table",
+                  15, "222222", "bold")]
     y = 44
     for k in keys:
         t = {**{"onaccent": "FFFFFF", "band": "F2F2F2"}, **themes[k]}
