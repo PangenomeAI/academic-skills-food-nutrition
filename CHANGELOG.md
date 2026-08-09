@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.47.0 — 2026-08
+
+- **`food-ppt` / `agri-ppt` get 8 professional, editable themes — big design upgrade.**
+  The first release built plain slides; decks now use a real visual system. New
+  `food-ppt/templates/themes.json` defines eight palettes — **slate** (default), sage,
+  burgundy, teal, graphite, ocean, terracotta, forest — each a palette + fonts + layout
+  style applied by `scripts/build_pptx.py` as **editable shapes**: cover with brand bar
+  + accent rule, full-bleed **section dividers**, a per-slide accent **edge stripe** +
+  underlined title + **footer with slide number**, accent bullet marks, and **styled
+  tables** (accent header row, banded rows). Everything stays native/editable — no
+  bundled template files, nothing flattened. Pick a theme with the deck-spec `"theme"`
+  field or `--theme`. Catalog: `food-ppt/templates/INDEX.md` + `references/templates.md`.
+- **Theme preview gallery.** New `scripts/preview_themes.py` (`--selftest`) renders an
+  SVG gallery (cover · section · bullets · table for each theme) so a theme can be
+  chosen by eye — `food-ppt/templates/theme-previews.svg`. `ppt_coordinator` now picks
+  the theme from topic/audience (or asks); `agri-ppt` prefers terracotta/forest.
+- The shipped example deck was rebuilt with the **sage** theme. Design informed by
+  `taste-skill` and the catalog pattern of `ppt-master` / `GordenPPTSkill` /
+  `codex-ppt-skill` — original code, no third-party templates bundled.
+
 ## 1.46.0 — 2026-08
 
 - **New `food-ppt` + `agri-ppt` skills — editable presentations from reports (14 skills

@@ -13,11 +13,15 @@ A 10-slide journal-club deck built from a real open-access food-science paper:
 - `polyphenols-antimicrobial-review.deck.json` — the deck spec.
 - `polyphenols-antimicrobial-review.pptx` — the built, fully editable deck.
 
-Rebuild it with:
+Built with the **sage** theme (one of 8 in `../templates/INDEX.md`; preview
+`../templates/theme-previews.svg`). Rebuild it — or try another theme — with:
 ```bash
 python3 ../scripts/build_pptx.py polyphenols-antimicrobial-review.deck.json \
-  --out polyphenols-antimicrobial-review.pptx
+  --out polyphenols-antimicrobial-review.pptx --theme sage
 ```
+
+Swap `--theme sage` for `slate`, `burgundy`, `teal`, `graphite`, `ocean`, `terracotta`,
+or `forest` to restyle the same content.
 
 **What it demonstrates**
 - Layout variety: title · section · bullets · two-column · **native table** · references.

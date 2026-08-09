@@ -8,6 +8,7 @@ metadata:
   related_skills: [food-research, food-deep-research, food-paper, food-pipeline, food-figure, agri-ppt]
   references:
     - references/source-to-slides.md
+    - references/templates.md
     - references/deck-spec.md
     - references/slide-design.md
     - references/editability-and-qa.md
@@ -46,12 +47,16 @@ say so; prefer a vector/redrawable source where available.
 5. **`deck_builder`** — assembles the **deck-spec JSON** (`references/deck-spec.md`) and runs **`python3 scripts/build_pptx.py <spec>.json --out <deck>.pptx`**.
 6. **`deck_qa`** — verifies editability, checks text overflow / slide density, and confirms every slide's content is faithful to the source (`references/editability-and-qa.md`).
 
-## Design — clean and non-generic (`references/slide-design.md`)
-Restrained academic style: one accent colour + ink/greys, generous whitespace, strong
-type hierarchy, one idea per slide, layout **variety** (title / section / bullets /
-two-column / figure / table / references) rather than wall-to-wall bullets. Informed by
-`taste-skill`: avoid the templated "AI deck" look — no clip-art, no gradient soup, no
-dense text dumps.
+## Templates & design (`references/templates.md`, `references/slide-design.md`)
+**Pick one of 8 editable themes** — slate (default) · sage · burgundy · teal · graphite
+· ocean · terracotta · forest — with the deck-spec `"theme"` field (catalog:
+`templates/INDEX.md`; preview: `templates/theme-previews.svg`). A theme is a palette +
+type + layout style (cover brand bar, full-bleed section dividers, accent edge stripe,
+underlined titles, footer + slide numbers, styled tables) applied as **editable
+shapes** — no bundled template files, nothing flattened. `ppt_coordinator` chooses the
+theme from topic/audience or asks. Restrained academic look informed by `taste-skill`:
+one accent + ink/greys, whitespace, one idea per slide, layout variety — never the
+templated "AI deck" look.
 
 ## Grounding & privacy (inherited)
 Slides are **only** as true as the source — never add a finding, number, or citation

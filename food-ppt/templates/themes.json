@@ -1,0 +1,54 @@
+{
+  "$schema": "food-ppt/themes/v1",
+  "default": "slate",
+  "themes": {
+    "slate": {
+      "name": "Slate", "style": "Minimal business", "best_for": "Default; conference & journal-club talks, clean and neutral",
+      "bg": "FFFFFF", "surface": "EEF2F6", "band": "F5F8FB", "ink": "18212B", "muted": "5B6673",
+      "accent": "1F3A5F", "accent2": "3E7CB1", "onaccent": "FFFFFF",
+      "font_head": "Calibri", "font_body": "Calibri"
+    },
+    "sage": {
+      "name": "Sage", "style": "Academic, calm", "best_for": "Literature reviews, food & nutrition science, thesis talks",
+      "bg": "FFFFFF", "surface": "EEF1EC", "band": "F4F7F1", "ink": "20261F", "muted": "5C6357",
+      "accent": "3B5A40", "accent2": "7D9D74", "onaccent": "FFFFFF",
+      "font_head": "Georgia", "font_body": "Calibri"
+    },
+    "burgundy": {
+      "name": "Burgundy", "style": "Scholarly, warm", "best_for": "Defenses, formal academic reviews",
+      "bg": "FFFFFF", "surface": "F3ECEC", "band": "F8F2F2", "ink": "241B1B", "muted": "6A5A5A",
+      "accent": "6E2431", "accent2": "A8535F", "onaccent": "FFFFFF",
+      "font_head": "Georgia", "font_body": "Calibri"
+    },
+    "teal": {
+      "name": "Teal", "style": "Fresh, food-science", "best_for": "Food & nutrition topics, public-facing talks",
+      "bg": "FFFFFF", "surface": "E8F1F1", "band": "F1F7F7", "ink": "10262A", "muted": "51636A",
+      "accent": "155E63", "accent2": "3FA7A0", "onaccent": "FFFFFF",
+      "font_head": "Calibri", "font_body": "Calibri"
+    },
+    "graphite": {
+      "name": "Graphite", "style": "Monochrome + amber, consulting-minimal", "best_for": "Data-forward, executive-style summaries",
+      "bg": "FFFFFF", "surface": "EDEEF0", "band": "F5F6F7", "ink": "1C1F24", "muted": "5E646C",
+      "accent": "2B2F36", "accent2": "D08A2C", "onaccent": "FFFFFF",
+      "font_head": "Arial", "font_body": "Arial"
+    },
+    "ocean": {
+      "name": "Ocean", "style": "Indigo + cyan, data-viz", "best_for": "Results-heavy, chart-driven decks",
+      "bg": "FFFFFF", "surface": "E9EDF6", "band": "F2F5FB", "ink": "141A2E", "muted": "586074",
+      "accent": "213A78", "accent2": "2E9BD6", "onaccent": "FFFFFF",
+      "font_head": "Calibri", "font_body": "Calibri"
+    },
+    "terracotta": {
+      "name": "Terracotta", "style": "Warm clay + sand, agriculture", "best_for": "Agronomy, soil & field-trial talks",
+      "bg": "FFFFFF", "surface": "F3ECE4", "band": "F8F3EC", "ink": "281E16", "muted": "6B5B4C",
+      "accent": "A0522D", "accent2": "C98A5E", "onaccent": "FFFFFF",
+      "font_head": "Georgia", "font_body": "Calibri"
+    },
+    "forest": {
+      "name": "Forest", "style": "Deep green + lime, agriculture", "best_for": "Crop, horticulture & sustainability talks",
+      "bg": "FFFFFF", "surface": "E8EFE6", "band": "F1F6EF", "ink": "16241A", "muted": "556356",
+      "accent": "24503A", "accent2": "6FA85A", "onaccent": "FFFFFF",
+      "font_head": "Calibri", "font_body": "Calibri"
+    }
+  }
+}

@@ -22,6 +22,13 @@ content becomes **native, editable** objects (text frames, tables, picture objec
 }
 ```
 
+## Theme & footer
+- **`theme`** — one of the keys in `templates/themes.json` (slate · sage · burgundy ·
+  teal · graphite · ocean · terracotta · forest); default `slate`. Sets palette, fonts,
+  and layout styling. See `templates.md`.
+- **`footer`** — short deck label shown bottom-left on content slides (defaults to the
+  deck title).
+
 ## Rules
 - **`layout`** is one of: `title · section · bullets · two_column · figure · table ·
   references`. The validator rejects anything else and reports the offending slide.
