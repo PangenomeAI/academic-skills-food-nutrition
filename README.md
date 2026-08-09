@@ -186,6 +186,15 @@ bundled browser-control or challenge-solving system.
   finalize, with mandatory author decision points. **Default: one** review→revise
   round; a second round and in-place Tracked Changes on the original Word file
   require **explicit author authorization** (avoids over-automation).
+- **`food-proposal`** — **proposal orchestrator** (the funding counterpart of
+  `food-pipeline`): it resolves the target **funding scheme's format** first
+  (headings, order, page/word limit, font, assessment criteria), then drafts from
+  scratch (`food-deep-research` → `food-paper` → `food-review`) or revises an existing
+  draft after understanding the field, enforcing the length limit and criteria at every
+  gate. Built-in schemes: **ARC Discovery EOI**, **ARC Discovery Full Application**, and
+  the **UoM Ag & Food project proposal**; if a scheme isn't built in it asks you to
+  upload the guideline and extracts the format. See
+  [`food-proposal/schemes/INDEX.md`](food-proposal/schemes/INDEX.md).
 
 ### `food-paper` modes: what each one does
 `food-paper` is eight tools in one, and **you rarely need the whole pipeline**. You
@@ -317,6 +326,8 @@ one-off tasks.
 | Reviewer comments + your draft | The revision + responses | `food-paper` **revise** |
 | **A finished, reviewed, polished paper** | **Only to change it to another journal's format** | **`food-paper` `format-convert`** — say *"reformat my manuscript for Food Chemistry"*. It re-flows structure, word/abstract limits, headings and the **whole reference list** into the new style, exports `.docx`/LaTeX/PDF, and **preserves EndNote/Zotero citation fields** — **no re-research, no re-review, no rewriting of your science.** |
 | A topic and nothing else, and you want it all | The whole project managed | `food-pipeline` (or `agri-pipeline`) |
+| A grant / funding proposal to write or revise | It written to the scheme's format & limits | `food-proposal` |
+| A finished report or paper | An editable slide deck | `food-ppt` (or `agri-ppt`) |
 
 Reformatting is deliberately **not** a pipeline job: running the pipeline on a
 finished paper would re-research, re-review, and re-edit work you already consider
