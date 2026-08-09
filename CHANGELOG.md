@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.48.0 — 2026-08
+
+- **Editable experimental-design flow diagrams (BioRender-style) in food-ppt/agri-ppt.**
+  New **`flow`** slide layout renders an experimental-design diagram as **native,
+  movable PowerPoint shapes** — one rounded box per step, one arrow per transition,
+  each individually editable — from `lanes` (swimlanes: Material → Treatment → Assays →
+  Analysis) or a linear `steps` list. **Never a flattened image**, so the presenter can
+  move/relabel any component. The design lives in **food-figure**
+  (`references/experimental-flow.md`, theme-matched blueprint); food-ppt calls it and
+  `build_pptx.py` renders the movable shapes. **Required in every deck built from a
+  research proposal or paper.**
+- **Results slides now illustrate and summarise.** New **`result`** layout puts a
+  **figure** (theme-matched, via `food-figure`) or a **scientific table** on the left
+  and a **Key findings** panel on the right — every results slide carries both the
+  evidence and the takeaways.
+- **Executive summary required** at the end of every deck; **figures match the deck
+  theme's palette** (the theme is passed to `food-figure`).
+- Wired through `outline_planner`, `slide_writer`, `figure_placer`, `deck_qa`, the
+  food-ppt references, and food-figure's SKILL. New illustrative example
+  `food-ppt/examples/experimental-design-demo` (synthetic data) showing the flow,
+  result, and executive-summary layouts — verified: 34 native movable shapes on the
+  flow slide, tables + key findings on results, notes on every slide.
+
 ## 1.47.0 — 2026-08
 
 - **`food-ppt` / `agri-ppt` get 8 professional, editable themes — big design upgrade.**

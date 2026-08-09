@@ -31,6 +31,19 @@ The outputs of the suite's other skills, or any report/paper the user supplies:
 - **`food-paper`** manuscript (or sections) → a paper-presentation / journal-club deck.
 - **`food-pipeline`** — offered at FINALIZE to package the finished work as slides.
 
+## Required content for a proposal / paper deck
+- **Experimental-design flow diagram** — a **`flow`** slide near the front, built from
+  **`food-figure`**'s blueprint (`experimental-flow.md`) and rendered as **native,
+  movable PowerPoint shapes** (one box per step, one arrow per transition — never a
+  flattened image), so the audience grasps the design at a glance. **Mandatory** for
+  any deck from a research proposal or research paper.
+- **Results slides illustrate the result** — each is a **`result`** slide: a
+  **figure** (from `food-figure`, theme-matched) where feasible, or a **scientific
+  table** when the numbers are the point, **plus a Key findings** panel of takeaways.
+- **Executive summary** — a closing summary slide is **required** in every deck.
+- **Theme-matched figures** — figures use the deck theme's palette so they match the
+  slides.
+
 ## Editable-first (non-negotiable) — `references/editability-and-qa.md`
 Build with **python-pptx** so the deck is genuinely editable: **real text frames**
 for titles/bullets, **native tables** (editable cells) for data, and figures placed as

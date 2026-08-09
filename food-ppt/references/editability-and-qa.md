@@ -14,6 +14,10 @@ to the source. Check both before delivery.
   figure exists only as a raster, embed it as a picture object (still movable /
   replaceable) and say so.
 
+- **Flow diagrams** are **native shapes** — each step box and arrow individually
+  movable/editable (the slide XML shows multiple `<p:sp>` roundRect + arrow shapes),
+  **not** one embedded image.
+
 Spot-check the built file: each slide's `ppt/slides/slideN.xml` should contain `<a:t>`
 text runs; data slides should contain `<a:tbl>`; no content slide should be a single
 full-bleed picture standing in for text.
@@ -28,6 +32,14 @@ content slides have empty notes.
 - **No text overflow** past the slide — if it overflows, cut text, raise the split, or
   move detail to notes; do **not** shrink the font to illegible sizes.
 - Layout variety, not wall-to-wall bullets.
+
+## Required content
+- **Experimental-design flow:** a deck from a research **proposal or paper** has a
+  `flow` slide (native movable shapes) near the front.
+- **Results slides** each carry a **figure or a scientific-style table AND a Key
+  findings** panel — never a bare figure with no takeaway.
+- **Executive summary** slide present at the end (before references/disclosure).
+- **Theme-matched figures:** figures from `food-figure` use the deck theme's palette.
 
 ## Faithful & clean
 - Every slide claim / number / citation appears in the source — nothing invented,

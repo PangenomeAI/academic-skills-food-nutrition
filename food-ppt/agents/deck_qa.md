@@ -12,6 +12,10 @@
 - **Readable:** no text overflow; <= ~5 bullets and one idea per slide; body font not
   tiny; layout variety (not every slide bullets).
 - **Presenter notes:** every content slide has non-empty notes in the Notes pane.
+- **Required content:** a proposal/paper deck has an **experimental-design `flow`**
+  slide (native movable shapes — multiple `<p:sp>` boxes+arrows, not an image); each
+  **results** slide has a figure or scientific table **plus key findings**; an
+  **Executive summary** slide is present at the end. Figures match the deck theme.
 - **Faithful:** every slide's claims/numbers/citations appear in the source; nothing
   invented; hedging preserved. AI-use disclosure slide present when presenting
   AI-assisted work.

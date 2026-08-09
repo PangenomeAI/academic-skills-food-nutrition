@@ -37,3 +37,17 @@ bot-blocked the automated PDF pull, so the example draws on the abstract. No num
 results are claimed beyond what the abstract states — the "Mechanisms at a glance"
 table is a conceptual summary of the abstract's described interaction sites, not
 invented data. The deck ends with an AI-use disclosure slide, per the suite's rules.
+
+## experimental-design-demo
+An **illustrative** paper-style deck (synthetic data, clearly labelled) that shows the
+research-deck layouts:
+- `experimental-design-demo.deck.json` / `.pptx` — 7 slides.
+- **Editable experimental-design `flow`** (swimlanes Material → Treatment → Assays →
+  Analysis) rendered as **native movable shapes** — every box and arrow is individually
+  editable, not a flattened image.
+- **`result`** slides: a scientific **table** + **Key findings** panel, and a **figure**
+  result slide (placeholder here; a theme-matched `food-figure` plot in real use).
+- A required **Executive summary** slide.
+
+All numbers are **synthetic placeholders** for layout demonstration — not a real study.
+Rebuild: `python3 ../scripts/build_pptx.py experimental-design-demo.deck.json --out experimental-design-demo.pptx`.

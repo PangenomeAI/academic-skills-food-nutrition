@@ -17,10 +17,36 @@ content becomes **native, editable** objects (text frames, tables, picture objec
     {"layout": "two_column", "title": "...", "left": ["..."], "right": ["..."], "notes": "..."},
     {"layout": "figure",  "title": "...", "image": "path/to/fig.png", "caption": "...", "notes": "..."},
     {"layout": "table",   "title": "...", "table": [["H1","H2"], ["a","b"]], "notes": "..."},
+    {"layout": "flow",   "title": "Experimental design",
+       "lanes": [{"label": "Material", "steps": ["...", "..."]},
+                 {"label": "Treatment", "steps": ["control", "arm 1", "arm 2"]},
+                 {"label": "Assays", "steps": ["..."]}], "notes": "..."},
+    {"layout": "result", "title": "Finding in a sentence",
+       "image": "fig.png",          // OR "table": [["H","H"],["a","b"]]
+       "key_findings": ["point", "point"], "caption": "...", "notes": "..."},
     {"layout": "references", "title": "References", "items": ["ref 1", "ref 2"], "notes": "..."}
   ]
 }
 ```
+
+## `flow` — experimental design (native, movable shapes)
+`flow` renders a **BioRender-style experimental-design diagram as native PowerPoint
+shapes** — one rounded box per step, one arrow per transition, all **movable and
+editable** (never a flattened image). Give it **`lanes`** (labelled swimlanes:
+Material → Treatment → Assays → Analysis) or a linear **`steps`** list. Design comes
+from **food-figure** (`experimental-flow.md`); box labels ≤ ~5 words, ≤ ~5 boxes/lane.
+**Required in every deck built from a research proposal or paper.**
+
+## `result` — a findings slide (figure/table + key points)
+`result` puts a **figure** (`image`) **or** a scientific-style **table** on the left
+and a **Key findings** panel (`key_findings`, bullets) on the right — so every results
+slide carries both the evidence and the takeaways. Prefer a figure to illustrate the
+result; use a table when the numbers are the point.
+
+## Executive summary (required)
+End every deck with an **Executive summary** slide (a `bullets` slide titled
+"Executive summary") capturing the key takeaways, before References and the AI-use
+disclosure.
 
 ## Theme & footer
 - **`theme`** — one of the keys in `templates/themes.json` (slate · sage · burgundy ·

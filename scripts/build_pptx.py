@@ -35,7 +35,8 @@ import os
 import sys
 import zipfile
 
-LAYOUTS = {"title", "section", "bullets", "two_column", "figure", "table", "references"}
+LAYOUTS = {"title", "section", "bullets", "two_column", "figure", "table",
+           "references", "flow", "result"}
 
 _FALLBACK_THEME = {
     "bg": "FFFFFF", "surface": "EEF2F6", "band": "F5F8FB", "ink": "18212B",
@@ -83,6 +84,13 @@ def validate_spec(spec):
                 problems.append(f"slide {i} (table): 'table' must be a list of rows")
         if lay == "references" and not s.get("items"):
             problems.append(f"slide {i} (references): missing 'items'")
+        if lay == "flow" and not (s.get("steps") or s.get("lanes")):
+            problems.append(f"slide {i} (flow): needs 'steps' (list) or 'lanes' (labelled rows)")
+        if lay == "result":
+            if not (s.get("image") or s.get("table")):
+                problems.append(f"slide {i} (result): needs an 'image' or a 'table'")
+            if not s.get("key_findings"):
+                problems.append(f"slide {i} (result): needs 'key_findings' (list)")
     return problems
 
 
@@ -154,6 +162,41 @@ def build(spec, out_path, theme_name=None):
     def notes(sl, text):
         if text:
             sl.notes_slide.notes_text_frame.text = str(text)
+
+    def flow_box(sl, l, t, w, h, text):
+        sp = sl.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, l, t, w, h)
+        sp.shadow.inherit = False
+        sp.fill.solid(); sp.fill.fore_color.rgb = C["band"]
+        sp.line.color.rgb = C["accent"]; sp.line.width = Pt(1.5)
+        tf = sp.text_frame; tf.word_wrap = True
+        tf.margin_left = tf.margin_right = Pt(6); tf.margin_top = tf.margin_bottom = Pt(3)
+        tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+        para(tf.paragraphs[0], str(text), 12, font=FB, bold=False, color=C["ink"],
+             align=PP_ALIGN.CENTER, space_after=0)
+        return sp
+
+    def flow_arrow(sl, l, t, w, h, down=False):
+        shp = MSO_SHAPE.DOWN_ARROW if down else MSO_SHAPE.RIGHT_ARROW
+        a = sl.shapes.add_shape(shp, l, t, w, h)
+        a.shadow.inherit = False
+        a.fill.solid(); a.fill.fore_color.rgb = C["accent2"]
+        a.line.fill.background()
+        return a
+
+    def flow_row(sl, steps, x0, y, total_w, box_h):
+        """Lay a row of movable step boxes with arrows between them."""
+        n = len(steps)
+        arrow_w = Inches(0.5)
+        gaps = (n - 1) * arrow_w
+        box_w = int((total_w - gaps) / max(n, 1))
+        x = x0
+        for j, step in enumerate(steps):
+            flow_box(sl, x, y, box_w, box_h, step)
+            x += box_w
+            if j < n - 1:
+                flow_arrow(sl, x + Inches(0.05), y + int(box_h / 2) - Inches(0.14),
+                           arrow_w - Inches(0.1), Inches(0.28))
+                x += arrow_w
 
     def add_bullets(tf, items, size=18, ref=False):
         first = True
@@ -256,6 +299,76 @@ def build(spec, out_path, theme_name=None):
                             run.font.color.rgb = C["onaccent"] if r == 0 else C["ink"]
             footer(sl, i)
 
+        elif lay == "flow":
+            # BioRender-style experimental-design flow as NATIVE, MOVABLE shapes:
+            # each step box and each arrow is its own editable object.
+            bg(sl); title_zone(sl, s.get("title", "Experimental design"))
+            lanes = s.get("lanes")
+            if not lanes:
+                lanes = [{"label": "", "steps": s.get("steps", [])}]
+            top, bottom = Inches(1.7), Inches(6.8)
+            avail_h = bottom - top
+            lane_h = int(avail_h / max(len(lanes), 1))
+            box_h = min(Inches(1.1), lane_h - Inches(0.5))
+            for li, lane in enumerate(lanes):
+                ly = top + li * lane_h
+                label = lane.get("label", "")
+                if label:
+                    ltf = tb(sl, Inches(0.7), ly, Inches(1.7), lane_h, anchor=MSO_ANCHOR.MIDDLE)
+                    para(ltf.paragraphs[0], label, 12, font=FH, bold=True, color=C["accent"],
+                         space_after=0)
+                    x0, row_w = Inches(2.5), Inches(10.1)
+                else:
+                    x0, row_w = Inches(0.8), Inches(11.7)
+                flow_row(sl, lane.get("steps", []), x0,
+                         ly + int((lane_h - box_h) / 2), row_w, box_h)
+                if li < len(lanes) - 1:  # arrow down to next lane
+                    flow_arrow(sl, Inches(6.5), ly + lane_h - Inches(0.32),
+                               Inches(0.34), Inches(0.3), down=True)
+            footer(sl, i)
+
+        elif lay == "result":
+            # Results slide: figure OR table on the left, key findings on the right.
+            bg(sl); title_zone(sl, s.get("title", "Results"))
+            img, data = s.get("image"), s.get("table")
+            if data:
+                rows, cols = len(data), max(len(r) for r in data)
+                gt = sl.shapes.add_table(rows, cols, Inches(0.8), Inches(1.75),
+                                         Inches(7.4), Inches(min(0.5 * rows, 4.6))).table
+                gt.first_row = True
+                for r, row in enumerate(data):
+                    for c in range(cols):
+                        cell = gt.cell(r, c)
+                        cell.text = str(row[c]) if c < len(row) else ""
+                        cell.fill.solid()
+                        cell.fill.fore_color.rgb = (C["accent"] if r == 0
+                                                    else (C["band"] if r % 2 else C["bg"]))
+                        for p in cell.text_frame.paragraphs:
+                            for run in p.runs:
+                                run.font.size = Pt(11); run.font.name = FB
+                                run.font.bold = (r == 0)
+                                run.font.color.rgb = C["onaccent"] if r == 0 else C["ink"]
+            elif img and os.path.exists(img):
+                pic = sl.shapes.add_picture(img, Inches(0.8), Inches(1.75), width=Inches(7.4))
+                if pic.height > Inches(4.9):
+                    pic.height, pic.width = Inches(4.9), int(pic.width * Inches(4.9) / pic.height)
+            else:
+                para(tb(sl, Inches(0.8), Inches(3.2), Inches(7.2), Inches(1)).paragraphs[0],
+                     f"[figure not found: {img}]", 14, color=C["muted"])
+            if s.get("caption"):
+                para(tb(sl, Inches(0.8), Inches(6.5), Inches(7.4), Inches(0.5)).paragraphs[0],
+                     s["caption"], 11, color=C["muted"])
+            # Key findings panel (right)
+            rect(sl, Inches(8.5), Inches(1.75), Inches(4.1), Inches(4.95), C["band"])
+            rect(sl, Inches(8.5), Inches(1.75), Inches(4.1), Inches(0.5), C["accent"])
+            kh = tb(sl, Inches(8.7), Inches(1.8), Inches(3.8), Inches(0.42),
+                    anchor=MSO_ANCHOR.MIDDLE)
+            para(kh.paragraphs[0], "Key findings", 14, font=FH, bold=True,
+                 color=C["onaccent"], space_after=0)
+            kf = tb(sl, Inches(8.7), Inches(2.35), Inches(3.75), Inches(4.2))
+            add_bullets(kf, s.get("key_findings", []), size=13)
+            footer(sl, i)
+
         notes(sl, s.get("notes"))
 
     prs.save(out_path)
@@ -269,6 +382,9 @@ def selftest():
         {"layout": "bullets", "title": "Points", "bullets": ["one", ["sub"], "two"], "notes": "n"},
         {"layout": "two_column", "title": "C", "left": ["a"], "right": ["b"]},
         {"layout": "table", "title": "Data", "table": [["Trt", "Value"], ["A", "1.2"]]},
+        {"layout": "flow", "title": "Design", "steps": ["Sample", "Assay", "Analyse"]},
+        {"layout": "result", "title": "Result 1", "table": [["Trt", "Val"], ["A", "1.2"]],
+         "key_findings": ["A beat control", "p < 0.05"]},
         {"layout": "references", "title": "References", "items": ["Ref 1"]}]}
     assert validate_spec(spec) == [], validate_spec(spec)
     bad = validate_spec({"slides": [{"layout": "bogus"}, {"layout": "figure"}]})

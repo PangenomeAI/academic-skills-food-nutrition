@@ -159,8 +159,11 @@ bundled browser-control or challenge-solving system.
 - **`food-ppt`** — **editable presentations** (6 subagents) from a review report,
   evidence brief, or manuscript. Reads any common source (**Word, PDF, Markdown,
   txt**, or a suite skill's output), plans the outline, writes grounded slide text
-  **with presenter notes on every slide**, places figures as movable picture objects,
-  and builds a **fully editable `.pptx`** via [`scripts/build_pptx.py`](scripts/build_pptx.py)
+  **with presenter notes on every slide**, places theme-matched figures (via `food-figure`) as movable picture objects, adds a
+  **BioRender-style experimental-design flow** as **native movable shapes** (editable
+  box-by-box) for proposal/paper decks, gives each **results** slide a figure or
+  scientific table **+ key findings**, ends with an **executive summary**, and builds a
+  **fully editable `.pptx`** via [`scripts/build_pptx.py`](scripts/build_pptx.py)
   (python-pptx) — every title, bullet, **native table**, and figure editable in
   PowerPoint, nothing flattened to an image. **8 editable themes** to choose from (slate · sage · burgundy · teal · graphite ·
   ocean · terracotta · forest — preview
