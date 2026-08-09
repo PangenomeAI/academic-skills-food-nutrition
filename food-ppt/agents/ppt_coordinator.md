@@ -12,7 +12,9 @@ conference, group meeting, defense) and **target length**; the output folder.
 1. **Read the source + confirm scope once.** Detect and read the input format (docx via
    the `docx` skill, PDF via the `pdf` skill, md/markdown/txt directly), keeping tables
    and figures. State the detected format. Confirm audience, approximate slide count,
-   and figure vs text emphasis. Default: ~10–15 slides, journal-club style.
+   figure vs text emphasis, and **theme** — pick from the 8 in `templates/INDEX.md`
+   (infer from topic/audience or ask; show `templates/theme-previews.svg` if unsure).
+   Default: ~10–15 slides, journal-club style, theme `slate`.
 2. **Outline** via `outline_planner` (`references/source-to-slides.md`).
 3. **Write** slide text via `slide_writer` (grounded, concise; detail in notes).
 4. **Place figures/tables** via `figure_placer`.

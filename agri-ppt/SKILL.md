@@ -26,7 +26,9 @@ Read that file first. No new machinery here.
    that discipline's audience.
 2. **Source** — the outputs of `agri-research` / `agri-deep-research` / `agri-paper` /
    `agri-pipeline`, or any user document (**Word · PDF · Markdown · txt**).
-3. **Emphasis** — foreground what an agricultural audience needs: site/season/design
+3. **Theme** — prefer the agriculture-leaning themes **terracotta** or **forest** (or
+   sage/slate) from `food-ppt/templates/INDEX.md`; infer from topic or ask.
+4. **Emphasis** — foreground what an agricultural audience needs: site/season/design
    and replication for field trials, the experimental unit, G×E, and units (t/ha,
    kg/ha) — carried from the source, never invented.
 

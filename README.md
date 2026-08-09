@@ -162,8 +162,11 @@ bundled browser-control or challenge-solving system.
   **with presenter notes on every slide**, places figures as movable picture objects,
   and builds a **fully editable `.pptx`** via [`scripts/build_pptx.py`](scripts/build_pptx.py)
   (python-pptx) — every title, bullet, **native table**, and figure editable in
-  PowerPoint, nothing flattened to an image. Clean, non-generic design (taste-informed);
-  never invents content beyond the source. See [`food-ppt/examples/`](food-ppt/examples/).
+  PowerPoint, nothing flattened to an image. **8 editable themes** to choose from (slate · sage · burgundy · teal · graphite ·
+  ocean · terracotta · forest — preview
+  [`theme-previews.svg`](food-ppt/templates/theme-previews.svg)), clean non-generic
+  design (taste-informed); never invents content beyond the source. See
+  [`food-ppt/examples/`](food-ppt/examples/).
 - **`food-fetch`** — **lawful full-text acquisition** (6 subagents) so the research
   and review skills read **papers, not abstracts**. Routes each article through legal
   **open access** (Unpaywall/OpenAlex/PMC/arXiv — always downloaded via

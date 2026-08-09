@@ -6,9 +6,10 @@
 authors.
 
 **Process** (`references/deck-spec.md`).
-1. Compose the **deck-spec JSON**: per slide a `layout` (title/section/bullets/
-   two_column/figure/table/references) and its content; deck-level title/subtitle/
-   authors/date; speaker notes per slide.
+1. Compose the **deck-spec JSON**: the chosen **`theme`** (see `references/templates.md`)
+   and `footer`; per slide a `layout` (title/section/bullets/two_column/figure/table/
+   references) and its content; deck-level title/subtitle/authors/date; speaker notes
+   per slide.
 2. Validate + build:
    `python3 scripts/build_pptx.py <spec>.json --out <deck>.pptx`
    (the script validates the spec, then emits native text frames, native tables, and
