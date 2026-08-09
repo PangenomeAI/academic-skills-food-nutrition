@@ -162,13 +162,16 @@ bundled browser-control or challenge-solving system.
   **with presenter notes on every slide**, places theme-matched figures (via `food-figure`) as movable picture objects, adds a
   **BioRender-style experimental-design flow** as **native movable shapes** (editable
   box-by-box) for proposal/paper decks, gives each **results** slide a figure or
-  scientific table **+ key findings**, ends with an **executive summary**, and builds a
+  scientific table **+ key findings**, presents a striking number on a **big-number
+  hero** (`metric`) and parallel facts on an **accent-bar card grid** (`cards`), ends
+  with an **executive summary**, and builds a
   **fully editable `.pptx`** via [`scripts/build_pptx.py`](scripts/build_pptx.py)
   (python-pptx) — every title, bullet, **native table**, and figure editable in
   PowerPoint, nothing flattened to an image. **8 editable themes** to choose from (slate · sage · burgundy · teal · graphite ·
   ocean · terracotta · forest — preview
   [`theme-previews.svg`](food-ppt/templates/theme-previews.svg)), clean non-generic
-  design (taste-informed); never invents content beyond the source. See
+  design (informed by `taste-skill` + `ui-ux-pro-max-skill`); never invents content
+  beyond the source. See
   [`food-ppt/examples/`](food-ppt/examples/).
 - **`food-fetch`** — **lawful full-text acquisition** (6 subagents) so the research
   and review skills read **papers, not abstracts**. Routes each article through legal
@@ -526,6 +529,9 @@ schema→builder→QA architecture for editable PPTX informed our original
 [`food-ppt`](food-ppt/SKILL.md) skill; no third-party templates bundled),
 [`taste-skill`](https://github.com/leonxlnx/taste-skill) (its anti-generic design
 sensibility informed `food-ppt`'s slide design),
+[`ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (MIT —
+its slide layout patterns, typographic scale, and layout→emotion logic informed
+`food-ppt`'s `metric`/`cards` layouts and type hierarchy),
 [`humanizer`](https://github.com/blader/humanizer)
 (MIT, Siqi Chen — whose AI-writing-pattern taxonomy, itself informed by Wikipedia's
 "Signs of AI writing", shaped our

@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.50.0 — 2026-08
+
+- **food-ppt / agri-ppt design upgrade — informed by `ui-ux-pro-max-skill` (MIT).** Two
+  new slide layouts and a real type scale, so decks read as *designed*, not templated:
+  - **`metric` — big-number hero.** One oversized figure (effect size, sample size, %
+    change) as editable text on a calm surface, with a label and optional supporting
+    statistic. Use it when a single number *is* the message.
+  - **`cards` — accent-bar card grid.** Up to 6 `{heading, text}` cards on accent-bar
+    surface panels (native rounded-rectangle shapes, editable), auto-arranged 1–3 per
+    row — for objectives, contributions, study parameters, or KPIs, which read as filler
+    in a bullet list but as design in a grid. A single row gets oversized headings for a
+    metrics-dashboard look.
+- **Stronger typography & composition:** bigger, tighter cover (46 pt) and section
+  (40 pt) titles with letter-spacing/line-height control, a cover side panel, and a
+  section side-accent block — adapted from `ui-ux-pro-max-skill`'s slide-typography scale
+  and layout logic. `references/slide-design.md` documents the type scale and a
+  layout→message guide.
+- Wired through `build_pptx.py` (validator + renderer + `--selftest`), the SVG preview
+  gallery (`preview_themes.py` now shows metric + cards columns), the `experimental-design-demo`
+  example (now 9 slides), and the food-ppt references. Everything stays **fully
+  editable** — no flattened images.
+
 ## 1.49.0 — 2026-08
 
 - **New skill: `food-proposal` — research & funding-proposal orchestrator.** The proposal
