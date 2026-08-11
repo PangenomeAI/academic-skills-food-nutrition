@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.51.0 — 2026-08
+
+- **food-ppt theme gallery expanded from 8 → 17, with automatic theme selection.**
+  - **9 new themes.** Eight recreate the *look* (palette + style, in English) of the
+    open-source `GordenPPTSkill` template gallery as original, code-generated theme
+    definitions — **consulting** (crimson+navy), **dashboard** (navy+brick-red),
+    **azure** (royal corporate blue), **geometric** (navy+coral), **indigo** (electric),
+    **scholar** (navy+gold on parchment), **claret** (wine on cream), **apricot**
+    (friendly orange). The ninth, **midnight**, is the first **dark theme** (dark slate +
+    blue), recreating the look of a user-supplied Grok-generated briefing.
+    **No third-party `.pptx`/image files are copied or bundled** (GordenPPTSkill's
+    templates carry no clear licence); near-identical corporate-blue templates were
+    consolidated, and its Chinese political-education templates were intentionally not
+    reproduced for this international, English-only academic suite.
+  - **Automatic theme selection.** New stdlib `scripts/suggest_theme.py` ranks themes by
+    keyword match against the deck's own text and returns the best fit plus options;
+    `ppt_coordinator` now **auto-picks a suitable theme and offers the top few** for the
+    user to choose. Every theme carries `keywords` in `themes.json`. `--selftest`.
+  - The builder needed **no changes** for dark mode — the theme schema already separates
+    `bg` from `ink`, so `midnight` renders light text on dark panels natively.
+- **New example: `ai-news-brief-demo`** — a 9-slide dark-theme briefing recreated from a
+  user-supplied Grok 4.5 deck, rebuilt with food-ppt's editable `cards`/`two_column`/
+  `references` layouts (content reproduced for layout demonstration, not independently
+  verified). Preview gallery `theme-previews.svg` regenerated with all 17 themes.
+
 ## 1.50.0 — 2026-08
 
 - **food-ppt / agri-ppt design upgrade — informed by `ui-ux-pro-max-skill` (MIT).** Two
