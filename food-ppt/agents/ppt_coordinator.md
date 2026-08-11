@@ -12,9 +12,14 @@ conference, group meeting, defense) and **target length**; the output folder.
 1. **Read the source + confirm scope once.** Detect and read the input format (docx via
    the `docx` skill, PDF via the `pdf` skill, md/markdown/txt directly), keeping tables
    and figures. State the detected format. Confirm audience, approximate slide count,
-   figure vs text emphasis, and **theme** — pick from the 8 in `templates/INDEX.md`
-   (infer from topic/audience or ask; show `templates/theme-previews.svg` if unsure).
-   Default: ~10–15 slides, journal-club style, theme `slate`.
+   and figure vs text emphasis.
+   **Theme — auto-pick, then offer options:** run
+   `python3 scripts/suggest_theme.py --text "<deck title + abstract/topic>"
+   [--audience "<who>"] [--doctype "<review|proposal|results|...>"] --top 3` to rank the
+   **17 themes** (`templates/INDEX.md`, incl. the dark `midnight`) from the deck's own text. **Recommend the top
+   result and present the top ~3 as options** (point to `templates/theme-previews.svg`),
+   and let the user choose; an explicit user choice always wins. Default: ~10–15 slides,
+   journal-club style, theme `slate` if nothing fits.
 2. **Outline** via `outline_planner` (`references/source-to-slides.md`).
 3. **Write** slide text via `slide_writer` (grounded, concise; detail in notes).
 4. **Place figures/tables** via `figure_placer`.

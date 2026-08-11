@@ -66,9 +66,14 @@ say so; prefer a vector/redrawable source where available.
 6. **`deck_qa`** — verifies editability, checks text overflow / slide density, and confirms every slide's content is faithful to the source (`references/editability-and-qa.md`).
 
 ## Templates & design (`references/templates.md`, `references/slide-design.md`)
-**Pick one of 8 editable themes** — slate (default) · sage · burgundy · teal · graphite
-· ocean · terracotta · forest — with the deck-spec `"theme"` field (catalog:
-`templates/INDEX.md`; preview: `templates/theme-previews.svg`). A theme is a palette +
+**Pick one of 17 editable themes** — slate (default) · sage · burgundy · teal · graphite
+· ocean · terracotta · forest · consulting · dashboard · azure · geometric · indigo ·
+scholar · claret · apricot · **midnight** (a dark theme) — with the deck-spec `"theme"`
+field (catalog: `templates/INDEX.md`; preview: `templates/theme-previews.svg`). Most
+recreate the look of the open-source `GordenPPTSkill` gallery (in English) as original
+theme definitions; `midnight` recreates a Grok-generated dark deck. **`ppt_coordinator`
+auto-picks a theme from the deck's text via `scripts/suggest_theme.py` and offers the
+top few as options** for the user to choose. A theme is a palette +
 type + layout style (cover brand bar + side panel, full-bleed section dividers, accent
 edge stripe, underlined titles, big-number heroes, accent-bar cards, footer + slide
 numbers, styled tables) applied as **editable shapes** — no bundled template files,

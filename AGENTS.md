@@ -76,6 +76,7 @@ python3 scripts/fetch_oa.py --selftest                # open-access PDF download
 python3 scripts/food_fetch_setup.py --selftest        # full-text access config store (first-run setup)
 python3 scripts/build_pptx.py --selftest              # editable-PPTX builder (food-ppt)
 python3 scripts/preview_themes.py --selftest          # theme preview-gallery generator (food-ppt)
+python3 scripts/suggest_theme.py --selftest           # theme auto-selector (food-ppt)
 python3 scripts/proposal_wordcount.py --selftest      # funding-scheme length-limit checker (food-proposal)
 
 # 3. Manifests are valid JSON (and, if you have Claude Code, validate the plugin)

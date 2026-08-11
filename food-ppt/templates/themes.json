@@ -4,51 +4,122 @@
   "themes": {
     "slate": {
       "name": "Slate", "style": "Minimal business", "best_for": "Default; conference & journal-club talks, clean and neutral",
+      "keywords": ["general", "conference", "journal club", "neutral", "default", "seminar", "overview", "talk"],
       "bg": "FFFFFF", "surface": "EEF2F6", "band": "F5F8FB", "ink": "18212B", "muted": "5B6673",
       "accent": "1F3A5F", "accent2": "3E7CB1", "onaccent": "FFFFFF",
       "font_head": "Calibri", "font_body": "Calibri"
     },
     "sage": {
       "name": "Sage", "style": "Academic, calm", "best_for": "Literature reviews, food & nutrition science, thesis talks",
+      "keywords": ["literature review", "nutrition", "food science", "thesis", "calm", "biochemistry", "systematic review", "meta-analysis", "dietary"],
       "bg": "FFFFFF", "surface": "EEF1EC", "band": "F4F7F1", "ink": "20261F", "muted": "5C6357",
       "accent": "3B5A40", "accent2": "7D9D74", "onaccent": "FFFFFF",
       "font_head": "Georgia", "font_body": "Calibri"
     },
     "burgundy": {
       "name": "Burgundy", "style": "Scholarly, warm", "best_for": "Defenses, formal academic reviews",
+      "keywords": ["defense", "formal", "review", "humanities", "committee", "viva"],
       "bg": "FFFFFF", "surface": "F3ECEC", "band": "F8F2F2", "ink": "241B1B", "muted": "6A5A5A",
       "accent": "6E2431", "accent2": "A8535F", "onaccent": "FFFFFF",
       "font_head": "Georgia", "font_body": "Calibri"
     },
     "teal": {
       "name": "Teal", "style": "Fresh, food-science", "best_for": "Food & nutrition topics, public-facing talks",
+      "keywords": ["food", "beverage", "fresh", "public", "sensory", "fermentation", "flavor", "packaging", "shelf life"],
       "bg": "FFFFFF", "surface": "E8F1F1", "band": "F1F7F7", "ink": "10262A", "muted": "51636A",
       "accent": "155E63", "accent2": "3FA7A0", "onaccent": "FFFFFF",
       "font_head": "Calibri", "font_body": "Calibri"
     },
     "graphite": {
       "name": "Graphite", "style": "Monochrome + amber, consulting-minimal", "best_for": "Data-forward, executive-style summaries",
+      "keywords": ["executive", "minimal", "summary", "monochrome", "briefing", "board"],
       "bg": "FFFFFF", "surface": "EDEEF0", "band": "F5F6F7", "ink": "1C1F24", "muted": "5E646C",
       "accent": "2B2F36", "accent2": "D08A2C", "onaccent": "FFFFFF",
       "font_head": "Arial", "font_body": "Arial"
     },
     "ocean": {
       "name": "Ocean", "style": "Indigo + cyan, data-viz", "best_for": "Results-heavy, chart-driven decks",
+      "keywords": ["results", "charts", "data visualization", "analysis", "statistics", "chart", "figures", "trends"],
       "bg": "FFFFFF", "surface": "E9EDF6", "band": "F2F5FB", "ink": "141A2E", "muted": "586074",
       "accent": "213A78", "accent2": "2E9BD6", "onaccent": "FFFFFF",
       "font_head": "Calibri", "font_body": "Calibri"
     },
     "terracotta": {
       "name": "Terracotta", "style": "Warm clay + sand, agriculture", "best_for": "Agronomy, soil & field-trial talks",
+      "keywords": ["agriculture", "soil", "agronomy", "field trial", "farming", "harvest", "irrigation", "fertilizer"],
       "bg": "FFFFFF", "surface": "F3ECE4", "band": "F8F3EC", "ink": "281E16", "muted": "6B5B4C",
       "accent": "A0522D", "accent2": "C98A5E", "onaccent": "FFFFFF",
       "font_head": "Georgia", "font_body": "Calibri"
     },
     "forest": {
       "name": "Forest", "style": "Deep green + lime, agriculture", "best_for": "Crop, horticulture & sustainability talks",
+      "keywords": ["crop", "horticulture", "sustainability", "environment", "plant", "green", "biodiversity", "climate", "ecology"],
       "bg": "FFFFFF", "surface": "E8EFE6", "band": "F1F6EF", "ink": "16241A", "muted": "556356",
       "accent": "24503A", "accent2": "6FA85A", "onaccent": "FFFFFF",
       "font_head": "Calibri", "font_body": "Calibri"
+    },
+    "consulting": {
+      "name": "Consulting", "style": "Crimson + navy, consulting", "best_for": "Strategy & structured argument (pyramid/funnel/compare), executive decks",
+      "keywords": ["strategy", "business", "consulting", "industry", "market", "commercial", "framework", "value chain", "recommendation"],
+      "bg": "FFFFFF", "surface": "F3ECEC", "band": "F9F3F3", "ink": "20222A", "muted": "5E5A5C",
+      "accent": "A52524", "accent2": "2D3955", "onaccent": "FFFFFF",
+      "font_head": "Arial Black", "font_body": "Arial"
+    },
+    "dashboard": {
+      "name": "Dashboard", "style": "Navy + brick red, data", "best_for": "Results-heavy metrics & KPI decks, competitive analyses",
+      "keywords": ["kpi", "metrics", "dashboard", "performance", "quarterly", "report", "benchmark", "indicator", "scorecard"],
+      "bg": "FFFFFF", "surface": "E9EDF3", "band": "F2F5F9", "ink": "141A24", "muted": "566072",
+      "accent": "23406B", "accent2": "B73E3E", "onaccent": "FFFFFF",
+      "font_head": "Arial", "font_body": "Arial"
+    },
+    "azure": {
+      "name": "Azure", "style": "Royal corporate blue", "best_for": "Industry/professional talks, operations & project updates",
+      "keywords": ["operations", "project", "corporate", "technology", "engineering", "professional", "product", "process", "workflow", "roadmap"],
+      "bg": "FFFFFF", "surface": "E8EEF9", "band": "F2F6FC", "ink": "121A2C", "muted": "55607A",
+      "accent": "1F3A93", "accent2": "3498DB", "onaccent": "FFFFFF",
+      "font_head": "Arial", "font_body": "Arial"
+    },
+    "geometric": {
+      "name": "Geometric", "style": "Navy + coral, colorful-professional", "best_for": "Overviews & summaries that want energy without clutter",
+      "keywords": ["overview", "summary", "workshop", "colorful", "teaching", "annual", "kickoff", "introduction"],
+      "bg": "FFFFFF", "surface": "EEF0F6", "band": "F5F6FA", "ink": "20242E", "muted": "5C6270",
+      "accent": "243670", "accent2": "E55A48", "onaccent": "FFFFFF",
+      "font_head": "Arial", "font_body": "Arial"
+    },
+    "indigo": {
+      "name": "Indigo", "style": "Electric indigo, modern", "best_for": "Bold modern talks, pitches & seminars with contemporary energy",
+      "keywords": ["pitch", "startup", "innovation", "modern", "seminar", "artificial intelligence", "machine learning", "digital", "biotech", "novel"],
+      "bg": "FFFFFF", "surface": "ECECFB", "band": "F4F4FE", "ink": "12121A", "muted": "5A5A6E",
+      "accent": "3D3DF5", "accent2": "14141C", "onaccent": "FFFFFF",
+      "font_head": "Arial Black", "font_body": "Arial"
+    },
+    "scholar": {
+      "name": "Scholar", "style": "Navy + gold on parchment, academic", "best_for": "Thesis & grant proposals, dissertations, warm scholarly talks",
+      "keywords": ["proposal", "grant", "dissertation", "thesis", "phd", "funding", "research plan", "candidature", "fellowship", "scholarship"],
+      "bg": "FAF6EC", "surface": "F1E9D6", "band": "F6F0DE", "ink": "232A3A", "muted": "6A6250",
+      "accent": "2A3F75", "accent2": "B08A3E", "onaccent": "FFFFFF",
+      "font_head": "Georgia", "font_body": "Calibri"
+    },
+    "claret": {
+      "name": "Claret", "style": "Wine red on cream, academic", "best_for": "Formal defenses & prestige academic decks",
+      "keywords": ["defense", "dissertation", "prestige", "award", "distinguished", "keynote", "honors", "inaugural"],
+      "bg": "FAF3E9", "surface": "F1E4DC", "band": "F7EDE5", "ink": "2A1D1A", "muted": "6A574F",
+      "accent": "7A2B22", "accent2": "A55248", "onaccent": "FFFFFF",
+      "font_head": "Georgia", "font_body": "Calibri"
+    },
+    "apricot": {
+      "name": "Apricot", "style": "Friendly orange, outreach", "best_for": "Public engagement, teaching & science-communication talks",
+      "keywords": ["outreach", "public", "education", "community", "science communication", "teaching", "extension", "children", "school", "engagement"],
+      "bg": "FFFDF9", "surface": "FDEFE0", "band": "FFF6EC", "ink": "3A2E24", "muted": "7A6656",
+      "accent": "B85F2A", "accent2": "E8944A", "onaccent": "FFFFFF",
+      "font_head": "Trebuchet MS", "font_body": "Calibri"
+    },
+    "midnight": {
+      "name": "Midnight", "style": "Dark slate + blue, modern tech", "best_for": "AI/tech briefings, news summaries & modern dark-mode talks",
+      "keywords": ["ai", "news", "briefing", "tech", "technology", "update", "weekly", "summary", "digest", "roundup", "trends", "dark", "modern"],
+      "bg": "0F172A", "surface": "1E293B", "band": "172136", "ink": "E2E8F0", "muted": "94A3B8",
+      "accent": "3B82F6", "accent2": "60A5FA", "onaccent": "FFFFFF",
+      "font_head": "Arial", "font_body": "Arial"
     }
   }
 }

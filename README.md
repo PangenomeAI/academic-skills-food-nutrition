@@ -167,11 +167,12 @@ bundled browser-control or challenge-solving system.
   with an **executive summary**, and builds a
   **fully editable `.pptx`** via [`scripts/build_pptx.py`](scripts/build_pptx.py)
   (python-pptx) — every title, bullet, **native table**, and figure editable in
-  PowerPoint, nothing flattened to an image. **8 editable themes** to choose from (slate · sage · burgundy · teal · graphite ·
-  ocean · terracotta · forest — preview
-  [`theme-previews.svg`](food-ppt/templates/theme-previews.svg)), clean non-generic
-  design (informed by `taste-skill` + `ui-ux-pro-max-skill`); never invents content
-  beyond the source. See
+  PowerPoint, nothing flattened to an image. **17 editable themes** to choose from —
+  including a **dark** theme (`midnight`) — and the coordinator **auto-picks a theme from
+  your deck's text and offers options** ([`scripts/suggest_theme.py`](scripts/suggest_theme.py);
+  preview all in [`theme-previews.svg`](food-ppt/templates/theme-previews.svg)); clean
+  non-generic design (informed by `taste-skill` + `ui-ux-pro-max-skill`; theme gallery
+  recreates the look of `GordenPPTSkill`); never invents content beyond the source. See
   [`food-ppt/examples/`](food-ppt/examples/).
 - **`food-fetch`** — **lawful full-text acquisition** (6 subagents) so the research
   and review skills read **papers, not abstracts**. Routes each article through legal
@@ -527,6 +528,10 @@ architecture informed our original [`food-fetch`](food-fetch/SKILL.md) skill),
 [`codex-ppt-skill`](https://github.com/ningzimu/codex-ppt-skill) (all MIT — their
 schema→builder→QA architecture for editable PPTX informed our original
 [`food-ppt`](food-ppt/SKILL.md) skill; no third-party templates bundled),
+[`GordenPPTSkill`](https://github.com/GordenSun/GordenPPTSkill) (its template gallery's
+*look* — palette + style — was recreated, in English, as food-ppt's original
+code-generated themes; **no template `.pptx`/image files are copied or bundled**, and its
+Chinese political-education templates were intentionally not reproduced),
 [`taste-skill`](https://github.com/leonxlnx/taste-skill) (its anti-generic design
 sensibility informed `food-ppt`'s slide design),
 [`ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (MIT —
