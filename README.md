@@ -112,8 +112,10 @@ limits accuracy — and you can set it up at any time. See
 
 Users at other institutions can add their library's public search, homepage, OpenURL,
 and authentication-method metadata by following the
-[`institution-profiles` guide](food-fetch/references/institution-profiles.md). This
-stores no credentials and relies on the host AI's browser capability rather than a
+[`institution-profiles` guide](food-fetch/references/institution-profiles.md)
+(profiles are validated offline by
+[`scripts/check_institution_profiles.py`](scripts/check_institution_profiles.py)).
+This stores no credentials and relies on the host AI's browser capability rather than a
 bundled browser-control or challenge-solving system.
 
 ## Skills

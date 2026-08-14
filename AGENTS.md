@@ -74,6 +74,7 @@ python3 scripts/check_docx_fields.py --selftest       # leaked EndNote/Zotero fi
 python3 scripts/resolve_oa.py --selftest              # open-access PDF resolver (Unpaywall/OpenAlex)
 python3 scripts/fetch_oa.py --selftest                # open-access PDF downloader + manifest (food-fetch)
 python3 scripts/food_fetch_setup.py --selftest        # full-text access config store (first-run setup)
+python3 scripts/check_institution_profiles.py --selftest  # institution-profile config gate (food-fetch)
 python3 scripts/build_pptx.py --selftest              # editable-PPTX builder (food-ppt)
 python3 scripts/preview_themes.py --selftest          # theme preview-gallery generator (food-ppt)
 python3 scripts/suggest_theme.py --selftest           # theme auto-selector (food-ppt)
