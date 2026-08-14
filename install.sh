@@ -30,7 +30,7 @@ MARKET="academic-skills-food-nutrition"
 TARGET="${1:-all}"
 
 # Top-level skills (each holds a SKILL.md) + shared dirs the skills reference.
-SKILLS="food-deep-research food-research food-paper food-pipeline food-review food-figure journal-selector"
+SKILLS="food-research food-deep-research food-paper food-review food-pipeline food-proposal food-figure food-ppt food-fetch agri-research agri-deep-research agri-paper agri-review agri-pipeline agri-ppt journal-selector"
 SHARED="journals scripts"
 
 # Locate the source: this checkout if run from inside the repo, else clone it.
@@ -55,7 +55,7 @@ install_bundle() {
     rm -rf "$dir/$d"
     cp -R "$SRC/$d" "$dir/$d"
   done
-  echo "  ✔ Installed 7 skills (+ journals/, scripts/) into $dir/"
+  echo "  ✔ Installed 16 skills (+ journals/, scripts/) into $dir/"
 }
 
 install_claude() {
