@@ -6,14 +6,23 @@
   Code plugins/skills/marketplaces at **zero configuration** — so an existing Claude Code
   install works in Grok with nothing extra (`/skills` to confirm). For a standalone Grok
   setup, `install.sh` gains a **`grok`** target that installs the skills flat into
-  `${GROK_HOME:-~/.grok}/skills/` (global) or `./.grok/skills/` (per project). README
-  "About", install, and update sections document both paths; the GitHub repo description
-  now lists Grok.
-- **Installer fix — flat installs now include the whole suite.** The flat-bundle skill
-  list was stale (7 skills); it now installs **all 16** skills (adds `food-fetch`,
-  `food-proposal`, `food-ppt`, and the six `agri-*` skills incl. `agri-ppt`) for Codex,
-  MiniMax Agent, OpenClaw, and Grok. The "installed N skills" message is now computed, and
-  cross-skill references still resolve via the shared `journals/` and `scripts/` dirs.
+  `${GROK_HOME:-~/.grok}/skills/` (global) or `./.grok/skills/` (per project) — the same
+  16-skill flat bundle used for Codex/MiniMax/OpenClaw (see 1.51.1). README "About",
+  intro, install, and update sections, the banner, and the GitHub repo description now
+  list Grok Build.
+
+## 1.51.1 — 2026-08
+
+- **Fix `install.sh` installing only 7 of 16 skills for Codex / MiniMax / OpenClaw.**
+  The flat-install skill list was last updated before `agri-*` (v1.34.0),
+  `food-fetch` (v1.42.0), `food-ppt`/`agri-ppt` (v1.46.0), and `food-proposal`
+  (v1.49.0) were added — non-Claude installs therefore never received those 9
+  skills. The list now covers all 16 skills (the 15 plugin skills plus
+  `journal-selector`) and the completion message reports the real count.
+- **Document `scripts/check_institution_profiles.py`.** The offline validator for
+  the `food-fetch` institution profiles (added with the v1.44.0 profile work) is
+  now part of the AGENTS.md pre-PR verification checklist (`--selftest`) and is
+  referenced from the README's full-text-access section.
 
 ## 1.51.0 — 2026-08
 
