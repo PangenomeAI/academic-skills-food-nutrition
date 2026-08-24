@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.52.0 — 2026-08
+
+- **Grok Build support.** Grok Build reads the `SKILL.md` open standard, and reads Claude
+  Code plugins/skills/marketplaces at **zero configuration** — so an existing Claude Code
+  install works in Grok with nothing extra (`/skills` to confirm). For a standalone Grok
+  setup, `install.sh` gains a **`grok`** target that installs the skills flat into
+  `${GROK_HOME:-~/.grok}/skills/` (global) or `./.grok/skills/` (per project). README
+  "About", install, and update sections document both paths; the GitHub repo description
+  now lists Grok.
+- **Installer fix — flat installs now include the whole suite.** The flat-bundle skill
+  list was stale (7 skills); it now installs **all 16** skills (adds `food-fetch`,
+  `food-proposal`, `food-ppt`, and the six `agri-*` skills incl. `agri-ppt`) for Codex,
+  MiniMax Agent, OpenClaw, and Grok. The "installed N skills" message is now computed, and
+  cross-skill references still resolve via the shared `journals/` and `scripts/` dirs.
+
 ## 1.51.0 — 2026-08
 
 - **food-ppt theme gallery expanded from 8 → 17, with automatic theme selection.**

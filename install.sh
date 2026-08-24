@@ -2,23 +2,26 @@
 # One-command installer for academic-skills-food-nutrition.
 #
 # Claude Code: installed as a plugin (the whole repo is the plugin).
-# Codex, MiniMax Agent (Mavis), and OpenClaw: each
+# Codex, MiniMax Agent (Mavis), OpenClaw, and Grok Build: each
 #   skill is installed FLAT into the agent's skills directory
 #   (…/skills/<name>/SKILL.md) so the agent discovers it, PLUS the shared
 #   `journals/` and `scripts/` directories so cross-skill references
 #   (e.g. journal-selector -> journals/…, scripts/verify_citations.py) resolve.
+#   (Grok Build also reads Claude Code plugins/skills at zero config, so a Claude
+#   install is picked up automatically — this target is for a standalone Grok setup.)
 #
 #   ./install.sh            # all (auto-detects what's installed)
 #   ./install.sh claude     # Claude Code only
 #   ./install.sh codex      # Codex only
 #   ./install.sh minimax    # MiniMax Agent / Mavis only  (alias: mavis)
 #   ./install.sh openclaw   # OpenClaw only
+#   ./install.sh grok       # Grok Build only
 #
 # Remote one-liner:
 #   curl -fsSL https://raw.githubusercontent.com/PangenomeAI/academic-skills-food-nutrition/main/install.sh | bash
 #
 # To UPDATE later, just re-run this script (Claude Code is updated via
-# `claude plugin update`; Codex/MiniMax/OpenClaw bundles are cleanly
+# `claude plugin update`; Codex/MiniMax/OpenClaw/Grok bundles are cleanly
 # replaced). Updates are never automatic — you update when you choose. Restart
 # the app afterwards.
 set -euo pipefail
@@ -30,8 +33,9 @@ MARKET="academic-skills-food-nutrition"
 TARGET="${1:-all}"
 
 # Top-level skills (each holds a SKILL.md) + shared dirs the skills reference.
-SKILLS="food-deep-research food-research food-paper food-pipeline food-review food-figure journal-selector"
+SKILLS="food-research food-deep-research food-paper food-review food-pipeline food-proposal food-figure food-fetch food-ppt agri-research agri-deep-research agri-paper agri-review agri-pipeline agri-ppt journal-selector"
 SHARED="journals scripts"
+SKILL_COUNT="$(printf '%s\n' $SKILLS | grep -c .)"
 
 # Locate the source: this checkout if run from inside the repo, else clone it.
 if SELF="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" 2>/dev/null && pwd)" \
@@ -55,7 +59,7 @@ install_bundle() {
     rm -rf "$dir/$d"
     cp -R "$SRC/$d" "$dir/$d"
   done
-  echo "  ✔ Installed 7 skills (+ journals/, scripts/) into $dir/"
+  echo "  ✔ Installed $SKILL_COUNT skills (+ journals/, scripts/) into $dir/"
 }
 
 install_claude() {
@@ -101,12 +105,26 @@ install_openclaw() {
   echo "    (Override the dir with OPENCLAW_HOME.)"
 }
 
+install_grok() {
+  # Grok Build reads SKILL.md skills from ~/.grok/skills (global) and .grok/skills
+  # (per-project, walked to repo root). It also reads Claude Code plugins/skills at
+  # zero config, so a Claude Code install is already picked up — this target is for a
+  # standalone Grok setup. Set GROK_HOME to override the base dir.
+  local dir="${GROK_HOME:-$HOME/.grok}/skills"
+  echo "→ Grok Build: installing skills to $dir"
+  install_bundle "$dir"
+  echo "    Start a new Grok session to load the skills (run /skills to confirm)."
+  echo "    Note: if you already installed the Claude Code plugin, Grok reads it"
+  echo "    automatically — no need to run this. (Override the dir with GROK_HOME.)"
+}
+
 
 case "$TARGET" in
   claude)        install_claude ;;
   codex)         install_codex ;;
   minimax|mavis) install_minimax ;;
   openclaw)      install_openclaw ;;
+  grok)          install_grok ;;
   all|both|"")
     install_claude
     if command -v codex >/dev/null 2>&1 || [ -d "${CODEX_HOME:-$HOME/.codex}" ]; then
@@ -124,8 +142,14 @@ case "$TARGET" in
     else
       echo "→ OpenClaw: not detected (no 'openclaw' CLI or ~/.openclaw) — skipping. Later: ./install.sh openclaw"
     fi
+    if command -v grok >/dev/null 2>&1 || [ -d "${GROK_HOME:-$HOME/.grok}" ] || [ -n "${GROK_HOME:-}" ]; then
+      install_grok
+    else
+      echo "→ Grok Build: not detected (no 'grok' CLI or ~/.grok) — skipping. Later: ./install.sh grok"
+      echo "    (If you use Claude Code, Grok already reads that install automatically.)"
+    fi
     ;;
-  *) echo "Usage: $0 [claude|codex|minimax|openclaw|all]"; exit 2 ;;
+  *) echo "Usage: $0 [claude|codex|minimax|openclaw|grok|all]"; exit 2 ;;
 esac
 
 [ "${CLONED:-0}" = 1 ] && echo "(source cloned to $SRC)"

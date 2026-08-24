@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Academic Skills for Food & Nutrition Science — open AI research skills for Claude Code and Codex" width="100%">
+  <img src="assets/banner.svg" alt="Academic Skills for Food & Nutrition Science — open AI research skills for Claude Code, Codex, MiniMax Agent, OpenClaw, and Grok Build" width="100%">
 </p>
 
 # Academic Skills for Food & Nutrition Science
@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > **AI research assistant for food, nutrition and agricultural science** — Claude
-> Code, Codex, MiniMax Agent, and OpenClaw skills for **literature
+> Code, Codex, MiniMax Agent, OpenClaw, and Grok Build skills for **literature
 > review, systematic review (PRISMA & meta-analysis), data analysis and
 > statistics, scientific figures, journal formatting, and peer review**.
 > Food, nutrition & agriculture research automation, end to end.
@@ -19,7 +19,8 @@ is a **multi-subagent system** and a master pipeline orchestrates them, with bui
 knowledge of food, nutrition & agriculture journal author guidelines and a scientific
 figure workflow. Two parallel skill sets share one engine: **`food-*`** for food &
 nutrition science and **`agri-*`** for agricultural science. Supports Claude Code,
-Codex, MiniMax Agent, and OpenClaw.
+Codex, MiniMax Agent, OpenClaw, and Grok Build (which reads Claude Code skills at zero
+config).
 
 This open project was **initiated by the Food Science Group at the University of
 Melbourne**, and we warmly welcome food & nutrition research groups from around
@@ -37,22 +38,40 @@ claude plugin install academic-skills-food-nutrition@academic-skills-food-nutrit
 Then restart Claude Code (or run `/plugin`). Update later with
 `claude plugin update academic-skills-food-nutrition`.
 
-**Claude Code, Codex, and MiniMax Agent** (one command via the installer):
+**Claude Code, Codex, MiniMax Agent, OpenClaw, and Grok Build** (one command via the installer):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/PangenomeAI/academic-skills-food-nutrition/main/install.sh | bash
 ```
 
-Or, from a local clone: `./install.sh` (all) · `./install.sh claude` · `./install.sh codex` · `./install.sh minimax` · `./install.sh openclaw`.
+Or, from a local clone: `./install.sh` (all) · `./install.sh claude` · `./install.sh codex` · `./install.sh minimax` · `./install.sh openclaw` · `./install.sh grok`.
 The installer registers the Claude Code plugin, and for **Codex**
 (`${CODEX_HOME:-~/.codex}/skills/`), **[MiniMax Agent](https://agent.minimax.io/)**
 (Mavis; `${MAVIS_SKILLS_DIR:-~/.mavis/skills}/`),
-**[OpenClaw](https://openclaw.ai)** (`${OPENCLAW_HOME:-~/.openclaw}/skills/`) it installs **each skill flat**
+**[OpenClaw](https://openclaw.ai)** (`${OPENCLAW_HOME:-~/.openclaw}/skills/`), and
+**[Grok Build](https://docs.x.ai/)** (`${GROK_HOME:-~/.grok}/skills/`) it installs **each skill flat**
 (`…/skills/<name>/SKILL.md`, so the agent discovers it) **plus** the shared
 `journals/` and `scripts/` directories so cross-skill references resolve. Restart
 the app so it rescans skills. (Override the location with `CODEX_HOME` /
-`MAVIS_SKILLS_DIR` / `OPENCLAW_HOME`, or add via MiniMax's
+`MAVIS_SKILLS_DIR` / `OPENCLAW_HOME` / `GROK_HOME`, or add via MiniMax's
 in-app Skill Creator/import.)
+
+**Grok Build** — the easy path is **nothing to install**: Grok reads Claude Code
+plugins, skills, and marketplaces at **zero configuration**, so if you installed the
+Claude Code plugin above, Grok already sees every skill — just run `/skills` in Grok to
+confirm. For a **standalone** Grok setup (no Claude Code), install the skills into
+Grok's own directory:
+
+```bash
+# global (all projects): installs into ~/.grok/skills/
+./install.sh grok
+# or per-project: installs into ./.grok/skills/ of the current repo
+GROK_HOME="$(pwd)/.grok" ./install.sh grok
+```
+
+Then start a **new** Grok session (skills load at session start) and run `/skills` to
+verify. Grok reads `SKILL.md` skills from `~/.grok/skills/` (global) and `.grok/skills/`
+(per project, searched up to the repo root).
 
 ## Updating
 
@@ -69,12 +88,14 @@ version, refresh the marketplace first:
 claude plugin marketplace update academic-skills-food-nutrition
 ```
 
-**Codex / MiniMax Agent (Mavis) / OpenClaw** — re-run the installer
+**Codex / MiniMax Agent (Mavis) / OpenClaw / Grok Build** — re-run the installer
 (it cleanly replaces the skills), then restart the app:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/PangenomeAI/academic-skills-food-nutrition/main/install.sh | bash
-# or, from a local clone:  ./install.sh codex  |  ./install.sh minimax  |  ./install.sh openclaw
+# or, from a local clone:  ./install.sh codex  |  ./install.sh minimax  |  ./install.sh openclaw  |  ./install.sh grok
 ```
+(Grok Build reading a Claude Code install needs no update step — updating the Claude
+Code plugin is enough.)
 
 Check your installed version with `claude plugin list`; see all versions on the
 [Releases](https://github.com/PangenomeAI/academic-skills-food-nutrition/releases)
