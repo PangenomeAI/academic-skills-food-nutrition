@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.52.1 — 2026-08
+
+- Add **Lijing Ke** (School of Food Science and Nutrition, University of Leeds) to the
+  contributor list in `CITATION.cff` and the README.
+
 ## 1.52.0 — 2026-08
 
 - **Grok Build support.** Grok Build reads the `SKILL.md` open standard, and reads Claude
