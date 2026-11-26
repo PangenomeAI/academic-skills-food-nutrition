@@ -9,7 +9,7 @@ metadata:
 
 # Elsevier Food Journals — Shared Author Guideline Skill
 
-> **Verification status:** **Mostly unverified** — ScienceDirect blocks direct access. Some rows come from search excerpts of official guides (O), others only from the Citation Style Language repository (C), last updated mostly 2018.
+> **Verification status:** **Verified** on the official ScienceDirect guide (2026-11-27) for the six journals marked **V**. Other rows come from search excerpts (O) or the Citation Style Language repository (C), and are **not verified**.
 > Anything not confirmed must be checked at the journal's guide before submission. Tell the
 > author so, and ask them to paste or upload the current guide if it cannot be read.
 
@@ -19,20 +19,20 @@ Flagship journals with their own skill: **Food Chemistry** (`food-chemistry`), *
 
 ## Applies to
 
-**Source column:** **O** = search excerpt of the journal's official guide; **C** = Citation
+**Source column:** **V** = official guide read; **O** = search excerpt of the journal's official guide; **C** = Citation
 Style Language repository only (secondary, may be out of date); **—** = no evidence.
 
 | Journal | Abbrev | Ref style | Source | Notes |
 |---|---|---|---|---|
-| Trends in Food Science & Technology | TRENDS FOOD SCI TECH | author–date (APA 7) | O | Reviews; abstract ≤250; ≤10,000 words, ≤7 tables/figures, ≤100 refs |
+| Trends in Food Science & Technology | TRENDS FOOD SCI TECH | author–date (APA 7) | V | Reviews/commentaries only; see below |
 | Food Hydrocolloids | FOOD HYDROCOLLOID | author–date (APA) | O | Colloid/structure focus |
 | Food Hydrocolloids for Health | FOOD HYDROCOLL HLTH | author–date | O | Open access |
-| Food Packaging and Shelf Life | FOOD PACKAGING SHELF | author–date (APA) | C |  |
+| Food Packaging and Shelf Life | FOOD PACKAGING SHELF | author–date (APA 7) | V | See below |
 | Global Food Security | GLOB FOOD SECUR-AGR | author–date | C | Policy/economics |
 | Current Opinion in Food Science | CURR OPIN FOOD SCI | numbered | C | Invited short reviews |
 | Food Chemistry: X | FOOD CHEM X | author–date (APA) | C | Open access |
 | Future Foods | FUTURE FOODS | confirm | — | Open access |
-| Food Research International | FOOD RES INT | author–date (APA) | C |  |
+| Food Research International | FOOD RES INT | author–date (APA 7) | V | See below |
 | Current Research in Food Science | CURR RES FOOD SCI | confirm | — | Open access |
 | Postharvest Biology and Technology | POSTHARVEST BIOL TEC | author–date | C |  |
 | Innovative Food Science & Emerging Technologies | INNOV FOOD SCI EMERG | author–date (APA) | C |  |
@@ -42,13 +42,13 @@ Style Language repository only (secondary, may be out of date); **—** = no evi
 | Applied Food Research | APPL FOOD RES | confirm | — | Open access |
 | Meat Science | MEAT SCI | author–date | C | Abstract ≤250; ~8,000 words; short communication ≤2,500 |
 | Food Policy | FOOD POLICY | author–date | C | Social science |
-| Food Bioscience | FOOD BIOSCI | author–date (APA) | C |  |
+| Food Bioscience | FOOD BIOSCI | author–date (APA 7) | V | See below |
 | Food Structure | FOOD STRUCT-NETH | author–date (APA) | C |  |
 | Journal of Food Engineering | J FOOD ENG | author–date | C | Engineering/modelling |
 | International Journal of Food Microbiology | INT J FOOD MICROBIOL | author–date | C |  |
-| Food Quality and Preference | FOOD QUAL PREFER | author–date (APA) | C | Sensory/consumer |
+| Food Quality and Preference | FOOD QUAL PREFER | author–date (APA 7) | V | See below; **structured** abstract |
 | Food Chemistry: Molecular Sciences | FOOD CHEM-MOL SCI | confirm | — | Abstract ≤250 (O) |
-| Food Microbiology | FOOD MICROBIOL | author–date | C |  |
+| Food Microbiology | FOOD MICROBIOL | author–date | V | See below |
 | Journal of Food Composition and Analysis | J FOOD COMPOS ANAL | author–date | C |  |
 | Microbial Risk Analysis | MICROB RISK ANAL | author–date | C | QMRA |
 | Journal of Functional Foods | J FUNCT FOODS | author–date (APA) | C | Research ≤7,500 words, ≤8 tables+figures; review ≤10,000 (O); abstract 150 or 250 — guide conflicts |
@@ -56,6 +56,21 @@ Style Language repository only (secondary, may be out of date); **—** = no evi
 
 **Never assume numbered references for an Elsevier food journal** — most listed here are
 author–date. Elsevier lets each journal choose; confirm at its Guide for Authors.
+
+## Verified journal limits (2026-11-27)
+All six: abstract ≤250 words. Word limits are the journal's own wording.
+
+| Journal | Article types and length | Keywords | Highlights | Graphical abstract | Numbered sections |
+|---|---|---|---|---|---|
+| Trends FST | Review ≤10,000 words, ≤7 tables/figures, ≤100 refs; commentary ≤5,000, ≤5, ≤50; no research papers | 1–7 | required | not checked | not required |
+| Food Research International | Research preferably ≤6,000 (excl. refs, figures, tables); reviews unlimited; no short communications | 1–7 | required | **required** | yes; continuous line numbers |
+| Food Packaging and Shelf Life | Research ≤7,500 incl. allowance for ≤6 tables/illustrations; review ≤8,000, ≤6; short ≤3,000, ≤4, at least 8 refs | 1–7 | required | encouraged | yes |
+| Food Bioscience | Research ≤6,000 (excl. abstract, acknowledgements, figures, tables, refs); mini-review ≤6,000; review ≤10,000; short ≤3,000, ≤4, at least 8 refs | 1–7 | encouraged | none stated | headings |
+| Food Quality and Preference | Full ≤7,000; review ≤10,000 (PRISMA); short ≤4,000, ≤20 refs | 1–6 | required | encouraged | yes |
+| Food Microbiology | Research about ≤9,000; short ≤4,000; review ≤12,000; correspondence ≤1,500 | 1–7 | required | none stated | yes |
+
+Highlights, where used: separate file, 3–5 bullets ≤85 characters (read on the Trends guide).
+Declare generative-AI use in a statement before the reference list.
 
 ## Common Elsevier structure
 Title page (title, authors, affiliations, corresponding author) → Abstract → Keywords → Introduction → Materials and methods → Results (and) Discussion → Conclusions → declarations → References → figure/table legends → figures/tables. Use **continuous line numbers** and page numbers.

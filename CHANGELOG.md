@@ -11,6 +11,10 @@
   styles, Journal of Future Foods and MDPI limits.
 - **Honest verification status** on all 25 journal skills: verified, partly verified or
   unverified (publishers that block automated access).
+- Second pass on official pages: verified 14 journals (six Elsevier, four Wiley, Science
+  Advances, three Taylor & Francis) and corrected them — e.g. Food Reviews International
+  and International Journal of Food Properties use **numbered ACS** references, and
+  Molecular Nutrition & Food Research is numbered with Experimental Section before Results.
 - Routed five Maximum Academic Press journals from `elsevier-food` to `agri-other`.
 - Full error list: `journals/_audit-2026-11.md`.
 - **Section renumbering rule** (`food-paper/references/section-renumbering.md`): after
