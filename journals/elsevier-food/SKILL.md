@@ -13,6 +13,12 @@ metadata:
 > Anything not confirmed must be checked at the journal's guide before submission. Tell the
 > author so, and ask them to paste or upload the current guide if it cannot be read.
 
+## Publisher-wide guidance (compared across journals, 2026-11-27)
+Shared by the verified food titles: abstract ≤250 words (FQP: structured); author–date
+references (APA 7 except Food Microbiology's own name–year rules); 1–7 keywords (FQP 1–6);
+highlights as 3–5 bullets ≤85 characters (required by most, encouraged by Food Bioscience);
+numbered sections in most; generative-AI declaration. **Length limits differ per journal.**
+
 **Publisher:** Elsevier · Confirm each journal's exact limits at its own *Guide for Authors* on ScienceDirect (pages block automated fetch; structure below reflects the common Elsevier template).
 
 Flagship journals with their own skill: **Food Chemistry** (`food-chemistry`), **Journal of Dairy Science** (`j-dairy-science`). Everything else Elsevier/food is covered here.

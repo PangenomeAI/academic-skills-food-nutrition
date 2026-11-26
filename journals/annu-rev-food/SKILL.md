@@ -1,64 +1,37 @@
 ---
 name: annu-rev-food
-description: "Author-guideline skill for Annual Review of Food Science and Technology (Annual Reviews, ISSN 1941-1413). Use to format or check an invited review for this journal — review structure, author–date Annual Reviews references, and figure specs. Triggers: submit to Annual Review of Food Science and Technology, Annual Reviews guidelines, invited food review formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
+description: "Author-guideline skill for Annual Review of Food Science and Technology (Annual Reviews, ISSN 1941-1413). Use to format or check an invited review for this journal — review structure, per-journal Annual Reviews reference styles, and figure specs. Triggers: submit to Annual Review of Food Science and Technology, Annual Reviews guidelines, invited food review formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "Annual Reviews"
   issn: "1941-1413"
-  verified: "unverified"
+  verified: "2026-11 partial"
   source: "https://www.annualreviews.org/journal/food"
 ---
 
 # Annual Review of Food Science and Technology — Author Guideline Skill
 
-> **Verification status:** **Not verified** — the current Annual Reviews author instructions were not found.
-> Anything not confirmed must be checked at the journal's guide before submission. Tell the
-> author so, and ask them to paste or upload the current guide if it cannot be read.
+> **Verification status:** **Verified:** invited authorship, and which author handbook each journal uses ([Author Resource Center](https://www.annualreviews.org/page/authors/general-information), 2026-11-27). Length, abstract and keyword limits are **not verified**.
+> Anything not listed here is unconfirmed: check the journal's guide, or ask the author to
+> paste or upload it, before applying a limit.
 
-**Publisher:** Annual Reviews · **ISSN:** 1941-1413 · **Source:** [Journal page](https://www.annualreviews.org/journal/food).
+**Publisher:** Annual Reviews. Reviews are written by **invitation** (unsolicited authors: contact the journal first).
 
-## Aims & scope
-Authoritative, **invited** critical reviews across food science and technology: food chemistry, microbiology, engineering, safety, nutrition, and emerging technologies. Articles are commissioned by the Editorial Committee — unsolicited submissions are generally not accepted; propose topics to the editors first.
+## Publisher-wide guidance
+**Reference style is set per journal** — Annual Reviews issues separate handbooks:
 
-## Article type
-Review articles only (comprehensive, synthesis-driven, forward-looking). Typical length is substantial (often ~8,000–10,000 words); confirm the assigned length with the production editor.
+| Journal | Handbook | Reference style |
+|---|---|---|
+| Annual Review of Food Science and Technology | [Harvard](https://www.annualreviews.org/pb-assets/authors%20assets/authorhandbook-harvard.pdf) | **author–date** |
+| Annual Review of Nutrition | [Numbered](https://www.annualreviews.org/pb-assets/authors%20assets/authorhandbook-numbered.pdf) | **numbered** |
+| Other Annual Reviews titles | choose the journal in the Author Resource Center | confirm |
 
-## Manuscript structure
-Title → Authors & affiliations → Abstract → Keywords → Introduction → thematic sections with descriptive headings → Summary Points / Future Issues (Annual Reviews signature elements) → Disclosure Statement → Acknowledgments → Literature Cited. Provide "Summary Points" and "Future Issues" bullet lists.
-
-- **Abstract:** ~150–250 words.
-- **Keywords:** ~6–8.
-- **Disclosure statement:** required (funding, affiliations, potential bias).
-
-## Reference style
-**Author–date (name–year), Annual Reviews style.** In-text `(Author & Author 2023)`; "Literature Cited" list alphabetical. Article titles included.
-
-Example:
-> Author AB, Author CD. 2023. Title of the review article. *Annu. Rev. Food Sci. Technol.* 14:123–45
-
-**Annual Review of Nutrition** and **Annual Review of Animal Biosciences** are listed as **numbered** styles in the Citation Style Language repository — confirm; do not assume author–date.
-
-## Figures & tables
-Figures ≥300 dpi (line art higher); Annual Reviews uses professional redraw — supply clear, editable source files and permissions for any reused figures; RGB/CMYK per production; editable tables; cite in order.
-
-## Submission checklist
-- [ ] Topic pre-agreed/invited by the Editorial Committee · [ ] Summary Points + Future Issues lists
-- [ ] Abstract ~150–250 words · [ ] 6–8 keywords · [ ] Disclosure statement
-- [ ] Author–date (Annual Reviews) Literature Cited · [ ] Permissions for reused figures
-- [ ] Figures ≥300 dpi, editable source provided
-
-## Also covers — Annual Review of Nutrition
-Same Annual Reviews format (invited only; Summary Points / Future Issues;
-reference style differs — see above). **Annual Review of Nutrition** (ANNU REV NUTR) — invited comprehensive
-nutrition reviews.
+## Usual review elements (unconfirmed)
+Introduction, thematic headings, Summary Points, Future Issues, Disclosure Statement, Literature Cited. Confirm lengths in the invitation and handbook.
 
 ## Formatting constraints
 ```yaml
-journal: Annual Review of Food Science and Technology; Annual Review of Nutrition
 publisher: Annual Reviews
-submission: invited-only
-reference_style: per-journal   # confirm
-abstract_words: 250
-keywords_max: 8
-required_elements: [summary_points, future_issues, disclosure_statement]
-figure_dpi: {halftone: 300, line_art: 1000}
+submission: invited
+reference_style: {food_science_technology: author-date, nutrition: numbered}
+abstract_words: confirm-at-source
 ```

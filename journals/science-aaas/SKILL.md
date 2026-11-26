@@ -9,7 +9,7 @@ metadata:
 
 # AAAS Science Family — Author Guideline Skill
 
-> **Verification status:** **Verified for Science Advances** (information for authors, 2026-11-27). Science and the other family journals are **not verified**.
+> **Verification status:** **Verified for Science Advances**, and for Science's initial-manuscript instructions and long-format limit (2026-11-27). Science's standard length and abstract limits and the other family journals are **not verified**.
 > Anything not confirmed must be checked at the journal's guide before submission. Tell the
 > author so, and ask them to paste or upload the current guide if it cannot be read.
 
@@ -18,6 +18,14 @@ metadata:
 ## Applies to
 Science; Science Advances (open access); Science Translational Medicine; Science
 Immunology; Science Signaling; Science Robotics.
+
+## Science (partly verified)
+- Order: Title → Authors → Affiliations → Abstract → Main Text → References and Notes → Acknowledgments → List of Supplementary Materials → figure captions → tables. Materials and Methods sit in the Supplementary Materials.
+- Title ≤96 characters; figure captions ≤200 words; include titles of cited articles.
+- Extended online Research Articles: ≤6,000 words, ≤6 display items, ≤100 main-text references.
+
+## Publisher-wide guidance
+Science and Science Advances **differ** in title length, section order and Methods placement; do not transfer limits.
 
 ## Science Advances (verified)
 [Information for authors](https://www.science.org/content/page/science-advances-information-authors)
@@ -30,8 +38,8 @@ Immunology; Science Signaling; Science Robotics.
 ## Format (Science style)
 - **References: numbered** in citation order, Science style (numbered list `1., 2., …`; in-text `(1)`, `(2, 3)`). Full author lists; include DOIs.
   > 1. A. B. Author, C. D. Author, Title of the article. *Science* **380**, 1234 (2026).
-- **Abstract:** single paragraph, very short (Science Research Articles ~125 words; Science Advances ≤150).
-- **Structure:** Science Research Articles are tightly length-limited (main text often ~2,500–4,500 words incl. references/notes; Reports shorter); Materials and Methods often in supplementary. Science Advances: see above.
+- **Abstract:** single paragraph, very short (Science: *confirm*; Science Advances ≤150).
+- **Structure:** Science Research Articles are tightly length-limited (*confirm current limit*); Materials and Methods often in supplementary. Science Advances: see above.
 - **Display items:** limited; cite `Fig. 1` in order.
 - **Mandatory:** data/materials availability; competing interests; author contributions; supplementary materials for full methods.
 - **Figures:** ≥300 dpi; RGB; sized to one/two columns; accessible palette.

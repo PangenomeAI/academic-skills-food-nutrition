@@ -15,6 +15,8 @@
   Advances, three Taylor & Francis) and corrected them — e.g. Food Reviews International
   and International Journal of Food Properties use **numbered ACS** references, and
   Molecular Nutrition & Food Research is numbered with Experimental Section before Results.
+- Third pass: at least two journals checked for each multi-journal publisher, with a
+  *publisher-wide guidance* note saying what is shared and what differs.
 - Routed five Maximum Academic Press journals from `elsevier-food` to `agri-other`.
 - Full error list: `journals/_audit-2026-11.md`.
 - **Section renumbering rule** (`food-paper/references/section-renumbering.md`): after

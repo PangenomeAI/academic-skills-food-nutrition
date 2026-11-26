@@ -13,6 +13,12 @@ metadata:
 > Anything not confirmed must be checked at the journal's guide before submission. Tell the
 > author so, and ask them to paste or upload the current guide if it cannot be read.
 
+## Publisher-wide guidance (compared across journals, 2026-11-27)
+Shared by the verified food journals: abstract 150–250 words, 4–6 keywords, Statements and
+Declarations with data availability. European Journal of Nutrition uses a structured
+abstract; International Journal of Obesity follows Nature-site limits. **Reference style
+differs per journal.**
+
 **Publisher:** Springer / Springer Nature · Confirm each journal's "Submission guidelines" on SpringerLink. Structure below reflects the common Springer template.
 
 ## Applies to

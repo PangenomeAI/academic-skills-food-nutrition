@@ -13,6 +13,11 @@ metadata:
 > Anything not confirmed must be checked at the journal's guide before submission. Tell the
 > author so, and ask them to paste or upload the current guide if it cannot be read.
 
+## Publisher-wide guidance (compared across journals, 2026-11-27)
+**There is no shared Wiley guide.** The four verified journals use Chicago author–date,
+APA, Vancouver and a numbered no-title style, with abstract limits from 200 to 260 words.
+Use only the journal's own block below; for an unverified Wiley journal, ask for its guide.
+
 **Publisher:** Wiley · Confirm each journal's Author Guidelines on Wiley Online Library (each journal's "Author Guidelines" tab). Structure below reflects the common Wiley template.
 
 ## Applies to

@@ -3,38 +3,35 @@ name: pnas
 description: "Author-guideline skill for PNAS (Proceedings of the National Academy of Sciences), a multidisciplinary journal food & nutrition researchers publish in. Use to format or check a manuscript for PNAS — structure, mandatory Significance Statement, abstract limit, PNAS numbered references, and figure specs. Triggers: submit to PNAS, Proceedings of the National Academy of Sciences guidelines, PNAS formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "National Academy of Sciences (PNAS)"
-  verified: "2026-11 partial"
+  verified: "2026-11"
   source: "https://www.pnas.org/author-center/submitting-your-manuscript"
 ---
 
 # PNAS — Author Guideline Skill
 
-> **Verification status:** **Partly verified** — search excerpts of the PNAS author center (2026-11-27); direct access blocked.
-> Anything not confirmed must be checked at the journal's guide before submission. Tell the
-> author so, and ask them to paste or upload the current guide if it cannot be read.
+> **Verification status:** **Verified** on the PNAS author center, 2026-11-27.
+> Anything not listed here is unconfirmed: check the journal's guide, or ask the author to
+> paste or upload it, before applying a limit.
 
-**Publisher:** National Academy of Sciences · Confirm exact limits at the PNAS author center.
+**Publisher:** National Academy of Sciences · [Submitting your manuscript](https://www.pnas.org/author-center/submitting-your-manuscript)
 
-## Aims & scope
-Multidisciplinary — biological, physical, and social sciences; food, nutrition,
-agriculture, microbiology, and environmental work all in scope.
+## Article types
+- **Research Report:** preferred 6 pages (about 4,000 words, 50 references, 4 medium figures/tables); maximum 12 pages.
+- **Brief Report:** 3 pages (about 1,600 words incl. title page, abstract, legends), 15 references.
 
-## Format (PNAS style)
-- **References: numbered** in order of citation (PNAS style); numbered reference list with article titles and DOIs.
-  > 1. A. B. Author, C. D. Author, Title of the article. *Proc. Natl. Acad. Sci. U.S.A.* **123**, e2412345 (2026).
-- **Significance Statement (mandatory):** a plain-language paragraph for non-specialists, 50–120 words, no references.
-- **Abstract:** ≤250 words, unstructured. Title page includes classification and keywords.
-- **Structure:** Title → Author affiliations → Significance Statement → Abstract → Introduction → Results → Discussion → Materials and Methods → References. Research Reports/Articles have length guidance (confirm).
-- **Mandatory:** data availability statement; author contributions; competing interest statement.
-- **Figures:** ≥300 dpi; RGB/CMYK per policy; one/two-column widths; editable tables.
+## Structure
+Title page (title under 135 characters, authors, **classification**, ≥3 keywords) → **Abstract** (≤250 words) → **Significance Statement** (≤120 words; direct and contributed submissions) → Introduction → Results → Discussion → **Materials and Methods** → References → Figure legends.
+
+- Initial manuscript may be in any format. Extra tables/figures do not go in supporting information beyond what the journal allows.
+- Reference style: numbered (Citation Style Language repository; confirm formatting).
+- Figures at final size: 300 ppi (no lettering), 600–900 ppi (with type), 1000–1200 ppi (line art); RGB; editable tables.
 
 ## Formatting constraints
 ```yaml
 journal: PNAS
-publisher: National Academy of Sciences
 reference_style: pnas-numbered
-significance_statement: {required: true, words: {min: 50, max: 120}}
 abstract_words: 250
-data_availability: required
-figure_dpi: 300
+significance_statement: {required: true, words_max: 120}
+section_order: [introduction, results, discussion, materials_and_methods]
+figure_dpi: {halftone: 300, combination: 600, line_art: 1000}
 ```

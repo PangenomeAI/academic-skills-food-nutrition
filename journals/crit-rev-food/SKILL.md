@@ -13,6 +13,11 @@ metadata:
 > Anything not confirmed must be checked at the journal's guide before submission. Tell the
 > author so, and ask them to paste or upload the current guide if it cannot be read.
 
+## Publisher-wide guidance (compared across journals, 2026-11-27)
+Shared by the three verified journals: IMRaD order with a Declaration of interest
+statement, 3–6 keywords (IJFP any number), figures 1200/600/300 dpi. **Reference style and
+abstract length differ per journal.**
+
 **Publisher:** Taylor & Francis · Confirm each journal's "Instructions for authors" on tandfonline.com. Structure below reflects the common T&F template.
 
 ## Applies to

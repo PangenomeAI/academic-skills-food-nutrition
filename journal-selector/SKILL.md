@@ -123,7 +123,7 @@ structured abstracts, trial registration, and reporting guidelines.
   Reviews; Proceedings of the Nutrition Society; Public Health Nutrition; Journal
   of Nutritional Science
 - **frontiers-nutrition** — Frontiers in Nutrition; Frontiers in Sustainable Food Systems
-- **nutrition-other** — Obesity Facts (Karger); Current Opinion in Clinical
+- **nutrition-other** — Obesity Facts (Oxford University Press); Current Opinion in Clinical
   Nutrition and Metabolic Care (Lippincott); Hepatobiliary Surgery and Nutrition
   (AME); Beneficial Microbes (Brill); Food & Nutrition Research (Swedish Nutrition
   Foundation)

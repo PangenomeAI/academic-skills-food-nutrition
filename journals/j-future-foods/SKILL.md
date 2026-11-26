@@ -9,9 +9,15 @@ metadata:
 
 # KeAi / Tsinghua Food Journals — Shared Author Guideline Skill
 
-> **Verification status:** **Verified for Journal of Future Foods** (KeAi guide, 2026-11-27). Food Science and Human Wellness and other titles **not verified**.
+> **Verification status:** **Verified** for Journal of Future Foods and The Crop Journal (KeAi guides, 2026-11-27). Food Science and Human Wellness and other titles are **not verified**.
 > Anything not confirmed must be checked at the journal's guide before submission. Tell the
 > author so, and ask them to paste or upload the current guide if it cannot be read.
+
+## Publisher-wide guidance (compared across journals, 2026-11-27)
+Shared by both: numbered references in square brackets; numbered sections with matching
+cross-references; "Material and methods". **Abstract and keywords differ:**
+Journal of Future Foods ≤300 words and ≤8 keywords; The Crop Journal 200–300 words and
+3–5 keywords.
 
 **Publisher:** KeAi (Elsevier-hosted) / Tsinghua University Press · Sources: [Journal of Future Foods GfA](https://www.keaipublishing.com/en/journals/journal-of-future-foods/guide-for-authors/), [Food Science and Human Wellness](https://www.sciopen.com/journal/2097-0765). Both are open access.
 

@@ -9,7 +9,7 @@ metadata:
 
 # Multidisciplinary & Cross-Discipline Journals — Author Guideline Skill
 
-> **Verification status:** **Verified only for PLOS Medicine** references and abstract (2026-11-27). Other reference styles come from the Citation Style Language repository or are unverified.
+> **Verification status:** **Verified** pages: PLOS Biology, PLOS Medicine, Environmental Science & Technology, Gut, Diabetes Care, eLife (2026-11-27), as detailed below. Other titles are **not verified**.
 > Anything not confirmed must be checked at the journal's guide before submission. Tell the
 > author so, and ask them to paste or upload the current guide if it cannot be read.
 
@@ -35,6 +35,18 @@ the current requirements at each journal's own author guide.
 (Vancouver-style) references; ES&T uses ACS style.
 
 **PLOS Medicine (verified):** Vancouver, square brackets, first six authors then *et al.*; structured abstract (Background, Methods and Findings, Conclusions), preferably ≤300 words, maximum 500.
+
+## Verified details (2026-11-27)
+| Journal | Verified |
+|---|---|
+| PLOS Biology | No length limit; Vancouver, square brackets; abstract one paragraph without headings |
+| PLOS Medicine | Vancouver; structured abstract (see above) |
+| Environmental Science & Technology | Research article ≤7,000 words; references in any style with titles; TOC graphic required |
+| Gut | Original research ≤4,000 words; structured abstract ≤250 (Background, Objective, Design, Results, Conclusion); key messages box; visual abstract; about 50 references |
+| Diabetes Care | Original article ≤4,000 words; structured abstract; Introduction (no heading), Research Design and Methods, Results, Conclusions |
+| eLife | Any reference style accepted; APA matches eLife style best |
+
+**PLOS publisher-wide:** Vancouver numbered references in both; abstract formats differ.
 
 ## Common requirements
 - Standard IMRaD (clinical titles may want structured abstracts + trial
