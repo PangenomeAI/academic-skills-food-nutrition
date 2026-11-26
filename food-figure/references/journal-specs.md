@@ -7,7 +7,7 @@ its spec from the journal skill; otherwise use the defaults below.
 1. Resolve the target journal via the **`journal-selector`** procedure (`journal-selector/SKILL.md`).
 2. Read that journal skill's `## Formatting constraints` block — use
    `figure_dpi`, `column_widths_mm` (or `_cm`), and any format requirement
-   (e.g. RSC/ACS **TOC graphic**, MDPI **≥1000 dpi line art**, Nature accessible
+   (e.g. RSC/ACS **TOC graphic**, MDPI **≥600 dpi** preferred, Nature accessible
    palette + ~180 mm double column).
 3. Apply DPI, width, font, and file format **before** export.
 
@@ -23,6 +23,8 @@ its spec from the journal skill; otherwise use the defaults below.
 - **Nature Portfolio:** RGB, ~180 mm double column, accessible palette (avoid red/green), ≥300 dpi.
 - **Elsevier:** ~90/190 mm; vector preferred; halftone ≥300 dpi, line art ≥1000 dpi.
 - **ACS / RSC:** require a **TOC/graphical-abstract** image at the specified size.
-- **MDPI:** figures near first citation; ≥1000 dpi line art.
+- **MDPI:** figures near first citation; preferably ≥600 dpi (PNG/JPEG/TIFF).
+- **RSC:** TIFF ≥600 dpi; 8.3 / 17.1 cm; TOC graphic ≤8 × 4 cm at revision.
+- **ACS (JAFC):** line art 1200, grayscale 600, colour 300 dpi.
 
 Always confirm exact numbers at the journal skill / author guide before final export.

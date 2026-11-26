@@ -3,20 +3,24 @@ name: multidisciplinary
 description: "Author-guideline skill for multidisciplinary and cross-discipline journals that food & nutrition researchers publish in but which sit outside the food/nutrition JCR categories: eLife, PLOS Biology, PLOS Medicine, National Science Review, The Innovation, Environmental Science & Technology (food safety/contaminants), Gut and Gastroenterology (nutrition/GI), Diabetes Care (clinical nutrition), and The ISME Journal (food/gut microbial ecology). Use to format or check a manuscript for one of these — with the journal's publisher, reference style, and source URL. Triggers: submit to eLife, PLOS, National Science Review, Environmental Science & Technology, Gut, Gastroenterology, Diabetes Care, ISME Journal guidelines. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "Various (see table)"
-  verified: "2026-07"
+  verified: "2026-11 partial"
   source: "per-journal (see table)"
 ---
 
 # Multidisciplinary & Cross-Discipline Journals — Author Guideline Skill
 
-**Verified:** 2026-07 · These journals are high-priority venues (multidisciplinary
+> **Verification status:** **Verified only for PLOS Medicine** references and abstract (2026-11-27). Other reference styles come from the Citation Style Language repository or are unverified.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+These journals are high-priority venues (multidisciplinary
 or adjacent fields) that food & nutrition researchers publish in. Always confirm
 the current requirements at each journal's own author guide.
 
 ## Applies to
 | Journal | Abbrev | Publisher | Ref style* | Source |
 |---|---|---|---|---|
-| eLife | ELIFE | eLife Sciences | numbered (Vancouver) | https://elifesciences.org/author-guide |
+| eLife | ELIFE | eLife Sciences | **author–date** | https://elifesciences.org/author-guide |
 | PLOS Biology | PLOS BIOL | PLOS | numbered (Vancouver) | https://journals.plos.org/plosbiology/s/submission-guidelines |
 | PLOS Medicine | PLOS MED | PLOS | numbered (Vancouver) | https://journals.plos.org/plosmedicine/s/submission-guidelines |
 | National Science Review | NATL SCI REV | Oxford / NSFC | numbered | https://academic.oup.com/nsr/pages/General_Instructions |
@@ -29,6 +33,8 @@ the current requirements at each journal's own author guide.
 
 *Best-known default; confirm at the source. Most of these use numbered
 (Vancouver-style) references; ES&T uses ACS style.
+
+**PLOS Medicine (verified):** Vancouver, square brackets, first six authors then *et al.*; structured abstract (Background, Methods and Findings, Conclusions), preferably ≤300 words, maximum 500.
 
 ## Common requirements
 - Standard IMRaD (clinical titles may want structured abstracts + trial

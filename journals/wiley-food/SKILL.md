@@ -3,13 +3,17 @@ name: wiley-food
 description: "Shared author-guideline skill for Wiley food & nutrition journals: Comprehensive Reviews in Food Science and Food Safety, Food Frontiers, eFood, Legume Science, Food and Energy Security, Molecular Nutrition & Food Research, Journal of Food Biochemistry, Food Science & Nutrition. Use to format or check a manuscript for a Wiley food journal — structure, abstract/keyword limits, Wiley reference styles, and figure specs. Triggers: submit to a Wiley food journal, CRFSFS/Food Frontiers/Food Science & Nutrition guidelines. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: Wiley
-  verified: "2026-07"
+  verified: "unverified"
   source: "https://authorservices.wiley.com/author-resources/Journal-Authors/index.html"
 ---
 
 # Wiley Food Journals — Shared Author Guideline Skill
 
-**Publisher:** Wiley · **Verified:** 2026-07 · Confirm each journal's Author Guidelines on Wiley Online Library (each journal's "Author Guidelines" tab). Structure below reflects the common Wiley template.
+> **Verification status:** **Not verified** (Wiley blocks automated access), except Food Science & Nutrition abstract/keywords from a search excerpt of its official guide.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+**Publisher:** Wiley · Confirm each journal's Author Guidelines on Wiley Online Library (each journal's "Author Guidelines" tab). Structure below reflects the common Wiley template.
 
 ## Applies to
 | Journal | Abbrev | Type focus | Ref style* |
@@ -19,7 +23,7 @@ metadata:
 | eFood | EFOOD | Research + reviews (open access) | numbered |
 | Legume Science | LEGUME SCI | Research (open access) | author–date |
 | Food and Energy Security | FOOD ENERGY SECUR | Research (open access) | author–date |
-| Molecular Nutrition & Food Research | MOL NUTR FOOD RES | Research; nutrition/molecular | author–date |
+| Molecular Nutrition & Food Research | MOL NUTR FOOD RES | Research; nutrition/molecular | **numbered** (CSL) |
 | Journal of Food Biochemistry | J FOOD BIOCHEM | Research | author–date |
 | Food Science & Nutrition | FOOD SCI NUTR | Research (open access, broad) | author–date |
 
@@ -40,6 +44,8 @@ Example (APA-style):
 
 For `eFood` (numbered): in-text `[1]`, numbered list.
 
+**Food Science & Nutrition** (official excerpt): abstract 250 words, 4–6 keywords. Clinical titles **Obesity** and **JPGN** are numbered (Citation Style Language repository).
+
 ## Figures & tables
 Figures ≥300 dpi (line art ≥600–1000 dpi); TIFF/EPS/PDF; RGB online; editable tables; cite in order. Wiley provides an EarlyView production workflow.
 
@@ -53,7 +59,7 @@ Most listed titles are Gold open access (APC). Include ethics/consent statements
 - [ ] ORCID for corresponding author · [ ] Figures ≥300 dpi · [ ] Cover letter
 
 ## Also covers — Wiley nutrition journals
-Same Wiley template (mostly author–date/APA); clinical titles add structured
+Same Wiley template (style differs by title; Obesity and JPGN are numbered); clinical titles add structured
 abstracts, trial registration, and reporting guidelines.
 
 | Journal | Abbrev | Notes |
@@ -71,7 +77,7 @@ abstracts, trial registration, and reporting guidelines.
 ```yaml
 publisher: Wiley
 scope: food & nutrition
-reference_style: per-journal   # author-date default; eFood numbered
+reference_style: per-journal   # confirm per journal; MNF&R, Obesity, JPGN numbered
 abstract_words: 250
 keywords_max: 6
 data_availability: required

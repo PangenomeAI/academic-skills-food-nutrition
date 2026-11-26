@@ -3,13 +3,17 @@ name: agri-food-security
 description: "Author-guideline skill for Agriculture & Food Security (BMC / Springer Nature, open access). Use to format or check a manuscript for this BMC journal — structure, mandatory BMC declarations, numbered references, and figure specs. Triggers: submit to Agriculture & Food Security, BMC food journal guidelines, BMC declarations formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "BMC (BioMed Central) / Springer Nature"
-  verified: "2026-07"
+  verified: "unverified"
   source: "https://agricultureandfoodsecurity.biomedcentral.com/submission-guidelines"
 ---
 
 # Agriculture & Food Security (BMC) — Author Guideline Skill
 
-**Publisher:** BioMed Central / Springer Nature · **Source:** [Submission guidelines](https://agricultureandfoodsecurity.biomedcentral.com/submission-guidelines) · **Verified:** 2026-07 (confirm at source). Gold open access.
+> **Verification status:** **Limits not verified.** 2026-11-27: the journal page is live and shows a submit link; reference style matches the Citation Style Language repository.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+**Publisher:** BioMed Central / Springer Nature · **Source:** [Submission guidelines](https://agricultureandfoodsecurity.biomedcentral.com/submission-guidelines). Gold open access.
 
 ## Aims & scope
 Research on agriculture and food security: crop and livestock production, food systems, nutrition security, policy, sustainability, and the links between agriculture, environment, and food access. Interdisciplinary, development-relevant work welcome.

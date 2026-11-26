@@ -3,13 +3,17 @@ name: agri-other
 description: "Author-guideline skill for Q1/Q2 agriculture journals from society, academy, and regional publishers not covered by a dedicated publisher skill: Soil (Copernicus), Plant Soil and Environment / Czech Journal of Animal Science (Czech Academy of Agricultural Sciences), CABI titles, Crop and Pasture Science (CSIRO), Animal Bioscience (AAAP), Journal of Animal Science and Technology (KSAST), Australian Journal of Grape and Wine Research (IVES), Am. J. Enology and Viticulture, Seed Science and Technology (ISTA), Scientia Agricola (USP/ESALQ), and similar. Use to format or check a manuscript for one of these agriculture journals — with the journal's source URL and default guidance. Triggers: submit to Soil Copernicus, Crop and Pasture Science, Animal Bioscience, Scientia Agricola, Czech Journal of Animal Science guidelines. Also fires when the user wants to publish on/in one of these journals, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "Various (Copernicus, Czech Academy of Agricultural Sciences, CABI, CSIRO, De Gruyter, society and university presses)"
-  verified: "2026-07"
+  verified: "unverified"
   source: "per-journal (see table)"
 ---
 
 # Society & Regional Agriculture Journals — Author Guideline Skill
 
-**Verified:** 2026-07 · These are the **Q1/Q2 agriculture journals whose publisher
+> **Verification status:** **Not verified** against the publishers.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+These are the **Q1/Q2 agriculture journals whose publisher
 format is not shared with any other skill in this suite** (see
 `journals/_coverage_agriculture.md`). They come from societies, academies, and
 university presses, so requirements vary — **always confirm at the journal's own

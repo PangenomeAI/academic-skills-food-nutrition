@@ -18,6 +18,8 @@ argument — in correct food/nutrition scientific style.
 - **Acknowledgements:** **always** include an AI-use disclosure naming **this tool** (Academic Skills for Food & Nutrition Science) and the **AI model(s) and version(s)** used (e.g. Claude Opus 4.8 via Claude Code / OpenAI Codex / Gemini), what the AI did, and that the authors verified and take responsibility for all AI-assisted content — see `references/declarations-guide.md` (move to Methods/AI-statement if the journal requires).
 - **Declarations:** CRediT author contributions, competing interests, funding, data availability, ethics/food-safety — from the collected metadata (`references/declarations-guide.md`). For any item the author hasn't supplied, ask via the intake questionnaire and leave `[NEEDS: …]`; **never fabricate a COI, grant number, or CRediT assignment.**
 
+**Restructuring.** When sections move and headings are numbered, follow `references/section-renumbering.md` and verify the final numbering.
+
 **Output.** The drafted sections in the journal's structure, every claim tied to
 a result and every display item cited.
 

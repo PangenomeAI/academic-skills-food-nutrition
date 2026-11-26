@@ -3,13 +3,17 @@ name: crit-rev-food
 description: "Shared author-guideline skill for Taylor & Francis food journals: Critical Reviews in Food Science and Nutrition, Food Reviews International, International Journal of Food Properties. Use to format or check a manuscript for a T&F food journal — structure, abstract/keyword limits, Taylor & Francis reference styles, and figure specs. Triggers: submit to Critical Reviews in Food Science and Nutrition, Food Reviews International, IJFP guidelines, Taylor & Francis food formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "Taylor & Francis"
-  verified: "2026-07"
+  verified: "unverified"
   source: "https://www.tandfonline.com/action/authorSubmission?journalCode=bfsn20"
 ---
 
 # Taylor & Francis Food Journals — Shared Author Guideline Skill
 
-**Publisher:** Taylor & Francis · **Verified:** 2026-07 · Confirm each journal's "Instructions for authors" on tandfonline.com. Structure below reflects the common T&F template.
+> **Verification status:** **Not verified** — Taylor & Francis blocks automated access.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+**Publisher:** Taylor & Francis · Confirm each journal's "Instructions for authors" on tandfonline.com. Structure below reflects the common T&F template.
 
 ## Applies to
 | Journal | Abbrev | Type focus | Ref style* |
@@ -32,6 +36,8 @@ Title page (with author bios/ORCID) → Abstract → Keywords → Introduction �
 
 Example (APA-style):
 > Author, A. B., & Author, C. D. (2023). Title of the article. *Critical Reviews in Food Science and Nutrition*, 63(10), 1234–1250. https://doi.org/10.1080/10408398.2023.xxxxxxx
+
+**Journal of the International Society of Sports Nutrition** uses **numbered** references (Citation Style Language repository), not author–date.
 
 ## Figures & tables
 Figures ≥300 dpi (line art ≥600 dpi); TIFF/EPS/PDF/PNG; color figures free online; editable tables; cite in order. T&F offers a LaTeX/Word template (Interact style).

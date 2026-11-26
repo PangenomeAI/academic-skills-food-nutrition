@@ -3,13 +3,17 @@ name: nutrition-other
 description: "Author-guideline skill for nutrition journals from smaller/niche publishers not covered by a dedicated publisher skill: Obesity Facts (Karger), Current Opinion in Clinical Nutrition and Metabolic Care (Wolters Kluwer/Lippincott), Hepatobiliary Surgery and Nutrition (AME), Beneficial Microbes (Brill), Food & Nutrition Research (Swedish Nutrition Foundation). Use to format or check a manuscript for one of these — with the journal's source URL and default guidance. Triggers: submit to Obesity Facts, Current Opinion in Clinical Nutrition, Beneficial Microbes, Food & Nutrition Research guidelines. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "Various (Karger, Wolters Kluwer/Lippincott, AME, Brill, Swedish Nutrition Foundation)"
-  verified: "2026-07"
+  verified: "unverified"
   source: "per-journal (see table)"
 ---
 
 # Niche Nutrition Journals — Author Guideline Skill
 
-**Verified:** 2026-07 · These journals come from smaller publishers; always
+> **Verification status:** **Not verified** against the publishers.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+These journals come from smaller publishers; always
 confirm exact requirements at each journal's own author guide (linked below).
 
 ## Applies to

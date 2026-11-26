@@ -4,13 +4,17 @@ description: "Author-guideline skill for Quality Assurance and Safety of Crops &
 metadata:
   publisher: "Codon Publications"
   issn: "1757-8361"
-  verified: "2026-07"
+  verified: "unverified"
   source: "https://www.qascf.com/index.php/qas/about/submissions"
 ---
 
 # Quality Assurance and Safety of Crops & Foods (Codon) — Author Guideline Skill
 
-**Publisher:** Codon Publications · **ISSN:** 1757-8361 · **Source:** [Submissions](https://www.qascf.com/index.php/qas/about/submissions) · **Verified:** 2026-07 (confirm at source). Gold open access.
+> **Verification status:** **Not verified** against the publisher.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+**Publisher:** Codon Publications · **ISSN:** 1757-8361 · **Source:** [Submissions](https://www.qascf.com/index.php/qas/about/submissions). Gold open access.
 
 ## Aims & scope
 Research on quality assurance and safety across the crop-to-food chain: crop quality, food safety, contaminants and residues, detection methods, processing and storage effects, authenticity, and risk. Applied and analytical work welcome.

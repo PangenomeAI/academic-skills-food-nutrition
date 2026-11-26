@@ -4,13 +4,17 @@ description: "Author-guideline skill for British Food Journal (Emerald, ISSN 000
 metadata:
   publisher: "Emerald Publishing"
   issn: "0007-070X"
-  verified: "2026-07"
+  verified: "unverified"
   source: "https://www.emeraldgrouppublishing.com/journal/bfj#author-guidelines"
 ---
 
 # British Food Journal (Emerald) — Author Guideline Skill
 
-**Publisher:** Emerald · **ISSN:** 0007-070X · **Source:** [Author guidelines](https://www.emeraldgrouppublishing.com/journal/bfj#author-guidelines) · **Verified:** 2026-07 (confirm at source).
+> **Verification status:** **Not verified** — Emerald blocks automated access.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+**Publisher:** Emerald · **ISSN:** 0007-070X · **Source:** [Author guidelines](https://www.emeraldgrouppublishing.com/journal/bfj#author-guidelines).
 
 ## Aims & scope
 Multidisciplinary research on food across the supply chain: consumer behavior, marketing, policy, quality/safety, sustainability, and food management. Strong social-science and management orientation alongside food science.

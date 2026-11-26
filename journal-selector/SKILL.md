@@ -40,6 +40,11 @@ and returns its `## Formatting constraints`. Authoritative mappings:
 4. **Hand off:** the calling pipeline applies these constraints to structure,
    word/abstract limits, and reference style, and passes `figure_dpi` /
    `column_widths_*` to the `food-figure` skill.
+   If the reorder touches numbered headings, the caller **must renumber and
+   double-check them** (`food-paper/references/section-renumbering.md`).
+   **Check the skill's Verification status.** For anything unverified, *unconfirmed*
+   or `confirm-at-source`, tell the author before applying it and ask them to check or
+   upload the journal's current guide. A guide supplied by the author overrides the skill.
 5. **If 'generic' or unresolved:** use standard food-science conventions
    (IMRaD; abstract ≤250 words; numbered or author–date references; figures
    ≥300 dpi; ~90/190 mm columns) and state the assumption so the author can

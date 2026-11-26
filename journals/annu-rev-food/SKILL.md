@@ -4,13 +4,17 @@ description: "Author-guideline skill for Annual Review of Food Science and Techn
 metadata:
   publisher: "Annual Reviews"
   issn: "1941-1413"
-  verified: "2026-07"
+  verified: "unverified"
   source: "https://www.annualreviews.org/journal/food"
 ---
 
 # Annual Review of Food Science and Technology — Author Guideline Skill
 
-**Publisher:** Annual Reviews · **ISSN:** 1941-1413 · **Source:** [Journal page](https://www.annualreviews.org/journal/food) · **Verified:** 2026-07 (confirm at source).
+> **Verification status:** **Not verified** — the current Annual Reviews author instructions were not found.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+**Publisher:** Annual Reviews · **ISSN:** 1941-1413 · **Source:** [Journal page](https://www.annualreviews.org/journal/food).
 
 ## Aims & scope
 Authoritative, **invited** critical reviews across food science and technology: food chemistry, microbiology, engineering, safety, nutrition, and emerging technologies. Articles are commissioned by the Editorial Committee — unsolicited submissions are generally not accepted; propose topics to the editors first.
@@ -31,6 +35,8 @@ Title → Authors & affiliations → Abstract → Keywords → Introduction → 
 Example:
 > Author AB, Author CD. 2023. Title of the review article. *Annu. Rev. Food Sci. Technol.* 14:123–45
 
+**Annual Review of Nutrition** and **Annual Review of Animal Biosciences** are listed as **numbered** styles in the Citation Style Language repository — confirm; do not assume author–date.
+
 ## Figures & tables
 Figures ≥300 dpi (line art higher); Annual Reviews uses professional redraw — supply clear, editable source files and permissions for any reused figures; RGB/CMYK per production; editable tables; cite in order.
 
@@ -41,8 +47,8 @@ Figures ≥300 dpi (line art higher); Annual Reviews uses professional redraw �
 - [ ] Figures ≥300 dpi, editable source provided
 
 ## Also covers — Annual Review of Nutrition
-Same Annual Reviews format (invited only; author–date; Summary Points / Future
-Issues). **Annual Review of Nutrition** (ANNU REV NUTR) — invited comprehensive
+Same Annual Reviews format (invited only; Summary Points / Future Issues;
+reference style differs — see above). **Annual Review of Nutrition** (ANNU REV NUTR) — invited comprehensive
 nutrition reviews.
 
 ## Formatting constraints
@@ -50,7 +56,7 @@ nutrition reviews.
 journal: Annual Review of Food Science and Technology; Annual Review of Nutrition
 publisher: Annual Reviews
 submission: invited-only
-reference_style: author-date-annual-reviews
+reference_style: per-journal   # confirm
 abstract_words: 250
 keywords_max: 8
 required_elements: [summary_points, future_issues, disclosure_statement]

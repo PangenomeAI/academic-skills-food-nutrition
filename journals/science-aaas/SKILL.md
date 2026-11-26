@@ -3,13 +3,17 @@ name: science-aaas
 description: "Author-guideline skill for the AAAS Science family that food & nutrition researchers publish in: Science, Science Advances, Science Translational Medicine, Science Immunology, Science Signaling, Science Robotics. Use to format or check a manuscript for a Science-family journal — very tight length limits, short abstract, Science numbered reference style, and figure specs. Triggers: submit to Science, Science Advances guidelines, AAAS Science formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "AAAS (American Association for the Advancement of Science)"
-  verified: "2026-07"
+  verified: "unverified"
   source: "https://www.science.org/content/page/science-information-authors"
 ---
 
 # AAAS Science Family — Author Guideline Skill
 
-**Publisher:** AAAS · **Verified:** 2026-07 · Confirm exact limits at the journal's Information for Authors (very strict; differ by title/article type).
+> **Verification status:** **Not verified** — science.org blocks automated access.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+**Publisher:** AAAS · Confirm exact limits at the journal's Information for Authors (very strict; differ by title/article type).
 
 ## Applies to
 Science; Science Advances (open access); Science Translational Medicine; Science

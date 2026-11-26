@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.53.0 — 2026-11
+
+- **Journal guideline audit.** Corrected wrong rules, including Food & Function /
+  Sustainable Food Technology (Experimental comes **before** Results and discussion;
+  reference format requires article titles; abstract 50–250 words; figures 600 dpi),
+  Food Chemistry and many Elsevier food titles (author–date, not numbered), JAFC
+  (abstract 100–150 words, no Conclusions section), British Journal of Nutrition
+  (Vancouver, not Harvard), Nature / Nature Food / npj limits, Springer reference
+  styles, Journal of Future Foods and MDPI limits.
+- **Honest verification status** on all 25 journal skills: verified, partly verified or
+  unverified (publishers that block automated access).
+- Routed five Maximum Academic Press journals from `elsevier-food` to `agri-other`.
+- Full error list: `journals/_audit-2026-11.md`.
+- **Section renumbering rule** (`food-paper/references/section-renumbering.md`): after
+  any restructure, numbered headings and cross-references are renumbered and
+  double-checked.
+
 ## 1.52.1 — 2026-08
 
 - Add **Lijing Ke** (School of Food Science and Nutrition, University of Leeds) to the

@@ -4,13 +4,17 @@ description: "Author-guideline skill for Food Quality and Safety (Oxford Univers
 metadata:
   publisher: "Oxford University Press"
   issn: "2399-1399"
-  verified: "2026-07"
+  verified: "unverified"
   source: "https://academic.oup.com/fqs/pages/General_Instructions"
 ---
 
 # Food Quality and Safety (OUP) — Author Guideline Skill
 
-**Publisher:** Oxford University Press · **ISSN:** 2399-1399 · **Source:** [Instructions to authors](https://academic.oup.com/fqs/pages/General_Instructions) · **Verified:** 2026-07 (confirm at source). Gold open access.
+> **Verification status:** **Not verified** (Oxford Academic blocks access), except the Food Quality and Safety abstract limit and graphical abstract from a search excerpt.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+**Publisher:** Oxford University Press · **ISSN:** 2399-1399 · **Source:** [Instructions to authors](https://academic.oup.com/fqs/pages/General_Instructions). Gold open access.
 
 ## Aims & scope
 Original research and reviews on food quality and safety: quality attributes, safety/risk, detection and analysis, processing effects on quality/safety, and related nutrition and health. Interdisciplinary, application-oriented work welcome.
@@ -23,6 +27,8 @@ Title page → Abstract → Keywords → Introduction → Materials and Methods 
 
 - **Abstract:** unstructured, ≤250 words.
 - **Keywords:** 4–6.
+
+- **Graphical abstract:** encouraged.
 
 ## Reference style
 **Numbered** citation-sequence style (confirm current OUP style for the journal). In-text bracketed/superscript numbers; numbered list with article titles and DOIs.

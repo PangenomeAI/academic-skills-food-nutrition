@@ -305,7 +305,7 @@ economics & policy · agriculture multidisciplinary.
   Annual Reviews, Oxford, Emerald, KeAi/Tsinghua, Codon, BioMed Central,
   Cambridge, Frontiers, plus niche-publisher skills for nutrition and agriculture).
   Because the folders are **publisher-tiered**, an Elsevier agronomy journal reuses
-  the same Guide-for-Authors skill as an Elsevier food journal — **185 of the 230
+  the same Guide-for-Authors skill as an Elsevier food journal — **180 of the 230
   agriculture journals need no new format**. Each lists the journals it
   covers, their limits, structure, **reference/citation style**, and a submission
   checklist.
@@ -361,6 +361,9 @@ finished paper would re-research, re-review, and re-edit work you already consid
 final.
 
 ## Coverage
+
+**Guideline accuracy:** each `journals/*` skill states its *Verification status*. Several publishers
+block automated access, so many limits are still marked unverified — confirm them at the journal.
 
 Every target journal maps to a publisher-tiered skill, verified by
 [`scripts/check_journal_coverage.py`](scripts/check_journal_coverage.py):
