@@ -3,13 +3,22 @@ name: agri-food-security
 description: "Author-guideline skill for Agriculture & Food Security (BMC / Springer Nature, open access). Use to format or check a manuscript for this BMC journal — structure, mandatory BMC declarations, numbered references, and figure specs. Triggers: submit to Agriculture & Food Security, BMC food journal guidelines, BMC declarations formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "BMC (BioMed Central) / Springer Nature"
-  verified: "2026-07"
+  verified: "2026-11"
   source: "https://agricultureandfoodsecurity.biomedcentral.com/submission-guidelines"
 ---
 
 # Agriculture & Food Security (BMC) — Author Guideline Skill
 
-**Publisher:** BioMed Central / Springer Nature · **Source:** [Submission guidelines](https://agricultureandfoodsecurity.biomedcentral.com/submission-guidelines) · **Verified:** 2026-07 (confirm at source). Gold open access.
+> **Verification status:** **Verified** for Agriculture & Food Security and Nutrition Journal (research-article guidelines, 2026-11-27). Other BMC titles were not read individually.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+## Publisher-wide guidance (compared across journals, 2026-11-27)
+Identical in both journals: structured abstract ≤350 words; 3–10 keywords; Background →
+Methods → Results → Discussion → Conclusions → List of abbreviations → Declarations →
+References. Numbered references.
+
+**Publisher:** BioMed Central / Springer Nature · **Source:** [Submission guidelines](https://agricultureandfoodsecurity.biomedcentral.com/submission-guidelines). Gold open access.
 
 ## Aims & scope
 Research on agriculture and food security: crop and livestock production, food systems, nutrition security, policy, sustainability, and the links between agriculture, environment, and food access. Interdisciplinary, development-relevant work welcome.
@@ -20,7 +29,7 @@ Research; Review; Methodology; Short report; Debate; Commentary; Case study.
 ## Manuscript structure (BMC)
 Title page → Abstract → Keywords → Background → Methods → Results → Discussion → Conclusions → **Declarations** → References → Figure legends → Tables.
 
-- **Abstract:** may be structured (Background, Methods, Results, Conclusions) or unstructured, ≤350 words.
+- **Abstract:** **structured**, ≤350 words, no citations (Nutrition Journal: Background, Methods, Results, Conclusions; Agriculture & Food Security lists Background, Results, Conclusions).
 - **Keywords:** 3–10.
 - **Declarations (mandatory BMC block):** Ethics approval and consent to participate; Consent for publication; Availability of data and materials; Competing interests; Funding; Authors' contributions; Acknowledgements. State "Not applicable" where relevant — **the section is required**.
 

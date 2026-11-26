@@ -3,13 +3,20 @@ name: foods-mdpi
 description: "Shared author-guideline skill for MDPI food & nutrition journals: Foods, Antioxidants, Toxins. Use to format or check a manuscript for an MDPI food journal — the MDPI template structure, abstract/keyword limits, numbered MDPI/ACS-style references, and figure specs. Triggers: submit to Foods, Antioxidants, Toxins guidelines, MDPI food formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: MDPI
-  verified: "2026-07"
+  verified: "2026-11 partial"
   source: "https://www.mdpi.com/journal/foods/instructions"
 ---
 
 # MDPI Food Journals — Shared Author Guideline Skill
 
-**Publisher:** MDPI · **Verified:** 2026-07 · Sources: [Foods instructions](https://www.mdpi.com/journal/foods/instructions), [Antioxidants](https://www.mdpi.com/journal/antioxidants/instructions), [Toxins](https://www.mdpi.com/journal/toxins/instructions). All Gold open access; use the MDPI Word/LaTeX template.
+> **Verification status:** **Verified for Foods and Nutrients** (instructions pages, 2026-11-27). Other MDPI titles were **not read individually**.
+
+## Publisher-wide guidance (compared across journals, 2026-11-27)
+Shared by Foods and Nutrients: no length limit; Introduction → Materials and Methods →
+Results → Discussion → Conclusions (optional); numbers in square brackets before
+punctuation; 3–10 keywords; figures preferably ≥600 dpi. **Abstract format differs.**
+
+**Publisher:** MDPI · Sources: [Foods instructions](https://www.mdpi.com/journal/foods/instructions), [Antioxidants](https://www.mdpi.com/journal/antioxidants/instructions), [Toxins](https://www.mdpi.com/journal/toxins/instructions). All Gold open access; use the MDPI Word/LaTeX template.
 
 ## Applies to
 | Journal | Abbrev | Scope |
@@ -22,9 +29,9 @@ metadata:
 Article, Review, Communication, plus Perspective/Opinion, Case Report, Protocol. Special Issues are central to MDPI; note the target Special Issue if any.
 
 ## Manuscript structure (MDPI template)
-Numbered sections: 1. Introduction → 2. Materials and Methods → 3. Results → 4. Discussion → 5. Conclusions. Followed by: Supplementary Materials, Author Contributions, Funding, Institutional Review Board Statement, Informed Consent Statement, Data Availability Statement, Acknowledgments, Conflicts of Interest, References.
+Introduction → Materials and Methods → Results → Discussion (may be combined with Results) → Conclusions (**optional**). Followed by: Supplementary Materials, Author Contributions, Funding, Institutional Review Board Statement, Informed Consent Statement, Data Availability Statement, Acknowledgments, Conflicts of Interest, References.
 
-- **Abstract:** single paragraph, **≤200 words**.
+- **Abstract:** single paragraph, differs by journal — **Foods:** about 200 words maximum, structured logic **without headings**; **Nutrients:** structured, around **250 words**, with headings Background/Objectives, Methods, Results, Conclusions.
 - **Keywords:** 3–10 (aim for ~5).
 - **Author Contributions:** CRediT taxonomy, required.
 - All the statement sections above are **mandatory** in the MDPI template (state "not applicable" where relevant).
@@ -38,12 +45,14 @@ Example:
 (Author names as Last, F.M.; journal name italic; year bold; volume italic.)
 
 ## Figures & tables
-Figures ≥300 dpi (≥1000 dpi for line art); place near first citation; MDPI adds figure/table numbering; editable tables; all figures/tables cited in order. Provide high-res originals.
+Figures preferably **≥600 dpi**, PNG/JPEG/TIFF; insert near first citation; Word tables; number all items in order. Graphical abstract optional, ≥560 × 1100 px (h × w).
+
+**Submission:** free-format references are accepted at first submission; MDPI style is required at revision. Cover letter required. Declare GenAI use in Methods/Acknowledgments.
 
 ## Submission checklist
-- [ ] MDPI template, numbered sections · [ ] Abstract ≤200 words · [ ] 3–10 keywords
+- [ ] MDPI template, numbered sections · [ ] Abstract per journal (Foods ~200; Nutrients ~250 structured) · [ ] 3–10 keywords
 - [ ] All mandatory statement sections completed (IRB, consent, data availability, conflicts, funding, contributions)
-- [ ] Numbered MDPI-style references with DOIs · [ ] Figures ≥300 dpi
+- [ ] Numbered MDPI-style references with DOIs · [ ] Figures ≥600 dpi preferred
 - [ ] Cover letter · [ ] Suggested reviewers (MDPI requests several)
 
 ## Also covers — MDPI nutrition journals
@@ -60,9 +69,9 @@ Same MDPI template (numbered MDPI style, mandatory statement sections).
 publisher: MDPI
 scope: food & nutrition
 reference_style: numbered-mdpi
-abstract_words: 200
+abstract_words: {foods: 200, nutrients: 250}   # others: confirm
 keywords: {min: 3, max: 10}
 mandatory_statements: [author_contributions, funding, irb, informed_consent, data_availability, conflicts_of_interest]
 open_access: gold
-figure_dpi: {halftone: 300, line_art: 1000}
+figure_dpi: 600
 ```

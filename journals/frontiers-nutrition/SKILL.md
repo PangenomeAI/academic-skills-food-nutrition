@@ -1,15 +1,23 @@
 ---
 name: frontiers-nutrition
-description: "Shared author-guideline skill for Frontiers Media food & nutrition journals: Frontiers in Nutrition and Frontiers in Sustainable Food Systems. Use to format or check a manuscript for a Frontiers journal — article types, structure, Frontiers reference style, and figure specs. Triggers: submit to Frontiers in Nutrition, Frontiers in Sustainable Food Systems guidelines, Frontiers formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
+description: "Shared author-guideline skill for Frontiers Media food & nutrition journals: Frontiers in Nutrition and Frontiers in Sustainable Food Systems. Use to format or check a manuscript for a Frontiers journal — article types, structure, per-journal reference style, and figure specs. Triggers: submit to Frontiers in Nutrition, Frontiers in Sustainable Food Systems guidelines, Frontiers formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "Frontiers Media SA"
-  verified: "2026-07"
+  verified: "2026-11"
   source: "https://www.frontiersin.org/guidelines/author-guidelines"
 ---
 
 # Frontiers Food & Nutrition Journals — Shared Author Guideline Skill
 
-**Publisher:** Frontiers Media SA · **Verified:** 2026-07 · Gold open access; use the Frontiers article template. Confirm at the Frontiers author guidelines.
+> **Verification status:** **Verified** against the Frontiers article-type and author-guideline pages and the official [reference-style list](https://www.frontiersin.org/files/pdf/Frontiers_Reference_styles.pdf), 2026-11-27. Abstract word limit depends on article type and was not confirmed.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+## Publisher-wide guidance (compared across journals, 2026-11-27)
+Shared: single-paragraph abstract, 5–8 keywords, figures 300 dpi at 85 or 180 mm.
+**Reference style depends on the journal** (see below).
+
+**Publisher:** Frontiers Media SA · Gold open access; use the Frontiers article template. Confirm at the Frontiers author guidelines.
 
 ## Applies to
 | Journal | Abbrev | Scope |
@@ -17,37 +25,36 @@ metadata:
 | Frontiers in Nutrition | FRONT NUTR | Nutrition, diet, health |
 | Frontiers in Sustainable Food Systems | FRONT SUSTAIN FOOD S | Sustainable food systems |
 
-## Article types
-Original Research, Review, Mini Review, Systematic Review, Perspective, Brief Research Report, Methods, and others per the Frontiers type list — each with its own length/structure spec on the journal site.
+## Article types (maximum words)
+Original Research, Review, Systematic Review, Clinical Trial, Hypothesis and Theory, Study Protocol: 12,000. Conceptual Analysis 8,000. Community Case Study 5,000. Brief Research Report 4,000 (≤4 figures/tables). Mini Review and Perspective 3,000 (≤2). Opinion 2,000 (1). General Commentary 1,000.
 
 ## Manuscript structure
-Title → Authors & affiliations → Abstract → Keywords → Introduction → Materials and Methods → Results → Discussion → Conclusion → Conflict of Interest statement → Author Contributions → Funding → Data Availability → References.
+Title → Authors & affiliations → Abstract → Keywords → Introduction → Materials and Methods → Results → Discussion (Original Research lists no separate Conclusions section) → Conflict of Interest statement → Author Contributions → Funding → Data Availability → References.
 
-- **Abstract:** unstructured, ≤~350 words (type-dependent; confirm).
+- **Abstract:** single paragraph; limit depends on article type (*unconfirmed*).
 - **Keywords:** 5–8.
 - Mandatory Frontiers statements: Conflict of Interest, Author Contributions, Funding, Data Availability, and Ethics (for human/animal studies).
 
-## Reference style
-**Frontiers reference style (author–date).** In-text `(Author et al., 2023)`; alphabetical reference list with full author lists and DOIs.
-
-Example:
-> Author, A. B., and Author, C. D. (2023). Title of the article. *Front. Nutr.* 10:123456. doi: 10.3389/fnut.2023.123456
+## Reference style (official list)
+- **Frontiers in Nutrition:** **Vancouver** — numbered consecutively, Arabic numerals **in parentheses** `(1)`.
+- **Frontiers in Sustainable Food Systems:** **Harvard author–date** `(Author et al., 2023)`.
 
 ## Figures & tables
-Figures ≥300 dpi (line art ≥600); TIFF/EPS/JPEG; RGB; editable tables; cite in order. Frontiers checks image integrity at submission.
+Figures 300 dpi at final size, 85 mm or 180 mm wide, RGB, TIFF/JPEG (EPS on acceptance), text ≥8 pt; editable tables; cite in order. Frontiers checks image integrity at submission.
 
 ## Submission checklist
 - [ ] Correct Frontiers article type + within its spec · [ ] Abstract within limit · [ ] 5–8 keywords
 - [ ] All mandatory Frontiers statements (COI, contributions, funding, data availability, ethics)
-- [ ] Frontiers author–date references with DOIs · [ ] Figures ≥300 dpi
+- [ ] Reference style matching the journal · [ ] Figures ≥300 dpi
 
 ## Formatting constraints
 ```yaml
 publisher: Frontiers Media
-reference_style: author-date-frontiers
-abstract_words: 350
+reference_style: {frontiers_in_nutrition: vancouver-parentheses, frontiers_in_sustainable_food_systems: harvard}
+abstract_words: confirm-at-source
 keywords_max: 8
 mandatory_statements: [conflict_of_interest, author_contributions, funding, data_availability, ethics]
 open_access: gold
-figure_dpi: {halftone: 300, line_art: 600}
+figure_dpi: {halftone: 300, line_art: 300}
+column_widths_mm: [85, 180]
 ```

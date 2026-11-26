@@ -3,20 +3,24 @@ name: multidisciplinary
 description: "Author-guideline skill for multidisciplinary and cross-discipline journals that food & nutrition researchers publish in but which sit outside the food/nutrition JCR categories: eLife, PLOS Biology, PLOS Medicine, National Science Review, The Innovation, Environmental Science & Technology (food safety/contaminants), Gut and Gastroenterology (nutrition/GI), Diabetes Care (clinical nutrition), and The ISME Journal (food/gut microbial ecology). Use to format or check a manuscript for one of these — with the journal's publisher, reference style, and source URL. Triggers: submit to eLife, PLOS, National Science Review, Environmental Science & Technology, Gut, Gastroenterology, Diabetes Care, ISME Journal guidelines. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "Various (see table)"
-  verified: "2026-07"
+  verified: "2026-11 partial"
   source: "per-journal (see table)"
 ---
 
 # Multidisciplinary & Cross-Discipline Journals — Author Guideline Skill
 
-**Verified:** 2026-07 · These journals are high-priority venues (multidisciplinary
+> **Verification status:** **Verified** pages: PLOS Biology, PLOS Medicine, Environmental Science & Technology, Gut, Diabetes Care, eLife (2026-11-27), as detailed below. Other titles are **not verified**.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+These journals are high-priority venues (multidisciplinary
 or adjacent fields) that food & nutrition researchers publish in. Always confirm
 the current requirements at each journal's own author guide.
 
 ## Applies to
 | Journal | Abbrev | Publisher | Ref style* | Source |
 |---|---|---|---|---|
-| eLife | ELIFE | eLife Sciences | numbered (Vancouver) | https://elifesciences.org/author-guide |
+| eLife | ELIFE | eLife Sciences | **author–date** | https://elifesciences.org/author-guide |
 | PLOS Biology | PLOS BIOL | PLOS | numbered (Vancouver) | https://journals.plos.org/plosbiology/s/submission-guidelines |
 | PLOS Medicine | PLOS MED | PLOS | numbered (Vancouver) | https://journals.plos.org/plosmedicine/s/submission-guidelines |
 | National Science Review | NATL SCI REV | Oxford / NSFC | numbered | https://academic.oup.com/nsr/pages/General_Instructions |
@@ -29,6 +33,20 @@ the current requirements at each journal's own author guide.
 
 *Best-known default; confirm at the source. Most of these use numbered
 (Vancouver-style) references; ES&T uses ACS style.
+
+**PLOS Medicine (verified):** Vancouver, square brackets, first six authors then *et al.*; structured abstract (Background, Methods and Findings, Conclusions), preferably ≤300 words, maximum 500.
+
+## Verified details (2026-11-27)
+| Journal | Verified |
+|---|---|
+| PLOS Biology | No length limit; Vancouver, square brackets; abstract one paragraph without headings |
+| PLOS Medicine | Vancouver; structured abstract (see above) |
+| Environmental Science & Technology | Research article ≤7,000 words; references in any style with titles; TOC graphic required |
+| Gut | Original research ≤4,000 words; structured abstract ≤250 (Background, Objective, Design, Results, Conclusion); key messages box; visual abstract; about 50 references |
+| Diabetes Care | Original article ≤4,000 words; structured abstract; Introduction (no heading), Research Design and Methods, Results, Conclusions |
+| eLife | Any reference style accepted; APA matches eLife style best |
+
+**PLOS publisher-wide:** Vancouver numbered references in both; abstract formats differ.
 
 ## Common requirements
 - Standard IMRaD (clinical titles may want structured abstracts + trial

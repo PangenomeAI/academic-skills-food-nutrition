@@ -95,7 +95,7 @@ regional publishers with no shared format fall to `agri-other`.
 | 74 | Animal | ANIMAL | ELSEVIER | Dairy & Animal Science | Q1 (4.1) | elsevier-food |
 | 75 | THEORETICAL AND APPLIED GENETICS | THEOR APPL GENET | SPRINGER | Agronomy | Q1 (4.1) | springer-food |
 | 76 | Agronomy-Basel | AGRONOMY-BASEL | MDPI | Agronomy | Q1 (4.1) | foods-mdpi |
-| 77 | Vegetable Research | VEG RES | Maximum Academic Press | Horticulture | Q1 (4.1) | elsevier-food |
+| 77 | Vegetable Research | VEG RES | Maximum Academic Press | Horticulture | Q1 (4.1) | agri-other |
 | 78 | Journal of Sustainable Agriculture and Environment | J SUST AGR ENV-AUST | WILEY | Agri-Multidisciplinary | Q1 (4.0) | wiley-food |
 | 79 | JOURNAL OF THE SCIENCE OF FOOD AND AGRICULTURE | J SCI FOOD AGR | WILEY | Agri-Multidisciplinary | Q1 (4.0) | wiley-food |
 | 80 | JOURNAL OF ANIMAL SCIENCE | J ANIM SCI | OXFORD UNIV PRESS INC | Dairy & Animal Science | Q1 (3.7) | food-quality-safety |
@@ -149,12 +149,12 @@ regional publishers with no shared format fall to `agri-other`.
 | 128 | International Journal of Agricultural and Biological Engineering | INT J AGR BIOL ENG | CHINESE ACAD AGRICULTURAL ENGINEER… | Agri Engineering | Q2 (3.1) | agri-other |
 | 129 | Journal of Agricultural Engineering | J AGRIC ENG-ITALY | PAGEPRESS PUBL | Agri Engineering | Q2 (3.1) | agri-other |
 | 130 | Cogent Food & Agriculture | COGENT FOOD AGR | TAYLOR & FRANCIS LTD | Agri-Multidisciplinary | Q2 (3.1) | crit-rev-food |
-| 131 | Ornamental Plant Research | ORNAM PLANT RES | Maximum Academic Press | Horticulture | Q2 (3.1) | elsevier-food |
+| 131 | Ornamental Plant Research | ORNAM PLANT RES | Maximum Academic Press | Horticulture | Q2 (3.1) | agri-other |
 | 132 | OENO One | OENO ONE | INT VITICULTURE & ENOLOGY SOC-IVES | Horticulture | Q2 (3.0) | agri-other |
 | 133 | Journal of Biosystems Engineering | J BIOSYST ENG-KOR | SPRINGERNATURE | Agri Engineering | Q2 (2.9) | springer-food |
 | 134 | EuroChoices | EUROCHOICES | WILEY | Agri Economics & Policy | Q2 (2.9) | wiley-food |
-| 135 | Grass Research | GRASS RES | Maximum Academic Press | Agronomy | Q2 (2.9) | elsevier-food |
-| 136 | Fruit Research | FRUIT RES | Maximum Academic Press | Horticulture | Q2 (2.9) | elsevier-food |
+| 135 | Grass Research | GRASS RES | Maximum Academic Press | Agronomy | Q2 (2.9) | agri-other |
+| 136 | Fruit Research | FRUIT RES | Maximum Academic Press | Horticulture | Q2 (2.9) | agri-other |
 | 137 | Journal of Plant Diseases and Protection | J PLANT DIS PROTECT | SPRINGER HEIDELBERG | Agri-Multidisciplinary | Q2 (2.8) | springer-food |
 | 138 | Gesunde Pflanzen | GESUNDE PFLANZ | SPRINGER | Agronomy | Q2 (2.8) | springer-food |
 | 139 | Grassland Research | GRASSL RES | WILEY | Agronomy | Q2 (2.8) | wiley-food |
@@ -210,7 +210,7 @@ regional publishers with no shared format fall to `agri-other`.
 | 189 | International Journal of Agronomy | INT J AGRON | WILEY | Agronomy | Q2 (2.1) | wiley-food |
 | 190 | Czech Journal of Genetics and Plant Breeding | CZECH J GENET PLANT | CZECH ACADEMY AGRICULTURAL SCIENCES | Agronomy | Q2 (2.1) | agri-other |
 | 191 | Tree Genetics & Genomes | TREE GENET GENOMES | SPRINGER HEIDELBERG | Horticulture | Q2 (2.1) | springer-food |
-| 192 | Technology in Horticulture | TECHNOL HORTIC | Maximum Academic Press | Horticulture | Q2 (2.1) | elsevier-food |
+| 192 | Technology in Horticulture | TECHNOL HORTIC | Maximum Academic Press | Horticulture | Q2 (2.1) | agri-other |
 | 193 | TROPICAL ANIMAL HEALTH AND PRODUCTION | TROP ANIM HEALTH PRO | SPRINGER | Dairy & Animal Science | Q2 (2.0) | springer-food |
 | 194 | JOURNAL OF APPLIED ANIMAL RESEARCH | J APPL ANIM RES | TAYLOR & FRANCIS LTD | Dairy & Animal Science | Q2 (2.0) | crit-rev-food |
 | 195 | Ruminants | RUMINANTS-BASEL | MDPI | Dairy & Animal Science | Q2 (2.0) | foods-mdpi |

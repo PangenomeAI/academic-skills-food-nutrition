@@ -35,6 +35,9 @@ domain-neutral (bar/box, dose–response, kinetics, PCA, heatmaps, forest plots 
 apply to agricultural data). Revision still follows
 `food-paper/references/revision-response.md`; peer review calls **`agri-review`**.
 
+**Restructuring:** whenever sections move, follow
+`food-paper/references/section-renumbering.md` and double-check heading numbers.
+
 ## Agricultural reporting (domain §5) — enforce in Methods and Results
 - **Field trials:** site (coordinates), **season(s)/years**, soil type and
   classification, cultivar/genotype, plot size, **design** (RCBD/split-plot/Latin

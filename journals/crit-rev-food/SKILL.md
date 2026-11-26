@@ -3,46 +3,52 @@ name: crit-rev-food
 description: "Shared author-guideline skill for Taylor & Francis food journals: Critical Reviews in Food Science and Nutrition, Food Reviews International, International Journal of Food Properties. Use to format or check a manuscript for a T&F food journal — structure, abstract/keyword limits, Taylor & Francis reference styles, and figure specs. Triggers: submit to Critical Reviews in Food Science and Nutrition, Food Reviews International, IJFP guidelines, Taylor & Francis food formatting. Also fires when the user wants to publish on/in this journal, format a manuscript for it, or match its reference/citation style."
 metadata:
   publisher: "Taylor & Francis"
-  verified: "2026-07"
+  verified: "2026-11"
   source: "https://www.tandfonline.com/action/authorSubmission?journalCode=bfsn20"
 ---
 
 # Taylor & Francis Food Journals — Shared Author Guideline Skill
 
-**Publisher:** Taylor & Francis · **Verified:** 2026-07 · Confirm each journal's "Instructions for authors" on tandfonline.com. Structure below reflects the common T&F template.
+> **Verification status:** **Verified** on the Taylor & Francis instructions pages (2026-11-27) for Critical Reviews in Food Science and Nutrition, Food Reviews International and International Journal of Food Properties. Other titles are **not verified**.
+> Anything not confirmed must be checked at the journal's guide before submission. Tell the
+> author so, and ask them to paste or upload the current guide if it cannot be read.
+
+## Publisher-wide guidance (compared across journals, 2026-11-27)
+Shared by the three verified journals: IMRaD order with a Declaration of interest
+statement, 3–6 keywords (IJFP any number), figures 1200/600/300 dpi. **Reference style and
+abstract length differ per journal.**
+
+**Publisher:** Taylor & Francis · Confirm each journal's "Instructions for authors" on tandfonline.com. Structure below reflects the common T&F template.
 
 ## Applies to
-| Journal | Abbrev | Type focus | Ref style* |
-|---|---|---|---|
-| Critical Reviews in Food Science and Nutrition | CRIT REV FOOD SCI | Reviews only (comprehensive) | author–date (APA-style) |
-| Food Reviews International | FOOD REV INT | Reviews | author–date |
-| International Journal of Food Properties | INT J FOOD PROP | Research (open access) | author–date |
+| Journal | Abbrev | Abstract | Keywords | Reference style |
+|---|---|---|---|---|
+| Critical Reviews in Food Science and Nutrition | CRIT REV FOOD SCI | unstructured, 200 words | 3–6 | **CSE 9th, author–date** ([guide](https://files.taylorandfrancis.com/tf_CSE.pdf)) |
+| Food Reviews International | FOOD REV INT | **≤100 words** | 3–6 | **ACS, numbered** ([guide](https://files.taylorandfrancis.com/tf_usacs.pdf)) |
+| International Journal of Food Properties | INT J FOOD PROP | unstructured, 200 words | any number | **ACS, numbered** (same guide) |
 
-*T&F assigns a named reference style per journal; these food titles use an **author–date** style (APA-like). Confirm at the journal's "Instructions for authors".
+**These three do not share a style — and none is APA.** In ACS (T&F variant) cite with superscript numbers in square brackets, after terminal punctuation.
 
-## Common T&F structure
-Title page (with author bios/ORCID) → Abstract → Keywords → Introduction → (Methods) → main body with headings → Conclusion → Disclosure statement → Funding → Data availability → References → Tables → Figure captions → Figures. Review journals: organize by thematic headings rather than IMRaD.
+## Structure
+Title page → Abstract → Keywords → Introduction → Materials and Methods → Results → Discussion → Acknowledgments → **Declaration of interest statement** → References → Appendices → Tables (with captions) → Figures → Figure captions.
 
-- **Abstract:** unstructured, typically ≤250 words.
-- **Keywords:** 5–7.
-- **Word length:** review articles are long-form; confirm any cap at the journal (CRFSN reviews are typically comprehensive, often 8,000–12,000 words).
-
-## Reference style
-**Author–date (APA-style, T&F variant).** In-text `(Author & Author, 2023)`; alphabetical reference list.
-
-Example (APA-style):
-> Author, A. B., & Author, C. D. (2023). Title of the article. *Critical Reviews in Food Science and Nutrition*, 63(10), 1234–1250. https://doi.org/10.1080/10408398.2023.xxxxxxx
+- CRFSN and IJFP offer **format-free submission**: any consistent reference style; journal style is applied after acceptance.
+- IJFP **reviews are invited only**.
+- Food Reviews International: American spelling, double-spaced, ≥1 inch margins, running head ≤50 characters.
+- No overall word limit was stated on these pages for the three journals.
+- Disclosure and data availability statements.
 
 ## Figures & tables
-Figures ≥300 dpi (line art ≥600 dpi); TIFF/EPS/PDF/PNG; color figures free online; editable tables; cite in order. T&F offers a LaTeX/Word template (Interact style).
+Line art 1200 dpi, grayscale 600 dpi, colour 300 dpi at final size; PS, JPEG, TIFF or Word; editable tables.
+
+**Journal of the International Society of Sports Nutrition** uses numbered references (Citation Style Language repository).
 
 ## Submission checklist
-- [ ] Author–date (APA-style) references · [ ] Abstract ≤~250 words · [ ] 5–7 keywords
-- [ ] Disclosure (competing interests) + Funding + Data availability statements
-- [ ] ORCID for authors · [ ] Figures ≥300 dpi · [ ] Cover letter (for reviews: scope + why comprehensive/timely)
+- [ ] Reference style for the specific journal · [ ] Abstract length (100 or 200) · [ ] Keywords
+- [ ] Declaration of interest + data availability · [ ] Figure resolution by type
 
 ## Also covers — Taylor & Francis / Routledge nutrition journals
-Same T&F template (author–date/APA); clinical titles add trial registration and
+Same T&F template (style differs by title); clinical titles add trial registration and
 reporting guidelines.
 
 | Journal | Abbrev | Notes |
@@ -56,11 +62,9 @@ reporting guidelines.
 ## Formatting constraints
 ```yaml
 publisher: Taylor & Francis
-scope: food & nutrition
-reference_style: author-date-apa
-abstract_words: 250
-keywords_max: 7
-review_word_range: [8000, 12000]   # CRFSN reviews; confirm per journal
+reference_style: per-journal   # CRFSN cse-author-date; FRI and IJFP acs-numbered
+abstract_words: {crit_rev_food_sci_nutr: 200, food_reviews_international: 100, int_j_food_properties: 200}
+keywords: {min: 3, max: 6}   # IJFP: any number
 disclosure_statement: required
-figure_dpi: {halftone: 300, line_art: 600}
+figure_dpi: {color: 300, grayscale: 600, line_art: 1200}
 ```

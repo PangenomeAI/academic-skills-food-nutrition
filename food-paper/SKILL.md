@@ -19,6 +19,7 @@ metadata:
     - references/privacy-and-confidentiality.md
     - references/revision-response.md
     - references/word-field-codes.md
+    - references/section-renumbering.md
 ---
 
 # Food-Paper — Whole-Process Manuscript System for Food & Nutrition Science
@@ -44,8 +45,8 @@ limits, reference style, and the figure spec passed to `food-figure`.
 - **outline** — detailed outline + evidence map only.
 - **section** — draft or rewrite one section (intro/methods/results/discussion/abstract).
 - **stats** — statistical analysis plan/execution guidance only.
-- **revise** — revise against an existing review (a `food-review` report and/or margin comments on a Word file). Edit **the original `.docx` with Tracked Changes** (do not start a fresh copy), resolving each comment. **Inside `food-pipeline`:** update the existing **Review & Response Report (`.docx`)** in place with each item's response — **no separate response letter**. **Standalone** (real journal reviewers): produce a **point-by-point response letter as a new Word document**. All deliverables are `.docx`, never Markdown. See `references/revision-response.md`.
-- **format-convert** — convert a draft to the target journal's structure + reference style; output **Markdown, LaTeX (.tex), or DOCX**, and **build a PDF** via Pandoc or `latexmk` (see `references/latex-guide.md`). Yes — this skill can prepare and edit LaTeX drafts. When the source is a Word file, **preserve EndNote/Zotero/Mendeley citation fields** (`references/word-field-codes.md`) — don't flatten field codes into text.
+- **revise** — revise against an existing review (a `food-review` report and/or margin comments on a Word file). Edit **the original `.docx` with Tracked Changes** (do not start a fresh copy), resolving each comment. **Inside `food-pipeline`:** update the existing **Review & Response Report (`.docx`)** in place with each item's response — **no separate response letter**. **Standalone** (real journal reviewers): produce a **point-by-point response letter as a new Word document**. All deliverables are `.docx`, never Markdown. See `references/revision-response.md`. After moving sections, apply `references/section-renumbering.md`.
+- **format-convert** — convert a draft to the target journal's structure + reference style; output **Markdown, LaTeX (.tex), or DOCX**, and **build a PDF** via Pandoc or `latexmk` (see `references/latex-guide.md`). Yes — this skill can prepare and edit LaTeX drafts. When the source is a Word file, **preserve EndNote/Zotero/Mendeley citation fields** (`references/word-field-codes.md`) — don't flatten field codes into text. **If any section is moved, added or removed and headings are numbered, renumber them and double-check the order** (`references/section-renumbering.md`).
 - **polish** — language editing to publication-quality English **and removal of AI writing tells** (`polisher` runs `references/human-writing.md`): inflated significance, "-ing" tack-ons, vague attribution ("studies have shown" → a real citation), stock AI vocabulary, "serves as" → "is", filler, hedge **stacking**, generic upbeat endings — then the two-pass check *"what still reads as machine-written?"*. Keeps calibrated hedging, passive Methods, and journal-mandated form; never changes a number, claim scope, or citation. Good for non-native-English drafts and for anything AI helped write.
 
 ## Subagent team (dispatch via the Agent tool; independent stages run in parallel)
@@ -107,6 +108,8 @@ prep, storage). Ethics/food-safety statements where relevant.
 - `references/revision-response.md` — **revise mode**: tracked changes (original Word opt-in under `food-pipeline`) + either updating the one **Review & Response Report** in place (pipeline) or a point-by-point response letter (standalone). All `.docx`.
 - `references/word-field-codes.md` — **preserve EndNote/Zotero/Mendeley citation fields** when editing a `.docx` (don't flatten field codes into visible text); verify with `scripts/check_docx_fields.py`.
 - `references/privacy-and-confidentiality.md` — **privacy check before delivery** (no local paths/secrets); run `scripts/privacy_scan.py`.
+
+- `references/section-renumbering.md` — **after any restructure**: renumber headings, cross-references and display items, then verify the order.
 
 ## Grounding (non-negotiable)
 Write **only** from the user's data and verified literature. Never invent
