@@ -63,4 +63,6 @@ line_numbering: required
 open_access: gold
 figure_dpi: {halftone: 300, line_art: 1000}
 column_widths_mm: [90, 190]
+per_journal:
+  the_crop_journal: {abstract_words: [200, 300], keywords: [3, 5]}
 ```

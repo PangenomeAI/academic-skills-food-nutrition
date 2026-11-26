@@ -35,7 +35,8 @@ and returns its `## Formatting constraints`. Authoritative mappings:
 2. **Resolve** the journal to its skill folder using the alias table below (or
    `journals/_coverage.md`). Match case-insensitively on full name or abbreviation.
 3. **Load** `journals/<folder>/SKILL.md` and return its `## Formatting constraints`
-   block plus the checklist. Note any per-journal override row in that skill's
+   block plus the checklist. **A `per_journal` entry or a "Verified" section for the
+   named journal overrides the block's generic values.** Note any per-journal override row in that skill's
    "Applies to" table (limits can differ within a publisher group).
 4. **Hand off:** the calling pipeline applies these constraints to structure,
    word/abstract limits, and reference style, and passes `figure_dpi` /

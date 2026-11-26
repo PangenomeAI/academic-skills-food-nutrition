@@ -81,8 +81,8 @@ Declare generative-AI use in a statement before the reference list.
 ## Common Elsevier structure
 Title page (title, authors, affiliations, corresponding author) → Abstract → Keywords → Introduction → Materials and methods → Results (and) Discussion → Conclusions → declarations → References → figure/table legends → figures/tables. Use **continuous line numbers** and page numbers.
 
-- **Abstract:** unstructured, typically ≤200–250 words (journal-specific).
-- **Keywords:** usually up to 6.
+- **Abstract:** ≤250 words in the verified journals (structured for Food Quality and Preference).
+- **Keywords:** 1–7 in most verified journals.
 - **Highlights:** separate file, **3–5 bullets ≤85 characters** each (most Elsevier journals).
 - **Graphical abstract:** required or encouraged on most food journals.
 - **Declarations:** Declaration of competing interest, CRediT roles, Data availability, funding, ethics where relevant.
@@ -136,7 +136,14 @@ publisher: Elsevier
 scope: food & nutrition
 reference_style: per-journal   # author-date for most food titles; see table
 abstract_words: 250
-keywords_max: 6
+keywords: {min: 1, max: 7}   # Food Quality and Preference max 6
+per_journal:   # verified; research-article word limits
+  food_research_international: {research_words: 6000, graphical_abstract: required}
+  food_packaging_shelf_life: {research_words: 7500, tables_figures_max: 6}
+  food_bioscience: {research_words: 6000, highlights: encouraged}
+  food_quality_preference: {research_words: 7000, structured_abstract: true, keywords_max: 6}
+  food_microbiology: {research_words: 9000}
+  trends_food_sci_tech: {review_words: 10000, tables_figures_max: 7, references_max: 100}
 highlights: {count: "3-5", max_chars: 85, common: true}
 graphical_abstract: common
 line_numbering: required

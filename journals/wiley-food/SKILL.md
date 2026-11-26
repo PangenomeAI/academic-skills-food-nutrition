@@ -72,8 +72,7 @@ These override the common template below.
 ## Common Wiley structure
 Title page → Abstract → Keywords → Introduction → Materials and Methods → Results → Discussion (or Results and Discussion) → Conclusion → Acknowledgements → Conflict of Interest → Author Contributions → Data Availability Statement → References → Tables → Figure legends → Figures.
 
-- **Abstract:** unstructured, typically ≤250 words (review journals may allow more).
-- **Keywords:** typically 5–6.
+- **Abstract / keywords:** per journal (structured for some).
 - **Novelty/impact statement:** some journals request a short novelty statement.
 
 ## Reference style
@@ -93,8 +92,8 @@ Figures ≥300 dpi (line art ≥600–1000 dpi); TIFF/EPS/PDF; RGB online; edita
 Most listed titles are Gold open access (APC). Include ethics/consent statements for human/animal studies and an ORCID for the corresponding author.
 
 ## Submission checklist
-- [ ] Correct reference style (author–date for most; numbered for eFood)
-- [ ] Abstract ≤~250 words · [ ] 5–6 keywords · [ ] Novelty statement (if required)
+- [ ] Reference style of the specific journal (see Verified journal rules)
+- [ ] Abstract and keyword limits of the specific journal · [ ] Novelty statement (if required)
 - [ ] Conflict of interest + Author Contributions + Data Availability statements
 - [ ] ORCID for corresponding author · [ ] Figures ≥300 dpi · [ ] Cover letter
 
@@ -118,8 +117,13 @@ abstracts, trial registration, and reporting guidelines.
 publisher: Wiley
 scope: food & nutrition
 reference_style: per-journal   # confirm per journal; MNF&R, Obesity, JPGN numbered
-abstract_words: 250
-keywords_max: 6
+per_journal:   # verified; these override everything else
+  comprehensive_reviews: {reference_style: chicago-author-date, abstract_words: 250, body_words: [8000, 15000]}
+  molecular_nutrition_food_research: {reference_style: numbered-no-article-title, abstract_words: 200, keywords_max: 5, research_words: 6500, methods: before-results}
+  food_frontiers: {reference_style: apa, abstract_words: 260, keywords: [3, 6], research_words: 5000}
+  j_science_food_agriculture: {reference_style: vancouver, abstract_words: 250, structured: [background, results, conclusion], keywords: [4, 6], research_words: 6000}
+  food_science_nutrition: {abstract_words: 250, keywords: [4, 6]}   # search excerpt
+other_journals: confirm-at-source
 data_availability: required
 open_access: mostly-gold
 figure_dpi: {halftone: 300, line_art: 1000}

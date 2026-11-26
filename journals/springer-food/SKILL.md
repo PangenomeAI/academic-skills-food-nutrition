@@ -77,7 +77,13 @@ publisher: Springer
 scope: food & nutrition
 reference_style: per-journal   # see per-journal list
 abstract_words: 250
-keywords_max: 6
+keywords: {min: 4, max: 6}
+per_journal:   # verified
+  food_bioprocess_technology: {reference_style: author-year}
+  food_security: {reference_style: author-year, research_words: 8000}
+  food_engineering_reviews: {reference_style: numbered-brackets}
+  european_journal_of_nutrition: {reference_style: numbered-brackets, structured_abstract: true}
+  international_journal_of_obesity: {abstract_words: 300, research_words: 4000, references_max: 60}
 declarations_block: required
 figure_dpi: {halftone: 300, line_art: 1200}
 column_widths_mm: [84, 174]
